@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Photoring</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
+  <style>
+    .thumb {
+      margin: 10px;
+    }
+    .videoDemo {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Photoring<br/><small>Definition, implementation and comparison of two different backend architectures</small></h1>
+        
+        <img width="500" src="https://raw.githubusercontent.com/nonameable/photoringSQL/master/static/img/photoringLive.png" alt="Photoring main view" class="thumb"/>
+        <br/><br/>
+        <a class="btn btn-primary" role="button" href="https://github.com/nonameable/photoringSQL">Github</a>
+        <a class="btn btn-primary" role="button" href="http://photoring.herokuapp.com/">Demo</a>
+        <a class="btn btn-primary" role="button" href="https://drive.google.com/file/d/1s7Aq5JOlYfiNzxOhTNpvqw4HVpLt64W-/view?usp=sharing">Poster</a>
+        <a class="btn btn-primary" role="button" href="https://www.overleaf.com/16547125sjrhczjxvqmg#/63571782/">Thesis</a>
+        <br/><br/>
+        <span class="videoDemo"><iframe width="560" height="315" src="https://www.youtube.com/embed/PArgtZ5IpsU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <h2>Objective</h2>
+        <div> Define a data model that supports the operations Photoring offers. Implement and compare two different backend architectures in terms of suitability to the model and efficiency</div>
+      </div>
+    </div><br/>
+    <div class="row">
+      <div class="col-8">
+        <h2>Problem Statement</h2>
+        <div>
+          Traditional tools for the the exploration and visualization of digital photo collections do not provide a usable easy-to-use interface for users to interact with. In addition, these tools usually do not convey all possible characteristics that photos in the collection have ( e.g. Date, Author, Location). As collections increase in size and characteristics, a new challenge appears: representing the collection in an efficient persistence data model. To address the first two problems we present Photoring, an alternative tool for the navigation, exploration and visualization of large photo collections. It offers a simple easy-to-use interface and it can also fully convey all possible characteristics of a collection. Finally, we implemented the data model for a particular collection in two different database schemas: mySQL and MongoDB. We then compared both implementations in terms of suitableness to the problem, ease of implementation and efficiency.
+        </div>
+      </div>
+    </div><br/>
+    <div class="row">
+      <div class="col-8">
+        <h2>Deliverables</h2>
+        <div>
+          1. Specific definition of the data model that supports the operations Photoring has to offer. <br/>
+          2. Implementation of the data model using two backend architectures, one based on mySQL and another one based on MongoDB.<br/>
+          3. Definition of a comparison framework that evaluates suitability to the data model and to the problem.<br/>
+          4. Comparison of the two backend architectures in termns of efficiency and suitability to the model.<br/>
+        </div>
+        <br></br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <h2>Results</h2>
+        <div>
+          <img width="500" src="https://raw.githubusercontent.com/nonameable/nonameable.github.io/master/images/mongog2.png" alt="MongoDB results" class="thumb"/>
+          <br/><br/>
+
+          <img width="500" src="https://raw.githubusercontent.com/nonameable/nonameable.github.io/master/images/mysqlg2.png" alt="MongoDB results" class="thumb"/>
+          <br/><br/>
+
+          <img width="500" src="https://raw.githubusercontent.com/nonameable/nonameable.github.io/master/images/mongo.png" alt="Average Response Time MongoDB" class="thumb"/>
+          <br/><br/>
+          <img width="500" src="https://raw.githubusercontent.com/nonameable/nonameable.github.io/master/images/mysql.png" alt="Average Response Time mySQL" class="thumb"/>
+          <br/><br/>
+        </div>
+        <br></br>
+      </div>
+    </div>
+    <p>Undergraduate project developed by <a href="https:/nonameable.github.io">David Mauricio Delgado Ruiz</a> under the supervision of <a href="http://johnguerra.co">John Alexis Guerra Gómez</a></p>
+  </div>
+</body>
