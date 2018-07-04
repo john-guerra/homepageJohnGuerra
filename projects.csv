@@ -53,11 +53,22 @@ Towards reusable charts d3 v4 tutorial,6/1/17,video,professional,reusableCharts.
 W209 Fall 2017 Final Projects,8/25/17,viz,academic,dataviz_projects.gif,http://johnguerra.co/viz/berkeleyFinalProjectsFall2017/,5
 SVG vs Canvas,11/20/17,viz,professional,svgVSCanvas.gif,https://bl.ocks.org/john-guerra/e80f02e59681ace122626c39407526a0,2
 revealVizScroll,11/27/17,viz,professional,revealVizScroll.gif,https://github.com/john-guerra/revealVizScrollyteling,5
-2017 US Federal Budget ,11/29/17,viz,professional,usFederalBudget2017.gif,https://bl.ocks.org/john-guerra/54ac510dbb3196f04bdd7db3bdcb5164,5
+2017 US Federal Budget ,11/29/17,viz,professional,usFederalBudget2017.gif,https://bl.ocks.org/john-guerra/54ac510dbb3196f04bdd7db3bdcb5164,3
 Flickr's best 2015 photos by geo,12/30/15,viz,professional,flickrBest2015.gif,http://johnguerra.co/viz/flickrBest2015/?showTreemap=true&showLabels=true&hierarchy=TYPE/NAME/PHOTOID&zoomable=true&maxLeafs=20&autopilot=false&autopilotTimer=60,5
 AVI2016 Best phototreemap practices ,6/7/16,slides,academic,aviPhototreemap.png,http://johnguerra.co/slides/aviPhototreemap/,3
-AVI2016 Network Explorer,6/7/16,slides,academic,aviPhototreemap.png,http://johnguerra.co/slides/aviNetworkExplorer,3
+AVI2016 Network Explorer,6/7/16,slides,academic,aviNetworkExplorer.png,http://johnguerra.co/slides/aviNetworkExplorer,3
 NetClusteringJS,10/3/13,viz,professional,netClusteringJS.gif,https://bl.ocks.org/john-guerra/ecdde32ab4ad91a1a240,4
 Zoomable Treemap demo,2/15/18,viz,professional,ZoomableTreemap.gif,https://beta.observablehq.com/@john-guerra/d3-zoomable-treemap,3
 InstaTreemap,1/15/18,viz,professional,instaTreemap.gif,http://johnguerra.co/viz/instaTreemap/,5
 Resultados Encuesta CAN,2/21/18,viz,professional,encuestaCNA.png,http://johnguerra.co/viz/resultadosEncuesta/,3
+Students viz,2/28/18,viz,professional,students.gif,http://johnguerra.co/#students,4
+Navio: Moma Explorer,3/29/18,viz,academic,MomaExplorerShort.gif,https://john-guerra.github.io/momaExplorer/,5
+D3 Force Boundary,4/21/18,viz,professional,boundaryWithArrows.gif,http://bl.ocks.org/john-guerra/a7cb6691ab063726ffc1c7f29b9a6578,3
+D3 Canvas with zoom and panning,4/18/18,viz,professional,d3CanvasMapZoom.gif,https://bl.ocks.org/john-guerra/05fafb55db94775db6b40ba62aa02772,2
+D3 Force Boundary Notebook,5/5/18,viz,professional,forceBoundaryNotebook.gif,https://beta.observablehq.com/@john-guerra/d3-force-boundary,2
+Colombian Presidential Election First Round,5/28/18,viz,professional,PrimeraVuelta.gif,http://johnguerra.co/viz/resultadosPrimeraVuelta2018/,5
+Veltman's Force Labeling on Colombian shapes,5/30/18,viz,professional,Colombia_Labeling.gif,https://beta.observablehq.com/@john-guerra/centerline-labeling,2
+Colombian Presidential Election Second Round,6/18/18,viz,professional,segundaVuelta.gif,http://johnguerra.co/viz/resultadosSegundaVuelta2018/index_old.html,5
+Colombia Force Cities Notebook,6/20/18,viz,professional,ColombiaForceCities.gif,https://beta.observablehq.com/@john-guerra/colombia-geojson,3
+World Cup Chances for second round,6/25/18,viz,professional,worldCup.gif,http://johnguerra.co/viz/worldCup2018/,3
+Colombian Election Storytelling,6/26/18,viz,professional,segundaVueltaStory_shorter.gif,http://johnguerra.co/viz/resultadosSegundaVuelta2018/,5
