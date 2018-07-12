@@ -26,9 +26,12 @@
   display: block;
   margin: auto;
 
-  height: auto;
   max-height: 100%;
-
-  width: auto;
   max-width: 100%;
+}
+#projectsComb image.tall {
+  width: auto;
+}
+#projectsComb image.wide {
+  height: auto;
 }

@@ -133,6 +133,7 @@
       })
       .attr("width", (hexRadius*2))
       .attr("height", (hexRadius*2))
+      .attr("preserveAspectRatio", "xMidYMid slice")
       .attr("clip-path", "url(#hexClip)")
       .on("click", function (d) {
         window.open(d.proj.url, "_blank");
