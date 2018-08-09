@@ -285,7 +285,7 @@ function doProjectList(data) {
       .attr("class", "row step opacable");
 
     var nameAndPhoto = row.append("div")
-      .attr("class", "col-xs-4");
+      .attr("class", "col-4");
 
     nameAndPhoto.append("div")
       .attr("class", "studentPhotoHolder")
@@ -308,7 +308,7 @@ function doProjectList(data) {
       });
 
     var body = row.append("div")
-      .attr("class", "col-xs-8")
+      .attr("class", "col-8")
     body.append("h3")
       .attr("class", "studentProject")
       .text(function (d) { return d.thesis; });
