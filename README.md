@@ -1,7 +1,10 @@
 # John Alexis Guerra Gómez Home Page
+
 A simple HTTP/CSS/JS page full of errors. Shows some of my projects, keeps my CV updated and tries to showcase all my students' great work
 
-# Running
+![screenshotHomeJohnGuerra]["img/screenshotHomeJohnGuerra.png"]
+
+## Running
 
 The page is mostly a static HTML page, with some javascript. To run it, just launch your favorite web server, e.g.:
 
