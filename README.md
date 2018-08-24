@@ -2,7 +2,7 @@
 
 A simple HTTP/CSS/JS page full of errors. Shows some of my projects, keeps my CV updated and tries to showcase all my students' great work
 
-![screenshotHomeJohnGuerra]["img/screenshotHomeJohnGuerra.png"]
+![screenshotHomeJohnGuerra](https://raw.githubusercontent.com/john-guerra/homepageJohnGuerra/master/img/screenshotHomeJohnGuerra.png)
 
 ## Running
 
