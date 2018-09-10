@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ISIS 4822 : Visual Analytics Final Projects</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      .project {
+        height: 600px;
+        overflow: scroll;
+      }
+      .project .description {
+        font-size: 90%;
+      }
+      img.project-thumb {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .topic {
+        margin-top: 30px;
+      }
+      .topic h2 {
+        margin-bottom: 20px;
+      
+      }
+      .project_url, .project_demo {
+        margin: 5px;
+      }
+      .intro {
+        font-size: 130%;
+      }
+      
+    </style>
+  </head>
+</html>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h1>Final Class Projects<a href="http://johnguerra.co/classes/isis_4822_fall_2016/"> Visual Analytics Course</a></h1>
+      </div>
+      <div class="col-md-8 col-sm-12 intro">
+        <p>This is a list of the final projects on this class. Each group was tasked to develop a Visual Analytics tool to help solve a <strong>real</strong> problem from a <strong>real</strong> user. The students successfully worked through the problems of obtaining and cleaning real data, and more importantly extracting real value from them.</p>
+        <p>Here is a list of the projects grouped by topics:</p>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div id="projects"></div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <h3>Presentations</h3>
+            <h4>Schedule</h4><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6:00 PM</td>
+<td>Introduction</td>
+</tr>
+<tr>
+<td>6:12 PM</td>
+<td>Public expenditure in Colombia</td>
+</tr>
+<tr>
+<td>6:24 PM</td>
+<td>Free Housing and Social Interest Project</td>
+</tr>
+<tr>
+<td>6:36 PM</td>
+<td>Surgical Reoperations in Military Central Hospital of Bogota</td>
+</tr>
+<tr>
+<td>6:48 PM</td>
+<td>Traffic tickets vs Car crashes</td>
+</tr>
+<tr>
+<td>7:00 PM</td>
+<td>Who dominates the Council of Bogotá and how?</td>
+</tr>
+<tr>
+<td>7:12 PM</td>
+<td>Deforestation in Colombia</td>
+</tr>
+<tr>
+<td>7:36 PM</td>
+<td>Coffee Break</td>
+</tr>
+<tr>
+<td>7:48 PM</td>
+<td>Bogota Schools Environments</td>
+</tr>
+<tr>
+<td>8:00 PM</td>
+<td>Colombian Presidential Elections 2018</td>
+</tr>
+<tr>
+<td>8:12 PM</td>
+<td>Fulbright Scholarships in Colombia</td>
+</tr>
+<tr>
+<td>8:24 PM</td>
+<td>Cell Phones Theft in the city of Bogotá, Colombia</td>
+</tr>
+<tr>
+<td>8:36 PM</td>
+<td>Colombian stock market visualization</td>
+</tr>
+</tbody>
+</table>
+
+          </div>
+        </div>
+        <h4>Streaming/Video</h4><span>
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/Ke8EP5fnbno" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          
+          </span>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="../../js/jquery-1.12.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./tabletop.js"></script>
+        <script>
+          var urlHtml = "17RZrKKR_TlioXOwY60MS1fcagAkxpXev32d9PqOzJTw";
+          var container = d3.select("#projects");
+          
+          
+          
+          function update(data) {
+            //- <div class="panel panel-default">
+            //- <div class="panel-heading">
+            //-   <h3 class="panel-title">Panel title</h3>
+            //- </div>
+            //- <div class="panel-body">
+            var nested_data = d3.nest()
+              .key(function (d) { return d["Project Category"]; })
+                .sortKeys(function (a, b) {
+                  return a === "Others" ?
+                    1 :
+                    b === "Others" ?
+                      -1 :
+                      d3.ascending(a, b);
+          
+          
+                })
+              .entries(data);
+          
+            var topics = container.selectAll(".topic")
+              .data(nested_data)
+                .enter()
+                  .append("div")
+                  .attr("class", "topic row")
+          
+            topics.append("h2")
+              .attr("class", "col-12 topic-header")
+              .text(function (d) { return d.key; })
+          
+            var projs = topics.selectAll(".project")
+              .data(function (d) { return d.values; })
+                .enter()
+                  .append("div")
+                    .attr("class", "col-sm-4")
+                  .append("div")
+                    .attr("class", "project panel panel-default");
+          
+            projs
+              .append("div")
+                .attr("class", "panel-heading")
+              .append("h3")
+                .attr("class", "panel-title")
+                .append("a")
+                  .attr("href" , function (d) {
+                    return d["Full URL for the Github repo"];
+                  })
+                  .attr("target", "_blank")
+                .text(function (d) { return d["Project title"]; });
+          
+            var body = projs.append("div")
+              .attr("class", "panel-body");
+            body
+              .append("a")
+              .attr("href", function (d) { return d["Project's demo full url"]; })
+                .attr("target", "_blank")
+                .append("img")
+                .attr("class", "project-thumb")
+                  .attr("src", function (d) { return d["Project's screenshot full url"]; });
+            body.append("a")
+              .attr("class", "project_url btn btn-sm btn-default")
+              .attr("href", function (d) { return d["Full URL for the Github repo"]; })
+              .attr("target", "_blank")
+              .text("GitHub");
+            body.append("a")
+              .attr("class", "project_demo btn btn-sm btn-primary")
+              .attr("href", function (d) { return d["Project's demo full url"]; })
+              .attr("target", "_blank")
+              .text("Demo");
+            body.append("a")
+              .attr("class", "project_demo btn btn-sm btn-success")
+              .attr("href", function (d) { return d["Video demo full url"]; })
+              .attr("target", "_blank")
+              .text("Video");
+          
+            body.append("a")
+              .attr("class", "project_demo btn btn-sm btn-info")
+              .attr("href", function (d) { return d["Slides"]; })
+              .attr("target", "_blank")
+              .text("Slides");
+          
+          
+          
+          
+            body.append("h4").text("Description");
+            body.append("p")
+              .attr("class", "description")
+                .text(function (d) { return d["Paragraph describing the project"]; });
+          
+            body.append("h4").text("Members");
+            body.append("div")
+              .attr("class", "student")
+              .append("a")
+              .attr("href", function (d) { return d["Student 1 homepage"]})
+              .attr("target", "_blank")
+                .text(function (d) { return d["Student 1 full name"]; });
+            body.append("div")
+              .attr("class", "student")
+              .append("a")
+              .attr("href", function (d) { return d["Student 2 homepage"]})
+              .attr("target", "_blank")
+                .text(function (d) { return d["Student 2 full name"]; });
+            body.append("div")
+              .attr("class", "student")
+              .append("a")
+              .attr("href", function (d) { return d["Student 3 homepage"]})
+              .attr("target", "_blank")
+                .text(function (d) { return d["Student 3 full name"]; });
+          
+          
+            //- body.append("h5")
+            //-   .text(function (d) { return "Group Number " + d["Número de grupo"]; })
+          }
+          
+          //- function preProcess(data) {
+          //-   var dictGroups = {};
+          //-   data.forEach(function (d) {
+          //-     dictGroups[d["Número de grupo"]]=d;
+          //-   })
+          //-   return d3.values(dictGroups);
+          //- }
+          
+          function updateFromGSheet(data) {
+            //- var procData = preProcess(data);
+            update(data);
+          }
+          
+          function init() {
+            Tabletop.init( { key: urlHtml,
+                             callback: updateFromGSheet,
+                             simpleSheet: true } )
+          }
+          
+          // Update from csv
+          //- d3.csv("projects.csv", function (error, data) {
+          //-   if (error) throw error;
+          //-   var procData = preProcess(data);
+          //-   update(procData);
+          //- });
+          
+          // Update from googleSheets
+          window.onload = function() { init() };
+          d3.select("table").attr("class", "table");
+          
+        </script>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-72531610-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
