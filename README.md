@@ -16,3 +16,7 @@ http-server
 Some pages are written on JADE, so you might need the JADE compiler. However, the compiled HTML versions are included as well.
 
 Made by [John Alexis Guerra Gómez](http://johnguerra.co), licensed under MIT
+
+## Requirements
+
+Some things need D3, some others jade and markdown-it (jstranformer-markdown-it)[https://www.npmjs.com/package/jstransformer-markdown-it]

@@ -311,6 +311,10 @@ function doProjectList(data) {
       .attr("class", "col-8")
     body.append("h3")
       .attr("class", "studentProject")
+      .append("a")
+        .attr("href", function (d) { return d.project_url; })
+        .attr("target", "_blank")
+
       .text(function (d) { return d.thesis; });
 
     body
