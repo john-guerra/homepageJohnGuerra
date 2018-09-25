@@ -312,7 +312,7 @@ function doProjectList(data) {
     body.append("h3")
       .attr("class", "studentProject")
       .append("a")
-        .attr("href", function (d) { return d.project_url; })
+        .attr("href", function (d) { return "./" + d.project_url; })
         .attr("target", "_blank")
 
       .text(function (d) { return d.thesis; });
@@ -321,7 +321,7 @@ function doProjectList(data) {
     .filter(function (d) { return d.slides && d.slides!==""; })
     .append("span")
     .append("a")
-      .attr("href", function (d) { return d.slides })
+      .attr("href", function (d) { return d.slides; })
       .attr("target", "_blank")
       .style("margin-right", "1em")
     .text("Slides");
@@ -330,14 +330,14 @@ function doProjectList(data) {
     .filter(function (d) { return d.slides && d.slides!==""; })
     .append("span")
     .append("a")
-      .attr("href", function (d) { return d.demo })
+      .attr("href", function (d) { return d.demo; })
       .attr("target", "_blank")
     .text("Demo");
 
 
     body.append("div")
       .attr("class", "studentProjectDescription")
-      .text(function (d) { return d.description; })
+      .text(function (d) { return d.description; });
 
 
     body
