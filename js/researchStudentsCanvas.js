@@ -16,7 +16,7 @@ function doNetwork(data) {
     width = container.node().offsetWidth,
     height = 600,
     c = d3.scaleOrdinal()
-      .domain(["InfoViz Testing", "InfoViz","Medicine", "Biology", "PhotoViz", "Visual Analytics", "Accesibility", "Machine Learning", "Photoviz", "Business",  "Large DataViz", "Web Development"])
+      .domain(["InfoViz Testing", "InfoViz","Medicine", "Biology", "PhotoViz", "Visual Analytics", "Accessibility", "Machine Learning", "Photoviz", "Business",  "Large DataViz", "Web Development"])
       .range(["#A7CA4E", "#A7CA4E",          "#BFCBC2", "#BFCBC2", "#A7CA4E", "#A7CA4E", "#76C7F2",                "#99C5B5",          "#A7CA4E", "#BFCBC2",   "#A7CA4E", "#B9BBE0"]),
     line = d3.line()
       .x(function (d) { return d.x; })
