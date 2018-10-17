@@ -17,7 +17,7 @@ function doNetwork(data) {
     width = container.node().offsetWidth,
     height = 600,
     c = d3.scaleOrdinal()
-      .domain(["InfoViz Testing", "InfoViz","Medicine", "Biology", "PhotoViz", "Visual Analytics", "Accesibility", "Machine Learning", "Photoviz", "Business",  "Large DataViz", "Web Development", "Politics"])
+      .domain(["InfoViz Testing", "InfoViz","Medicine", "Biology", "PhotoViz", "Visual Analytics", "Accessibility", "Machine Learning", "Photoviz", "Business",  "Large DataViz", "Web Development", "Politics"])
       .range(["#A7CA4E", "#A7CA4E",          "#BFCBC2", "#BFCBC2", "#A7CA4E", "#A7CA4E", "#76C7F2",                "#99C5B5",          "#A7CA4E", "#BFCBC2",   "#A7CA4E", "#B9BBE0",                "#BFCBC2"]),
     line = d3.line()
       .x(function (d) { return d.x; })
@@ -312,7 +312,7 @@ function doProjectList(data) {
     body.append("h3")
       .attr("class", "studentProject")
       .append("a")
-        .attr("href", function (d) { return "./" + d.project_url; })
+        .attr("href", function (d) { return "/students/" + d.project_url; })
         .attr("target", "_blank")
 
       .text(function (d) { return d.thesis; });

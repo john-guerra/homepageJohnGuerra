@@ -38,7 +38,7 @@
 	"dateStr":"March 2017",
 	"type":"Conference",
 	"ranking":[],
-	"category":"Accesibility"
+	"category":"Accessibility"
 },
 {
 	"year":"2016",
@@ -366,7 +366,7 @@
 	"date":"08/01/2005",
 	"dateStr":"Aug 2005",
 	"type":"Magazine",
-	"category":"Accesibility"
+	"category":"Accessibility"
 
 },
 {
@@ -390,7 +390,7 @@
 	"venue":"Superintendencia de Industria y Comercio",
 	"date": "10/09/2012",
 	"dateFmt": "Oct 2012",
-	"category": "Accesibility"
+	"category": "Accessibility"
 },
 {
 	"year":"2011",
@@ -401,7 +401,7 @@
 	"venue":"Superintendencia de Industria y Comercio",
 	"date": "03/02/2011",
 	"dateFmt": "Mar 2011",
-	"category": "Accesibility"
+	"category": "Accessibility"
 },
 {
 	"year":"2007",
@@ -412,7 +412,7 @@
 	"date":"04/01/2006",
 	"dateFmt": "Apr 2006",
 	"link":"https://patents.google.com/patent/US20080174566A1",
-	"category": "Accesibility"
+	"category": "Accessibility"
 },
 {
 	"year":"2006",
@@ -422,7 +422,7 @@
 	"venue":"In process with the WIPO (World Intellectual Property Organization) since June 2006",
 	"date":"06/01/2006",
 	"dateFmt": "Jun 2006",
-	"category": "Accesibility"
+	"category": "Accessibility"
 },
 {
 	"year":"2006",
@@ -432,7 +432,7 @@
 	"venue":"In process with the WIPO (World Intellectual Property Organization) since June 2006",
 	"date":"12/22/2008",
 	"dateFmt": "Dec 2008",
-	"category": "Accesibility"
+	"category": "Accessibility"
 },
 {
 	"year":"2005",
@@ -442,7 +442,7 @@
 	"venue":"In process with the WIPO (World Intellectual Property Organization) since June 2006",
 	"date":"04/05/2011",
 	"dateFmt": "Apr 2011",
-	"category": "Accesibility"
+	"category": "Accessibility"
 },
 {
 	"year":"2009",
