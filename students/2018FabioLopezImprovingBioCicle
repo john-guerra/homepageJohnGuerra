@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Improving BioCicle</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
+  <style>
+    .thumb {
+      margin: 10px;
+    }
+    .videoDemo {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Improving BioCicle</h1>
+        <h2>Adaptation of the visualization tool for bioinformatics analysis</h2>
+        <p>Undergrad project by <a href="http://falopez10.github.io">Fabio Andrés López Corredor</a> working under the supervision of <a href="http://johnguerra.co">John Alexis Guerra Gómez</a></p><img width="300" src="https://mvanegas10.github.io/BioCicle/BioCicleTeaser.png" alt="BioCicle original" class="thumb"/><br/><br/>
+        <a role="button" class="btn btn-primary" href="https://github.com/mvanegas10/BioCicle">Github</a>
+        <a role="button" class="btn btn-primary" href="http://biocicle.johnguerra.co/">Demo</a>
+        <a role="button" class="btn btn-primary" href="#">Poster</a>
+        <a role="button" class="btn btn-primary" href="https://www.overleaf.com/read/wkxrrdcgtrgw">Thesis</a><br/><br/><span class="videoDemo"><iframe width="560" height="315" src="https://youtu.be/-VPyzLO9LnU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <h2>Objective</h2>
+        <div> Revisit the <a href="http://johnguerra.co/students/2018MeiliVanegasBioCicle/">BioCicle project</a> (implemented by <a href="https://mvanegas10.github.io/">Meili Vanegas</a>), allow an easier portability and availability online and adapt its setting to the new requirements from the users (bioinformaticians). </div>
+      </div>
+    </div><br/>
+    <div class="row">
+      <div class="col-8">
+        <h2>Problem Statement</h2>
+        <div></div>
+      </div>
+    </div><br/>
+    <div class="row">
+      <div class="col-8">
+        <h2>Deliverables</h2>
+        <div>
+          <ul>
+            <li>Visualization available online, able to summarize and compare taxonomic reports.</li>
+            <li>Results and analysis of interaction from users with BioCicle.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
