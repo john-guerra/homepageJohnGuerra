@@ -1,53 +1,148 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-<head>
-  <meta charset="UTF-8"/>
-  <title>Navigation widget for large collection of files</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
-  <style>
-    .thumb {
-      margin: 10px;
-    }
-    .videoDemo {
-      margin: 10px;
-    }
-  </style>
-</head>
+<html lang="en">
+<title>Navigation widget for large collection of files</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lato", sans-serif
+  }
+
+  .w3-bar,
+  h1,
+  button {
+    font-family: "Montserrat", sans-serif
+  }
+
+  .fa-anchor,
+  .fa-coffee {
+    font-size: 200px
+  }
+
+  #aJustificar {
+    text-align: justify;
+  }
+</style>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Navigation widget for large collection of files<br/><small>Widget for easily navigation through large collection of files or photos. </small></h1>
-        <p>Undergrad project by <a href="http://daviddlaiton.github.io">Andrés David Laiton Vargas</a> working under the supervision of <a href="http://johnguerra.co">John Alexis Guerra Gómez</a></p><img width="300" src="https://image.ibb.co/dn9wc9/Photoring_nba.jpg" alt="Photoring nba players" class="thumb"/><br/><br/>
-        <img width="300" src="https://image.ibb.co/mrQxjp/photoring_moma.png" alt="Photoring moma" class="thumb"/><br/><br/>
-        <a role="button" class="btn btn-primary" href="https://github.com/daviddlaiton/photoringSQL">Github</a>
-        <a role="button" class="btn btn-primary" href="#">Demo</a>
-        <a role="button" class="btn btn-primary" href="#">Poster</a>
-        <a role="button" class="btn btn-primary" href="https://es.overleaf.com/read/ztmjjfspcbnb">Thesis</a><br/><br/><span class="videoDemo"><iframe width="560" height="315" src="https://www.youtube.com/embed/PArgtZ5IpsU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></span>
-      </div>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+      <a href="https://github.com/daviddlaiton/navigationWidget" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Github</a>
+      <a href="https://drive.google.com/file/d/1EJbcgzIr-zj213LUry3vrSMnT4DIco5p/view?usp=sharing" target="_blank"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Poster</a>
+      <a href="https://daviddlaiton.github.io/navigationWidget/" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Demo</a>
+      <a href="https://es.overleaf.com/read/ztmjjfspcbnb" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Paper</a>
     </div>
-    <div class="row">
-      <div class="col-8">
-        <h2>Objective</h2>
-        <div> Create a widget that allows easily navigation through large collection of files or photos. </div>
-      </div>
-    </div><br/>
-    <div class="row">
-      <div class="col-8">
-        <h2>Problem Statement</h2>
-        <div> Traditional tools for exploring files do not provide a usable easy-to-use interface for users to interact with. Additionally, all the existing solutions follow similar ways to show the files to the user. These solutions only show few information about the files, despite of the different way to show it. As a solution of the problems mentioned before we present the navigation widget. This widget is made to provide an easy-to-use tool for the user that shows all the information available. This widget is implemented in Photoring (an alternative tool for the navigation, exploration and visualization of large photo collection) as an example of how it works. The navigation widget can be used in other tools for exploring files or photos, how is it done in Photoring. </div>
-      </div>
-    </div><br/>
-    <div class="row">
-      <div class="col-8">
-        <h2>Deliverables</h2>
-        <div>
-          <ul>
-            <li>Nagivation widget implemented in file explorer.</li>
-            <li>Custom navigation widget.</li>
-          </ul>
-        </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="home" class="w3-container w3-red w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo">Navigation widget for large collection of files</h1>
+    <p class="w3-xlarge">Undergraduate project by <a href="http://daviddlaiton.github.io">Andrés David Laiton Vargas</a>
+      working under the supervision of <a href="http://johnguerra.co">John Alexis Guerra Gómez</a></p>
+  </header>
+
+  <!-- First Grid -->
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>Objetive</h1>
+        <h5 class="w3-padding-32" id="aJustificar">Create a widget that allows easily navigation through large
+          collection of files or
+          photos.
+        </h5>
+
+        <h1>Problem Statement</h1>
+        <h5 class="w3-padding-32" id="aJustificar">Traditional tools for exploring files do not provide a usable
+          easy-to-use interface for
+          users to interact with. Additionally, all the existing solutions follow similar ways to show the files to the
+          user. These solutions only show few information about the files, despite of the different way to show it. As
+          a solution of the problems mentioned before we present the navigation widget. This widget is made to provide
+          an easy-to-use tool for the user that shows all the information available. This widget is implemented in
+          Photoring (an alternative tool for the navigation, exploration and visualization of large photo collection)
+          as an example of how it works. The navigation widget can be used in other tools for exploring files or
+          photos, how is it done in Photoring.</h5>
       </div>
     </div>
   </div>
+
+  <!-- Second Grid -->
+  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <img width="600" src="https://image.ibb.co/nPHmx0/Example.png" alt="navigationWidget implementation" class="thumb" /><br /><br />
+      </div>
+
+      <div class="w3-threequarter">
+        <h1>Main task</h1>
+        <ul>
+          <li class="w3-padding-32">Summarize large collection of files in one list.</li>
+          <li class="w3-padding-32">Easy to search.</li>
+          <li class="w3-padding-32">Detail sub list.</li>
+          <li class="w3-padding-32">Autocomplete search bar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>Video</h1>
+        <h5 class="w3-padding-32" id="aJustificar">Check this video to learn more about the navigation widget
+        </h5>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wvAS-weok78" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Check de demo basen on MoMA artwork dataset <a href="https://daviddlaiton.github.io/navigationWidget/"
+        target="_blank">here!</a></h1>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
+
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
 </body>
+
+</html>
