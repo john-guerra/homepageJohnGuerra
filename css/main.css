@@ -44,6 +44,7 @@ h2 {
 
 .img400 {
 	width:80%;
+  /*min-height:400px;*/
 	max-width:400px;
 	display: block;
     margin-left: auto;

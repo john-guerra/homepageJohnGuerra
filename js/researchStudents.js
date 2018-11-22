@@ -178,7 +178,7 @@ function doNetwork(data) {
     //         .on("end", dragended));
 
     container.call(d3.drag()
-      .container(container)
+      .container(container.node())
       .subject(dragsubject)
       .on("start", dragstarted)
       .on("drag", dragged)
@@ -300,11 +300,11 @@ function doProjectList(data) {
           .attr("target", "_blank")
         .text(function (d) {
           return d.name;
-        })
+        });
         selName.append("small")
         .text(function (d) {
           return " " +d.level;
-        })
+        });
       });
 
     var body = row.append("div")
@@ -312,7 +312,7 @@ function doProjectList(data) {
     body.append("h3")
       .attr("class", "studentProject")
       .append("a")
-        .attr("href", function (d) { return "/students/" + d.project_url; })
+        .attr("href", function (d) { return (d.project_url.indexOf("http")===-1 ? "/students/" : "") + d.project_url; })
         .attr("target", "_blank")
 
       .text(function (d) { return d.thesis; });
@@ -437,10 +437,11 @@ function movePhoto(nick) {
 
 
 function updateFromGSheet(data) {
-
+  data = data.filter(function (d) { return !d.disabled; });
   doNetwork(data);
   doProjectList(data);
   setupScroller();
+
 }
 
 function init() {
@@ -472,23 +473,25 @@ function setupScroller() {
         return i>= index-2 && i<= index ? 1 : 0.1;
       });
 
+
+
     // activate current section
     // plot.activate(index);
     console.log(index);
 
     selected = [];
-    // if (index > 1) {
-    //   movePhoto(graph.nodes[index-2].nickname);
-    // }
+    if (index > 1) {
+      movePhoto(graph.nodes[index-2].nickname);
+    }
     if (index > 0) {
       movePhoto(graph.nodes[index-1].nickname);
     }
     if (index!== 0 && index < steps.nodes().length -1){
       movePhoto(graph.nodes[index].nickname);
     }
-    if (index!== 0 && index < steps.nodes().length -2){
-      movePhoto(graph.nodes[index+1].nickname);
-    }
+    // if (index!== 0 && index < steps.nodes().length -2){
+    //   movePhoto(graph.nodes[index+1].nickname);
+    // }
     clearPhotos();
 
   });

@@ -395,7 +395,7 @@
 {
 	"year":"2011",
 	"type":"Software",
-	"link":"Registro_IRIS_v3.pdf",
+	"link":"papers/Registro_IRIS_v3.pdf",
 	"authors":"John Alexis Guerra-Gomez, Juan Pablo Valois",
 	"title": "IRIS version 3.0, Colombian Software Registration 13-28-205",
 	"venue":"Superintendencia de Industria y Comercio",
@@ -447,7 +447,7 @@
 {
 	"year":"2009",
 	"type":"Tech Report",
-	"link":"AudioSavant.pdf",
+	"link":"papers/AudioSavant.pdf",
 	"authors":"Mark Daly, John Alexis Guerra-Gomez,John Locke,Megan Monroe",
 	"title": "AudioSavant: Exploring Musical Structure Through Visual Interaction",
 	"date":"12/01/2009",
@@ -457,7 +457,7 @@
 {
 	"year":"2017",
 	"type":"Workshop",
-	"link":"Kangaroo_fundation_viz.pdf",
+	"link":"papers/Kangaroo_fundation_viz.pdf",
 	"authors":"Deisy J. Díaz, Julieta Villegas, John Alexis Guerra-Gomez, Nathalie Charpak, José Tiberio Hernádez",
 	"title": "Visual Tools for the Exploration of Growth Data in a cohort of Kangaroo Infants during their first year of life",
 	"venue":"Proceedings of the 2017 Workshop on Visual Analytics in Healthcare (VAHC 2017)",
@@ -484,24 +484,39 @@
 	"title": "Understanding world happiness: An information visualization application case of the World Happiness Report",
 	"venue":"IV Jornadas Iberoamericanas de Interacción Humano Computador",
 	"date":"25/04/2018",
-	"link":"world_happiness_report_jornadas_hci.pdf",
+	"link":"papers/world_happiness_report_jornadas_hci.pdf",
 	"dateFmt": "Apr 2018",
 	"category": "Visualization"
 },
 {
 	"year":"2018",
 	"type":"Journal",
-	"authors":"Nychol Bazurto-Gomez, Carlos F. Torres, Raul Gutierrez, Mario Chamorro, Claire Bulger, Tiberio Hernandez, John A. Guerra-Gomez",
+	"authors":"Nychol Bazurto-Gomez, Carlos F. Torres, Raul Gutierrez, Mario Chamorro, Claire Bulger, Tiberio Hernandez, John Alexis Guerra-Gomez",
 	"title": "Understanding world happiness: An information visualization application case of the World Happiness Report",
 	"venue":"Communications in Computer and Information Science, Springer",
 	"date":"12/07/2018",
-	"link":"world_happiness_report_journal.pdf",
+	"link":"papers/world_happiness_report_journal.pdf",
 	"link_journal":"https://www.springer.com/series/7899",
 	"volumne": "HCI-COLLAB 2018 post-proceedings",
 	"dateFmt": "July 2018",
 	"category": "Visualization",
 	"ranking": ["Scopus Q3"],
 	"ISSN": "1865-0929"
-}
+},
+{
+	"year":"2018",
+	"type":"Workshop",
+	"authors":"Fabian C. Peña, John Alexis Guerra-Gomez",
+	"title": "Opening the black-box: Towards more Interactive and InterpretableMachine Learning",
+	"venue":"Communications in Computer and Information Science, Springer",
+	"date":"12/07/2018",
+	"link":"papers/world_happiness_report_journal.pdf",
+	"link_journal":"https://www.springer.com/series/7899",
+	"volumne": "HCI-COLLAB 2018 post-proceedings",
+	"dateFmt": "July 2018",
+	"category": "Visualization",
+	"ranking": ["Scopus Q3"],
+	"ISSN": "1865-0929"
+},
 ]
 

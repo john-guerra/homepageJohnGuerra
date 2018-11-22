@@ -91,11 +91,15 @@ function scroller() {
    *
    */
   function position() {
-    var pos = window.pageYOffset - 10 - containerStart;
+    resize();
+
+    var padding = 10;
+
+    var pos = window.pageYOffset - padding - containerStart;
     var sectionIndex = d3.bisect(sectionPositions, pos);
     sectionIndex = Math.min(sections.size() - 1, sectionIndex);
 
-    console.log("pos ", pos, " index", sectionIndex, " containerStart", containerStart, sectionPositions);
+    // console.log("pos ", pos, " index", sectionIndex, " containerStart", containerStart, sectionPositions, window.pageYOffset, padding);
 
     if (currentIndex !== sectionIndex) {
       // @v4 you now `.call` the dispatch callback
