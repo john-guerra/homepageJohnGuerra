@@ -1,0 +1,111 @@
+/* GRAPHIC CODE */
+
+*, * > * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.8em;
+  background-color: #f2f2f2;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,h2,h3 {
+  line-height: 1.5em;
+  font-family: 'Archivo', sans-serif;
+}
+
+h1 {
+  margin-top: 40px;
+  background-color: #62C975;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-family:  'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+h2.sub {
+  text-align: center;
+}
+
+main {
+  max-width: 50vw;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.team {
+  overflow: auto;
+  margin-right: -5%;
+}
+
+.team > div {
+  width: 45%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-right: 5%;
+}
+
+.team > #imagine {
+  float: left;
+}
+
+.team > #imagine img {
+  /*width: 150px;*/
+  /*margin-left: 20px;*/
+  margin-bottom: -15px;
+  margin-top: 10px;
+  padding: 0 25px 0; 
+  /*margin-top: -px;*/
+}
+
+.team > #cv {
+  float: right;
+}
+
+.team > #cv img {
+  margin-bottom: -20px;
+  margin-top: 10px;
+}
+
+div.links {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+a.link {
+  padding: 20px;
+  color: #fff;
+  background-color: #62C975;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}
+
+img.viz {
+  width: 100%;
+  /*padding: 20px;*/
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 100vw;
+    padding: 30px;
+  }
+}
