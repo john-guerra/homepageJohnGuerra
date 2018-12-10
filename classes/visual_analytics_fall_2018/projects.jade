@@ -1,16 +1,74 @@
 doctype html
 html
   head
-    title ISIS 4822 : Visual Analytics Final Projects
+    title Final projects - WEB Development - Uniandes
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
 
     style.
+
+      .logo {
+        height: 90px;
+        border-radius: 5px;
+      }
+
+
+      body {
+        background-color: #fff5df;
+      }
+      #comb {
+        width: 100%;
+      }
+
+      #comb .mesh {
+        fill:none;
+        stroke: #white;
+        stroke-width: 1.5;
+      }
+      #comb .projectHex{
+        opacity: 0.1;
+      }
+      #comb .projectHex.important{
+        opacity: 1.0
+      }
+      #comb #hexClip {
+        fill:black;
+      }
+
+      #comb .projectHex .hexBorder {
+        stroke: #d0aba0;
+        stroke-width: 1.5;
+      }
+
+      #comb .projectHex .hexBG {
+        fill: white;
+
+      }
+
+      #comb .important .hexBG {
+        fill: #ddd;
+      }
+
+
+      #comb circle {
+        fill:none;
+        stroke:steelblue;
+      }
+      .card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card .thumb {
+        max-height: 400px;
+      }
+
       .project {
         height: 600px;
         overflow: scroll;
+        margin-bottom: 30px;
       }
       .project .description {
         font-size: 90%;
@@ -37,13 +95,24 @@ body
   div.container
     div.row
       div.col-md-12.col-sm-12
+
+        h1 WebDevelopment:
+          small  Final projects
+        p Here is the list of the final projects developed by the students. These projects were built for solving a real world problem using the technologies learned during class: Meteor, React, Mongo, Node.js among others, as well as concepts such as Accessibility, Design, Security, Scalability and Usability. For more information visit the #[a(href="../") class page]
+        p The projects will be presented Thursday Dec 07 8AM COT at Los Andes University Room C_102, but you can #[a(href="#streaming") watch the streaming here]
         h1 Final Class Projects
-          a(href="http://johnguerra.co/classes/isis_4822_fall_2016/")  Visual Analytics Course
+          a(href="http://johnguerra.co/classes/visual_analytics_fall_2018/")  Visual Analytics Course
 
-      div.col-md-8.col-sm-12.intro
-        p This is a list of the final projects on this class. Each group was tasked to develop a Visual Analytics tool to help solve a #[strong real] problem from a #[strong real] user. The students successfully worked through the problems of obtaining and cleaning real data, and more importantly extracting real value from them.
-        p Here is a list of the projects grouped by topics:
+      div.col-md-8.col-sm-10.intro
+        p Here is a list of the Visual Analytics projects developed during our Fall 2018 Course at #[a(href="https://sistemas.uniandes.edu.co" target="_blank") Los Andes University]. Each group was tasked to develop a Visual Analytics tool to help solve a #[strong real] problem from a #[strong real] user. The students successfully worked through the problems of obtaining and cleaning real data, and more importantly extracting real value from them.
+      div.col-4.col-sm-2
+        img.logo(src="../../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University Logo" )
 
+    .row
+      div.col-md-12.col-sm-12
+        h2 Projects:
+        div#comb
+    .row
       div.col-md-12.col-sm-12
         div#projects
 
@@ -55,44 +124,83 @@ body
             :markdown-it(linkify langPrefix='highlight-')
               | Time    |  Project   |
               | ------  |  -----     |
-              | 6:00 PM  | Introduction |
-              | 6:12 PM  | Public expenditure in Colombia |
-              | 6:24 PM  | Free Housing and Social Interest Project |
-              | 6:36 PM  | Surgical Reoperations in Military Central Hospital of Bogota |
-              | 6:48 PM  | Traffic tickets vs Car crashes |
-              | 7:00 PM  | Who dominates the Council of Bogotá and how? |
-              | 7:12 PM  | Deforestation in Colombia  |
-              | 7:36 PM  | Coffee Break |
-              | 7:48 PM  | Bogota Schools Environments |
-              | 8:00 PM  | Colombian Presidential Elections 2018 |
-              | 8:12 PM  | Fulbright Scholarships in Colombia |
-              | 8:24 PM  | Cell Phones Theft in the city of Bogotá, Colombia |
-              | 8:36 PM  | Colombian stock market visualization |
-              
+              | 6:11 PM  | Introduction |
+              | 6:22 PM  | Politicians campaign financing and contracts network |
+              | 6:33 PM  | Rheumatoid Arthritis in Colombia |
+              | 6:44 PM  | Built Environment Profiles for Latin American Urban Settings |
+              | 6:55 PM  | Variation in the Colombian gut microbiome according to diet and health |
+              | 7:06 PM  | Colombian statistics - DANE |
+              | 7:17 PM  | Smart Taxis |
+              | 7:28 PM  | We know what you did. Congress family members |
+              | 7:39 PM  | We know what you did. Congress finances |
+              | 7:50 PM  | Colombian congress: Congreso Visible |
+              | 8:01 PM  | Abortion in Colombia: not a tale, a reality |
+              | 8:12 PM  | Analyzing a MOOC in Mathematics |
+              | 8:23 PM  | The Best School in Colombia |
+              | 8:34 PM  | Can You really learn about sexuality through a MOOC? |
+              | 8:45 PM  | How does Bogota vote? |
+            //- | 8:56 PM  |  |
 
 
         h4 Streaming/Video
         span.
-          <iframe width="853" height="480" src="https://www.youtube.com/embed/Ke8EP5fnbno" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/_yClK5vkga0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        span.
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/KYOOhflU-D8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+        script(src="https://d3js.org/d3-hexbin.v0.2.min.js")
         script(src="https://d3js.org/d3.v4.min.js")
 
         script(src="../../js/jquery-1.12.1.min.js")
         script(src="../../js/bootstrap.min.js")
         script(type="text/javascript", src="./tabletop.js")
+        script(type="text/javascript" src="./projectsComb.js")
         script.
-          var urlHtml = "17RZrKKR_TlioXOwY60MS1fcagAkxpXev32d9PqOzJTw";
+
+          //- https://docs.google.com/spreadsheets/d/e/2PACX-1vQyW2xnHranhjr0PXynZ3nwsM_C9Mj9MkpepCI7oWyIzgE-CKcXT_PCajFASp2E2C-2GmeNGuxNmsrw/pubhtml
+          //- https://docs.google.com/spreadsheets/d/1ZLPUKxp7VAV4z6F-PAStGpAvvI87NZaLAr31jyg0jNU/edit?usp=sharing
+          var urlHtml = "1ZLPUKxp7VAV4z6F-PAStGpAvvI87NZaLAr31jyg0jNU";
           var container = d3.select("#projects");
 
+          /* globals d3, ProjectsComb */
+          var
+            width = d3.select("#comb").node().clientWidth,
+            comb = ProjectsComb()
+            // .width(400)
+            .columns( width > 800 ? 7 : 5)
+            .rows(width > 800 ? 2 : 3)
+            .containerID("#comb")
+            .thumbFn(function (d) { return d["Project's screenshot full url"]; })
+            .onClick(function (d) { return document.getElementById(d["Project title"].split(" ")[0]).scrollIntoView(); })
+            .textFn(function (d) { return d["Project title"]; })
+            .repeat(false);
+
+          // Knuth Shuffle taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+          function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+              // Pick a remaining element...
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex -= 1;
+
+              // And swap it with the current element.
+              temporaryValue = array[currentIndex];
+              array[currentIndex] = array[randomIndex];
+              array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+          }
 
 
           function update(data) {
-            //- <div class="panel panel-default">
-            //- <div class="panel-heading">
-            //-   <h3 class="panel-title">Panel title</h3>
-            //- </div>
-            //- <div class="panel-body">
+
+            data = shuffle(data);
+            comb.updateComb(data);
+
             var nested_data = d3.nest()
               .key(function (d) { return d["Project Category"]; })
                 .sortKeys(function (a, b) {
@@ -120,31 +228,34 @@ body
               .data(function (d) { return d.values; })
                 .enter()
                   .append("div")
-                    .attr("class", "col-sm-4")
+                    .attr("class", "col-lg-4 col-sm-6 col-xs-12")
                   .append("div")
-                    .attr("class", "project panel panel-default");
+                    //- .attr("class", "card")
+                    .attr("class", "project card")
+                    .attr("id", function (d) { return d["Project title"].split(" ")[0]; });;
 
             projs
-              .append("div")
-                .attr("class", "panel-heading")
-              .append("h3")
-                .attr("class", "panel-title")
-                .append("a")
-                  .attr("href" , function (d) {
-                    return d["Full URL for the Github repo"];
-                  })
-                  .attr("target", "_blank")
-                .text(function (d) { return d["Project title"]; });
-
-            var body = projs.append("div")
-              .attr("class", "panel-body");
-            body
               .append("a")
               .attr("href", function (d) { return d["Project's demo full url"]; })
                 .attr("target", "_blank")
                 .append("img")
-                .attr("class", "project-thumb")
+                .attr("class", "project-thumb card-img-top thumb")
                   .attr("src", function (d) { return d["Project's screenshot full url"]; });
+
+            var body = projs.append("div")
+              .attr("class", "card-body");
+
+
+            body
+              .append("h4")
+              .attr("class", "card-title name")
+              .append("a")
+                .attr("href" , function (d) {
+                  return d["Full URL for the Github repo"];
+                })
+                .attr("target", "_blank")
+              .text(function (d) { return d["Project title"]; });
+
             body.append("a")
               .attr("class", "project_url btn btn-sm btn-default")
               .attr("href", function (d) { return d["Full URL for the Github repo"]; })

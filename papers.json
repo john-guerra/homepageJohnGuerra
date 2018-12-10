@@ -497,7 +497,7 @@
 	"date":"12/07/2018",
 	"link":"papers/world_happiness_report_journal.pdf",
 	"link_journal":"https://www.springer.com/series/7899",
-	"volumne": "HCI-COLLAB 2018 post-proceedings",
+	"volume": "HCI-COLLAB 2018 post-proceedings",
 	"dateFmt": "July 2018",
 	"category": "Visualization",
 	"ranking": ["Scopus Q3"],
@@ -512,11 +512,10 @@
 	"date":"12/07/2018",
 	"link":"papers/world_happiness_report_journal.pdf",
 	"link_journal":"https://www.springer.com/series/7899",
-	"volumne": "HCI-COLLAB 2018 post-proceedings",
+	"volume": "HCI-COLLAB 2018 post-proceedings",
 	"dateFmt": "July 2018",
 	"category": "Visualization",
 	"ranking": ["Scopus Q3"],
 	"ISSN": "1865-0929"
-},
+}
 ]
-
