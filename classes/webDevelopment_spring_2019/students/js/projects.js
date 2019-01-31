@@ -56,7 +56,7 @@ function update(data) {
     .text(function (d) { return d["Name"] + " " + d["Last Name"]; });
 
   desc.filter(function (d) {
-    return d["Código 2"] && d["Código 2"]!==d["Código"];
+    return d["Code 2"] && d["Code 2"]!==d["Code"];
   })
     .append("div").append("a")
     .attr("href" , function (d) { return d["Homepage URL 2"];})
@@ -128,7 +128,7 @@ function preProcess(data) {
       b["Timestamp"]);
   })
   .forEach(function (d) {
-    dictStudentProj[d["Project"]+d["Código"]]=d;
+    dictStudentProj[d["Project"]+d["Code"]]=d;
   });
   return d3.values(dictStudentProj);
 }
