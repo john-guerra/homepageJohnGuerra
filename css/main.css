@@ -1,100 +1,100 @@
-h1, h2, h3, h4, h5 {
-  font-family: 'Crimson Text', serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Crimson Text", serif;
   font-weight: bold;
 }
 
-
 body {
-	/*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-family: 'Cabin', sans-serif;
-	font-size:12pt;
-	/* Forces phantom js to use background color on pdf */
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: "Cabin", sans-serif;
+  font-size: 12pt;
+  /* Forces phantom js to use background color on pdf */
   -webkit-print-color-adjust: exact;
 }
 .content {
-	padding-top: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 40px;
-	margin-left: 20px;
-	margin-right: 20px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 
-
-	/*background-image: linear-gradient(-180deg, #FFFFFF 0%, #F7F5F5 100%);*/
-	background-color: #F7F5F5;
-	box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.50);
+  /*background-image: linear-gradient(-180deg, #FFFFFF 0%, #F7F5F5 100%);*/
+  background-color: #fefefa;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
-	/* I do Visual Analytic: */
-	/*font-family: HelveticaNeue;*/
-	font-size: 23.39px;
-	color: #616161;
-	line-height: 23.39px;
+  /* I do Visual Analytic: */
+  /*font-family: HelveticaNeue;*/
+  font-size: 23.39px;
+  color: #616161;
+  line-height: 23.39px;
   margin: 25px 0px;
 }
 
 h2 {
-	/*margin-top: 40px;*/
+  /*margin-top: 40px;*/
 }
 
 .sidebar-nav {
-	padding: 9px 0;
+  padding: 9px 0;
 }
 
 .img400 {
-	width:80%;
+  width: 80%;
   /*min-height:400px;*/
-	max-width:400px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .project-thumb {
-	width:95%;
-	max-width:200px;
-	min-width:80px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 95%;
+  max-width: 200px;
+  min-width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .right-floater {
-	float: right;
-	margin-top: 20px;
-    text-align: right;
-
-
+  float: right;
+  margin-top: 20px;
+  text-align: right;
 }
 
 .clearer {
-	clear: both;
+  clear: both;
 }
 
 .time-slab {
-	width: 95%;
-	min-width: 80px;
-	max-width: 150px;
+  width: 95%;
+  min-width: 80px;
+  max-width: 150px;
   padding-right: 10px;
 }
 
 .project {
-	width:95%;
-	/*max-width:200px;*/
-	min-width:80px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-	box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.50);
-	/*border-radius: 10px;*/
+  width: 95%;
+  /*max-width:200px;*/
+  min-width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.5);
+  /*border-radius: 10px;*/
 }
 .svg-inject {
-	width:95%;
+  width: 95%;
 }
 
 .bigger-description {
-	font-size: 120%;
+  font-size: 120%;
 }

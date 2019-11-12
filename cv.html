@@ -1,146 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>John Alexis Guerra Gómez's Home Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="John Alexis Guerra Gomez CV">
-	<meta name="author" content="John Alexis Guerra Gomez">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Le styles -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/experienceTimeline.css" rel="stylesheet">
-	<link href="css/projectsComb.css" rel="stylesheet">
-	<link href="css/students.css" rel="stylesheet">
+	<head>
+		<meta charset="utf-8" />
+		<title>John Alexis Guerra Gómez's Home Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="John Alexis Guerra Gomez CV" />
+		<meta name="author" content="John Alexis Guerra Gomez" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Le styles -->
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
+		<link href="css/main.css" rel="stylesheet" />
+		<link href="css/experienceTimeline.css" rel="stylesheet" />
+		<link href="css/projectsComb.css" rel="stylesheet" />
+		<link href="css/students.css" rel="stylesheet" />
 
+		<link href="css/papers.css" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Crimson Text|Cabin"
+			rel="stylesheet"
+		/>
+	</head>
 
-	<link href="css/papers.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Crimson Text|Cabin" rel="stylesheet">
-</head>
+	<style>
+		.img200 {
+			width: 50%;
+			max-width: 200px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
 
-<style>
-	.img200 {
-		width:50%;
-		max-width:200px;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 10px;
-		margin-top: 10px;
-	}
+		hr {
+			margin: 0px;
+		}
 
-	hr {
-		margin:0px;
-	}
+		.experience {
+			font-size: 120%;
+		}
+	</style>
 
-	.experience {
-		font-size: 120%;
-	}
-</style>
-
-<body>
-	<div class="content container-fluid">
-		<div class="row">
-			<div class="col-xs-12 col-md-4">
-				<h1>John Alexis <br> Guerra Gómez</h1>
-				<p class="subtitle">I do <strong>Visual Analytics</strong>, i.e., I include the <strong>user</strong> in the big data analysis/science loop.</p>
-				john.guerra[~at~]gmail.com<br>
-				<a href="http://johnguerra.co">johnguerra.co</a>
-				<br>
-				<a href="http://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
-				<br>
-				<a href="https://twitter.com/duto_guerra" class="twitter-follow-button" data-show-count="false">Follow @duto_guerra</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-			</div>
-			<div class="col-xs-12 col-md-5">
-				<h2>In a nutshell</h2>
-				<p class="experience">Information Visualization Researcher and Engineer. I help people extract insights from their data using interactive infovis and data science. PhD in Computer Science, Assistant Professor at <a href="https://profesores.virtual.uniandes.edu.co/jaguerrag/en/inicio-en/">Uniandes</a>, Remote Lecturer at the <a href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez">Master in Data Science at UCBerkeley</a>. I conduct research on Visual Analytics, Accessibility, Big data, Human Centered Data Science and Web Development</p>
-				<h4>Experience</h4>
-				<ul class="experience">
-					<li>8 years as a researcher on Information Visualization.  <a href="http://johnguerra.co/projects.html">Portfolio</a></li>
-					<li>16 years as <a href="#projects">a full stack developer</a></li>
-					<li>9 years on <a href="#teaching">teaching</a> at university level</li>
-					<li>30+ research <a href="#papers">publications</a> at major conferences such as CHI, IEEEVIS, AVI, TRB</li>
-					<li>AC of toChi 2016, Creativity and Cognition 2017, Graph Drawing 2017. Reviewer for CHI, IEEEVIS, AVI, EuroVis and UIST</li>
-					<li>15 years as public speaker, e.g. <a href="http://www.openvisconf.com/2017/#jgomez-video-item">Openvis2017</a>, <a href="https://www.youtube.com/watch?v=ThPIvxv2vD4">TEDx</a></li>
-					<li>Entrepreneur co-founder of DUTO, KebSolutions, Tweetometro.co and BTactile, with more than <a href="http://duto.org/nosotros/logros/?lang=en">10 international entrepreneurship awards</a></li>
-				</ul>
-			</div>
-
-			<div class="col-xs-12 col-md-3">
-				<div class="row">
-					<div class="col-xs-6 col-md-12">
-						<h3>My Skills</h3>
-						<img class="svg-inject" src="img/My skills.png" class="img200" alt="My Skils"/>
-					</div>
-
-					<div class="col-xs-6 col-md-12">
-						<h3>The tools and techniques I use</h3>
-						<img class="svg-inject" src="img/What I use.png" class="img200" alt="What tools I use"/>
-					</div>
+	<body>
+		<div class="content container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<h1>
+						John Alexis <br />
+						Guerra Gómez
+					</h1>
+					<p class="subtitle">
+						I do <strong>Visual Analytics</strong>, i.e., I include the
+						<strong>user</strong> in the big data analysis/science loop.
+					</p>
+					john.guerra[~at~]gmail.com<br />
+					<a href="http://johnguerra.co">johnguerra.co</a>
+					<br />
+					<a href="http://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
+					<br />
+					<a
+						href="https://twitter.com/duto_guerra"
+						class="twitter-follow-button"
+						data-show-count="false"
+						>Follow @duto_guerra</a
+					>
+					<script>
+						!(function(d, s, id) {
+							var js,
+								fjs = d.getElementsByTagName(s)[0];
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = "//platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						})(document, "script", "twitter-wjs");
+					</script>
+				</div>
+				<div class="col-xs-12 col-md-5">
+					<h2>In a nutshell</h2>
+					<p class="experience">
+						Information Visualization Researcher and Engineer. I help people
+						extract insights from their data using interactive infovis and data
+						science. PhD in Computer Science, Lecturer at the
+						<a
+							href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez"
+							>Master in Data Science at UCBerkeley</a
+						>
+						and at
+						<a
+							href="https://profesores.virtual.uniandes.edu.co/jaguerrag/en/inicio-en/"
+							>Uniandes</a
+						>
+						Colombia. I conduct research on Visual Analytics, Accessibility, Big
+						data, Human Computer Interaction and Web Development
+					</p>
+					<h4>Experience</h4>
+					<ul class="experience">
+						<li>
+							10 years as a researcher on Information Visualization.
+							<a href="http://johnguerra.co/projects.html">Portfolio</a>
+						</li>
+						<li>17 years as <a href="#projects">a full stack engineer</a></li>
+						<li>
+							11 years on <a href="#teaching">teaching</a> at university level
+						</li>
+						<li>
+							30+ research <a href="#papers">publications</a> at major
+							conferences such as CHI, IEEEVIS, AVI, TRB
+						</li>
+						<li>
+							AC of toCHI 2016, Creativity and Cognition 2017/2018/2019, Graph
+							Drawing 2017. Reviewer for CHI, IEEEVIS, AVI, EuroVis and UIST
+						</li>
+						<li>
+							15 years as public speaker, e.g.
+							<a href="http://www.openvisconf.com/2017/#jgomez-video-item"
+								>Openvis2017</a
+							>, <a href="https://www.youtube.com/watch?v=ThPIvxv2vD4">TEDx</a>,
+							<a href="https://www.youtube.com/watch?v=WyLYTibjNO4"
+								>Singularity University Summit Colombia 2018</a
+							>,
+							<a href="https://www.youtube.com/watch?v=5zDJzjrEaNo"
+								>Ruta de la Ciencia Colombia 2016</a
+							>, <a href="https://cxsummit.com.co/">CX Summit Colombia</a>,
+							<a
+								href="https://www.ienergy.community/NewsDetails/dt/Detail/ItemID/375/The-Quest-for-Data-Insights-"
+								>Halliburton's STEPS Distinguished Lecture series on Big Data in
+								Exploration and Production 2018</a
+							>
+						</li>
+						<li>
+							Entrepreneur co-founder of <a href="http://duto.co">DUTO</a>,
+							KebSolutions,
+							<a href="http://tweetometro.co">Tweetometro.co</a> and
+							<a href="https://btactile.com">BTactile</a>, with more than
+							<a href="http://duto.org/nosotros/logros/?lang=en"
+								>10 international entrepreneurship awards</a
+							>
+						</li>
+					</ul>
 				</div>
 
+				<div class="col-xs-12 col-md-3">
+					<div class="row">
+						<div class="col-xs-6 col-md-12">
+							<h3>My Skills</h3>
+							<img
+								class="svg-inject"
+								src="img/My skills.png"
+								class="img200"
+								alt="My Skils"
+							/>
+						</div>
+
+						<div class="col-xs-6 col-md-12">
+							<h3>The tools and techniques I use</h3>
+							<img
+								class="svg-inject"
+								src="img/What I use.png"
+								class="img200"
+								alt="What tools I use"
+							/>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-
-		</div>
-		<div id="experience" class="row">
-			<div class="col-md-12 col-lg-12">
-				<h3>Experience and Education</h3>
-				<div width="400">
-					<svg id="timeline"  height="150" alt="My experience in a timeline"></svg>
-
+			<div class="row"></div>
+			<div id="experience" class="row">
+				<div class="col-md-12 col-lg-12">
+					<h3>Experience and Education</h3>
+					<div width="400">
+						<svg
+							id="timeline"
+							height="150"
+							alt="My experience in a timeline"
+						></svg>
+					</div>
 				</div>
 			</div>
-		</div>
 
-
-
-
-
-<!-- ********************** Achievements *********************-->
-		<h2 id="achievements">Things I'm proud of</h2>
-		<div class="row">
-			<div class="col-md-8 col-sm-8 col-xs-12" id="achievementsText">
-
-				<!-- Uniandes -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/Uniandes box.png" class="time-slab" alt="Uniandes">
+			<!-- ********************** Achievements *********************-->
+			<h2 id="achievements">Things I'm proud of</h2>
+			<div class="row">
+				<div class="col-md-8 col-sm-8 col-xs-12" id="achievementsText">
+					<!-- Uniandes -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img
+								src="img/Uniandes box.png"
+								class="time-slab"
+								alt="Uniandes"
+							/>
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Conducted research on
+									<a href="./navio.html">large dataviz</a>,
+									<a href="./netviz.html">network visualization</a> and
+									<a href="./photoviz.html">photo visualization</a> and
+									accessibility, with the help of great
+									<a href="#students">students</a>.
+								</li>
+								<li>
+									Redesigned and taught the
+									<a
+										href="http://johnguerra.co/classes/visual_analytics_fall_2019/"
+										>Visual Analytics</a
+									>
+									(<a
+										href="http://johnguerra.co/classes/visual_analytics_fall_2018/"
+										>Fall '18</a
+									>,<a
+										href="http://johnguerra.co/classes/visual_analytics_fall_2017/"
+									>
+										Fall '17</a
+									>,<a href="http://johnguerra.co/classes/isis_4822_fall_2016/">
+										Fall '16</a
+									>) and
+									<a
+										href="http://johnguerra.co/classes/webDevelopment_fall_2019/"
+										>Web Development</a
+									>
+									classes (<a
+										href="http://johnguerra.co/classes/webDevelopment_fall_2018/"
+										>Fall '18</a
+									>,
+									<a
+										href="http://johnguerra.co/classes/webDevelopment_spring_2018/"
+										>Spring '18</a
+									>,
+									<a
+										href="http://johnguerra.co/classes/webDevelopment_spring_2017/"
+										>Spring '17</a
+									>,
+									<a
+										href="http://johnguerra.co/classes/webDevelopment_fall_2017/"
+										>Fall '17</a
+									>).
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li>Conducting research on <a href="./netviz.html">network</a> and <a href="./photoviz.html">photo visualization</a> and accessibility, with the help of great <a href="#students">students</a>.</li>
-							<li>Redesigned and taught the <a href="http://johnguerra.co/classes/visual_analytics_fall_2017/">Visual Analytics</a> (<a href="http://johnguerra.co/classes/isis_4822_fall_2016/">Fall 2016</a>) and <a href="http://johnguerra.co/classes/webDevelopment_spring_2018/">Web Development</a> classes (<a href="http://johnguerra.co/classes/webDevelopment_spring_2017/">Spring 2017</a>, <a href="http://johnguerra.co/classes/webDevelopment_fall_2017/">Fall 2017</a>).</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End uniandes -->
-				<hr>
+					<!-- End uniandes -->
+					<hr />
 
-				<!-- Berkeley -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/Berkeley box.png" class="time-slab" alt="Berkeley">
+					<!-- Berkeley -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img
+								src="img/Berkeley box.png"
+								class="time-slab"
+								alt="Berkeley"
+							/>
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Remote Lecturer at
+									<a
+										href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez"
+										>Berkeley's online Master in Data Sciece</a
+									>. Teaching W209 Data Communication and Visualization. Student
+									projects:
+									<a
+										href="http://johnguerra.co/viz/berkeleyFinalProjectsFall2018/"
+									>
+										Fall '18</a
+									>,
+									<a
+										href="http://johnguerra.co/viz/berkeleyFinalProjectsSummer2018/"
+									>
+										Summer '18</a
+									>,
+									<a
+										href="http://johnguerra.co/viz/berkeleyFinalProjectsSpring2018/"
+									>
+										Spring '18</a
+									>,
+									<a
+										href="http://johnguerra.co/viz/berkeleyFinalProjectsFall2017/"
+									>
+										Fall '17</a
+									>,
+									<a
+										href="http://johnguerra.co/viz/berkeleyFinalProjectsSummer2017/"
+									>
+										Summer '17.</a
+									>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li>
-								Remote Lecturer at <a href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez">Berkeley's online Master in Data Sciece</a>. Teaching W209 Data Communication and Visualization. Student projects: <a href="http://johnguerra.co/viz/berkeleyFinalProjectsSummer2017/">Summer 2017</a>, <a href="http://johnguerra.co/viz/berkeleyFinalProjectsFall2017/">Fall 2017.</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End Berkeley -->
-				<hr>
+					<!-- End Berkeley -->
+					<hr />
 
-
-				<!-- Btactile -->
-				<!-- <div class="row">
+					<!-- Btactile -->
+					<!-- <div class="row">
 					<div class="col-md-1 col-sm-1 col-xs-2">
 						<img src="img/Btactile box.png" class="time-slab" alt="Btactile">
 					</div>
@@ -162,339 +320,559 @@
 					</div>
 				</div>
 				<hr> -->
-				<!-- End Btactile -->
+					<!-- End Btactile -->
 
-
-
-
-				<!-- Yahoo labs -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/Yahoo Labs box.png" class="time-slab" alt="Yahoo Labs">
+					<!-- Yahoo labs -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img
+								src="img/Yahoo Labs box.png"
+								class="time-slab"
+								alt="Yahoo Labs"
+							/>
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Exploring information visualization interfaces for navigating
+									big repositories of photos.
+								</li>
+								<li>Helped redesigned <strong>Flickr stats</strong>.</li>
+								<li>
+									Developed and deployed a visualization for better exploring
+									the organizational units that is being used company wide.
+								</li>
+								<li>
+									Modified Flickr code to add a new photo navigation
+									visualization.
+								</li>
+								<li>
+									Four papers accepted in two major conferences (CHI2016 and
+									AVI2016).
+								</li>
+								<li>
+									Created visual analytics for dozens of complex Yahoo datasets.
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li>Exploring information visualization interfaces for navigating big repositories of photos.</li>
-							<li>Helped redesigned <strong>Flickr stats</strong>.</li>
-							<li>Developed and deployed a visualization for better exploring the organizational units that is being used company wide.</li>
-							<li>Modified Flickr code to add a new photo navigation visualization.</li>
-							<li>Four papers accepted in two major conferences (CHI2016 and AVI2016).</li>
-							<li>Created visual analytics for dozens of complex Yahoo datasets.</li>
-						</ul>
+					<!-- End yahoo labs -->
+
+					<hr />
+
+					<!-- PARC -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img src="img/Parc box.png" class="time-slab" alt="PARC" />
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Created
+									<strong
+										><a href="https://www.youtube.com/watch?v=9lYvVjsstZs"
+											>Network Explorer</a
+										></strong
+									>
+									a visual network analytics tool to explore hundreds of
+									thousands of nodes, which was implemented, among others, in a
+									Fraud, Waste and Abuse solution from Xerox and is being used
+									for detecting fraud in Health Care networks.
+								</li>
+								<li>Constructed several dashboards using Tableau.</li>
+								<li>
+									Developed and integrated several other time-based and text
+									based visualizations in 3 different products.
+								</li>
+							</ul>
+						</div>
 					</div>
+					<!-- End PARC -->
+
+					<hr />
+
+					<!-- Extras -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img src="img/Extras box.png" class="time-slab" alt="Extras" />
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Co-founded and developed
+									<strong><a href="http://btactile.com">BTactile</a></strong> a
+									platform to index 5000 tactile graphics for the blind from all
+									over the world using Meteor.js and React.
+								</li>
+								<li>
+									<strong>OpenVis 2017 Speaker</strong> with
+									<a href="http://www.openvisconf.com/2017/#jgomez-video-item"
+										>Untangling the Hairball</a
+									>,
+									<a href="http://johnguerra.co/slides/untanglingTheHairball/#/"
+										>slides</a
+									>.
+								</li>
+								<li>
+									Creator of
+									<strong
+										><a
+											href="https://github.com/john-guerra/revealVizScrollyteling"
+											>RevealVizScroll</a
+										></strong
+									>
+									an open source library for creating scrollytelling-like
+									stories using reveal.js
+								</li>
+								<li>
+									Creator of
+									<strong
+										><a
+											target="_blank"
+											href="https://github.com/john-guerra/forceInABox"
+											>force-in-a-box</a
+										></strong
+									>
+									and
+									<strong
+										><a
+											target="_blank"
+											href="https://github.com/john-guerra/netClusteringJs"
+											>netClustering.js</a
+										></strong
+									>.
+								</li>
+								<li>
+									Co-creator of
+									<strong
+										><a target="_blank" href="http://tweetometro.co"
+											>tweetometro.co</a
+										></strong
+									>
+									a platform to monitor Twitter activity for the Colombian
+									presidential election.
+								</li>
+								<li>
+									Creator of
+									<strong
+										><a target="_blank" href="http://wholikesmyfb.com"
+											>WholikesMyFB.com</a
+										></strong
+									>
+									a Facebook app to explore who likes your post the most.
+								</li>
+								<!-- 							<li>Other experiments <strong><a target="_blank" href="http://www.dutovis.com/tradeFlow/flow/flow.html">Tradeflow:</a></strong> A tool to compare the imports/exports of products in countries of the Americas</li>
+ -->
+							</ul>
+						</div>
+					</div>
+					<!-- End Extras -->
+
+					<hr />
+
+					<!-- PhD -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img src="img/PhD box.png" class="time-slab" alt="PhD" />
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									<strong>PhD</strong> and <strong>MSc</strong> in Computer
+									Science under the supervision of
+									<a href="https://www.cs.umd.edu/users/ben/"
+										>Dr. Ben Shneiderman</a
+									>
+									and
+									<a href="http://hcil.umd.edu/catherine-plaisant/"
+										>Dr. Catherine Plaisant</a
+									>
+									at the
+									<a href="http://www.cs.umd.edu/"
+										>University of Maryland (2013)</a
+									>.
+								</li>
+								<li>
+									Created the <strong>StemView</strong> a visualization
+									technique that represents 5 characteristics of change in
+									trees.
+								</li>
+								<li>
+									Created the <strong>Bullet</strong> a visualization glyph that
+									represents 4 characteristics of change in trees.
+								</li>
+								<li>
+									Implemented
+									<strong
+										><a
+											href="http://treeversity.cattlab.umd.edu/?hierarchy=agency/bureau&db=tv2_budget&seqFrom=01/01/70&seqTo=01/01/15&currentFrom=40&title=US%20Federal%20Budget"
+											>TreeVersity2</a
+										></strong
+									>
+									a visual analytics web application to explore change in
+									datasets over time.
+								</li>
+								<li>
+									Implemented
+									<strong
+										><a href="https://github.com/john-guerra/treeversity"
+											>TreeVersity</a
+										></strong
+									>
+									a visual analytics desktop application to compare changes
+									between two trees.
+								</li>
+								<li>
+									Conducted 13 case studies with 9 domain experts to validate
+									TreeVersity and TreeVersity2.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End PhD -->
+
+					<hr />
+
+					<!-- Lecturer -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img
+								src="img/Professor box.png"
+								class="time-slab"
+								alt="Lecturer"
+							/>
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Winner of the
+									<strong
+										><a href="http://scienceandtech.fulbrightonline.org/"
+											>Fulbright Science and Technology scholarship</a
+										></strong
+									>
+									(40 people awarded in the world yearly).
+								</li>
+								<li>
+									Lecturer in a wide range of undergrad courses from Programming
+									to Distributed Systems.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End Lecturer -->
+
+					<hr />
+
+					<!-- DUTO -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img src="img/DUTO box.png" class="time-slab" alt="DUTO" />
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									<strong>Co-founder</strong> of
+									<a href="http://duto.co">DUTO</a> and Co-creator of
+									<a href="http://duto.org/portafolio/">IRIS</a> a system that
+									allows blind students to see with their hands.
+								</li>
+								<li>
+									<strong>CTO</strong> and responsible of all the software
+									development in the company.
+								</li>
+								<li>
+									Winner of more than
+									<a href="http://duto.org/nosotros/logros/"
+										>10 international entrepreneurship awards</a
+									>.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End DUTO -->
 				</div>
-				<!-- End yahoo labs -->
+				<!-- achievements text -->
 
-				<hr>
-
-				<!-- PARC -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/Parc box.png" class="time-slab" alt="PARC">
-					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li>Created <strong><a href="https://www.youtube.com/watch?v=9lYvVjsstZs">Network Explorer</a></strong> a visual network analytics tool to explore hundreds of thousands of nodes, which was implemented, among others, in a Fraud, Waste and Abuse solution from Xerox and is being used for detecting fraud in Health Care networks.</li>
-							<li>Constructed several dashboards using Tableau.</li>
-							<li>Developed and integrated several other time-based and text based visualizations in 3 different products.</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End PARC -->
-
-				<hr>
-
-				<!-- Extras -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/Extras box.png" class="time-slab" alt="Extras">
-					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li>Co-founded and developed <strong><a href="http://btactile.com">BTactile</a></strong> a platform to index 5000 tactile graphics for the blind from all over the world using Meteor.js and React.
-							</li>
-							<li><strong>OpenVis 2017 Speaker</strong> with <a href="http://www.openvisconf.com/2017/#jgomez-video-item">Untangling the Hairball</a>, <a href="http://johnguerra.co/slides/untanglingTheHairball/#/">slides</a>.</li>
-							<li>Creator of <strong><a href="https://github.com/john-guerra/revealVizScrollyteling">RevealVizScroll</a></strong> an open source library for creating scrollytelling-like stories using reveal.js</li>
-							<li>Creator of <strong><a target="_blank" href="https://github.com/john-guerra/forceInABox">force-in-a-box</a></strong> and <strong><a target="_blank" href="https://github.com/john-guerra/netClusteringJs">netClustering.js</a></strong>.
-							</li>
-							<li>Co-creator of <strong><a target="_blank" href="http://tweetometro.co">tweetometro.co</a></strong> a platform to monitor Twitter activity for the Colombian presidential election.</li>
-							<li>Creator of <strong><a target="_blank" href="http://wholikesmyfb.com">WholikesMyFB.com</a></strong> a Facebook app to explore who likes your post the most.</li>
-<!-- 							<li>Other experiments <strong><a target="_blank" href="http://www.dutovis.com/tradeFlow/flow/flow.html">Tradeflow:</a></strong> A tool to compare the imports/exports of products in countries of the Americas</li>
- -->						</ul>
-					</div>
-
-
-
-				</div>
-				<!-- End Extras -->
-
-				<hr>
-
-
-				<!-- PhD -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/PhD box.png" class="time-slab" alt="PhD">
-					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-
-							<li><strong>PhD</strong> and <strong>MSc</strong> in Computer Science under the supervision of <a href="https://www.cs.umd.edu/users/ben/">Dr. Ben Shneiderman</a> and <a href="http://hcil.umd.edu/catherine-plaisant/">Dr. Catherine Plaisant</a> at the <a href="http://www.cs.umd.edu/">University of Maryland (2013)</a>.</li>
-							<li>Created the <strong>StemView</strong> a visualization technique that represents 5 characteristics of change in trees.</li>
-							<li>Created the <strong>Bullet</strong> a visualization glyph that represents 4 characteristics of change in trees.</li>
-							<li>Implemented <strong><a href="http://treeversity.cattlab.umd.edu/?hierarchy=agency/bureau&db=tv2_budget&seqFrom=01/01/70&seqTo=01/01/15&currentFrom=40&title=US%20Federal%20Budget">TreeVersity2</a></strong> a visual analytics web application to explore change in datasets over time.</li>
-							<li>Implemented <strong><a href="https://github.com/john-guerra/treeversity">TreeVersity</a></strong> a visual analytics desktop application to compare changes between two trees.</li>
-							<li>Conducted 13 case studies with 9 domain experts to validate TreeVersity and TreeVersity2.</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End PhD -->
-
-				<hr>
-
-
-				<!-- Lecturer -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/Professor box.png" class="time-slab" alt="Lecturer">
-					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li>Winner of the <strong><a href="http://scienceandtech.fulbrightonline.org/">Fulbright Science and Technology scholarship</a></strong> (40 people awarded in the world yearly).</li>
-							<li>Lecturer in a wide range of undergrad courses from Programming to Distributed Systems.</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End Lecturer -->
-
-				<hr>
-
-
-				<!-- DUTO -->
-				<div class="row">
-					<div class="col-md-1 col-sm-1 col-xs-2">
-						<img src="img/DUTO box.png" class="time-slab" alt="DUTO">
-					</div>
-					<div class="col-md-11 col-sm-11 col-xs-12">
-						<ul>
-							<li><strong>Co-founder</strong> of <a href="http://duto.co">DUTO</a> and Co-creator of <a href="http://duto.org/portafolio/">IRIS</a> a system that allows blind students to see with their hands.</li>
-							<li><strong>CTO</strong> and responsible of all the software development in the company.</li>
-							<li>Winner of more than <a href="http://duto.org/nosotros/logros/">10 international entrepreneurship awards</a>.</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End DUTO -->
-			</div> <!-- achievements text -->
-
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div id="projectsComb">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div id="projectsComb"></div>
 				</div>
 			</div>
+			<!-- End achievements -->
+
+			<!-- ***************** PROJECTS *************** -->
+			<div style="page-break-before:always; padding-top:1cm" id="projects">
+				<h2>Things I have built</h2>
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="./navio.html">
+							<img class="project" src="img/Navio.png" alt="Navio screenshot" />
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="./navio.html">
+							<h4>Navio</h4>
+						</a>
+						<p>A visualization widget that you can use to explore large data</p>
+					</div>
+				</div>
+				<!-- end Navio -->
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="http://btactile.com">
+							<img
+								class="project"
+								src="img/BTactile_screenshot.jpg"
+								alt="BTactile screenshot"
+							/>
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="http://btactile.com">
+							<h4>BTactile</h4>
+						</a>
+						<p>A search engine for tactile images for the blind.</p>
+					</div>
+				</div>
+				<!-- end btactile -->
+
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="http://dev.tweetometro.co">
+							<img
+								class="project"
+								src="img/projs/tweetometro.jpg"
+								alt="Tweetometro screenshot"
+							/>
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="http://dev.tweetometro.co">
+							<h4>Tweetometro</h4>
+						</a>
+						<p>Twitter monitor and analyzer for different topics</p>
+					</div>
+				</div>
+				<!-- end tweetometro -->
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="photoviz.html">
+							<img
+								class="project"
+								src="img/colorsTreemap.jpg"
+								alt="Phototreemap"
+							/>
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="photoviz.html">
+							<h4>Phototreemap</h4>
+						</a>
+						<p>
+							Representing groups of photos with numeric attributes. Work in
+							progress, pending publication.
+						</p>
+					</div>
+				</div>
+				<!-- end phototreemap -->
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="netviz.html"
+							><img
+								class="project"
+								src="img/overview_10k_nointer_cropped.jpg"
+								alt="Network Explorer"
+						/></a>
+					</div>
+					<div class="col-md-10">
+						<a href="netviz.html"><h4>Network Explorer</h4></a>
+						<p>
+							Visual analytics tool for understanding large networks. Pending
+							publication.
+						</p>
+					</div>
+				</div>
+				<!-- end phototreemap -->
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="old/treeversity_v2.html">
+							<img
+								class="project"
+								src="img/treeversity_v2_thumb.png"
+								alt="TreeVersity v2"
+							/>
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="old/treeversity_v2.html"><h4>TreeVersity v2</h4></a>
+						<p>
+							Visualizing five dimensions of change in a dataset changing over
+							time using hierarchies
+						</p>
+					</div>
+				</div>
+
+				<!-- end treeversity2 -->
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="http://hcil.cs.umd.edu/treeversity">
+							<img
+								class="project"
+								src="img/treeversityv1.png"
+								alt="TreeVersity v1"
+						/></a>
+					</div>
+					<div class="col-md-10">
+						<a href="http://hcil.cs.umd.edu/treeversity"
+							><h4>TreeVersity v1</h4></a
+						>
+						<p>Comparing changes between trees on structure and node values.</p>
+					</div>
+				</div>
+				<!-- end treeversity -->
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="http://www.cs.umd.edu/hcil/lifeflow/">
+							<img
+								class="project"
+								src="img/lifeflow_thumb.png"
+								alt="LifeFlow"
+							/>
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="http://www.cs.umd.edu/hcil/lifeflow/"><h4>LifeFlow</h4></a>
+						<p>
+							A visual analytics tool for temporal categorical data. Helped
+							developing the comparison modules as part of a broader project.
+						</p>
+					</div>
+				</div>
+				<!-- end Lifeflow -->
+
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="http://duto.org/iris">
+							<img class="project" src="img/IRIS.jpg" alt="IRIS" />
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="http://duto.org/iris"><h4>IRIS</h4></a>
+						<p>
+							A system to allow blind children to see colors and shapes with
+							their hands
+						</p>
+					</div>
+				</div>
+				<!-- end IRIS -->
+
+				<br />
+
+				<div class="row">
+					<div class="col-md-2">
+						<a href="http://johnguerra.co/projects.html">
+							<img
+								class="project"
+								src="img/portfolio_small.gif"
+								alt="John Guerra's Portfolio"
+							/>
+						</a>
+					</div>
+					<div class="col-md-10">
+						<a href="http://johnguerra.co/projects.html"><h4>Much more!</h4></a>
+						<p>Here is a sample of everything I've been building and doing</p>
+					</div>
+				</div>
+				<!-- end IRIS -->
+			</div>
+			<!-- end projects -->
+
+			<br />
+			<hr />
+
+			<!-- *********** PAPERS ************** -->
+
+			<div style="page-break-before:always;" class="row">
+				<div id="papers" class="col-md-12"></div>
+				<!-- end #papers -->
+			</div>
+			<!-- end research -->
+
+			<!-- ***************** STUDENTS ******************* -->
+			<div class="row students" id="students">
+				<h2>Students</h2>
+				<div class="col-md-1 col-sm-1"></div>
+				<div class="col-md-8 col-sm-12">
+					<div id="studentsViz" class="step"></div>
+					<div id="studentsList"></div>
+				</div>
+				<div class="filler"></div>
+			</div>
+			<!-- end photos -->
 		</div>
-		<!-- End achievements -->
+		<!--/.fluid-container-->
 
+		<script src="js/jquery-1.12.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/svg-injector.min.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+		<script src="js/experienceTimeline.js"></script>
+		<script src="js/projectsComb.js"></script>
+		<script src="js/papers.js"></script>
+		<script type="text/javascript" src="js/tabletop.js"></script>
+		<script type="text/javascript" src="js/scroller.js"></script>
+		<script type="text/javascript" src="js/researchStudents.js"></script>
 
-		<!-- ***************** PROJECTS *************** -->
+		<script>
+			// Elements to inject
+			var mySVGsToInject = document.querySelectorAll("img.svg-inject");
 
-		<div style="page-break-before:always; padding-top:1cm" id="projects">
-			<h2>Things I have built</h2>
+			// Do the injection
+			SVGInjector(mySVGsToInject);
+		</script>
 
-			<div class="row">
-				<div class="col-md-2">
-					<a href="http://btactile.com">
-						<img class="project" src="img/BTactile_screenshot.jpg" alt="BTactile screenshot"/>
-					</a>
-				</div>
-				<div class="col-md-10">
-					<a href="http://btactile.com">
-						<h4>BTactile</h4>
-					</a>
-					<p>A search engine for tactile images for the blind.</p>
-				</div>
-			</div>
-			<!-- end btactile -->
-			<br>
+		<!-- GOOGLE ANALYTICS -->
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i["GoogleAnalyticsObject"] = r;
+				(i[r] =
+					i[r] ||
+					function() {
+						(i[r].q = i[r].q || []).push(arguments);
+					}),
+					(i[r].l = 1 * new Date());
+				(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m);
+			})(
+				window,
+				document,
+				"script",
+				"//www.google-analytics.com/analytics.js",
+				"ga"
+			);
 
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="http://dev.tweetometro.co">
-						<img class="project" src="img/projs/tweetometro.jpg" alt="Tweetometro screenshot"/>
-					</a>
-				</div>
-				<div class="col-md-10">
-					<a href="http://dev.tweetometro.co">
-						<h4>Tweetometro</h4>
-					</a>
-					<p>Twitter monitor and analyzer for different topics</p>
-				</div>
-			</div>
-			<!-- end tweetometro -->
-			<br>
-
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="photoviz.html">
-						<img class="project" src="img/colorsTreemap.jpg" alt="Phototreemap"/>
-					</a>
-				</div>
-				<div class="col-md-10">
-					<a href="photoviz.html">
-						<h4>Phototreemap</h4>
-					</a>
-					<p>Representing groups of photos with numeric attributes. Work in progress, pending publication.</p>
-				</div>
-			</div>
-			<!-- end phototreemap -->
-			<br>
-
-
-			<div class="row">
-				<div class="col-md-2">
-
-					<a href="netviz.html"><img class="project" src="img/overview_10k_nointer_cropped.jpg" alt="Network Explorer"/></a>
-				</div>
-				<div class="col-md-10">
-					<a href="netviz.html"><h4>Network Explorer</h4></a>
-					<p>Visual analytics tool for understanding large networks. Pending publication.</p>
-				</div>
-			</div>
-			<!-- end phototreemap -->
-			<br>
-
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="old/treeversity_v2.html">
-						<img class="project" src="img/treeversity_v2_thumb.png" alt="TreeVersity v2"/>
-					</a>
-				</div>
-				<div class="col-md-10">
-					<a href="old/treeversity_v2.html"><h4>TreeVersity v2</h4></a>
-					<p>Visualizing five dimensions of change in a dataset changing over time using hierarchies</p>
-				</div>
-			</div>
-
-			<!-- end treeversity2 -->
-			<br>
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="http://hcil.cs.umd.edu/treeversity"> <img class="project" src="img/treeversityv1.png" alt="TreeVersity v1"/></a>
-				</div>
-				<div class="col-md-10">
-					<a href="http://hcil.cs.umd.edu/treeversity"><h4>TreeVersity v1</h4></a>
-					<p>Comparing changes between trees on structure and node values.</p>
-				</div>
-			</div>
-			<!-- end treeversity -->
-			<br>
-
-
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="http://www.cs.umd.edu/hcil/lifeflow/"> <img class="project" src="img/lifeflow_thumb.png" alt="LifeFlow"/>  </a>
-				</div>
-				<div class="col-md-10">
-					<a href="http://www.cs.umd.edu/hcil/lifeflow/"><h4>LifeFlow</h4></a>
-					<p>A visual analytics tool for temporal categorical data. Helped developing the comparison modules as part of a broader project.</p>
-				</div>
-			</div>
-			<!-- end Lifeflow -->
-
-			<br>
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="http://duto.org/iris">
-						<img class="project" src="img/IRIS.jpg" alt="IRIS"/>
-					</a>
-				</div>
-				<div class="col-md-10">
-					<a href="http://duto.org/iris"><h4>IRIS</h4></a>
-					<p>A system to allow blind children to see colors and shapes with their hands</p>
-				</div>
-			</div>
-			<!-- end IRIS -->
-
-			<br>
-
-			<div class="row">
-				<div class="col-md-2">
-					<a href="http://johnguerra.co/projects.html">
-						<img class="project" src="img/portfolio_small.gif" alt="John Guerra's Portfolio"/>
-					</a>
-				</div>
-				<div class="col-md-10">
-					<a href="http://johnguerra.co/projects.html"><h4>Much more!</h4></a>
-					<p>Here is a sample of everything I've been building and doing</p>
-				</div>
-			</div>
-			<!-- end IRIS -->
-		</div>
-		<!-- end projects -->
-
-
-		<!-- *********** PAPERS ************** -->
-
-		<div style="page-break-before:always;" class="row">
-			<div id="papers" class="col-md-12">
-			</div>
-			<!-- end #papers -->
-		</div>
-		<!-- end research -->
-
-
-
-		<!-- ***************** STUDENTS ******************* -->
-    <div class="row students" id="students">
-    	<h2>Students</h2>
-      <div class="col-md-1 col-sm-1"></div>
-      <div class="col-md-8 col-sm-12">
-        <div id="studentsViz" class="step"></div>
-        <div id="studentsList"></div>
-      </div>
-      <div class="filler"></div>
-    </div>
-    <!-- end photos -->
-
-
-	</div><!--/.fluid-container-->
-
-	<script src="js/jquery-1.12.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/svg-injector.min.js"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
-	<script src="js/experienceTimeline.js"> </script>
-	<script src="js/projectsComb.js"> </script>
-	<script src="js/papers.js"> </script>
-  <script type="text/javascript" src="js/tabletop.js"></script>
-  <script type="text/javascript" src="js/scroller.js"></script>
-  <script type="text/javascript" src="js/researchStudents.js"></script>
-
-
-	<script>
-		// Elements to inject
-		var mySVGsToInject = document.querySelectorAll('img.svg-inject');
-
-		// Do the injection
-		SVGInjector(mySVGsToInject);
-	</script>
-
-	<!-- GOOGLE ANALYTICS -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-72531610-1', 'auto');
-		ga('send', 'pageview');
-
-	</script>
-
-</body>
+			ga("create", "UA-72531610-1", "auto");
+			ga("send", "pageview");
+		</script>
+	</body>
 </html>

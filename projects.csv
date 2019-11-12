@@ -1,4 +1,4 @@
-project,date,categories,type,thumb,url,rating
+﻿project,date,categories,type,thumb,url,rating
 bens_network,8/1/09,treeViz,research,Ben'sFlickr_thumb.png,http://johnguerra.co,2
 btactile,1/1/16,treeViz,research,BTactile_screenshot.png,http://btactile.com/,5
 flickrstats,10/1/15,treeViz,research,flickrstats.png,https://www.flickr.com/stats,5
@@ -32,12 +32,12 @@ AutoAlbum,4/1/16,treeViz,professional,autoalbum.gif,https://github.com/john-guer
 Blo.cks with force in a Box,5/8/17,netViz,professional,blocks_forceinabox.gif,http://bl.ocks.org/john-guerra/fb39ff1e5d73fdb85cc13935e3eb8f1d,2
 LikertScales in d3,3/20/17,viz,professional,likert.png,https://bl.ocks.org/john-guerra/57d31bae7685139cecd731bba9f48090,2
 Colored Weavy Treemaps,1/20/17,viz,professional,weavytreemap.png,https://bl.ocks.org/john-guerra/7031ce041cb07a4053d56059a5d67005,1
-US Elections results 2012,10/31/16,viz,professional,usElections2012.gif,https://bl.ocks.org/john-guerra/213160a5025315f028cda4ebc0c97256,4
+US Elections results 2012,10/31/16,viz,professional,usElections2012.gif,http://johnguerra.co/viz/USElections2016/,4
 Colombian Peace Agreement results,10/31/16,viz,professional,resultadosPlebiscito.png,http://johnguerra.co/viz/resultadosPlebiscito/,4
 Kickstarter projects,9/15/16,viz,professional,kickstarter.png,http://bl.ocks.org/john-guerra/38b1c32154905828f019f35a026b7526,3
 Colombia Olympics,8/23/16,viz,professional,colombiaOlympics.gif,https://bl.ocks.org/john-guerra/653dff16b54df2ad2682c8dd0cfbe27a,3
 Colombia as a Force Layout,7/20/16,viz,professional,colombiaForce.gif,https://bl.ocks.org/john-guerra/4db5024e00a82f10a2dc,3
-IEEEVIS Publications Network,6/18/15,viz,professional,visPubNetwork.gif,http://johnguerra.co/viz/visPubNetwork/,3
+IEEEVIS Publications Network,6/18/15,viz,professional,visPubNetwork2018.gif,http://johnguerra.co/viz/visPubNetwork/,3
 VIZ Ecology,6/18/15,slides,professional,vizEcology.png,http://johnguerra.co/viz/visEcology,1
 Used Cars Colombia,5/10/16,viz,professional,usedCarsColombia.gif,http://johnguerra.co/viz/bigDataQuest/#/insightcars,2
 NetViz Lessons learned,6/18/15,slides,professional,netVizLessons.gif,http://johnguerra.co/viz/netVizLessons,4
@@ -68,9 +68,38 @@ D3 Canvas with zoom and panning,4/18/18,viz,professional,d3CanvasMapZoom.gif,htt
 D3 Force Boundary Notebook,5/5/18,viz,professional,forceBoundaryNotebook.gif,https://beta.observablehq.com/@john-guerra/d3-force-boundary,2
 Colombian Presidential Election First Round,5/28/18,viz,professional,PrimeraVuelta.gif,http://johnguerra.co/viz/resultadosPrimeraVuelta2018/,5
 Veltman's Force Labeling on Colombian shapes,5/30/18,viz,professional,Colombia_Labeling.gif,https://beta.observablehq.com/@john-guerra/centerline-labeling,2
-Colombian Presidential Election Second Round,6/18/18,viz,professional,segundaVuelta.gif,http://johnguerra.co/viz/resultadosSegundaVuelta2018/index_old.html,5
+Colombian Presidential Election Second Round,6/18/18,viz,professional,analisisSegundaVuelta.gif,http://johnguerra.co/viz/resultadosSegundaVuelta2018/index_old.html,5
 Colombia Force Cities Notebook,6/20/18,viz,professional,ColombiaForceCities.gif,https://beta.observablehq.com/@john-guerra/colombia-geojson,3
 World Cup Chances for second round,6/25/18,viz,professional,worldCup.gif,http://johnguerra.co/viz/worldCup2018/,3
 Colombian Election Storytelling,6/26/18,viz,professional,segundaVueltaStory_shorter.gif,http://johnguerra.co/viz/resultadosSegundaVuelta2018/,5
 San Francisco Muni Map,4/18/18,viz,professional,sfMuniMap.gif,http://johnguerra.co/viz/sfMuniMap/,4
 Navio: Colombian Senate ,5/2/18,viz,professional,senadoColombia.gif,http://johnguerra.co/viz/senadoColombia/,5
+Us Federal Budget with d3 Force,8/12/18,viz,professional,usFederalBudgetForces.gif,https://bl.ocks.org/john-guerra/54ac510dbb3196f04bdd7db3bdcb5164,3
+Playing with Circles,8/15/18,viz,professional,playingWithCircles.gif,https://observablehq.com/@john-guerra/circles-over-a-circle,3
+Data Visualization Final Class Projects Summer 2018 Berkeley Master in Data Science,8/19/18,viz,professional,BerkeleySummer2018.gif,https://johnguerra.co/viz/berkeleyFinalProjectsSummer2018/,3
+Mapa resultados plebiscito,8/26/18,viz,professional,mapaConsulta.png,https://johnguerra.co/viz/resultadosPlebiscito/,4
+consultaStory,8/26/18,viz,professional,consultaStory.gif,https://johnguerra.co/viz/consultaAnticorrupcion2018/,5
+Colombian National Education Test results (Resultados Pruebas Saber 11 Colombia),8/29/18,viz,professional,colegios.gif,https://public.tableau.com/profile/john.alexis.guerra.g.mez#!/vizhome/pruebasSaber11_2017-2/MejoresColegiosenColombia,5
+IEEEVIS2018 Tweets,11/2/18,viz,professional,ieeevis2018_tweets_v2.gif,http://johnguerra.co/viz/influentials/ieeevis2018/tweets.html,4
+Final Projects Visual Analytics Fall 2018 Uniandes,12/4/18,viz,professional,visualAnalytics201820_projects.gif,https://johnguerra.co/classes/visual_analytics_fall_2018/projects.html,4
+Are the Colombian Parties pro or anti governement? With Juan Castro Varón (Partidos políticos en Colombia: ¿gobernistas o antigobernistas?),1/23/19,viz,professional,congreso_visible_oposicion.gif,https://congreso.castrovaron.com/,5
+IEEEVIS Publications Network,2/25/19,viz,professional,visPubNetwork2018.gif,https://johnguerra.co/viz/visPubNetwork/,3
+Force in a Box Observable Notebook,2/26/19,viz,professional,forceInABox_notebook.gif,https://observablehq.com/@john-guerra/force-in-a-box,4
+A day in the life using force in a box,3/7/19,viz,professional,aDayInTheLife.gif,https://observablehq.com/@john-guerra/a-day-in-the-life-with-forceinabox,4
+Navio: a Visualization widget for large tabular data,3/27/19,viz,professional,navio_thumb_v4.gif,https://navio.dev/,5
+Flickr Rainbow,3/29/19,viz,professional,flickrRainbowNotebook.gif,https://observablehq.com/@john-guerra/flickr-rainbow,4
+Load your own data on Navio,3/30/19,viz,professional,navio_load_notebook.gif,https://observablehq.com/@john-guerra/navio-load,5
+Force Radial Demo,5/25/19,viz,professional,forceRadial.gif,https://observablehq.com/@john-guerra/d3-forceradial,3
+"MLExplorer: Interactive TSNE and Kmeans with your data, with Fabián Peña",6/5/19,viz,professional,mlexplore_salurbal.gif,https://fabiancpl.github.io/MLExplore.js/,5
+Scrollyteling the most influential accounts of CHI2019,6/13/19,viz,professional,storyInfluentials_chi2019.gif,https://johnguerra.co/viz/influentials/story/?hashtag=chi2019,5
+D3 Parallel Sets,6/27/19,viz,professional,d3_parsets.gif,https://observablehq.com/@john-guerra/parallel-sets,4
+Alternatives for overlapping scatterplots,7/6/19,viz,professional,overlapping_scatterplot.gif,https://observablehq.com/@john-guerra/overlapping-scatterplots,3
+Hierarchical Barcharts Animations chained,7/10/19,viz,professional,Hierarchichal_barchart_chained4.gif,https://observablehq.com/@john-guerra/hierarchical-bar-chart,3
+BioCicle: A visual analytics tool for summarize and compare biological sequence alignments with Meili Vanegas,7/22/19,viz,professional,BioCicle.gif,http://johnguerra.co/students/2018MeiliVanegasBioCicle/,3
+A basic implementation of LineUP,9/5/19,viz,professional,lineup.gif,https://observablehq.com/@john-guerra/lineup,3
+How to make a network visualization with Vega,10/26/19,viz,professional,vegaLiteNetwork.gif,https://observablehq.com/@john-guerra/network-visualization-vega-lite,4
+Zoomable Icicle with variable size ,8/8/19,viz,professional,zoomable_icicle_variable_size.gif,https://observablehq.com/@john-guerra/zoomable-variable-size-icicle,3
+Car depreciations in Colombia (2016 data),7/20/16,viz,professional,CarDepreciationTableau.png,https://public.tableau.com/profile/john.alexis.guerra.g.mez#!/vizhome/CarDepreciationinColombia/CarDepreciationinColombia,2
+2015 Bogotá's Council Results (Resultados Elecciones Concejo Bogotá 2015),5/24/19,viz,professional,eleccionesConcejo2015.gif,https://public.tableau.com/profile/john.alexis.guerra.g.mez#!/vizhome/votosConcejo/Dashboard1,2
+2019 Colombian Elections notebook,10/29/19,viz,professional,eleccionesColombia2019.gif,https://observablehq.com/d/f756f0b40ef17960,3
+Colombia's gender gap (Brecha Salarial Colombia),8/12/19,viz,professional,brechaSalarialColombia.png,https://public.tableau.com/profile/john.alexis.guerra.g.mez#!/vizhome/GenderGap_15656264439480/Diferencia_Salarial,3
