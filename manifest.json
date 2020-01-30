@@ -1,0 +1,31 @@
+{
+  "name": "John Alexis Guerra Gómez Homepage",
+  "short_name": "John A. Guerra-Gomez",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#FF9800",
+  "background_color": "#FF9800",
+  "icons": [
+    {
+      "src": "img/John_Guerra_Icon@2x.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "img/John_Guerra_Icon@3x.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/John_Guerra_Icon@3x.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "img/John_Guerra_Icon@3x.png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "img/John_Guerra_Icon@3x.png",
+      "sizes": "512x512"
+    }
+  ]
+}

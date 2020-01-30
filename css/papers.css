@@ -3,27 +3,28 @@ body {
 }
 #papers .year {
   margin-right: 5px;
-  float:left;
+  float: left;
 }
 #papers .paper-content {
-  float:left;
-  width:80%;
+  float: left;
+  width: 80%;
 }
 #papers .title {
   font-weight: 200%;
 }
 #papers .category {
-  clear:both;
-  page-break-before:always;
+  /*clear:both;*/
+  /*page-break-before: always;*/
 }
 #papers .paper {
   margin-bottom: 2px;
-  width:100%;
+  width: 100%;
 }
 
-#papers .authors, #papers .venue {
-  color:#777;
+#papers .authors,
+#papers .venue {
+  color: #777;
 }
 #papers .clearer {
-  clear:both;
+  clear: both;
 }

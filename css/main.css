@@ -98,3 +98,10 @@ h2 {
 .bigger-description {
   font-size: 120%;
 }
+
+.banner {
+  align-content: center;
+  display: none;
+  justify-content: center;
+  width: 100%;
+}

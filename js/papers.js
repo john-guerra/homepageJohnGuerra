@@ -60,7 +60,7 @@ d3.json("papers.json", function(err, papers) {
   var catSel = papersSel
     .enter()
     .append("div")
-    .attr("class", "category col-md-6");
+    .attr("class", "category col-6");
   // .style("page-break-before", "always");
 
   catSel.append("h3").text(function(d) {
