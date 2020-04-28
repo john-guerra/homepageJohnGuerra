@@ -2,6 +2,23 @@
 var urlHtml = "1vSswzx-b0oFcPK4jNpEEoVasPxoFAlb38cyGNs3fpHk";
 
 var container = d3.select("#projects");
+/**
+ * @const @enum Project constants.
+ */
+var Project = {
+  THUMBNAIL: 'URL de un thumbnail del proyecto',
+};
+
+/**
+ * Checks if image's filename has valid file extension.
+ * @param {string} image Image's filename
+ * @return {boolean} True if valid extension, false otherwise.
+ */
+function isValidImageExtension(image) {
+  var validateImage = /\.(jpe?g|png|gif|bmp)$/i;
+
+  return validateImage.test(image);
+}
 
 function update(data) {
   console.log(data.length);
@@ -89,9 +106,10 @@ function update(data) {
     })
     .append("img")
     .attr("class", "img-circle")
+    .attr("onerror", "this.src='../images/logo_desarrollo_web.png'")
     .attr("src", function(d) {
-      return d["URL de un thumbnail del proyecto"]
-        ? d["URL de un thumbnail del proyecto"]
+      return d[Project.THUMBNAIL] && isValidImageExtension(d[Project.THUMBNAIL])
+        ? d[Project.THUMBNAIL]
         : "../images/logo_desarrollo_web.png";
     })
     .attr("alt", function(d) {
