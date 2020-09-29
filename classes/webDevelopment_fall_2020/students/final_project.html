@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final projects - WEB Development - Uniandes</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="IMAGINE research group, research projects, Los Andes University">
+  <meta name="author" content="John Alexis Guerra Gómez">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style>
+    .project {
+      height: 600px;
+      overflow: scroll;
+    }
+    .project .description {
+      font-size: 90%;
+    }
+    img.project-thumb {
+      width: auto;
+      height: auto;
+      display:block;
+      max-height: 200px;
+      margin: 0 auto 5px auto;
+    }
+    .topic h2 {
+      margin-bottom: 20px;
+    }
+    .project_url, .project_demo {
+      margin: 5px;
+    }
+    .intro {
+      font-size: 130%;
+    }
+  </style>
+</head>
+</html>
+<body>
+  <div class="content container-fluid">
+    <div class="row">
+      <div class="col-md-1 col-sm-0"></div>
+      <div class="col-md-10 col-sm-12">
+        <h1>WebDevelopment: <small>Final projects</small></h1>
+        <p>Here is the list of the final projects developed by the students. These projects were built for solving a real world problem using the technologies learned during class: Meteor, React, Mongo, Node.js among others, as well as concepts such as Accessibility, Design, Security, Scalability and Usability. For more information visit the <a href="../">class page</a></p>
+        <p>The projects will be presented Friday May 26 5PM (Colombian Time) at Los Andes University Room B_203, but you can <a href="#streaming">watch the streaming here</a>.</p>
+      </div>
+    </div> <!-- Row -->
+    <div class="row">
+      <div id="projects"></div>
+    </div> <!-- Row -->
+    <div class="row">
+      <div class="col-md-1 col-sm-0"></div>
+      <div class="col-md-4 col-sm-8">
+        <h2>Presentation order</h2>
+        <table>
+          <thead>
+            <th>Project</th>
+            <th>Scheduled Hour</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#Tweelings">Tweelings</a></td>
+              <td>5:00PM</td>
+            </tr>
+            <tr>
+              <td><a href="#ListHub">ListHub</a></td>
+              <td>5:08PM</td>
+            </tr>
+            <tr>
+              <td><a href="#GoalScores">GoalScores</a></td>
+              <td>5:16PM</td>
+            </tr>
+            <tr>
+              <td><a href="#TaskAllocator">Task Allocator</a></td>
+              <td>5:24PM</td>
+            </tr>
+            <tr>
+              <td><a href="#ParkingLotsMap">ParkingLotsMap</a></td>
+              <td>5:32PM</td>
+            </tr>
+            <tr>
+              <td><a href="#Find-it-cheaper">Find-it-cheaper</a></td>
+              <td>5:40PM</td>
+            </tr>
+            <tr>
+              <td><a href="#Chilax">Chilax</a></td>
+              <td>5:48PM</td>
+            </tr>
+            <tr>
+              <td><a href="#MyStore">MyStore</a></td>
+              <td>5:56PM</td>
+            </tr>
+            <tr>
+              <td><a href="#ActiveU">ActiveU</a></td>
+              <td>6:04PM</td>
+            </tr>
+            <tr>
+              <td><a href="#BitPad">BitPad</a></td>
+              <td>6:12PM</td>
+            </tr>
+            <tr>
+              <td><a href="#Job-Marketplace">Job-Marketplace</a></td>
+              <td>6:20PM</td>
+            </tr>
+            <tr>
+              <td><a href="#TaxonomyTree">TaxonomyTree</a></td>
+              <td>6:28PM</td>
+            </tr>
+            <tr>
+              <td><a href="#Outfit">Outfit-builder</a></td>
+              <td>6:36PM</td>
+            </tr>
+            <tr>
+              <td><a href="#MusicFromTheWorld">MusicFromTheWorld</a></td>
+              <td>6:44PM</td>
+            </tr>
+            <tr>
+              <td><a href="#PetFamilyFinder"> PetFamilyFinder </a></td>
+              <td>6:52PM</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-md-1 col-sm-0"></div>
+      <div class="col-md-10 col-sm-12">
+        <h3 id="streaming">Streaming</h3>
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/iMdC-jnFp7U?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div> <!-- row -->
+
+    <div class="row">
+      <hr>
+      <div class="col-md-4 col-sm-4">
+        <a href="http://uniandes.edu.co"><img height="50px" src="../../../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University Logo"></a>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <a href=".."><img src="../images/logo_desarrollo_web.png" width="50px" alt="Logo Desarrollo Web by Maria Camila Remolina">ISIS-3710 Web development</a>
+      </div>
+      <div class="col-md-4 col-sm-4" style="margin-top: 15px">
+        <a href="http://johnguerra.co">John Alexis Guerra Gómez</a>
+      </div>
+    </div>
+
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src="js/final_project.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </div>
+</div>
+</div>
+</body>

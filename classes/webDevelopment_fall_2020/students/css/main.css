@@ -1,0 +1,45 @@
+.project {
+	height: 220px;
+}
+
+.description {
+	text-align: center;
+	font-size: 110%;
+	font-weight: bold;
+	height: 50px;
+
+}
+.description2 {
+	text-align: center;
+}
+
+.description2 a {
+	font-size: 90%;
+	padding: 5px;
+}
+
+.project-thumb {
+	width:95%;
+	text-align: center;
+	max-width:80px;
+	min-width:20px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.project-thumb img {
+	width: 80px;
+	height: 80px;
+}
+
+#projects, .projects__heading {
+	padding: 0 32px;
+	text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+	#projects, .projects__heading {
+		padding-left: 2cm;
+		text-align: left;
+	}
+}
