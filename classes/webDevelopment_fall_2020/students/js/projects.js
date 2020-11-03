@@ -185,6 +185,10 @@ function preProcess(data) {
   let dictStudentProj = {};
   console.log("Received " + data.length);
   data
+    .map(d => {
+      d["Timestamp"] = new Date(d["Timestamp"]);
+      return d;
+    })
     .sort(function (a, b) {
       return d3.ascending(a["Timestamp"], b["Timestamp"]);
     })
