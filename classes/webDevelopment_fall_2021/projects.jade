@@ -1,0 +1,336 @@
+doctype html
+html
+  head
+    title ISIS 4822 : Visual Analytics Final Projects Fall 2021
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+    style.
+
+      .logo {
+        height: 90px;
+        border-radius: 5px;
+      }
+
+
+      body {
+        background-color: #f0f9f8;
+      }
+      #comb {
+        width: 100%;
+      }
+
+      #comb .mesh {
+        fill:none;
+        stroke: #white;
+        stroke-width: 1.5;
+      }
+      #comb .projectHex{
+        opacity: 0.1;
+      }
+      #comb .projectHex.important{
+        opacity: 1.0
+      }
+      #comb #hexClip {
+        fill:black;
+      }
+
+      #comb .projectHex .hexBorder {
+        stroke: #3f51b5;
+        stroke-width: 1.5;
+      }
+
+      #comb .projectHex .hexBG {
+        fill: white;
+
+      }
+
+      #comb .important .hexBG {
+        fill: #ddd;
+      }
+
+
+      #comb circle {
+        fill:none;
+        stroke:steelblue;
+      }
+      .card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card .thumb {
+        max-height: 400px;
+      }
+
+      .project {
+        height: 600px;
+        overflow: scroll;
+        margin-bottom: 30px;
+      }
+      .project .description {
+        font-size: 90%;
+      }
+      img.project-thumb {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .topic {
+        margin-top: 30px;
+      }
+      .topic h2 {
+        margin-bottom: 20px;
+
+      }
+      .project_url, .project_demo {
+        margin: 5px;
+      }
+      .intro {
+        font-size: 130%;
+      }
+
+body
+  div.container
+    div.row
+      div.col-md-12.col-sm-12
+        h1 Final Class Projects
+          a(href="http://johnguerra.co/classes/webDevelopment_fall_2018/")  Web Development Course
+
+      div.col-md-8.col-sm-10.intro
+        p Here is the list of the final projects developed by my awesome Web Development students for the #[a(href="http://johnguerra.co/classes/webDevelopment_fall_2018/") Fall 2018 Course]  at #[a(href="https://sistemas.uniandes.edu.co" target="_blank") Los Andes University]. Students were requested to come up with a project idea to implement their Meteor.js, React, Node.js and Mongo skills
+      div.col-4.col-sm-2
+        img.logo(src="../../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University Logo" )
+
+    .row
+      div.col-md-12.col-sm-12
+        h2 Projects:
+        div#comb
+    .row
+      div.col-md-12.col-sm-12
+        div#projects
+
+        div.row
+          div.col-md-12.col-sm-12
+            h3 Presentations
+
+            h4 Schedule
+            :markdown-it(linkify langPrefix='highlight-')
+              | Time    |  Project   |
+              | ------  |  -----     |
+            //- | 8:56 PM  |  |
+
+
+            h4 Streaming/Video
+            span.
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/_U9K_WM5F0U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  script(src="https://d3js.org/d3-hexbin.v0.2.min.js")
+  script(src="https://d3js.org/d3.v4.min.js")
+
+  script(src="../../js/jquery-1.12.1.min.js")
+  script(src="../../js/bootstrap.min.js")
+  script(type="text/javascript", src="./tabletop.js")
+  script(type="text/javascript" src="./projectsComb.js")
+  script.
+    var urlHtml = "1vSswzx-b0oFcPK4jNpEEoVasPxoFAlb38cyGNs3fpHk";
+    var container = d3.select("#projects");
+
+    /* globals d3, ProjectsComb */
+    var
+      width = d3.select("#comb").node().clientWidth,
+      comb = ProjectsComb()
+      // .width(400)
+      .columns( width > 800 ? 7 : 5)
+      .rows(width > 800 ? 2 : 3)
+      .containerID("#comb")
+      .thumbFn(function (d) { return d["Project's screenshot full url"]; })
+      .onClick(function (d) { return document.getElementById(d["Project title"].split(" ")[0]).scrollIntoView(); })
+      .textFn(function (d) { return d["Project title"]; })
+      .repeat(false);
+
+    // Knuth Shuffle taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
+
+    function update(data) {
+
+      data = shuffle(data);
+      comb.updateComb(data);
+
+      var nested_data = d3.nest()
+        .key(function (d) { return d["Project Category"]; })
+          .sortKeys(function (a, b) {
+            return a === "Others" ?
+              1 :
+              b === "Others" ?
+                -1 :
+                d3.ascending(a, b);
+
+
+          })
+        .entries(data);
+
+      var topics = container.selectAll(".topic")
+        .data(nested_data)
+          .enter()
+            .append("div")
+            .attr("class", "topic row")
+
+      topics.append("h2")
+        .attr("class", "col-12 topic-header")
+        .text(function (d) { return d.key; })
+
+      var projs = topics.selectAll(".project")
+        .data(function (d) { return d.values; })
+          .enter()
+            .append("div")
+              .attr("class", "col-lg-4 col-sm-6 col-xs-12")
+            .append("div")
+              //- .attr("class", "card")
+              .attr("class", "project card")
+              .attr("id", function (d) { return d["Project title"].split(" ")[0]; });;
+
+      projs
+        .append("a")
+        .attr("href", function (d) { return d["Project's demo full url"]; })
+          .attr("target", "_blank")
+          .append("img")
+          .attr("class", "project-thumb card-img-top thumb")
+            .attr("src", function (d) { return d["Project's screenshot full url"]; });
+
+      var body = projs.append("div")
+        .attr("class", "card-body");
+
+
+      body
+        .append("h4")
+        .attr("class", "card-title name")
+        .append("a")
+          .attr("href" , function (d) {
+            return d["Full URL for the Github repo"];
+          })
+          .attr("target", "_blank")
+        .text(function (d) { return d["Project title"]; });
+
+      body.append("a")
+        .attr("class", "project_url btn btn-sm btn-default")
+        .attr("href", function (d) { return d["Full URL for the Github repo"]; })
+        .attr("target", "_blank")
+        .text("GitHub");
+      body.append("a")
+        .attr("class", "project_demo btn btn-sm btn-primary")
+        .attr("href", function (d) { return d["Project's demo full url"]; })
+        .attr("target", "_blank")
+        .text("Demo");
+      body.append("a")
+        .attr("class", "project_demo btn btn-sm btn-success")
+        .attr("href", function (d) { return d["Video demo full url"]; })
+        .attr("target", "_blank")
+        .text("Video");
+
+      body.append("a")
+        .attr("class", "project_demo btn btn-sm btn-info")
+        .attr("href", function (d) { return d["Slides"]; })
+        .attr("target", "_blank")
+        .text("Slides");
+
+
+
+
+      body.append("h4").text("Description");
+      body.append("p")
+        .attr("class", "description")
+          .text(function (d) { return d["Paragraph describing the project"]; });
+
+      body.append("h4").text("Members");
+      body.append("div")
+        .attr("class", "student")
+        .append("a")
+        .attr("href", function (d) { return d["Student 1 homepage"]})
+        .attr("target", "_blank")
+          .text(function (d) { return d["Student 1 full name"]; });
+      body.append("div")
+        .attr("class", "student")
+        .append("a")
+        .attr("href", function (d) { return d["Student 2 homepage"]})
+        .attr("target", "_blank")
+          .text(function (d) { return d["Student 2 full name"]; });
+      body.append("div")
+        .attr("class", "student")
+        .append("a")
+        .attr("href", function (d) { return d["Student 3 homepage"]})
+        .attr("target", "_blank")
+          .text(function (d) { return d["Student 3 full name"]; });
+
+
+      //- body.append("h5")
+      //-   .text(function (d) { return "Group Number " + d["Número de grupo"]; })
+    }
+
+    //- function preProcess(data) {
+    //-   var dictGroups = {};
+    //-   data.forEach(function (d) {
+    //-     dictGroups[d["Número de grupo"]]=d;
+    //-   })
+    //-   return d3.values(dictGroups);
+    //- }
+
+    function updateFromGSheet(data) {
+      //- var procData = preProcess(data);
+      update(data);
+    }
+
+    function init() {
+      Tabletop.init( { key: urlHtml,
+                       callback: updateFromGSheet,
+                       simpleSheet: true } )
+    }
+
+    // Update from csv
+    //- d3.csv("projects.csv", function (error, data) {
+    //-   if (error) throw error;
+    //-   var procData = preProcess(data);
+    //-   update(procData);
+    //- });
+
+    // Update from googleSheets
+    window.onload = function() { init() };
+    d3.select("table").attr("class", "table");
+
+  script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+  script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72531610-1', 'auto');
+    ga('send', 'pageview');
+
+
+
+
+
+
+
