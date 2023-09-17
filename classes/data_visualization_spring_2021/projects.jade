@@ -1,0 +1,184 @@
+doctype html
+html
+  head
+    title Final projects - Infovis - Northeastern University
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+
+    style.
+
+      h1 {
+        margin-top: 50px;
+      }
+
+      .logo {
+        height: 90px;
+        border-radius: 5px;
+      }
+
+
+      /* body {
+         background-color: #fff5df;
+      } */
+
+      #comb {
+        width: 100%;
+      }
+
+      #comb .mesh {
+        fill:none;
+        stroke: #white;
+        stroke-width: 1.5;
+      }
+      #comb .projectHex{
+        opacity: 0.1;
+      }
+      #comb .projectHex.important{
+        opacity: 1.0
+      }
+      #comb #hexClip {
+        fill:black;
+      }
+
+      #comb .projectHex .hexBorder {
+        stroke: #d0aba0;
+        stroke-width: 1.5;
+      }
+
+      #comb .projectHex .hexBG {
+        fill: white;
+
+      }
+
+      #comb .important .hexBG {
+        fill: #ddd;
+      }
+
+
+      #comb circle {
+        fill:none;
+        stroke:steelblue;
+      }
+      .card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card .thumb {
+        max-height: 400px;
+      }
+
+      .project {
+        height: 600px;
+        overflow: scroll;
+        margin-bottom: 30px;
+      }
+      .project .description {
+        font-size: 90%;
+      }
+      img.project-thumb {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .topic {
+        margin-top: 30px;
+      }
+      .topic h2 {
+        margin-bottom: 20px;
+
+      }
+      .project_url, .project_demo {
+        margin: 5px;
+      }
+      .intro {
+        font-size: 130%;
+      }
+
+body
+  div.container
+    div.row
+      div.col-md-12.col-sm-12
+        h1 Final Class Projects
+          a(href="http://johnguerra.co/classes/data_visualization_spring_2021/")  Data Visualization Course
+
+      div.col-md-8.col-sm-10.intro
+        p Here is a list of the Data Visualization projects developed during our Spring 2021 Course at #[a(href="https://www.khoury.northeastern.edu/" target="_blank") Northeastern University]. Each group was tasked to develop a Data Visualization tool to help solve a #[strong real] problem from a #[strong real] user. The students successfully worked through the problems of obtaining and cleaning real data, and more importantly extracting real value from them.
+        //- p The projects will be presented Tuesday Dec 10 6PM COT at Los Andes University Room ML_511, but you can #[a(href="#streaming") watch the streaming here]
+      div.col-4.col-sm-2
+        img.logo(src="../../img/seal_logotype-768x252.png" alt="Northeastern University Logo" )
+
+    .row
+      div.col-md-12.col-sm-12
+        h2 Projects:
+        div#comb
+    .row
+      div.col-md-12.col-sm-12
+        div#projects
+
+        //- div.row
+        //-   div.col-md-12.col-sm-12
+        //-     h3 Presentations
+
+        //-     h4 Schedule (PM COT)
+        //-     :markdown-it(linkify langPrefix='highlight-')
+        //-       | Time    |  Project   |
+        //-       | ------  |  -----     |
+        //-       | 6:00  | Introduction  |
+        //-       | 6:12  | SmartMeteringEnel Codensa –Condensa S.A.  |
+        //-       | 6:24  | eventtia.com  |
+        //-       | 6:36  | Instituto Alexander von Humboldt - Visualización de datos de biodiversidad colombiana |
+        //-       | 6:48  | Fundación Dividendo por Colombia  |
+        //-       | 7:00  | "Contraloría General de La Nación
+        //-       " |
+        //-       | 7:12  | Monitoreo de los Medicamentos de Alto Costo en el Hospital Militar Central  |
+        //-       | 7:24  | Equipos de Respuesta Rápida |
+        //-       | 7:36  | Análisis del desempeño de los estudiantes de APO para futuras predicciones de deserción |
+        //-       | 7:48  | Cartografías de Conflictos Socio-ambientales en Colombia  |
+        //-       | 8:00  | Una Empresa Docente |
+        //-       | 8:12  | Comparación Intrauterinos |
+        //-       | 8:24  | PEOPLE ANALYTICS  |
+        //-       | 8:36  |   |
+        //- | 8:56 PM  |  |
+
+
+        //- h4 Streaming/Video
+        //- p
+        //-   strong The projects will be presented on Tuesday December 10 at 6PM Colombian Time
+        //- span.
+        //-   <iframe width="560" height="315" src="https://www.youtube.com/embed/YYd7Ga_MzAs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+  script(src="https://d3js.org/d3-hexbin.v0.2.min.js")
+  script(src="https://d3js.org/d3.v4.min.js")
+
+  script(src="../../js/jquery-1.12.1.min.js")
+  script(src="../../js/bootstrap.min.js")
+  script(type="text/javascript", src="./tabletop.js")
+  script(type="text/javascript" src="./projectsComb.js")
+
+
+  script(type="text/javascript" src="./final_projects.js")
+
+
+
+  script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+  script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72531610-1', 'auto');
+    ga('send', 'pageview');
+
+
+
+
+
+
+

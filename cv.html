@@ -8,13 +8,18 @@
 		<meta name="author" content="John Alexis Guerra Gomez" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!-- Le styles -->
-		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+		<!-- <link href="css/bootstrap.css" rel="stylesheet" /> -->
 		<!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
 		<link href="css/main.css" rel="stylesheet" />
 		<link href="css/experienceTimeline.css" rel="stylesheet" />
 		<link href="css/projectsComb.css" rel="stylesheet" />
 		<link href="css/students.css" rel="stylesheet" />
-
 		<link href="css/papers.css" rel="stylesheet" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Crimson Text|Cabin"
@@ -23,6 +28,10 @@
 	</head>
 
 	<style>
+		/* For PDF export */
+		/*body {
+			width: 1300px;
+		}*/
 		.img200 {
 			width: 50%;
 			max-width: 200px;
@@ -37,9 +46,9 @@
 			margin: 0px;
 		}
 
-		.experience {
-			font-size: 120%;
-		}
+		/*.experience {*/
+			/*font-size: 120%;*/
+		/*}*/
 	</style>
 
 	<body>
@@ -103,7 +112,7 @@
 					<h4>Experience</h4>
 					<ul class="experience">
 						<li>
-							10 years as a researcher on Information Visualization.
+							10 years as a researcher in Information Visualization.
 							<a href="http://johnguerra.co/projects.html">Portfolio</a>
 						</li>
 						<li>17 years as <a href="#projects">a full stack engineer</a></li>
@@ -120,21 +129,7 @@
 							IEEEVIS, AVI, EuroVis and UIST
 						</li>
 						<li>
-							15 years as public speaker, e.g.
-							<a href="http://www.openvisconf.com/2017/#jgomez-video-item"
-								>Openvis2017</a
-							>, <a href="https://www.youtube.com/watch?v=ThPIvxv2vD4">TEDx</a>,
-							<a href="https://www.youtube.com/watch?v=WyLYTibjNO4"
-								>Singularity University Summit Colombia 2018</a
-							>,
-							<a href="https://www.youtube.com/watch?v=5zDJzjrEaNo"
-								>Ruta de la Ciencia Colombia 2016</a
-							>, <a href="https://cxsummit.com.co/">CX Summit Colombia</a>,
-							<a
-								href="https://www.ienergy.community/NewsDetails/dt/Detail/ItemID/375/The-Quest-for-Data-Insights-"
-								>Halliburton's STEPS Distinguished Lecture series on Big Data in
-								Exploration and Production 2018</a
-							>
+							15 years as public speaker.
 						</li>
 						<li>
 							Entrepreneur co-founder of <a href="http://duto.co">DUTO</a>,
@@ -190,7 +185,32 @@
 			<!-- ********************** Achievements *********************-->
 			<h2 id="achievements">Things I'm proud of</h2>
 			<div class="row">
-				<div class="col-md-8 col-sm-8 col-xs-12" id="achievementsText">
+				<div class="col-md-9 col-sm-9 col-xs-12" id="achievementsText">
+					<!-- Uniandes -->
+					<div class="row">
+						<div class="col-md-1 col-sm-1 col-xs-2">
+							<img
+								src="img/Northeastern box.png"
+								class="time-slab"
+								alt="Northeastern"
+							/>
+						</div>
+						<div class="col-md-11 col-sm-11 col-xs-12">
+							<ul>
+								<li>
+									Conducting research in information visualization and
+									accesibility.
+								</li>
+								<li>
+									Teaching: Web Development, Database Management Systems and
+									Information Visualization.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End uniandes -->
+					<hr />
+
 					<!-- Uniandes -->
 					<div class="row">
 						<div class="col-md-1 col-sm-1 col-xs-2">
@@ -203,7 +223,7 @@
 						<div class="col-md-11 col-sm-11 col-xs-12">
 							<ul>
 								<li>
-									Conducted research on
+									Conducted research in
 									<a href="./navio.html">large dataviz</a>,
 									<a href="./netviz.html">network visualization</a> and
 									<a href="./photoviz.html">photo visualization</a> and
@@ -268,7 +288,7 @@
 									Remote Lecturer at
 									<a
 										href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez"
-										>Berkeley's online Master in Data Sciece</a
+										>Berkeley's online Master in Data Science</a
 									>. Teaching W209 Data Communication and Visualization. Student
 									projects:
 									<a
@@ -324,8 +344,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<hr> -->
+						</div>
+						<hr>
+					-->
 					<!-- End Btactile -->
 
 					<!-- Yahoo labs -->
@@ -343,7 +364,7 @@
 									Exploring information visualization interfaces for navigating
 									big repositories of photos.
 								</li>
-								<li>Helped redesigned <strong>Flickr stats</strong>.</li>
+								<li>Helped redesign <strong>Flickr stats</strong>.</li>
 								<li>
 									Developed and deployed a visualization for better exploring
 									the organizational units that is being used company wide.
@@ -420,31 +441,30 @@
 									>.
 								</li>
 								<li>
-									Creator of
+									Creator of open source software:
 									<strong
 										><a
 											href="https://github.com/john-guerra/revealVizScrollyteling"
 											>RevealVizScroll</a
 										></strong
-									>
-									an open source library for creating scrollytelling-like
-									stories using reveal.js
-								</li>
-								<li>
-									Creator of
+									>,
 									<strong
 										><a
 											target="_blank"
 											href="https://github.com/john-guerra/forceInABox"
 											>force-in-a-box</a
 										></strong
-									>
-									and
+									>,
 									<strong
 										><a
 											target="_blank"
 											href="https://github.com/john-guerra/netClusteringJs"
 											>netClustering.js</a
+										></strong
+									>,
+									<strong
+										><a target="_blank" href="https://navio.dev"
+											>navio</a
 										></strong
 									>.
 								</li>
@@ -458,7 +478,7 @@
 									a platform to monitor Twitter activity for the Colombian
 									presidential election.
 								</li>
-								<li>
+								<!-- <li>
 									Creator of
 									<strong
 										><a target="_blank" href="http://wholikesmyfb.com"
@@ -466,13 +486,14 @@
 										></strong
 									>
 									a Facebook app to explore who likes your post the most.
-								</li>
+								</li> -->
 								<!-- 							<li>Other experiments <strong><a target="_blank" href="http://www.dutovis.com/tradeFlow/flow/flow.html">Tradeflow:</a></strong> A tool to compare the imports/exports of products in countries of the Americas</li>
- -->
+ 							-->
 							</ul>
 						</div>
 					</div>
 					<!-- End Extras -->
+
 
 					<hr />
 
@@ -600,14 +621,14 @@
 				</div>
 				<!-- achievements text -->
 
-				<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="col-md-3 col-sm-3 col-xs-12">
 					<div id="projectsComb"></div>
 				</div>
 			</div>
 			<!-- End achievements -->
 
 			<!-- ***************** PROJECTS *************** -->
-			<div style="page-break-before: always; padding-top: 1cm;" id="projects">
+			<div style="page-break-before: always; padding-top: 1cm" id="projects">
 				<h2>Things I have built</h2>
 
 				<div class="row">
@@ -815,14 +836,47 @@
 
 			<!-- *********** PAPERS ************** -->
 
-			<div style="page-break-before: always;" class="row">
+			<div style="page-break-before: always" class="row">
+				<form id="orderBy">
+					Order by:
+					<label class="form-check-label"
+						><input
+							class="form-check-input"
+							type="radio"
+							name="papersOrderBy"
+							id="byDate"
+							checked
+						/>
+						Date</label
+					>
+					<label class="form-check-label"
+						><input
+							class="form-check-input"
+							type="radio"
+							name="papersOrderBy"
+							id="category"
+						/>
+						Category</label
+					>
+	
+					<label class="form-check-label"
+						><input
+							class="form-check-input"
+							type="radio"
+							name="papersOrderBy"
+							id="type"
+						/>
+						Type</label
+					>
+				</form>
+
 				<div id="papers" class="col-md-12"></div>
 				<!-- end #papers -->
 			</div>
 			<!-- end research -->
 
 			<!-- ***************** STUDENTS ******************* -->
-			<div class="row students" id="students">
+			<!-- <div class="row students" id="students">
 				<h2>Students</h2>
 				<div class="col-md-1 col-sm-1"></div>
 				<div class="col-md-8 col-sm-12">
@@ -830,7 +884,7 @@
 					<div id="studentsList"></div>
 				</div>
 				<div class="filler"></div>
-			</div>
+			</div> -->
 			<!-- end photos -->
 		</div>
 		<!--/.fluid-container-->

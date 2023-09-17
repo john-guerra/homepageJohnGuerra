@@ -151,7 +151,7 @@ body
 
         script(src="../../js/jquery-1.12.1.min.js")
         script(src="../../js/bootstrap.min.js")
-        script(type="text/javascript", src="./tabletop.js")
+        //- script(type="text/javascript", src="./tabletop.js")
         script(type="text/javascript" src="./projectsComb.js")
         script.
 
@@ -328,21 +328,21 @@ body
             update(procData);
           }
 
-          function init() {
-            Tabletop.init( { key: urlHtml,
-                             callback: updateFromGSheet,
-                             simpleSheet: true } )
-          }
+          //- function init() {
+          //-   Tabletop.init( { key: urlHtml,
+          //-                    callback: updateFromGSheet,
+          //-                    simpleSheet: true } )
+          //- }
 
           // Update from csv
-          //- d3.csv("projects.csv", function (error, data) {
-          //-   if (error) throw error;
-          //-   var procData = preProcess(data);
-          //-   update(procData);
-          //- });
+          d3.csv("projects.csv", function (error, data) {
+            if (error) throw error;
+            var procData = preProcess(data);
+            update(procData);
+          });
 
           // Update from googleSheets
-          window.onload = function() { init() };
+          //- window.onload = function() { init() };
           d3.select("table").attr("class", "table");
 
   script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")

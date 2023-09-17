@@ -1,11 +1,13 @@
 /* global d3 */
-var container = d3.select("#papers");
+let container = d3.select("#papers");
 container.html("");
-var timeFmt = d3.timeParse("%m/%d/%Y");
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+let timeFmt = d3.timeParse("%m/%d/%Y");
+let color = d3.scaleOrdinal(d3.schemeCategory10);
 
 d3.json("papers.json", function(err, papers) {
   if (err) throw err;
+
+  let orderBy = "byDate";
 
   papers.forEach(function(d) {
     d.date = timeFmt(d.date);
@@ -15,12 +17,12 @@ d3.json("papers.json", function(err, papers) {
     );
   });
 
-  var hideCategories = [
+  let hideCategories = [
     "Presentation",
     "Tech Report",
     "Software",
     "Trademark",
-    "Panel"
+    "Panel",
   ];
   const categoriesOrder = {
     Visualization: 0,
@@ -29,97 +31,179 @@ d3.json("papers.json", function(err, papers) {
     "Network Visualization": 3,
     "Time Visualization": 6,
     Accessibility: 5,
-    Other: 4
+    Other: 4,
   };
 
-  var filteredPapers = papers.filter(function(d) {
+  let filteredPapers = papers.filter(function(d) {
     return hideCategories.indexOf(d.type) === -1;
   });
 
-  var sortByDate = function(a, b) {
+  let sortByDate = function(a, b) {
     return d3.descending(a.date, b.date);
   };
-
-  var nestedPapers = d3
-    .nest()
-    .key(function(d) {
-      return d.category;
-    })
-    .entries(filteredPapers.sort(sortByDate))
-    .sort((a, b) =>
-      d3.ascending(categoriesOrder[a.key], categoriesOrder[b.key])
-    );
 
   container
     .append("h2")
     .text("Publications" + " (" + filteredPapers.length + ")");
 
+  function onChangeOrderBy() {
+    console.log("evt", d3.event.target.id);
+
+    orderBy = d3.event.target.id;
+
+    reload();
+  }
+
+  const formOrderBy = d3
+    .select("#orderBy")
+    .append("form")
+    .attr("class", "form-check")
+    .html(
+      `
+      <form id="orderBy">
+					Order by:
+					<label class="form-check-label"
+						><input
+							class="form-check-input"
+							type="radio"
+							name="papersOrderBy"
+							id="byDate"
+							checked
+						/>
+						Date</label
+					>
+					<label class="form-check-label"
+						><input
+							class="form-check-input"
+							type="radio"
+							name="papersOrderBy"
+							id="category"
+						/>
+						Category</label
+					>
+	
+					<label class="form-check-label"
+						><input
+							class="form-check-input"
+							type="radio"
+							name="papersOrderBy"
+							id="type"
+						/>
+						Type</label
+					>
+				</form>
+    `
+    )
+    .on("change", onChangeOrderBy);
+
   const row = container.append("div").attr("class", "row");
-  var papersSel = row.selectAll(".category").data(nestedPapers);
 
-  var catSel = papersSel
-    .enter()
-    .append("div")
-    .attr("class", "category col-6");
-  // .style("page-break-before", "always");
+  function renderCategoryHeader(catSelMerged) {
+    const catSelMergedH3 = catSelMerged.selectAll("h3").data((d) => [d]);
+    catSelMergedH3
+      .enter()
+      .append("h3")
+      .merge(catSelMergedH3)
+      .text(function(d) {
+        return d.key + " (" + d.values.length + ")";
+      });
+    catSelMergedH3.exit().remove();
+  }
 
-  catSel.append("h3").text(function(d) {
-    return d.key + " (" + d.values.length + ")";
-  });
-
-  var paperSel = catSel
-    .selectAll(".paper")
-    .data(function(d) {
+  function renderPapers(catSelMerged) {
+    // Render papers
+    let paperSel = catSelMerged.selectAll(".paper").data(function(d) {
       return d.values;
-    })
-    .enter()
-    .append("div")
-    .attr("class", "paper");
-
-  paperSel
-    .append("div")
-    .attr("class", "year")
-    .text(function(d) {
-      return d.year;
     });
 
-  var paperContentSel = paperSel.append("div").attr("class", "paper-content");
+    const paperSelMerged = paperSel
+      .enter()
+      .append("div")
+      .merge(paperSel)
+      .attr("class", "paper");
 
-  paperSel.append("div").attr("class", "clearer");
+    paperSelMerged
+      .append("div")
+      .attr("class", "year")
+      .text(function(d) {
+        return d.year;
+      });
 
-  paperContentSel
-    .append("a")
-    .attr("class", "title")
-    .attr("href", function(d) {
-      return d.link;
-    })
-    .text(function(d) {
-      return d.title;
+    let paperContentSel = paperSelMerged
+      .append("div")
+      .attr("class", "paper-content");
+
+    paperSelMerged.append("div").attr("class", "clearer");
+
+    paperContentSel
+      .append("a")
+      .attr("class", "title")
+      .attr("href", function(d) {
+        return d.link;
+      })
+      .text(function(d) {
+        return d.title;
+      });
+
+    paperContentSel
+      .append("div")
+      .attr("class", "authors")
+      .html(function(d) {
+        return d.authors;
+      });
+
+    paperContentSel
+      .append("div")
+      .attr("class", "venue")
+      .text(function(d) {
+        return d.venue;
+      });
+
+    paperContentSel
+      .append("div")
+      .attr("class", "type")
+      .style("color", function(d) {
+        return color(d.type);
+      })
+      .text(function(d) {
+        return d.type;
+      });
+  }
+
+  function reload() {
+    let nestedPapers = d3
+      .nest()
+      .key((d) => (orderBy === "byDate" ? "" : d[orderBy]))
+      .entries(filteredPapers.sort(sortByDate))
+      .sort((a, b) =>
+        d3.ascending(categoriesOrder[a.key], categoriesOrder[b.key])
+      );
+
+    nestedPapers.map((d) => {
+      d.values = d.values.sort((a, b) =>
+        d3.ascending(categoriesOrder[a.date], categoriesOrder[b.date])
+      );
     });
 
-  paperContentSel
-    .append("div")
-    .attr("class", "authors")
-    .html(function(d) {
-      return d.authors;
-    });
+    row.html("");
 
-  paperContentSel
-    .append("div")
-    .attr("class", "venue")
-    .text(function(d) {
-      return d.venue;
-    });
+    let catSel = row.selectAll(".category").data(nestedPapers);
 
-  paperContentSel
-    .append("div")
-    .attr("class", "type")
-    .style("color", function(d) {
-      return color(d.type);
-    })
-    .text(function(d) {
-      return d.type;
-    });
+    let catSelMerged = catSel.enter().append("div");
 
-  catSel.append("div").attr("class", "clearer");
+    catSelMerged
+      .merge(catSel)
+      .attr("class", `category ${orderBy === "byDate" ? "col-12" : "col-6"}`);
+    // .style("page-break-before", "always");
+
+    catSelMerged.exit().remove();
+
+    // Only draw category header if orderBy is byCategory
+    if (orderBy !== "byDate") renderCategoryHeader(catSelMerged);
+    renderPapers(catSelMerged);
+
+    catSelMerged.append("div").attr("class", "clearer");
+  }
+
+  reload();
 });

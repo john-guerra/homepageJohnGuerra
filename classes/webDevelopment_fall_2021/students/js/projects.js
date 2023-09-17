@@ -1,6 +1,7 @@
 /* globals d3, Tabletop */
 // let urlHtml = "1OHk8QgSQONe-bYgJ1Qnt4uHQmE34xIEtLHV9xwKmGNA";
-let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvm2ahVBmuVhQEEg3REcsfS5Lfe2VGzHZ8oXIi5jNa470TJRUWYuRFZxg8ql3O4imuCf0y8-vSjgjW/pub?gid=599643406&single=true&output=csv";
+let urlCSV =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvm2ahVBmuVhQEEg3REcsfS5Lfe2VGzHZ8oXIi5jNa470TJRUWYuRFZxg8ql3O4imuCf0y8-vSjgjW/pub?gid=599643406&single=true&output=csv";
 let container = d3.select("#projects");
 /**
  * @const @enum Project constants.
@@ -190,6 +191,7 @@ function preProcess(data) {
     .sort(function (a, b) {
       return d3.ascending(a["Timestamp"], b["Timestamp"]);
     })
+    .filter(p => !p.disabled)
     .forEach(function (d) {
       dictStudentProj[d["Project"] + d["University ID Number"]] = d;
     });
@@ -218,4 +220,4 @@ function updateFromGSheet(data) {
 d3.csv(urlCSV, (err, data) => {
   if (err) throw err;
   updateFromGSheet(data);
-})
+});
