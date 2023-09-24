@@ -1,7 +1,7 @@
 
 #timeline {
   /*background: #eee;*/
-  font-size: 15px;
+  font-size: 12px;
   width: 100%;
 }
 .axis .domain {
@@ -9,19 +9,19 @@
 }
 .entry rect {
   /*opacity: 0.7;*/
-  /*stroke: white;*/
+  stroke: white;
   stroke-width: 1px;
 }
 
 #timeline .entry text {
   text-anchor: middle;
-  font-family: HelveticaNeue-Bold;
+  /* font-family: HelveticaNeue-Bold; */
   fill: white;
   text-shadow: 0 1px 0 #507B94, 1px 0 0 #507B94, 0 -1px 0 #507B94, -1px 0 0 #507B94;
 
 }
 #timeline .axis {
-  font-family: HelveticaNeue;
+  /* font-family: HelveticaNeue; */
   font-size: 16px;
 
 }
@@ -29,7 +29,9 @@
   stroke-width: 2.5px;
   stroke: #979797;
 }
+
 #timeline .axis text {
-  fill: #636363;
+  /* fill: #636363; */
+  fill: #636363; 
   stroke: none;
 }

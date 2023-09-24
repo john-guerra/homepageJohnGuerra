@@ -5,7 +5,7 @@ yOffset,Height,Type,Description,Location,Start,End
 0,1,Professional,Yahoo Labs,Xerox PARC,01/2015,04/2016
 0,0.5,Professional,Uniandes,Uniandes,06/2016,12/2018
 1,0.5,Professional,Berkeley,Berkeley,01/2017,07/2020
-0,0.8,Personal,Co-founder/CTO DUTO,DUTO,01/2005,05/2013
-0,0.8,Personal,Other projects,Other,05/2013,01/2016
-0,0.8,Personal,BTactile,BTactile,01/2016,-
-0,0.5,Professional,Northeastern U.,Northeastern U,12/2018,-
+0,1,Personal,Co-founder/CTO DUTO,DUTO,01/2005,05/2013
+0,1,Personal,Other projects,Other,05/2013,01/2016
+0,1,Personal,BTactile,BTactile,01/2016,-
+0,1,Professional,Northeastern U.,Northeastern U,8/2020,-

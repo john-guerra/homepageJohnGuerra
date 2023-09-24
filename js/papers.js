@@ -1,209 +1,270 @@
 /* global d3 */
-let container = d3.select("#papers");
-container.html("");
-let timeFmt = d3.timeParse("%m/%d/%Y");
-let color = d3.scaleOrdinal(d3.schemeCategory10);
 
-d3.json("papers.json", function(err, papers) {
-  if (err) throw err;
+import { Runtime } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/@john-guerra/scented-checkbox.js?v=3";
 
-  let orderBy = "byDate";
+async function runPapers() {
+  const notebook = new Runtime().module(define);
+  const scentedCheckbox = await notebook.value("scentedCheckbox");
 
-  papers.forEach(function(d) {
-    d.date = timeFmt(d.date);
-    d.authors = d.authors.replace(
-      "John Alexis Guerra-Gomez",
-      "<strong>John Alexis Guerra-Gomez</strong>"
-    );
-  });
+  let container = d3.select("#papers");
+  container.html("");
+  let timeFmt = d3.timeParse("%m/%d/%Y");
+  let color = d3.scaleOrdinal(d3.schemeCategory10);
 
-  let hideCategories = [
-    "Presentation",
-    "Tech Report",
-    "Software",
-    "Trademark",
-    "Panel",
-  ];
-  const categoriesOrder = {
-    Visualization: 0,
-    "Tree Visualization": 1,
-    "Photo Visualization": 2,
-    "Network Visualization": 3,
-    "Time Visualization": 6,
-    Accessibility: 5,
-    Other: 4,
-  };
+  d3.json("papers.json", function(err, papers) {
+    if (err) throw err;
 
-  let filteredPapers = papers.filter(function(d) {
-    return hideCategories.indexOf(d.type) === -1;
-  });
+    let orderBy = "byDate";
+    let selectedTypes = [];
+    let selectedCategories = [];
 
-  let sortByDate = function(a, b) {
-    return d3.descending(a.date, b.date);
-  };
+    papers.forEach(function(d) {
+      d.date = timeFmt(d.date);
+      d.authors = d.authors.replace(
+        "John Alexis Guerra-Gomez",
+        "<strong>John Alexis Guerra-Gomez</strong>"
+      );
+    });
 
-  container
-    .append("h2")
-    .text("Publications" + " (" + filteredPapers.length + ")");
+    let hideCategories = [
+      "Presentation",
+      "Tech Report",
+      "Software",
+      "Trademark",
+      "Panel",
+    ];
+    const categoriesOrder = {
+      Visualization: 0,
+      "Tree Visualization": 1,
+      "Photo Visualization": 2,
+      "Network Visualization": 3,
+      "Time Visualization": 6,
+      Accessibility: 5,
+      Other: 4,
+    };
 
-  function onChangeOrderBy() {
-    console.log("evt", d3.event.target.id);
+    let filteredPapers = papers.filter(function(d) {
+      return hideCategories.indexOf(d.type) === -1;
+    });
 
-    orderBy = d3.event.target.id;
+    let sortByDate = function(a, b) {
+      return d3.descending(a.date, b.date);
+    };
+
+    const h2Container = container.append("h2");
+
+    createCheckboxes();    
+
+    const formOrderBy = d3
+      .select("#orderBy")
+      // .append("form")
+      // .attr("class", "form-check")
+      // .html(
+      //   `
+      //   <form id="orderBy">
+      // 			Order by:
+      // 			<label class="form-check-label"
+      // 				><input
+      // 					class="form-check-input"
+      // 					type="radio"
+      // 					name="papersOrderBy"
+      // 					id="byDate"
+      // 					checked
+      // 				/>
+      // 				Date</label
+      // 			>
+      // 			<label class="form-check-label"
+      // 				><input
+      // 					class="form-check-input"
+      // 					type="radio"
+      // 					name="papersOrderBy"
+      // 					id="category"
+      // 				/>
+      // 				Category</label
+      // 			>
+
+      // 			<label class="form-check-label"
+      // 				><input
+      // 					class="form-check-input"
+      // 					type="radio"
+      // 					name="papersOrderBy"
+      // 					id="type"
+      // 				/>
+      // 				Type</label
+      // 			>
+      // 		</form>
+      // `
+      // )
+      .on("change", onChangeOrderBy);
+
+    const row = container.append("div").attr("class", "row");   
 
     reload();
-  }
 
-  const formOrderBy = d3
-    .select("#orderBy")
-    .append("form")
-    .attr("class", "form-check")
-    .html(
-      `
-      <form id="orderBy">
-					Order by:
-					<label class="form-check-label"
-						><input
-							class="form-check-input"
-							type="radio"
-							name="papersOrderBy"
-							id="byDate"
-							checked
-						/>
-						Date</label
-					>
-					<label class="form-check-label"
-						><input
-							class="form-check-input"
-							type="radio"
-							name="papersOrderBy"
-							id="category"
-						/>
-						Category</label
-					>
-	
-					<label class="form-check-label"
-						><input
-							class="form-check-input"
-							type="radio"
-							name="papersOrderBy"
-							id="type"
-						/>
-						Type</label
-					>
-				</form>
-    `
-    )
-    .on("change", onChangeOrderBy);
-
-  const row = container.append("div").attr("class", "row");
-
-  function renderCategoryHeader(catSelMerged) {
-    const catSelMergedH3 = catSelMerged.selectAll("h3").data((d) => [d]);
-    catSelMergedH3
-      .enter()
-      .append("h3")
-      .merge(catSelMergedH3)
-      .text(function(d) {
-        return d.key + " (" + d.values.length + ")";
+    function createCheckboxes() {
+      const checkboxType = scentedCheckbox(filteredPapers, (d) => d.type, {
+        label: "Type: ",
+        showTotal: false,
       });
-    catSelMergedH3.exit().remove();
-  }
+      selectedTypes = checkboxType.value;
+      document.querySelector("#papersFilters").append(checkboxType);
 
-  function renderPapers(catSelMerged) {
-    // Render papers
-    let paperSel = catSelMerged.selectAll(".paper").data(function(d) {
-      return d.values;
-    });
+      const checkboxCategory = scentedCheckbox(
+        filteredPapers,
+        (d) => d.category,
+        {
+          label: "Category: ",
+          showTotal: false,
+        }
+      );
+      selectedCategories = checkboxCategory.value;
+      document.querySelector("#papersFilters").append(checkboxCategory);
+      checkboxType.addEventListener("change", () => {
+        selectedTypes = checkboxType.value;
+        reload();
+      });
+      checkboxCategory.addEventListener("change", () => {
+        selectedCategories = checkboxCategory.value;
+        reload();
+      });
+    }
 
-    const paperSelMerged = paperSel
-      .enter()
-      .append("div")
-      .merge(paperSel)
-      .attr("class", "paper");
+    function onChangeOrderBy() {
+      console.log("evt", d3.event.target.id);
 
-    paperSelMerged
-      .append("div")
-      .attr("class", "year")
-      .text(function(d) {
-        return d.year;
+      orderBy = d3.event.target.id;
+
+      reload();
+    }
+
+    function renderCategoryHeader(catSelMerged) {
+      const catSelMergedH3 = catSelMerged.selectAll("h3").data((d) => [d]);
+      catSelMergedH3
+        .enter()
+        .append("h3")
+        .merge(catSelMergedH3)
+        .text(function(d) {
+          return d.key + " (" + d.values.length + ")";
+        });
+      catSelMergedH3.exit().remove();
+    }
+
+    function renderPapers(catSelMerged) {
+      // Render papers
+      let paperSel = catSelMerged.selectAll(".paper").data(function(d) {
+        return d.values;
       });
 
-    let paperContentSel = paperSelMerged
-      .append("div")
-      .attr("class", "paper-content");
+      const paperSelMerged = paperSel
+        .enter()
+        .append("div")
+        .merge(paperSel)
+        .attr("class", "paper");
 
-    paperSelMerged.append("div").attr("class", "clearer");
+      paperSelMerged
+        .append("div")
+        .attr("class", "year")
+        .text(function(d) {
+          return d.year;
+        });
 
-    paperContentSel
-      .append("a")
-      .attr("class", "title")
-      .attr("href", function(d) {
-        return d.link;
-      })
-      .text(function(d) {
-        return d.title;
-      });
+      let paperContentSel = paperSelMerged
+        .append("div")
+        .attr("class", "paper-content");
 
-    paperContentSel
-      .append("div")
-      .attr("class", "authors")
-      .html(function(d) {
-        return d.authors;
-      });
+      paperSelMerged.append("div").attr("class", "clearer");
 
-    paperContentSel
-      .append("div")
-      .attr("class", "venue")
-      .text(function(d) {
-        return d.venue;
-      });
+      paperContentSel
+        .append("a")
+        .attr("class", "title")
+        .attr("href", function(d) {
+          return d.link;
+        })
+        .text(function(d) {
+          return d.title;
+        });
 
-    paperContentSel
-      .append("div")
-      .attr("class", "type")
-      .style("color", function(d) {
-        return color(d.type);
-      })
-      .text(function(d) {
-        return d.type;
-      });
-  }
+      paperContentSel
+        .append("div")
+        .attr("class", "authors")
+        .html(function(d) {
+          return d.authors;
+        });
 
-  function reload() {
-    let nestedPapers = d3
-      .nest()
-      .key((d) => (orderBy === "byDate" ? "" : d[orderBy]))
-      .entries(filteredPapers.sort(sortByDate))
-      .sort((a, b) =>
-        d3.ascending(categoriesOrder[a.key], categoriesOrder[b.key])
+      paperContentSel
+        .append("div")
+        .attr("class", "venue")
+        .text(function(d) {
+          return d.venue;
+        });
+
+      const paperContentSelTypeCat = paperContentSel
+        .append("div")
+        .classed("type-cat", true);
+
+      paperContentSelTypeCat
+        .append("span")
+        .attr("class", "type")
+        .style("color", function(d) {
+          return color(d.type);
+        })
+        .text(function(d) {
+          return d.type;
+        });
+
+      paperContentSelTypeCat
+        .append("span")
+        .attr("class", "category")
+        .text((d) => `Category: ${d.category}`);
+    }
+
+    function reload() {
+      filteredPapers = papers.filter(
+        (d) =>
+          selectedTypes.includes(d.type) &&
+          selectedCategories.includes(d.category)
       );
 
-    nestedPapers.map((d) => {
-      d.values = d.values.sort((a, b) =>
-        d3.ascending(categoriesOrder[a.date], categoriesOrder[b.date])
-      );
-    });
+      h2Container.text("Publications" + " (" + filteredPapers.length + ")");
 
-    row.html("");
+      let nestedPapers = d3
+        .nest()
+        .key((d) => (orderBy === "byDate" ? "" : d[orderBy]))
+        .entries(filteredPapers.sort(sortByDate))
+        .sort((a, b) =>
+          d3.ascending(categoriesOrder[a.key], categoriesOrder[b.key])
+        );
 
-    let catSel = row.selectAll(".category").data(nestedPapers);
+      nestedPapers.map((d) => {
+        d.values = d.values.sort((a, b) =>
+          d3.ascending(categoriesOrder[a.date], categoriesOrder[b.date])
+        );
+      });
 
-    let catSelMerged = catSel.enter().append("div");
+      row.html("");
 
-    catSelMerged
-      .merge(catSel)
-      .attr("class", `category ${orderBy === "byDate" ? "col-12" : "col-6"}`);
-    // .style("page-break-before", "always");
+      let catSel = row.selectAll(".category").data(nestedPapers);
 
-    catSelMerged.exit().remove();
+      let catSelMerged = catSel.enter().append("div");
 
-    // Only draw category header if orderBy is byCategory
-    if (orderBy !== "byDate") renderCategoryHeader(catSelMerged);
-    renderPapers(catSelMerged);
+      catSelMerged
+        .merge(catSel)
+        .attr(
+          "class",
+          `category ${orderBy === "byDate" ? "col-12" : "col-md-6 col-sm-12"}`
+        );
+      // .style("page-break-before", "always");
 
-    catSelMerged.append("div").attr("class", "clearer");
-  }
+      catSelMerged.exit().remove();
 
-  reload();
-});
+      // Only draw category header if orderBy is byCategory
+      if (orderBy !== "byDate") renderCategoryHeader(catSelMerged);
+      renderPapers(catSelMerged);
+
+      catSelMerged.append("div").attr("class", "clearer");
+    }    
+  });
+}
+
+runPapers();

@@ -4,6 +4,7 @@
   "description": "A simple HTTP/CSS/JS page full of errors. Shows some of my projects, keeps my CV updated and tries to showcase all my students' great work",
   "main": "highlight.v9.min.js",
   "dependencies": {
+    "ejs": "^3.1.9",
     "svg-injector": "^1.1.3"
   },
   "devDependencies": {
@@ -12,7 +13,8 @@
     "prettier": "^1.19.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./build.sh"
   },
   "repository": {
     "type": "git",

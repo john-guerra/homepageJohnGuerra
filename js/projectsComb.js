@@ -24,7 +24,7 @@
     top: 0,
     right: 0,
     bottom: 0,
-    left: 0
+    left: 0,
   };
 
   var width = 850;
@@ -64,6 +64,11 @@
     height = d3.select("#achievementsText").node()
       ? d3.select("#achievementsText").node().clientHeight
       : window.innerHeight;
+
+    // for PDF
+    height = 900;
+
+
     var hexRadius = width / ((MapColumns + 0.5) * Math.sqrt(3));
     MapRows = Math.floor(height / (1.5 * hexRadius)) + 1;
     //Set the new height and width of the SVG based on the max possible

@@ -25,6 +25,11 @@ body {
 #papers .venue {
   color: #777;
 }
+
 #papers .clearer {
   clear: both;
+}
+
+.type-cat span {
+  margin-right: 15px;
 }

@@ -1,3 +1,20 @@
+@media print {
+  @page { 
+    margin: 0mm 0mm 0mm 0mm;
+    size: 12.75in 13.5in;
+  }
+}
+
+
+body {
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: "Cabin", sans-serif;
+  font-size: 12pt;
+  width: 97%;
+  /* Forces phantom js to use background color on pdf */
+  /* -webkit-print-color-adjust: exact; */
+}
+
 h1,
 h2,
 h3,
@@ -5,15 +22,10 @@ h4,
 h5 {
   font-family: "Crimson Text", serif;
   font-weight: bold;
+  margin-top: 20px
 }
 
-body {
-  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-family: "Cabin", sans-serif;
-  font-size: 12pt;
-  /* Forces phantom js to use background color on pdf */
-  -webkit-print-color-adjust: exact;
-}
+
 .content {
   padding-top: 20px;
   padding-left: 30px;
@@ -22,7 +34,7 @@ body {
   margin-left: 20px;
   margin-right: 20px;
 
-  /*background-image: linear-gradient(-180deg, #FFFFFF 0%, #F7F5F5 100%);*/
+  /* background-image: linear-gradient(-180deg, #FFFFFF 0%, #fefefa 100%); */
   background-color: #fefefa;
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.5);
 }

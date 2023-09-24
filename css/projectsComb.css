@@ -1,24 +1,26 @@
 #projectsComb {
-	width: 100%;
+  width: 100%;
 }
 
 #projectsComb .mesh {
-  fill:none;
+  fill: none;
   stroke: white;
   stroke-width: 1.5;
 }
 #projectsComb #hexClip {
-  fill:black;
+  fill: black;
 }
 #projectsComb circle {
-  fill:none;
-  stroke:steelblue;
+  fill: none;
+  stroke: steelblue;
 }
 
-#projectsComb svg {
-	-webkit-box-shadow: 0px 0px 109px -10px #bdbdbd;
-    -moz-box-shadow: 0px 0px 109px -10px #bdbdbd;
-  box-shadow: 0px 0px 109px -10px #bdbdbd;
+@media screen {
+  #projectsComb svg {
+    -webkit-box-shadow: 5px 5px 15px #bdbdbd;
+    -moz-box-shadow: 5px 5px 15px #bdbdbd;
+    box-shadow: 5px 5px 15px #bdbdbd;
+  }
 }
 
 #projectsComb image {
