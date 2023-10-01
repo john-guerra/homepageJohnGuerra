@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>John Alexis Guerra Gómez's CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="John Alexis Guerra Gomez CV" />
+    <meta name="author" content="John Alexis Guerra Gomez" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%- include('partials/headersPartial.ejs.html') %>
+  </head>
+
+  <style>
+    /* For PDF export */
+
+    /* For PDF export */
+    body {
+      width: 95%;
+      margin: 0 auto;
+    }
+    @media print {
+      @page {
+        margin: 5mm 0mm 5mm 0mm;
+        size: 17in 18in;
+      }
+    }
+
+    /* .img200 {
+      width: 50%;
+      max-width: 200px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    } */
+
+    hr {
+      margin: 0px;
+    }
+
+    /* New page after inventor  */
+    #achievementsText > div:nth-child(11) {
+      page-break-after: always;
+    }
+
+    /*.experience {*/
+    /*font-size: 120%;*/
+    /*}*/
+  </style>
+
+  <body>
+    <div class="content container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <h1>
+            John Alexis <br />
+            Guerra Gómez
+          </h1>
+          <p class="subtitle">
+            I do <strong>Visual Analytics</strong>, i.e., I include the
+            <strong>user</strong> in the big data analysis/science loop.
+          </p>
+          john.guerra[~at~]gmail.com<br />
+          <a href="http://johnguerra.co">johnguerra.co</a>
+          <br />
+          <a href="http://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
+          <br />
+          <a
+            href="https://twitter.com/duto_guerra"
+            class="twitter-follow-button"
+            data-show-count="false"
+            >Follow @duto_guerra</a
+          >
+          <script>
+            !(function(d, s, id) {
+              var js,
+                fjs = d.getElementsByTagName(s)[0];
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            })(document, "script", "twitter-wjs");
+          </script>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <h2>In a nutshell</h2>
+          <p class="experience">
+            Information Visualization Researcher and Engineer. I help people
+            extract insights from their data using interactive infovis and data
+            science. PhD in Computer Science, Assistant Teaching Professor at
+            <a href="https://www.northeastern.edu/bayarea/"
+              >Northeastern University Bay Area</a
+            >. I conduct research on Visual Analytics, Accessibility, Big data,
+            Human Computer Interaction and Web Development. Formerly at
+            <a
+              href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez"
+              >UCBerkeley</a
+            >,
+            <a
+              href="https://profesores.virtual.uniandes.edu.co/jaguerrag/en/inicio-en/"
+              >Uniandes</a
+            >
+            Colombia, <a href="https://research.yahoo.com/">Yahoo Labs</a>,
+            <a href="http://parc.com">Xerox PARC</a> and
+            <a href="http://duto.org">DUTO</a> .
+          </p>
+          <h4>Experience</h4>
+          <ul class="experience">
+            <li>
+              10 years as a researcher in Information Visualization.
+              <a href="http://johnguerra.co/projects.html">Portfolio</a>
+            </li>
+            <li>17 years as <a href="#projects">a full stack engineer</a></li>
+            <li>
+              11 years on <a href="#teaching">teaching</a> at university level
+            </li>
+            <li>
+              30+ research <a href="#papers">publications</a> at major
+              conferences such as CHI, IEEEVIS, AVI, TRB
+            </li>
+            <li>
+              Part of the Program Committee of toCHI 2016, Creativity and
+              Cognition 2017/2018/2019, Graph Drawing 2017. Reviewer for CHI,
+              IEEEVIS, AVI, EuroVis and UIST
+            </li>
+            <li>
+              15 years as public speaker.
+            </li>
+            <li>
+              Entrepreneur co-founder of <a href="http://duto.co">DUTO</a>,
+              KebSolutions,
+              <a href="http://tweetometro.co">Tweetometro.co</a> and
+              <a href="https://btactile.com">BTactile</a>, with more than
+              <a href="http://duto.org/nosotros/logros/?lang=en"
+                >10 international entrepreneurship awards</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+          <div class="row">
+            <div class="col-xs-6 col-md-12">
+              <h3>My Skills</h3>
+              <img
+                class="svg-inject"
+                src="img/My skills.png"
+                class="img200"
+                alt="My Skils"
+              />
+            </div>
+
+            <div class="col-xs-6 col-md-12">
+              <h3>The tools and techniques I use</h3>
+              <img
+                class="svg-inject"
+                src="img/What I use.png"
+                class="img200"
+                alt="What tools I use"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      <!-- ********************** Achievements *********************-->
+      <%- include('./partials/experiencePartial.ejs.html'); %>
+      <!-- End achievements -->
+
+      <hr />
+
+      <!-- *********** PAPERS ************** -->
+
+      <%- include('./partials/papersPartial.ejs.html') %>
+      <!-- end research -->
+
+      <hr />
+
+      <!-- ***************** PROJECTS *************** -->
+      <section id="projects">
+        <%- include('partials/projectsPartial.ejs.html') %> <%-
+        include('partials/notebooksPartial.ejs.html') %>
+      </section>
+      <!-- end projects -->
+
+      <!-- ***************** STUDENTS ******************* -->
+      <!-- <div class="row students" id="students">
+				<h2>Students</h2>
+				<div class="col-md-1 col-sm-1"></div>
+				<div class="col-md-8 col-sm-12">
+					<div id="studentsViz" class="step"></div>
+					<div id="studentsList"></div>
+				</div>
+				<div class="filler"></div>
+			</div> -->
+      <!-- end photos -->
+    </div>
+    <!--/.fluid-container-->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/svg-injector.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+    <script src="js/experienceTimeline.js"></script>
+    <script src="js/projectsComb.js"></script>
+    <script src="js/papers.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src="js/scroller.js"></script>
+    <script type="text/javascript" src="js/researchStudents.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/papers.js" type="module"></script>
+
+    <script>
+      // Elements to inject
+      var mySVGsToInject = document.querySelectorAll("img.svg-inject");
+
+      // Do the injection
+      SVGInjector(mySVGsToInject);
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-72531610-1", "auto");
+      ga("send", "pageview");
+    </script>
+  </body>
+</html>

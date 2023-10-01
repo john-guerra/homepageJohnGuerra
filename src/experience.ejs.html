@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>John Alexis Guerra Gómez's Experience</title>
+
+    <%- include('partials/headersPartial.ejs.html') %>
+
+    <style>
+      /* For PDF export */
+      body {
+        width: 1175px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content container-fluid">
+      <%- include('./partials/experiencePartial.ejs.html'); %>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <script src="js/svg-injector.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+    <script src="js/experienceTimeline.js"></script>
+    <script src="js/projectsComb.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src="js/scroller.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <!-- <script></script> -->
+  </body>
+</html>

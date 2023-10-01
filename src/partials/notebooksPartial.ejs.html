@@ -1,0 +1,34 @@
+<div class="notebooks">
+  <!-- <h3>My Observable Notebooks</h3> -->
+
+  <div id="observablehq-beeswarmPlotNotebooks-85e7616c"></div>
+  <div id="observablehq-viewof-minLikes-85e7616c"></div>
+  <div id="observablehq-notebooksHtml-85e7616c"></div>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+  />
+  <script type="module">
+    import {
+      Runtime,
+      Inspector,
+    } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/@john-guerra/my-observable-notebooks.js?v=3";
+    new Runtime().module(define, (name) => {
+      if (name === "beeswarmPlotNotebooks")
+        return new Inspector(
+          document.querySelector("#observablehq-beeswarmPlotNotebooks-85e7616c")
+        );
+      if (name === "viewof minLikes")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-minLikes-85e7616c")
+        );
+      if (name === "notebooksHtml")
+        return new Inspector(
+          document.querySelector("#observablehq-notebooksHtml-85e7616c")
+        );
+      return ["filteredNotebooks"].includes(name);
+    });
+  </script>
+</div>

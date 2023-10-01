@@ -20,19 +20,19 @@
         margin: 0 auto;
       }
       @media print {
-        @page { 
+        @page {
           margin: 10mm 0mm 10mm 0mm;
           size: 12.75in 13.5in;
         }
       }
-
-
-
     </style>
   </head>
   <body>
     <div class="container-xl">
-      <main class="row">
+      <!-- ******************** Research ****************** -->
+      <section class="row" id="research">
+        <h2>Academic contributions</h2>
+
         <form id="orderBy">
           Order by:
           <label class="form-check-label"
@@ -66,9 +66,11 @@
           >
         </form>
         <div id="papersFilters"></div>
-
-        <div id="papers"></div>
-      </main>
+        <main class="row">
+          <div id="papers"></div>
+        </main>
+      </section>
+      <!-- end research -->
     </div>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
