@@ -55,6 +55,8 @@ function doNetwork(data) {
 
   svg.attr("width", width).attr("height", height);
 
+  console.log("students width", width, "height", height);
+
   function forceBoundary() {
     for (var i = 0, n = graph.nodes.length, node; i < n; ++i) {
       node = graph.nodes[i];
@@ -74,14 +76,14 @@ function doNetwork(data) {
         .id(function (d) {
           return d.nickname;
         })
-        .distance(50)
-        .strength(0.1)
+        .distance(60)
+        .strength(0.05)
     )
-    .force("collide", d3.forceCollide(R / 2).iterations(4))
+    .force("collide", d3.forceCollide(R * 0.6).iterations(4))
     .force("charge", d3.forceManyBody().strength(-150))
     // .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("x", d3.forceX(width / 2).strength(0.05))
-    .force("y", d3.forceY(height / 2).strength(0.05))
+    .force("x", d3.forceX(width / 2).strength(0.05 * height/width))
+    .force("y", d3.forceY(height / 2).strength(0.05 * width/height))
     // .force("borderX", d3.forceX(function (d) {
     //   if (d.px<=0) { d.x=1; }
     //   if (d.px>=width) { d.x=width-1; }

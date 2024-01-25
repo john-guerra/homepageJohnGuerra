@@ -88,8 +88,8 @@ function update(data) {
   desc
     .filter(function(d) {
       return (
-        d["University ID Number 2"] &&
-        d["University ID Number 2"] !== d["University ID Number Student 1"]
+        d["University ID Number Student 2"] &&
+        d["University ID Number Student 2"] !== d["University ID Number Student 1"]
       );
     })
     .append("div")
@@ -177,7 +177,9 @@ function update(data) {
 function preProcess(data) {
   let dictStudentProj = {};
   console.log("Received " + data.length);
+  console.log("Disabled", data.filter(d => d.Disabled !== null && d.Disabled !== ""));
   data
+    .filter(d => d.Disabled === null || d.Disabled === "")
     .map((d) => {
       d["Timestamp"] = new Date(d["Timestamp"]);
       return d;
