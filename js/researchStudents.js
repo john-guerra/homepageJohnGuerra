@@ -339,6 +339,7 @@ function doProjectList() {
     nameAndPhoto
       .append("div")
       .style("display", "flex")
+      .style("flex-wrap", "wrap")
       .selectAll(".studentProject")
       .data((d) => projectToStudents.get(d.project))
       .enter()
