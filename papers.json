@@ -7,8 +7,10 @@
 		"venue": "In Proceedings of 6th International Research Symposium on Problem Based Learning, Bogotá, Colombia",
 		"date": "07/01/2017",
 		"dateStr": "July 2017",
-		"type": "Conference",
-		"ranking": ["Publindex C"],
+		"type": "Symposium",
+		"ranking": [
+			"Publindex C"
+		],
 		"ISSN": "2446-3833",
 		"ISBN": "978-87-7112-637-2",
 		"category": "Visualization"
@@ -16,7 +18,8 @@
 	{
 		"year": "2017",
 		"authors": "Sergio Cabrero, Jack Jansen, Thomas Roggla, John Alexis Guerra-Gomez, David A. Shamma, and Pablo Cesar",
-		"link": "papers/MMSYS2017-ADE2016-Dataset.pdf",
+		"link_paper": "papers/MMSYS2017-ADE2016-Dataset.pdf",
+		"link": "https://dl.acm.org/doi/10.1145/3083187.3083213",
 		"title": "CWI-ADE2016 Dataset: Sensing nightclubs through 40 million BLE packets",
 		"venue": "in Proceedings of the ACM Multimedia Systems Conference (ACM MMsys 2017), Taiwan",
 		"dateStr": "June 20-23 2017",
@@ -49,13 +52,17 @@
 		"date": "10/24/2016",
 		"dateStr": "Oct 2016",
 		"type": "Workshop",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"category": "Network Visualization"
 	},
 	{
 		"year": "2016",
 		"authors": "John Alexis Guerra-Gomez, Cati Boulanger, Sanjay Kairam, David A. Shamma",
-		"link": "papers/avi-treemaps_camera_ready.pdf",
+		"link_paper": "papers/avi-treemaps_camera_ready.pdf",
+		"link": "https://dl.acm.org/doi/10.1145/2909132.2909280",
 		"title": "Identifying Best Practices for Visualizing Photo Statistics and Galleries using Treemaps",
 		"doi": "http://dx.doi.org/10.1145/2909132.2909280",
 		"venue": "In Proceedings of the International Working Conference on Advanced Visual Interfaces (AVI '16), Paolo Buono, Rosa Lanzilotti, and Maristella Matera (Eds.). ACM, New York, NY, USA, 60-63",
@@ -64,47 +71,57 @@
 		"ISBN": "978-1-4503-4131-8",
 		"ISSN": "0302-9743",
 		"type": "Conference",
-		"ranking": ["Core B"],
+		"ranking": [
+			"Core B"
+		],
 		"category": "Photo Visualization"
 	},
 	{
 		"year": "2016",
 		"authors": "John Alexis Guerra-Gomez, Aaron Wilson, Juan Liu, Dan Davies, Peter Jarvis and Eric Bier",
-		"link": "papers/network_explorer_avi_short.pdf",
-		"doi": "http://dx.doi.org/10.1145/2909132.2909281",
+		"link_paper": "papers/network_explorer_avi_short.pdf",
+		"link": "http://dx.doi.org/10.1145/2909132.2909281",
 		"title": "Design, Implementation, and Real World Deployment of the Network Explorer, a Large Network Visual Analytics Tool",
 		"venue": "In Proceedings of the International Working Conference on Advanced Visual Interfaces (AVI '16), Paolo Buono, Rosa Lanzilotti, and Maristella Matera (Eds.). ACM, New York, NY, USA, 108-111",
 		"date": "07/01/2016",
 		"dateStr": "July 2016",
 		"type": "Conference",
-		"ranking": ["Core B"],
+		"ranking": [
+			"Core B"
+		],
 		"category": "Network Visualization"
 	},
 	{
 		"year": "2016",
 		"authors": "Frank Bentley, Joseph ‘Jofish’ Kaye, David A. Shamma, John Alexis Guerra-Gomez",
-		"link": "papers/Bentley_CHI2016.pdf",
-		"doi": "http://dx.doi.org/10.1145/2858036.2858255",
+		"link_paper": "papers/Bentley_CHI2016.pdf",
+		"link": "http://dx.doi.org/10.1145/2858036.2858255",
 		"title": "The 32 Days Of Christmas: Understanding Temporal Intent in Image Search Queries",
 		"venue": "In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems (CHI '16). ACM, New York, NY, USA, 5710-5714",
 		"date": "05/07/2016",
 		"dateStr": "May 2016",
 		"type": "Conference",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"category": "Photo Visualization"
 	},
 	{
 		"year": "2016",
-		"link": "papers/Kairam-CHI2016.pdf",
+		"link_paper": "papers/Kairam-CHI2016.pdf",
 		"authors": "Sanjay Kairam, Jofish Kaye, John Alexis Guerra-Gomez, David Ayman Shamma",
-		"doi": "http://dx.doi.org/10.1145/2858036.2858451",
+		"link": "http://dx.doi.org/10.1145/2858036.2858451",
 		"title": "Snap Decisions? How Users, Content, and Aesthetics Interact to Shape Photo Sharing Behaviors",
 		"venue": "In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems (CHI '16). ACM, New York, NY, USA, 113-124",
 		"date": "05/07/2016",
 		"dateStr": "May 2016",
 		"type": "Conference",
 		"ISBN": "978-1-4503-3362-7",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"category": "Photo Visualization"
 	},
 	{
@@ -122,14 +139,17 @@
 		"year": "2015",
 		"authors": "John Alexis Guerra-Gomez, Michael L. Pack, Catherine Plaisant, Ben Shneiderman",
 		"link": "http://www.sciencedirect.com/science/article/pii/S0968090X14003301",
-		"title": "Discovering temporal changes in hierarchical transportation data: Visual analytics &amp; text reporting tools",
+		"link_paper": "papers/2015_journal_TRC_Treeversity.pdf",
+		"title": "Discovering temporal changes in hierarchical transportation data: Visual analytics & text reporting tools",
 		"doi": "http://dx.doi.org/10.1016/j.trc.2014.11.007",
 		"venue": "Transportation Research Part C: Emerging Technologies, Volume 51, February 2015, Pages 167-179",
 		"ISSN": "0968-090X",
 		"date": "01/01/2015",
 		"dateStr": "Jan 2015",
 		"type": "Journal",
-		"ranking": ["Scopus Q1"],
+		"ranking": [
+			"Scopus Q1"
+		],
 		"category": "Tree Visualization"
 	},
 	{
@@ -146,15 +166,19 @@
 	{
 		"year": "2015",
 		"authors": "Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar, Leilani Gilpin, John Alexis Guerra-Gomez, and Daniel Davies",
-		"link": "http://www.aaai.org/ocs/index.php/IAAI/IAAI15/paper/view/9705",
+		"link": "https://cdn.aaai.org/ojs/19047/19047-13-22899-1-10-20211013.pdf",
 		"title": "Graph analysis for detecting fraud, waste, and abuse in healthcare data",
 		"venue": "In Proceedings of the Twenty-Ninth AAAI Conference on Artificial Intelligence (AAAI'15). AAAI Press 3912-3919",
 		"date": "01/25/2015",
-		"comment": { "ISBN": "0-262-51129-0" },
+		"comment": {
+			"ISBN": "0-262-51129-0"
+		},
 		"ISBN": "978-1-57735-698-1",
 		"dateStr": "Jan 2015",
 		"type": "Conference",
-		"ranking": ["Core A*"],
+		"ranking": [
+			"Core A*"
+		],
 		"category": "Network Visualization"
 	},
 	{
@@ -165,24 +189,32 @@
 		"venue": "AI Magazine, 37(2), 33-47",
 		"date": "07/01/2016",
 		"ISSN": "0738-4602",
+		"doi": "https://doi.org/10.1609/aimag.v37i2.2630",
 		"dateStr": "Jun 2016",
 		"type": "Journal",
-		"ranking": ["Scopus Q2"],
+		"ranking": [
+			"Scopus Q2"
+		],
 		"category": "Network Visualization"
 	},
 	{
 		"year": "2013",
-		"authors": "John Alexis Guerra-Gomez, Michael L. Pack, Catherine Plaisant, Ben Shneiderman, B",
-		"link": "papers/TreeVersity_InfoViz2013_preprint.pdf",
+		"authors": "John Alexis Guerra-Gomez, Michael L. Pack, Catherine Plaisant, Ben Shneiderman",
+		"link_paper": "papers/TreeVersity_InfoViz2013_preprint.pdf",
+		"link": "https://ieeexplore.ieee.org/document/6634101",
 		"title": "Visualizing Change over Time Using Dynamic Hierarchies: TreeVersity2 and the StemView",
-		"venue": "IEEE transactions on visualization and computer graphics, 19(12), 2566–75",
-		"doi": "doi:10.1109/TVCG.2013.231",
+		"venue": "IEEE Transactions on Visualization and Computer Graphics ( Volume: 19, Issue: 12, December 2013)",
+		"doi": "https://doi.org/10.1109/TVCG.2013.231",
 		"date": "10/13/2013",
 		"dateStr": "Oct 2013",
 		"ISSN": "1077-2626",
-		"type": "Conference",
-		"ranking": ["Scopus Q1", "Core A*"],
-		"category": "Tree Visualization"
+		"type": "Journal",
+		"ranking": [
+			"Scopus Q1",
+			"Core A*"
+		],
+		"category": "Tree Visualization",
+		"comments": "IEEEVIS 2013, also published in TVCG"
 	},
 	{
 		"year": "2013",
@@ -202,25 +234,30 @@
 		"link": "http://amonline.trb.org/2vdrfh/1",
 		"award": "<a href=\"http://www.trbvis.org/storage/2013MinutesABJ95JanuaryTRB.pdf\">2013 Greg Herrington Award</a> for Excellence in Visualization Research from the Transportation Research Board of the National Academies of Sciences Transportation Research Board (TRB).",
 		"title": "TreeVersity: Interactive Visualizations for Comparing Hierarchical Datasets",
-		"venue": "In Proceedings of the Transportation Research Board 92th annual meeting, The National Academies, Washington, DC (2013)",
+		"venue": "Transportation Research Record Volume 2392, Issue 1: Statistical Methods and Visualization",
 		"date": "01/25/2013",
 		"dateStr": "Jan 2013",
-		"type": "Conference",
+		"type": "Journal",
 		"ISSN": "0361-1981",
-		"ranking": ["ERA2010 A"],
-		"category": "Tree Visualization"
+		"ranking": [
+			"ERA2010 A"
+		],
+		"category": "Tree Visualization",
+		"comments": "Presented at the TRB conference, published in a sage journal"
 	},
 	{
 		"year": "2012",
 		"authors": "John Alexis Guerra-Gomez, Audra Buck-Coleman, Catherine Plaisant, Ben Shneiderman",
-		"link": "http://www.designresearchsociety.org/docs-procs/drs2012/drs2012-2.pdf",
+		"link": "https://dl.designresearchsociety.org/drs-conference-papers/drs2012/researchpapers/46/",
 		"title": "TreeVersity: Visualizing Hierarchical Data for Value with Topology Changes",
 		"venue": "Design Research Society Conference Bangkok 2012",
 		"date": "07/01/2012",
 		"dateStr": "July 2012",
 		"ISBN": "978-616-551-574-0",
 		"type": "Conference",
-		"ranking": ["ERA2010 B"],
+		"ranking": [
+			"ERA2010 B"
+		],
 		"category": "Tree Visualization"
 	},
 	{
@@ -234,7 +271,10 @@
 		"ISBN": "978-1-4503-0228-9",
 		"type": "Conference",
 		"doi": "https://doi.org/10.1145/1978942.1979196",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"category": "Time Visualization"
 	},
 	{
@@ -258,7 +298,11 @@
 		"dateStr": "Dec 2011",
 		"type": "Tech Report",
 		"category": "Tree Visualization",
-		"tags": ["Tree Visualization", "Social Networks", "Facebook"]
+		"tags": [
+			"Tree Visualization",
+			"Social Networks",
+			"Facebook"
+		]
 	},
 	{
 		"year": "2011",
@@ -282,7 +326,10 @@
 		"date": "10/01/2011",
 		"dateStr": "Oct 2011",
 		"category": "Tree Visualization",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"type": "Conference"
 	},
 	{
@@ -321,13 +368,16 @@
 	{
 		"year": "2011",
 		"authors": "John Alexis Guerra-Gomez, Krist Wongsuphasawat, Taowei David Wang, Michael Pack and Catherine Plaisant",
-		"link": "http://hcil2.cs.umd.edu/trs/2010-17/2010-17.pdf",
+		"link": "2011_conference_TRB_Analyzing_Incident_Management_Event_Sequences_with_Interactive_Visualization.pdf",
+		"link_conference": "https://trid.trb.org/Results?txtKeywords=ANALYZING%20INCIDENT%20MANAGEMENT&txtTitle=&txtSerial=%22Transportation%20Research%20Board%2090th%20Annual%20Meeting%22&ddlSubject=&txtReportNum=&ddlTrisfile=&txtIndex=&specificTerms=&txtAgency=&sourceagency=&txtAuthor=&ddlResultType=&chkFulltextOnly=&abstractsOnly=&recordLanguage=&subjectLogic=or&termsLogic=or&dateStart=&dateEnd=&rangeType=emptyrange&sortBy=published&sortOrder=DESC&rpp=25#/View/1092725",
 		"title": "Analyzing Incident Management Event Sequences with Interactive Visualization",
 		"venue": "In Proceedings of the Transportation Research Board 90th annual meeting, The National Academies, Washington, DC",
 		"date": "1/25/2011",
 		"dateStr": "Jan 2011",
 		"type": "Conference",
-		"ranking": ["ERA2010 A"],
+		"ranking": [
+			"ERA2010 A"
+		],
 		"category": "Time Visualization"
 	},
 	{
@@ -456,14 +506,20 @@
 	{
 		"year": "2017",
 		"type": "Workshop",
-		"link": "papers/Kangaroo_fundation_viz.pdf",
+		"link_paper": "papers/Kangaroo_fundation_viz.pdf",
+		"link": "https://ieeexplore.ieee.org/abstract/document/8387495",
 		"authors": "Deisy J. Díaz, Julieta Villegas, John Alexis Guerra-Gomez, Nathalie Charpak, José Tiberio Hernádez",
 		"title": "Visual Tools for the Exploration of Growth Data in a cohort of Kangaroo Infants during their first year of life",
 		"venue": "Proceedings of the 2017 Workshop on Visual Analytics in Healthcare (VAHC 2017)",
 		"date": "10/01/2017",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"dateFmt": "Oct 2017",
-		"category": "Visualization"
+		"category": "Visualization",
+		"Electronic ISBN": "978-1-5386-3187-4",
+		"ISBN": "978-1-5386-3188-1"
 	},
 	{
 		"year": "2015",
@@ -488,18 +544,20 @@
 		"category": "Visualization"
 	},
 	{
-		"year": "2019",
+		"year": "2018",
 		"type": "Journal",
 		"authors": "Nychol Bazurto-Gomez, Carlos F. Torres, Raul Gutierrez, Mario Chamorro, Claire Bulger, Tiberio Hernandez, John Alexis Guerra-Gomez",
-		"title": "Understanding world happiness: An information visualization application case of the World Happiness Report",
+		"title": "An Information Visualization Application Case to Understand the World Happiness Report",
 		"venue": "Communications in Computer and Information Science, Springer",
 		"date": "7/12/2018",
-		"link": "papers/world_happiness_report_journal.pdf",
-		"link_journal": "https://www.springer.com/gp/book/9783030052690",
+		"link_paper": "papers/world_happiness_report_journal.pdf",
+		"link": "https://www.springer.com/gp/book/9783030052690",
 		"volume": "Human-Computer Interaction 4th Iberoamerican Workshop, HCI-Collab 2018, Popayán, Colombia, April 23–27, 2018, Revised Selected Papers",
 		"dateFmt": "July 2018",
 		"category": "Visualization",
-		"ranking": ["Scopus Q1"],
+		"ranking": [
+			"Scopus Q1"
+		],
 		"ISSN": "1865-0929",
 		"ISBN": "978-3-030-05270-6",
 		"doi": "10.1007/978-3-030-05270-6",
@@ -535,18 +593,21 @@
 		"year": "2019",
 		"type": "Journal",
 		"authors": "Pierre Raimbaud, Jaime Camilo Espitia Castillo, John Alexis Guerra-Gomez",
-		"title": "A Visual Analytics Framework Case Study:Understanding Colombia’s National Administrative Departmentof Statistics Datasets",
+		"title": "A Visual Analytics Framework Case Study: Understanding Colombia’s National Administrative Department of Statistics Datasets",
 		"journal": "Human-Computer Interaction",
 		"publisher": "Springer",
-		"date": "12/1/2019",
-		"link_journal": "https://link.springer.com/chapter/10.1007/978-3-030-37386-3_5",
-		"link": "papers/Pierre_JornadasHci2019_Extracting_Classification_DANE.pdf",
-		"volume": "Human-Computer Interaction 5th Iberoamerican Workshop, HCI-Collab 2019",
+		"date": "12/15/2019",
+		"link": "https://link.springer.com/chapter/10.1007/978-3-030-37386-3_5",
+		"link_paper": "papers/Pierre_JornadasHci2019_Extracting_Classification_DANE.pdf",
+		"venue": "Communications in Computer and Information Science (CCIS, volume 1114)",
+		"volume": "1114",
 		"ISBN": "978-3-030-37385-6",
 		"Online-ISBN": "978-3-030-37386-3",
 		"dateFmt": "December 2019",
 		"category": "Visualization",
-		"doi": "https://doi.org/10.1007/978-3-030-37386-3_5"
+		"doi": "https://doi.org/10.1007/978-3-030-37386-3_5",
+		"Electronic ISSN": "1865-0937",
+		"Print ISSN": "1865-0929"
 	},
 	{
 		"year": "2019",
@@ -554,13 +615,14 @@
 		"authors": "Diego Prens, Iván Alfonso, Kelly Garcés, John Alexis Guerra-Gomez",
 		"title": "Continuous Delivery of Software on IoT Devices",
 		"venue": "MODELS 2019",
-		"date": "09/12/2019",
-		"link": "papers/MODELS_2019_paper_226.pdf",
-		"link_conference": "https://dl.acm.org/doi/10.1109/MODELS-C.2019.00112",
+		"date": "09/15/2019",
+		"link_paper": "papers/MODELS_2019_paper_226.pdf",
+		"link": "https://dl.acm.org/doi/10.1109/MODELS-C.2019.00112",
 		"doi": "https://doi.org/10.1109/MODELS-C.2019.00112",
 		"dateFmt": "September 2019",
 		"category": "Other",
-		"ranking": []
+		"ranking": [],
+		"ISBN": "978-1-7281-5125-0"
 	},
 	{
 		"year": "2019",
@@ -574,21 +636,25 @@
 		"volume": "",
 		"dateFmt": "July 2019",
 		"category": "Visualization",
-		"ranking": ["Core C"]
+		"ranking": [
+			"Core C"
+		]
 	},
 	{
 		"year": "2019",
 		"type": "Poster",
 		"authors": "Ricardo Gonzalez, Carlos Gonzalez, John Alexis Guerra-Gomez",
 		"title": "Tactiled: Towards More and Better Tactile Graphics Using Machine Learning",
-		"venue": "ASSETS 2019",		
-		"link": "papers/Ricardo_poster_assets_2019_RGP_Last.pdf",
-		"link_journal": "https://dl.acm.org/citation.cfm?id=3354613",
-		"volume": "Proceeding of the ASSETS '19 The 21st International ACM SIGACCESS Conference on Computers and Accessibility",
+		"venue_short": "ASSETS 2019",
+		"link_paper": "papers/Ricardo_poster_assets_2019_RGP_Last.pdf",
+		"link": "https://dl.acm.org/citation.cfm?id=3354613",
+		"venue": "Proceeding of the ASSETS '19 The 21st International ACM SIGACCESS Conference on Computers and Accessibility",
 		"date": "10/28/2019",
 		"dateFmt": "Oct 2019",
 		"category": "Accessibility",
-		"ranking": ["Qualis A2"],
+		"ranking": [
+			"Qualis A2"
+		],
 		"ISBN": "978-1-4503-6676-2",
 		"doi": "https://doi.org/10.1145/3308561.3354613"
 	},
@@ -597,12 +663,12 @@
 		"type": "Poster",
 		"authors": "Armando Acosta, Ricardo Portocarrero, Adriana Beltran Ostos, Hoover Quitian Reyes, Camila Camargo Rodriguez, Sergio Moreno, John Guerra-Gomez",
 		"title": "Visual Analytics Applied to the Monitoring of High-Cost Medicines used in Rheumatology, in a Hospital of High Complexityin Latin America",
-		"venue": "PANLAR 2020",
+		"venue": "Congreso Panamericano de Reumatología, PANLAR 2020",
 		"date": "09/09/2020",
 		"link": "papers/Abstract Analitica Visual en reumatologia.pdf",
 		"link_journal": "https://en.panlar.org/congreso-panamericano-de-reumatologia-2020",
 		"dateFmt": "Sep 2020",
-		"category": "Other"
+		"category": "Human Computer Interaction"
 	},
 	{
 		"year": "2020",
@@ -612,33 +678,37 @@
 		"date": "03/03/2020",
 		"link": "https://arxiv.org/abs/2003.01304",
 		"dateFmt": "Mar 2020",
-		"category": "Other"
+		"category": "Human Computer Interaction"
 	},
 	{
 		"year": "2020",
 		"authors": "Julián A. Fernández-Niño, John A. Guerra-Gómez, Alvaro J. Idrovo",
-		"link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7778468/",
+		"link": "https://iris.paho.org/handle/10665.2/53159",
 		"title": "Multimorbidity patterns among COVID-19 deaths: proposal for the construction of etiological models",
-		"venue": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7778468/",
-		"doi": "doi:10.26633/RPSP.2020.166",
+		"venue": "Pan American Journal of Public Health, 44, e166, 2020",
+		"doi": "https://doi.org/10.26633/RPSP.2020.166",
 		"date": "12/30/2020",
 		"dateStr": "Dec 2020",
 		"type": "Journal",
 		"ranking": [],
-		"category": "Other"
+		"category": "Other",
+		"ISSN": "1680 5348"
 	},
 	{
 		"year": "2021",
 		"authors": "Aditeya Pandey, Uzma Haque Syeda, Chaitya Shah, John Alexis Guerra-Gomez, Michelle Borkin",
 		"link": "https://ieeexplore.ieee.org/abstract/document/9371413",
 		"title": "A State-of-the-Art Survey of Tasks for Tree Design and Evaluation with a Curated Task Dataset",
-		"venue": "IEEE transactions on visualization and computer graphics",
+		"venue": "IEEE transactions on visualization and computer graphics 2021",
 		"doi": "10.1109/TVCG.2021.3064037",
 		"date": "3/5/2021",
 		"dateStr": "Mar 2021",
 		"ISSN": "1077-2626",
 		"type": "Conference",
-		"ranking": ["Scopus Q1", "Core A*"],
+		"ranking": [
+			"Scopus Q1",
+			"Core A*"
+		],
 		"category": "Tree Visualization"
 	},
 	{
@@ -651,8 +721,11 @@
 		"date": "10/26/2021",
 		"dateStr": "Oct 2021",
 		"type": "Journal",
-		"ranking": ["Scopus Q1"],
-		"category": "Other"
+		"ranking": [
+			"Scopus Q1"
+		],
+		"category": "Other",
+		"ISSN": "1932-6203"
 	},
 	{
 		"year": "2021",
@@ -663,9 +736,11 @@
 		"venue": "Structural Control and Health Monitoring 2022",
 		"date": "11/14/2021",
 		"dateStr": "Nov 2021",
-		"issn": "15452255, 15452263",
+		"issn": "1545-2263",
 		"type": "Journal",
-		"ranking": ["Scopus Q1"],
+		"ranking": [
+			"Scopus Q1"
+		],
 		"category": "Other"
 	},
 	{
@@ -678,8 +753,11 @@
 		"date": "04/29/2022",
 		"dateStr": "Apr 2022",
 		"type": "Conference",
-		"ranking": ["Core A*", "Scopus Q1"],
-		"category": "Other"
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
+		"category": "Human Computer Interaction"
 	},
 	{
 		"year": "2022",
@@ -691,7 +769,44 @@
 		"date": "04/29/2022",
 		"dateStr": "Apr 2022",
 		"type": "Conference",
-		"ranking": ["Core A*", "Scopus Q1"],
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
 		"category": "Accessibility"
+	},
+	{
+		"year": "2023",
+		"authors": "Leon Salcedo, Maria Fernanda Zuniga-Zabala, John Alexis Guerra-Gomez",
+		"link": "https://link.springer.com/chapter/10.1007/978-3-031-55319-6_12",
+		"title": "Guitar Improvisation Preparation and Practice: A Digital-Assisted Approach Integrating Set Theory and Mechanical Gesture Exploration",
+		"venue": "ArtsIT 2023, LNICST 564, pp. 1–20, 2024",
+		"doi": "https://doi.org/10.1007/978-3-031-55319-6_12",
+		"date": "11/29/2023",
+		"dateStr": "Nov 2023",
+		"type": "Journal",
+		"isbn": "978-3-031-55319-6",
+		"issn": "1867-8211",
+		"ranking": [],
+		"category": "Human Computer Interaction",
+		"comment": "It is also a conference"
+	},
+	{
+		"year": "2024",
+		"authors": "Yian Chen, Lana Do, Liheng Yi, Ricardo Baeza-Yates, and John Alexis Guerra-Gomez",
+		"link": "https://link.springer.com/conference/hci-collab",
+		"title": "Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting.",
+		"venue": "X Jornadas Iberoamericanas de Interacción Humano-Computador 2024",
+		"doi": "",
+		"date": "06/04/2024",
+		"dateStr": "Jun 2024",
+		"type": "Conference",
+		"isbn": "",
+		"issn": "",
+		"ranking": [],
+		"publisher": "Springer, Cham",
+		"journal": "Communications in Computer and Information Science, Springer, Cham.",
+		"category": "Human Computer Interaction",
+		"comment": "// [1] Y. Chen, L. Do, L. Yi, R. Baeza-Yates, and J. A. Guerra-Gomez. (2024). Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. Pending publication in Human-Computer Interaction. HCI-COLLAB 2024. Communications in Computer and Information Science, Springer, Cham."
 	}
 ]

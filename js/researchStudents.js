@@ -1,14 +1,17 @@
 /* globals d3, Tabletop, scroller */
-var urlHtml = "1KiS9NDIoduptAiWL5UybvfQ3KzF91f3ikQ0vk3nUNUQ";
-var graph, simulation;
-var dicStudents = d3.map(),
+let urlHtml = "1KiS9NDIoduptAiWL5UybvfQ3KzF91f3ikQ0vk3nUNUQ";
+let graph,
+  simulation,
+  projects = [],
+  projectToStudents = d3.map();
+let dicStudents = d3.map(),
   selected = [],
   R = 60;
 function doNetwork(data) {
-  var container = d3.select("#studentsViz").attr("class", "step");
-  var svg = container.append("svg");
+  let container = d3.select("#studentsViz").attr("class", "step");
+  let svg = container.append("svg");
 
-  var dicTopics = d3.map(),
+  let dicTopics = d3.map(),
     r = d3.scaleLinear().range([20, 60]),
     width = container.node().offsetWidth,
     height = 600,
@@ -46,10 +49,10 @@ function doNetwork(data) {
       ]),
     line = d3
       .line()
-      .x(function (d) {
+      .x(function(d) {
         return d.x;
       })
-      .y(function (d) {
+      .y(function(d) {
         return d.y;
       });
 
@@ -58,7 +61,7 @@ function doNetwork(data) {
   console.log("students width", width, "height", height);
 
   function forceBoundary() {
-    for (var i = 0, n = graph.nodes.length, node; i < n; ++i) {
+    for (let i = 0, n = graph.nodes.length, node; i < n; ++i) {
       node = graph.nodes[i];
       if (node.x > width) node.x = width;
       if (node.x < 0) node.x = 0;
@@ -73,7 +76,7 @@ function doNetwork(data) {
       "link",
       d3
         .forceLink()
-        .id(function (d) {
+        .id(function(d) {
           return d.nickname;
         })
         .distance(60)
@@ -82,8 +85,8 @@ function doNetwork(data) {
     .force("collide", d3.forceCollide(R * 0.6).iterations(4))
     .force("charge", d3.forceManyBody().strength(-150))
     // .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("x", d3.forceX(width / 2).strength(0.05 * height/width))
-    .force("y", d3.forceY(height / 2).strength(0.05 * width/height))
+    .force("x", d3.forceX(width / 2).strength((0.05 * height) / width))
+    .force("y", d3.forceY(height / 2).strength((0.05 * width) / height))
     // .force("borderX", d3.forceX(function (d) {
     //   if (d.px<=0) { d.x=1; }
     //   if (d.px>=width) { d.x=width-1; }
@@ -124,31 +127,40 @@ function doNetwork(data) {
   // }
 
   // function drawNode(d) {
-  //   var dr =  d.type==="topic" ? r(d.numberStudents): 40;
+  //   let dr =  d.type==="topic" ? r(d.numberStudents): 40;
   //   context.moveTo(d.x + dr, d.y);
   //   context.arc(d.x, d.y, dr, 0, 2 * Math.PI);
   //   context.fillText(d.name, d.x, d.y);
   // }
 
   function getGraph(data) {
-    var graph = {};
+    let graph = {};
 
     dicStudents = d3.map();
     dicTopics = d3.map();
     graph.nodes = [];
-    data.forEach(function (d) {
+    data.forEach(function(d) {
       d.topics = d.topics.split(";");
-      dicStudents.set(d.nickname, d);
-      d.topics.forEach(function (t) {
-        var subTopics = t.split(",");
 
-        var prevSt = null;
-        subTopics.forEach(function (st) {
+      if (!projectToStudents.has(d.project)) {
+        projectToStudents.set(d.project, []);
+        if (d.type !== "topic") projects.push(d);
+      }
+      projectToStudents.set(
+        d.project,
+        projectToStudents.get(d.project).concat([d.nickname])
+      );
+      dicStudents.set(d.nickname, d);
+      d.topics.forEach(function(t) {
+        let subTopics = t.split(",");
+
+        let prevSt = null;
+        subTopics.forEach(function(st) {
           st = st.trim();
           if (!dicTopics.has(st)) {
             dicTopics.set(st, []);
           }
-          var studentListOnTopic = dicTopics.get(st);
+          let studentListOnTopic = dicTopics.get(st);
           studentListOnTopic.push(prevSt ? prevSt : d.nickname);
           dicTopics.set(st, studentListOnTopic);
           prevSt = st;
@@ -160,12 +172,12 @@ function doNetwork(data) {
     graph.links = [];
 
     r.domain(
-      d3.extent(dicTopics.entries(), function (d) {
+      d3.extent(dicTopics.entries(), function(d) {
         return d.value.length;
       })
     );
     graph.nodes = graph.nodes.concat(
-      dicTopics.entries().map(function (t) {
+      dicTopics.entries().map(function(t) {
         return {
           name: t.key,
           nickname: t.key,
@@ -175,8 +187,8 @@ function doNetwork(data) {
       })
     );
 
-    dicTopics.each(function (studentListOnTopic, t) {
-      studentListOnTopic.forEach(function (s) {
+    dicTopics.each(function(studentListOnTopic, t) {
+      studentListOnTopic.forEach(function(s) {
         graph.links.push({
           source: s,
           target: t,
@@ -196,7 +208,7 @@ function doNetwork(data) {
     simulation.force("link").links(graph.links);
 
     // simulation.stop();
-    d3.range(500).forEach(function () {
+    d3.range(500).forEach(function() {
       simulation.alpha(1).tick();
     });
     simulation.alpha(1).restart();
@@ -218,28 +230,28 @@ function doNetwork(data) {
         .on("end", dragended)
     );
 
-    var nodes = container.selectAll(".node").data(graph.nodes);
+    let nodes = container.selectAll(".node").data(graph.nodes);
 
-    var nodesEnter = nodes
+    let nodesEnter = nodes
       .enter()
       .append("div")
       .attr("class", "node")
-      .classed("student", function (d) {
+      .classed("student", function(d) {
         return d.type !== "topic";
       })
       .style("position", "absolute")
-      .each(function (d) {
+      .each(function(d) {
         // Set background
         if (d.type === "topic") {
           d3.select(this)
             .style("background-color", c(d.name))
-            .text(function (d) {
+            .text(function(d) {
               return d.name;
             });
         } else {
           d3.select(this)
             // .style("background-image", "url("+d.photo+")")
-            .attr("id", function (d) {
+            .attr("id", function(d) {
               return d.nickname;
             })
             .style("width", R + "px")
@@ -257,16 +269,16 @@ function doNetwork(data) {
         }
       });
 
-    var links = svg.selectAll(".link").data(graph.links);
+    let links = svg.selectAll(".link").data(graph.links);
 
-    var linksEnter = links
+    let linksEnter = links
       .enter()
       .append("path")
       .attr("class", "link")
-      .attr("d", function (d) {
+      .attr("d", function(d) {
         return line([d.source, d.target]);
       })
-      .style("stroke", function (d) {
+      .style("stroke", function(d) {
         return c(d.target.name);
       });
 
@@ -274,14 +286,14 @@ function doNetwork(data) {
       nodes
         .merge(nodesEnter)
         // .filter(function (d) { return !d.fixed; })
-        .style("top", function (d) {
+        .style("top", function(d) {
           return d.y + "px";
         })
-        .style("left", function (d) {
+        .style("left", function(d) {
           return d.x + "px";
         });
 
-      links.merge(linksEnter).attr("d", function (d) {
+      links.merge(linksEnter).attr("d", function(d) {
         return line([d.source, d.target]);
       });
 
@@ -307,54 +319,64 @@ function doNetwork(data) {
   update(data);
 }
 
-function doProjectList(data) {
-  var studentList = d3.select("#studentsList");
+function doProjectList() {
+  let studentList = d3.select("#studentsList");
 
-  var lists = studentList.selectAll(".studentList").data(
-    data.filter(function (d) {
-      return d.type !== "topic";
-    })
-  );
+  let lists = studentList.selectAll(".studentList").data(projects);
 
-  lists.enter().append("div").attr("class", "studentList").call(createStudent);
+  lists
+    .enter()
+    .append("div")
+    .attr("class", "studentList")
+    .call(createStudent);
 
   function createStudent(sel) {
-    var row = sel.append("div").attr("class", "row step opacable");
+    let row = sel.append("div").attr("class", "row step opacable");
 
-    var nameAndPhoto = row.append("div").attr("class", "col-4");
+    let nameAndPhoto = row.append("div").attr("class", "col-4");
 
+    // Draw multiple boxes for each student in the project
     nameAndPhoto
       .append("div")
-      .attr("class", "studentPhotoHolder")
-      .attr("id", function (d) {
-        return d.nickname;
-      })
-      .style("height", "150px");
-
-    nameAndPhoto
+      .style("display", "flex")
+      .selectAll(".studentProject")
+      .data((d) => projectToStudents.get(d.project))
+      .enter()
       .append("div")
-      .attr("class", "studentName")
-      .call(function (selName) {
-        selName
-          .append("a")
-          .attr("href", function (d) {
-            return d.homepage;
-          })
-          .attr("target", "_blank")
-          .text(function (d) {
-            return d.name;
+      .attr("class", "studentProject")
+      .style("padding-right", "10px")
+      .call(function(sel) {
+        sel
+          .append("div")
+          .attr("class", "studentPhotoHolder")
+          .attr("id", (nick) => dicStudents.get(nick).nickname)
+          .style("height", "150px");
+
+        sel
+          .append("div")
+          .attr("class", "studentName")
+          .call(function(selName) {
+            selName
+              .append("a")
+              .attr("href", function(nick) {
+                return dicStudents.get(nick).homepage;
+              })
+              .attr("target", "_blank")
+              .text(function(nick) {
+                return dicStudents.get(nick).name;
+              });
+            selName.append("small").text(function(nick) {
+              return " " + dicStudents.get(nick).level;
+            });
           });
-        selName.append("small").text(function (d) {
-          return " " + d.level;
-        });
       });
 
-    var body = row.append("div").attr("class", "col-8");
+    let body = row.append("div").attr("class", "col-8");
     body
       .append("h3")
       .attr("class", "studentProject")
       .append("a")
-      .attr("href", function (d) {
+      .attr("href", function(d) {
         return (
           (d.project_url.indexOf("http") === -1 ? "/students/" : "") +
           d.project_url
@@ -362,17 +384,17 @@ function doProjectList(data) {
       })
       .attr("target", "_blank")
 
-      .text(function (d) {
+      .text(function(d) {
         return d.thesis;
       });
 
     body
-      .filter(function (d) {
+      .filter(function(d) {
         return d.slides && d.slides !== "";
       })
       .append("span")
       .append("a")
-      .attr("href", function (d) {
+      .attr("href", function(d) {
         return d.slides;
       })
       .attr("target", "_blank")
@@ -380,12 +402,12 @@ function doProjectList(data) {
       .text("Slides");
 
     body
-      .filter(function (d) {
+      .filter(function(d) {
         return d.slides && d.slides !== "";
       })
       .append("span")
       .append("a")
-      .attr("href", function (d) {
+      .attr("href", function(d) {
         return d.demo;
       })
       .attr("target", "_blank")
@@ -394,27 +416,27 @@ function doProjectList(data) {
     body
       .append("div")
       .attr("class", "studentProjectDescription")
-      .text(function (d) {
+      .text(function(d) {
         return d.description;
       });
 
     body
-      .filter(function (d) {
+      .filter(function(d) {
         return d.project_thumbnail;
       })
       .append("div")
       .attr("class", "projectThumb")
       .append("a")
-      .attr("href", function (d) {
+      .attr("href", function(d) {
         return d.project_github;
       })
       .append("img")
-      .attr("src", function (d) {
+      .attr("src", function(d) {
         return d.project_thumbnail
           ? d.project_thumbnail
           : "../images/logo_desarrollo_web.png";
       })
-      .attr("alt", function (d) {
+      .attr("alt", function(d) {
         return "Image " + d.thesis + " " + d.name;
       });
 
@@ -425,10 +447,10 @@ function doProjectList(data) {
 function clearPhotos() {
   // clear the ones that aren't on the selection anymore
   graph.nodes
-    .filter(function (s) {
+    .filter(function(s) {
       return s.fixed && selected.indexOf(s.nickname) === -1;
     })
-    .forEach(function (s) {
+    .forEach(function(s) {
       s.fixed = false;
       console.log("clear" + s.nickname);
       s.fx = null;
@@ -441,11 +463,17 @@ function clearPhotos() {
     });
 }
 
+function moveStudentsInProject(project) {
+  for (let nick of projectToStudents.get(project)) {
+    movePhoto(nick);
+  }
+}
+
 function movePhoto(nick) {
   console.log("move" + nick);
-  var node = dicStudents.get(nick),
+  let node = dicStudents.get(nick),
     boundingRect = d3
-      .select(".studentPhotoHolder#" + nick)
+      .select(".studentPhotoHolder#" + node.nickname)
       .node()
       .getBoundingClientRect(),
     networkBoundingRect = d3
@@ -456,18 +484,18 @@ function movePhoto(nick) {
   console.log("movePhoto boundingRect", boundingRect);
   console.log("movePhoto NetboundingRect", networkBoundingRect);
 
-  var bigWidth = 120;
+  let bigWidth = 120;
   node.fixed = true;
   selected.push(nick);
   d3.select(".node#" + nick)
     .transition()
     .ease(d3.easePolyOut)
     .duration(2500)
-    .tween("style.left", function () {
-      var target = boundingRect.left - networkBoundingRect.left + bigWidth / 2,
+    .tween("style.left", function() {
+      let target = boundingRect.left - networkBoundingRect.left + bigWidth / 2,
         // nSel = this,
         i = d3.interpolateNumber(node.x, target);
-      return function (t) {
+      return function(t) {
         // nSel.setAttribute("style.left", i(t) + "px");
         // node.fixed=true;
         if (node.fixed) {
@@ -475,11 +503,11 @@ function movePhoto(nick) {
         }
       };
     })
-    .tween("style.top", function () {
-      var target = boundingRect.top - networkBoundingRect.top + bigWidth / 2,
+    .tween("style.top", function() {
+      let target = boundingRect.top - networkBoundingRect.top + bigWidth / 2,
         // nSel = this,
         i = d3.interpolateNumber(node.y, target);
-      return function (t) {
+      return function(t) {
         // nSel.setAttribute("style.top", i(t) + "px");
         // node.fixed=true;
         if (node.fixed) {
@@ -498,11 +526,11 @@ function movePhoto(nick) {
 }
 
 function updateFromGSheet(data) {
-  data = data.filter(function (d) {
+  data = data.filter(function(d) {
     return d.disabled === "";
   });
   doNetwork(data);
-  doProjectList(data);
+  doProjectList(); // uses projects variable
   setupScroller();
 }
 
@@ -526,32 +554,32 @@ d3.csv(urlCSV, (err, data) => {
 function setupScroller() {
   // Jim Vallandingan"s scrolling code
   // setup scroll functionality
-  var scroll = scroller().container(d3.select(".students"));
+  let scroll = scroller().container(d3.select(".students"));
 
-  var steps = d3.selectAll(".step");
+  let steps = d3.selectAll(".step");
   // pass in .step selection as the steps
   scroll(steps);
 
   // setup event handling
-  scroll.on("active", function (index) {
+  scroll.on("active", function(index) {
     // highlight current step text
-    d3.selectAll(".step.opacable").style("opacity", function (d, i) {
+    d3.selectAll(".step.opacable").style("opacity", function(d, i) {
       return i >= index - 2 && i <= index ? 1 : 0.1;
     });
 
     // activate current section
     // plot.activate(index);
-    console.log(index);
+    console.log("Project scrolled", index);
 
     selected = [];
     if (index > 1) {
-      movePhoto(graph.nodes[index - 2].nickname);
+      moveStudentsInProject(projects[index - 2].project);
     }
     if (index > 0) {
-      movePhoto(graph.nodes[index - 1].nickname);
+      moveStudentsInProject(projects[index - 1].project);
     }
     if (index !== 0 && index < steps.nodes().length - 1) {
-      movePhoto(graph.nodes[index].nickname);
+      moveStudentsInProject(projects[index].project);
     }
     // if (index!== 0 && index < steps.nodes().length -2){
     //   movePhoto(graph.nodes[index+1].nickname);

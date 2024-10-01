@@ -93,7 +93,14 @@
     @media print {
       @page {
         margin: 5mm 0mm 5mm 0mm;
-        size: 17in 18in;
+        /* size: 17in 18in; */
+
+         /* 1.75 letter */
+        /* size: 14.875in 19.25in; */
+        
+        
+        /* 1.5 letter */
+        size: 12.75in 16.5in;
       }
     }
 
@@ -111,10 +118,10 @@
       margin: 0px;
     }
 
-    /* New page after inventor  */
+    /* New page after inventor 
     #achievementsText > div:nth-child(11) {
       page-break-after: always;
-    }
+    } */
 
     /*.experience {*/
     /*font-size: 120%;*/
@@ -134,9 +141,9 @@
             <strong>user</strong> in the big data analysis/science loop.
           </p>
           john.guerra[~at~]gmail.com<br />
-          <a href="http://johnguerra.co">johnguerra.co</a>
+          <a href="https://johnguerra.co">johnguerra.co</a>
           <br />
-          <a href="http://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
+          <a href="https://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
           <br />
           <a
             href="https://twitter.com/duto_guerra"
@@ -144,7 +151,7 @@
             data-show-count="false"
             >Follow @duto_guerra</a
           >
-          <script>
+          <!-- <script>
             !(function(d, s, id) {
               var js,
                 fjs = d.getElementsByTagName(s)[0];
@@ -155,7 +162,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
               }
             })(document, "script", "twitter-wjs");
-          </script>
+          </script> -->
         </div>
         <div class="col-xs-12 col-md-6">
           <h2>In a nutshell</h2>
@@ -815,7 +822,7 @@
         </form>
         <div id="papersFilters"></div>
         <main class="row">
-          <div id="papers"></div>
+          <div id="papersContent"></div>
         </main>
       </section>
       <!-- end research -->

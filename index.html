@@ -117,7 +117,7 @@
             <a href="#photos">Photos</a> | <a href="#classes">Classes</a> |
             <a href="#students">Students</a>
           </div>
-          <script>
+          <!-- <script>
             !(function(d, s, id) {
               var js,
                 fjs = d.getElementsByTagName(s)[0];
@@ -128,18 +128,19 @@
                 fjs.parentNode.insertBefore(js, fjs);
               }
             })(document, "script", "twitter-wjs");
-          </script>
+          </script> -->
         </div>
 
+        <!-- IN a nutshell -->
         <div class="col-xs-12 col-md-5">
           <h2>In a nutshell</h2>
           <p class="experience">
             Information Visualization Researcher and Engineer. I help people
             extract insights from their data using interactive infovis and data
-            science. PhD in Computer Science, Assistant Teaching Professor at
+            science. PhD in Computer Science, Associate Teaching Professor at
             <a href="https://www.northeastern.edu/bayarea/"
               >Northeastern University Bay Area</a
-            >. I conduct research on Visual Analytics, Accessibility, Big data,
+            >. Member of the <a href="https://vis.khoury.northeastern.edu/">Khoury Visualization Lab</a>. I conduct research on Visual Analytics, Accessibility, Big data,
             Human Computer Interaction and Web Development. Formerly at
             <a
               href="https://www.ischool.berkeley.edu/people/john-alexis-guerra-gomez"
@@ -231,7 +232,7 @@
       <section id="experience" class="row">
         <div class="col-md-12 col-lg-12">
           <h2>Experience and Education</h2>
-          <div style="width: '100%'">
+          <div style="width: 100%">
             <svg
               id="timeline"
               height="150"
@@ -263,7 +264,7 @@
               </div>
               <div class="col-md-11 col-sm-11 col-xs-12 experienceBody">
                 <div class="experienceTitle">
-                  Assistant Teaching Professor
+                  Associate Teaching Professor
                 </div>
                 <ul>
                   <li>
@@ -960,10 +961,10 @@
           <script type="module">
             import {
               Runtime,
-              Inspector
+              Inspector,
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@john-guerra/my-observable-notebooks.js?v=3";
-            new Runtime().module(define, name => {
+            new Runtime().module(define, (name) => {
               if (name === "beeswarmPlotNotebooks")
                 return new Inspector(
                   document.querySelector(
@@ -998,10 +999,10 @@
           <script type="module">
             import {
               Runtime,
-              Inspector
+              Inspector,
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@john-guerra/my-youtube-videos.js?v=3";
-            new Runtime().module(define, name => {
+            new Runtime().module(define, (name) => {
               if (name === "beeswarmPlotvideos")
                 return new Inspector(
                   document.querySelector(
@@ -1026,7 +1027,7 @@
       <!-- end projects -->
 
       <!-- ******************** Research ****************** -->
-      <section class="row" id="research">
+      <section class="row" id="papers">
         <h2>Academic contributions</h2>
 
         <form id="orderBy">
@@ -1063,7 +1064,7 @@
         </form>
         <div id="papersFilters"></div>
         <main class="row">
-          <div id="papers"></div>
+          <div id="papersContent"></div>
         </main>
       </section>
       <!-- end research -->
@@ -1132,6 +1133,55 @@
       <section id="classes" class="row">
         <div class="col-sm-12 col-md-8">
           <h2>Classes</h2>
+
+          <!-- Fall 2024 -->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">Fall 2024</div>
+            <div class="col-sm-12 col-md-9">
+              <ul>
+                <li>
+                  <div>
+                    <a href="classes/data_visualization_fall_2024"
+                      >Northeastern University Bay Area, CS7295: Special Topics
+                      in Data Visualization Fall 2024</a
+                    >
+                    14 Weeks.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    Northeastern University Oakland, CS3200: Database
+                      Management
+                    Systems. <a
+                    href="https://drive.google.com/drive/folders/1sYus6NRd_DgNb__FnRHEqkFbqghP1KUJ?usp=sharing"
+                    >Slides</a
+                    > 14 Weeks.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Spring 2024 -->
+          <div class="row">
+            <div class="col-sm-12 col-md-3">Spring 2024</div>
+            <div class="col-sm-12 col-md-9">
+              <ul>
+                <li>
+                  <div>
+                    Northeastern University Oakland, CS 5010: Program Design
+                    Paradigms 14 Weeks.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    Northeastern University Oakland, CS3200: Database Management
+                    Systems 14 Weeks.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
 
           <!-- Fall 2023 -->
           <div class="row">

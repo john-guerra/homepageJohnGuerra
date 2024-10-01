@@ -7,7 +7,7 @@ async function runPapers() {
   const notebook = new Runtime().module(define);
   const scentedCheckbox = await notebook.value("scentedCheckbox");
 
-  let container = d3.select("#papers");
+  let container = d3.select("#papersContent");
   container.html("");
   let timeFmt = d3.timeParse("%m/%d/%Y");
   let color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -54,7 +54,7 @@ async function runPapers() {
 
     const h2Container = container.append("h2");
 
-    createCheckboxes();    
+    createCheckboxes();
 
     const formOrderBy = d3
       .select("#orderBy")
@@ -98,7 +98,7 @@ async function runPapers() {
       // )
       .on("change", onChangeOrderBy);
 
-    const row = container.append("div").attr("class", "row");   
+    const row = container.append("div").attr("class", "row");
 
     reload();
 
@@ -263,7 +263,7 @@ async function runPapers() {
       renderPapers(catSelMerged);
 
       catSelMerged.append("div").attr("class", "clearer");
-    }    
+    }
   });
 }
 

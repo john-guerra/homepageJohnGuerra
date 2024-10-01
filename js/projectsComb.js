@@ -1,6 +1,15 @@
 // Code inspired on VisualCinamon http://blockbuilder.org/john-guerra/e5d5fbb6c526000599d2c83639f6ade0
 (function Comb() {
   /* global d3, CombColumns */
+
+  const NOTEBOOK_VISIBILITY = [
+    // "Unlisted",
+    "Public",
+    "Team",
+    "Published",
+    "Shared",
+  ];
+
   //Function to call when you mouseover a node
   function mover(d) {
     var el = d3
@@ -31,7 +40,7 @@
   var height = 2050;
 
   //The number of columns and rows of the heatmap
-  var MapColumns = window.CombColumns || 5,
+  var MapColumns = window.CombColumns || 6,
     MapRows; // I'll compute this later
 
   //Set the hexagon radius
@@ -60,14 +69,24 @@
   function updateComb(data) {
     // updateComb radius
     var svgNode = d3.select("#projectsComb").node();
+
+    // Set height to 600 to accurately measure the height of the text
+    d3.select("#projectsComb>svg").attr("height", 600);
+
     width = svgNode ? svgNode.clientWidth : width;
-    height = d3.select("#achievementsText").node()
-      ? d3.select("#achievementsText").node().clientHeight
-      : window.innerHeight;
+    // Is it a small screen?
+    if (width < 600) {
+      height = window.innerHeight * 0.7;
+    } else if (d3.select("#achievementsText").node()) {
+      // set to the height of the text if it exists
+      height = d3.select("#achievementsText").node().clientHeight;
+    } else {
+      height = screen.availHeight || window.innerHeight;
+    }
 
-    // for PDF
-    height = 900;
-
+    console.log("UpdateComb", width, height);
+    // // for PDF
+    // height = 900;
 
     var hexRadius = width / ((MapColumns + 0.5) * Math.sqrt(3));
     MapRows = Math.floor(height / (1.5 * hexRadius)) + 1;
@@ -145,7 +164,10 @@
         return d.proj;
       })
       .attr("xlink:href", function(d) {
-        var splitName = d.proj.thumb.split(".");
+        if (d.proj.thumb.indexOf("http") === 0) {
+          return d.proj.thumb;
+        }
+        let splitName = d.proj.thumb.split(".");
         return "img/projs/" + splitName[0] + "_small." + splitName[1];
       })
       .attr("width", hexRadius * 2)
@@ -201,11 +223,6 @@
     //   .attr("width", 500)
     //   .attr("height", 500)
     //   // .attr("clip-path", "url(#hexClip)")
-
-    d3.select(window).on("resize", function() {
-      updateComb(data);
-    });
-    // .each(function () { updateComb(data); });
   }
 
   const dateFmt = d3.timeParse("%m/%d/%Y");
@@ -218,13 +235,33 @@
     },
     function(err, data) {
       if (err) throw err;
-      updateComb(
-        data.sort(function(a, b) {
+
+      d3.csv("notebooks.csv", function(err2, notebooks) {
+        if (err) throw err;
+        // Combine projects and notebooks
+        data = data.concat(
+          notebooks
+            .filter((n) => NOTEBOOK_VISIBILITY.includes(n.Visibility))
+            .map((n) => ({
+              project: n.Name,
+              thumb: n["Thumb-src"],
+              url: n["Link-href"],
+              date: n.timestamp,
+              rating: n.Likes > 3 ? 5 : 2,
+            }))
+        );
+
+        data = data.sort(function(a, b) {
           return (
             d3.ascending(a.rating, b.rating) || d3.ascending(a.date, b.date)
           );
-        })
-      );
+        });
+        updateComb(data);
+
+        window.addEventListener("resize", function() {
+          updateComb(data);
+        });
+      });
     }
   );
 })();
