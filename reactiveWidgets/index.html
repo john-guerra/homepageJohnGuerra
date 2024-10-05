@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Towards Reusable and Reactive Widgets for Information Visualization
+      Research and Dissemination
+    </title>
+    <meta name="author" content="John Alexis Guerra Gómez" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif, sans-serif;
+        margin: 50px;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Towards Reusable and Reactive Widgets for Information Visualization
+      Research and Dissemination
+    </h1>
+
+    <h2>The Paper</h2>
+    <div style="text-indent: 1em; font-size: 90%; padding-top: 10px">
+      <div>
+        📄
+        <a
+          href="https://aa.ieeevis.org/year/2024/program/paper_v-short-1189.html"
+          >IEEE VIS 2024</a
+        >
+        Short Paper
+      </div>
+      <div>
+        <span style="font-style: italic"
+          ><a
+            href="https://aa.ieeevis.org/year/2024/program/paper_v-short-1189.html"
+            >Towards Reusable and Reactive Widgets for Information Visualization
+            Research and Dissemination</a
+          ></span
+        >
+      </div>
+      <div>
+        <strong
+          ><a href="https://johnguerra.co">John A. Guerra-Gomez</a></strong
+        >
+      </div>
+      <div>
+        <a href="https://oakland.northeastern.edu/"
+          >Northeastern University, Oakland Campus</a
+        >
+      </div>
+    </div>
+
+    <br />
+    <div style="text-indent: 3em; font-style: italic">
+      The information visualization research community commonly produces
+      supporting software to demonstrate technical contributions to the field.
+      However, developing this software tends to be an overwhelming task. The
+      final product tends to be a research prototype without much thought for
+      modularization and re-usability, which makes it harder to replicate and
+      adopt. This paper presents a design pattern for facilitating the creation,
+      dissemination, and re-utilization of visualization techniques using
+      reactive widgets. The design pattern features basic concepts that leverage
+      modern front-end development best practices and standards, which
+      facilitate development and replication. The paper presents several usage
+      examples of the pattern, templates for implementation, and even a wrapper
+      for facilitating the conversion of any
+      <a href="https://vega.github.io/">Vega</a> specification into a reactive
+      widget.
+    </div>
+
+    <div
+      class="observablehq observablehq--worker"
+      dir="auto"
+      style="margin-bottom: 17px"
+    >
+      <div>
+        <p>
+          Reactive widgets allow you to build your visualization application in
+          a more modular way, facilitating reusability and replicability of
+          experiments.
+        </p>
+        <p>
+          Think of them as interactive building blocks for your visualizations!
+        </p>
+        <p>
+          A Reactive Visualization widget displays data and allows users to
+          directly interact with it (e.g., select a bar in a bar chart 📊). It
+          then emits events based on these interactions (e.g., signaling which
+          bars are selected).
+        </p>
+        <h2 id="reactive-widget-specification">
+          Reactive widget specification
+        </h2>
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div style="flex: 3">
+            A reusable and reactive visualization widget should be:
+            <ul>
+              <li>
+                A <strong>function</strong> that returns:
+                <ul>
+                  <li>
+                    an 🧱
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/API/Element"
+                      ><strong>HTML Element</strong></a
+                    >
+                  </li>
+                  <li>
+                    and the 🎯 user selection in the
+                    <strong>value</strong> attribute of the element.
+                    <ul>
+                      <li>Receives:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    some 🗃️ <strong>input data</strong> (usually in tidy format)
+                  </li>
+                  <li>
+                    an 🎛️ <strong>options</strong> object
+                    <ul>
+                      <li>
+                        📣 <strong>Emits</strong> <em>input</em> events when
+                        there is an user interaction
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    and 👂🏼 <strong>listens</strong> to <em>input</em> to the
+                    same event to reflect changes made on other widgets
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div style="flex: 1; height: 100%">
+            <img
+              width="350px"
+              src="./img/Reusable_widget.png"
+              alt="Reactive Widgets Icon"
+            />
+          </div>
+        </div>
+
+        <p><strong>TL;DR Usage</strong></p>
+        <h3 id="helper-function">Helper Function</h3>
+        <p>To use within observable just</p>
+        <pre
+          class="observablehq--md-pre"
+        ><code class="js hljs javascript"><span class="hljs-keyword">import</span> { ReactiveWidget } <span class="hljs-keyword">from</span> <span class="hljs-string">"@john-guerra/reactive-widgets"</span>
+      <span class="hljs-comment">// Outside of observable the easiest is to copy and pase </span>
+      
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyWidget</span>(<span class="hljs-params">
+        data, { value = <span class="hljs-number">0</span> } = {}
+      </span>) </span>{
+        <span class="hljs-keyword">let</span> widget;  
+        <span class="hljs-keyword">const</span> element = htl.html<span class="hljs-string">``</span>; <span class="hljs-comment">// ✅ Add here the code that creates your widget as an HTML element</span>
+      
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showValue</span>(<span class="hljs-params"></span>) </span>{
+          <span class="hljs-comment">/* ✅ Add here the code that updates the current selection */</span>    
+        }
+      
+        <span class="hljs-comment">// 🧰 Then wrap your visualization (html element) with the reactive value</span>
+        <span class="hljs-comment">// and input events</span>
+        <span class="hljs-keyword">let</span> widget = ReactiveWidget(element.node(), { value, showValue });
+      
+        <span class="hljs-comment">// 🧰 Show the initial value</span>
+        showValue();
+      
+        <span class="hljs-comment">// 🧰 Finally return the html element</span>
+        <span class="hljs-keyword">return</span> widget;
+      }
+      
+      </span></code></pre>
+      </div>
+    </div>
+
+    <!-- Reactive widgets allow you to build your visualization application in a more
+    modular way, facilitating reusability and replicability of experiments.
+    Think of them as interactive building blocks for your visualizations! A
+    Reactive Visualization widget displays data and allows users to directly
+    interact with it (e.g., select a bar in a bar chart 📊). It then emits
+    events based on these interactions (e.g., signaling which bars are
+    selected). ## Reactive widget specification
+
+    <div
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div style="flex: 3">
+        A reusable and reactive visualization widget should be: ${md`* A
+        **function** that returns: * an 🧱 [**HTML
+        Element**](https://developer.mozilla.org/en-US/docs/Web/API/Element) *
+        and the 🎯 user selection in the **value** attribute of the element. *
+        Receives: * some 🗃️ **input data** (usually in tidy format) * an 🎛️
+        **options** object * 📣 **Emits** *input* events when there is an user
+        interaction * and 👂🏼 **listens** to *input* to the same event to reflect
+        changes made on other widgets`}
+      </div>
+      <div style="flex: 1; height: 100%">
+        <img width="350px" src="./img/Reusable widget.png" alt="Reactive Widgets Icon" />
+      </div>
+    </div> -->
+
+    <h2>Observable Notebook</h2>
+    <a href="https://observablehq.com/@john-guerra/reactive-widgets#examples"
+      >Please visit the Observable Notebook for more details</a
+    >
+
+    <iframe
+      width="100%"
+      height="900"
+      frameborder="0"
+      src="https://observablehq.com/embed/@john-guerra/reactive-widgets@latest?cell=*"
+    ></iframe>
+  </body>
+</html>
