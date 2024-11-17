@@ -4,105 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Towards Reusable and Reactive Widgets for Information Visualization
-      Research and Dissemination
+      Reactive Widgets for Information Visualization Research and Dissemination
     </title>
     <meta name="author" content="John Alexis Guerra Gómez" />
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif, sans-serif;
-        margin: 50px;
-        padding: 0;
-      }
-    </style>
+    <style></style>
+    <meta
+      property="og:title"
+      content="Towards Reusable and Reactive Widgets for Information Visualization Research and Dissemination"
+    />
+    <meta
+      property="og:description"
+      content="This IEEEVIS 2024 short paper presents a design pattern for facilitating the creation, dissemination, and re-utilization of visualization techniques using reactive widgets."
+    />
+    <meta property="og:image" content="./img/representative_image.png" />
+    <meta property="og:url" content="http://johnguerra.co/reactiveWidgets" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Towards Reusable and Reactive Widgets for Information Visualization Research and Dissemination"
+    />
+    <meta
+      name="twitter:description"
+      content="This IEEEVIS 2024 short paper presents a design pattern for facilitating the creation, dissemination, and re-utilization of visualization techniques using reactive widgets."
+    />
+    <meta
+      name="twitter:image"
+      content="https://johnguerra.co/reactiveWidgets/img/representative_image.png"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
   </head>
   <body>
-    <h1>
-      Towards Reusable and Reactive Widgets for Information Visualization
-      Research and Dissemination
-    </h1>
+    <div class="container">
+      <h1>Reactive Visualization Widgets</h1>
 
-    <h2>The Paper</h2>
-    <div style="text-indent: 1em; font-size: 90%; padding-top: 10px">
-      <div>
-        📄
-        <a
-          href="https://aa.ieeevis.org/year/2024/program/paper_v-short-1189.html"
-          >IEEE VIS 2024</a
-        >
-        Short Paper
-      </div>
-      <div>
-        <span style="font-style: italic"
-          ><a
-            href="https://aa.ieeevis.org/year/2024/program/paper_v-short-1189.html"
-            >Towards Reusable and Reactive Widgets for Information Visualization
-            Research and Dissemination</a
-          ></span
-        >
-      </div>
-      <div>
-        <strong
-          ><a href="https://johnguerra.co">John A. Guerra-Gomez</a></strong
-        >
-      </div>
-      <div>
-        <a href="https://oakland.northeastern.edu/"
-          >Northeastern University, Oakland Campus</a
-        >
-      </div>
-    </div>
+      <!-- --------------- Intro ---------------- -->
+      <section>
+        <div class="row">
+          <div class="col-md-9">
+            <p>
+              Reactive widgets allow you to build your visualization application
+              in a more modular way, facilitating reusability and replicability
+              of experiments.
+            </p>
+            <p>
+              Think of them as interactive building blocks for your
+              visualizations!
+            </p>
+            <p>
+              A Reactive Visualization widget displays data and allows users to
+              directly interact with it (e.g., select a bar in a bar chart 📊).
+              It then emits events based on these interactions (e.g., signaling
+              which bars are selected).
+            </p>
+          </div>
+          <!-- col-md-9 -->
 
-    <br />
-    <div style="text-indent: 3em; font-style: italic">
-      The information visualization research community commonly produces
-      supporting software to demonstrate technical contributions to the field.
-      However, developing this software tends to be an overwhelming task. The
-      final product tends to be a research prototype without much thought for
-      modularization and re-usability, which makes it harder to replicate and
-      adopt. This paper presents a design pattern for facilitating the creation,
-      dissemination, and re-utilization of visualization techniques using
-      reactive widgets. The design pattern features basic concepts that leverage
-      modern front-end development best practices and standards, which
-      facilitate development and replication. The paper presents several usage
-      examples of the pattern, templates for implementation, and even a wrapper
-      for facilitating the conversion of any
-      <a href="https://vega.github.io/">Vega</a> specification into a reactive
-      widget.
-    </div>
+          <div class="col-md-3">
+            <div class="main">
+              <div id="xAttr"></div>
+              <div id="histX"></div>
+              <div id="sliderX"></div>
+              <div id="histY"></div>
+            </div>
+          </div>
+          <!-- col-md-3 -->
+        </div>
+        <!-- row -->
+      </section>
 
-    <div
-      class="observablehq observablehq--worker"
-      dir="auto"
-      style="margin-bottom: 17px"
-    >
-      <div>
-        <p>
-          Reactive widgets allow you to build your visualization application in
-          a more modular way, facilitating reusability and replicability of
-          experiments.
-        </p>
-        <p>
-          Think of them as interactive building blocks for your visualizations!
-        </p>
-        <p>
-          A Reactive Visualization widget displays data and allows users to
-          directly interact with it (e.g., select a bar in a bar chart 📊). It
-          then emits events based on these interactions (e.g., signaling which
-          bars are selected).
-        </p>
+      <!-- ------------------------ Specification --------------------------- -->
+      <section id="Spec">
         <h2 id="reactive-widget-specification">
           Reactive widget specification
         </h2>
-        <div
-          style="
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-          "
-        >
-          <div style="flex: 3">
+        <div class="row">
+          <div class="col-md-8">
             A reusable and reactive visualization widget should be:
             <ul>
               <li>
@@ -142,89 +130,209 @@
               </li>
             </ul>
           </div>
-          <div style="flex: 1; height: 100%">
+          <div class="col-md-4">
             <img
               width="350px"
               src="./img/Reusable_widget.png"
               alt="Reactive Widgets Icon"
             />
           </div>
+          <!-- col-3 -->
         </div>
+        <!-- row -->
+      </section>
 
-        <p><strong>TL;DR Usage</strong></p>
-        <h3 id="helper-function">Helper Function</h3>
-        <p>To use within observable just</p>
-        <pre
-          class="observablehq--md-pre"
-        ><code class="js hljs javascript"><span class="hljs-keyword">import</span> { ReactiveWidget } <span class="hljs-keyword">from</span> <span class="hljs-string">"@john-guerra/reactive-widgets"</span>
-      <span class="hljs-comment">// Outside of observable the easiest is to copy and pase </span>
-      
-      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyWidget</span>(<span class="hljs-params">
-        data, { value = <span class="hljs-number">0</span> } = {}
-      </span>) </span>{
-        <span class="hljs-keyword">let</span> widget;  
-        <span class="hljs-keyword">const</span> element = htl.html<span class="hljs-string">``</span>; <span class="hljs-comment">// ✅ Add here the code that creates your widget as an HTML element</span>
-      
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showValue</span>(<span class="hljs-params"></span>) </span>{
-          <span class="hljs-comment">/* ✅ Add here the code that updates the current selection */</span>    
-        }
-      
-        <span class="hljs-comment">// 🧰 Then wrap your visualization (html element) with the reactive value</span>
-        <span class="hljs-comment">// and input events</span>
-        <span class="hljs-keyword">let</span> widget = ReactiveWidget(element.node(), { value, showValue });
-      
-        <span class="hljs-comment">// 🧰 Show the initial value</span>
-        showValue();
-      
-        <span class="hljs-comment">// 🧰 Finally return the html element</span>
-        <span class="hljs-keyword">return</span> widget;
-      }
-      
-      </span></code></pre>
-      </div>
+      <!-- ----------------- Usage ------------------- -->
+      <section>
+        <div class="row">
+          <div class="col-md-9">
+            <h3>TL;DR Usage</h3>
+            <p>To create a Reactive Widget</p>
+            <pre><code>import { ReactiveWidget } from "@john-guerra/reactive-widgets"
+
+function MyWidget(
+  data, { value = 0 } = {}
+) {
+  let widget;  
+  const element = htl.html``; // ✅ Add here the code that 
+  // creates your widget as an HTML element
+
+  function showValue() {
+    /* ✅ Add here the code that updates 
+    the current selection */    
+  }
+
+  // 🧰 Then wrap your visualization (html element) with 
+  // the reactive value and input events
+  let widget = ReactiveWidget(element.node(), 
+    { value, showValue }
+  );
+  
+  // 🧰 Show the initial value
+  showValue();
+  
+  // 🧰 Finally return the html element
+  return widget;
+}</code></pre>
+          </div>
+          <!-- col-md-9 -->
+        </div>
+        <!-- row -->
+      </section>
+
+      <!-- ----------------- PAPER ------------------- -->
+      <section id="paper">
+        <div class="row">
+          <div class="col-md-9">
+            <h2>The Paper</h2>
+            <h3>
+              Towards Reusable and Reactive Widgets for Information
+              Visualization Research and Dissemination
+            </h3>
+            <div style="text-indent: 1em; font-size: 90%; padding-top: 10px">
+              <div>
+                📄
+                <a
+                  href="https://aa.ieeevis.org/year/2024/program/paper_v-short-1189.html"
+                  >IEEE VIS 2024</a
+                >
+                Short Paper
+              </div>
+              <div>
+                <span style="font-style: italic"
+                  ><a
+                    href="https://aa.ieeevis.org/year/2024/program/paper_v-short-1189.html"
+                    >Towards Reusable and Reactive Widgets for Information
+                    Visualization Research and Dissemination</a
+                  ></span
+                >
+              </div>
+              <div>
+                <strong
+                  ><a href="https://johnguerra.co"
+                    >John A. Guerra-Gomez</a
+                  ></strong
+                >
+              </div>
+              <div>
+                <a href="https://oakland.northeastern.edu/"
+                  >Northeastern University, Oakland Campus</a
+                >
+              </div>
+            </div>
+
+            <br />
+            <div style="text-indent: 3em; font-style: italic">
+              The information visualization research community commonly produces
+              supporting software to demonstrate technical contributions to the
+              field. However, developing this software tends to be an
+              overwhelming task. The final product tends to be a research
+              prototype without much thought for modularization and
+              re-usability, which makes it harder to replicate and adopt. This
+              paper presents a design pattern for facilitating the creation,
+              dissemination, and re-utilization of visualization techniques
+              using reactive widgets. The design pattern features basic concepts
+              that leverage modern front-end development best practices and
+              standards, which facilitate development and replication. The paper
+              presents several usage examples of the pattern, templates for
+              implementation, and even a wrapper for facilitating the conversion
+              of any
+              <a href="https://vega.github.io/">Vega</a> specification into a
+              reactive widget.
+            </div>
+
+            <h3>Presentation</h3>
+            <a href="https://www.youtube.com/live/QoKwx8sUMyg?si=sP6kxHNPltwK-fh0&t=3576">https://www.youtube.com/live/QoKwx8sUMyg?si=sP6kxHNPltwK-fh0&t=3576</a>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QoKwx8sUMyg?si=sP6kxHNPltwK-fh0&amp;start=3576" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>Fast forward presentation</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gPxR7ibKKvY?si=JldqE_yANeJWZFn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+          </div>
+          <!-- col-md-9 -->
+        </div>
+        <!-- row -->
+      </section>
+
+      <section>
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Example applications and widgets</h2>
+
+            <p>Here are some other examples that follow (at least in part) the idea of reactive visualization widgets</p>
+
+            <h3>Helper functions</h3>
+
+            <ul>
+              <li><a href="https://www.npmjs.com/package/vega-selected">vegaSelected vega/vega-lite helper function to convert any spec into a Reactive Widget</a></li>
+              <li><a href="https://www.npmjs.com/package/reactive-widget-helper">ReactiveWidget helper function to convert a D3 visualization into a Reactive Widget</a></li>
+            </ul>
+
+            <h3>Examples</h3>
+
+            <ul>
+              <li><a href="https://johnguerra.co/viz/ieeevis2024Papers">IEEE VIS 2024 Papers Explorer</a></li>
+              <li><a href="https://johnguerra.co/viz/USBudgetHistory/">US Federal Budget History</a></li>
+              <li><a href="https://johnguerra.co/viz/chi2024Papers">CHI 2024 Papers Explorer</a></li>
+              <li><a href="https://johnguerra.co/viz/umapPlayground/">UMAP Playground</a></li>
+              <li><a href="https://johnguerra.co/viz/guitarImproviser/">Guitar Improviser</a></li>
+            </ul>
+
+            <h3>Widgets</h3>
+
+            <ul>
+              <li><a href="https://observablehq.com/@john-guerra/navio?collection=@john-guerra/visualization-widgets">Navio</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/spacetree?collection=@john-guerra/visualization-widgets">SpaceTree Widget</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/scented-checkbox?collection=@john-guerra/visualization-widgets">Scented checkboxes, group data by attribute, count occurrences and select by those</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/multi-auto-select?collection=@john-guerra/visualization-widgets">Multi Auto Select: select multiple attributes with a search box, and order them</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/search-checkbox?collection=@john-guerra/visualization-widgets">Search checkboxes: combine searching and checkboxes with select all/none buttons</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/collapsible-tree?collection=@john-guerra/visualization-widgets">Collapsible Tree</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/persist-input?collection=@john-guerra/visualization-widgets">PersistInput make a widget persistent using URL</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/conditional-show?collection=@john-guerra/visualization-widgets">Conditionally show a widget on demand</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/visualize-sqlite?collection=@john-guerra/visualization-widgets">Visualize SQLite</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/faceted-search?collection=@john-guerra/visualization-widgets">A very basic Faceted Search input</a></li>
+              <li><a href="https://observablehq.com/@john-guerra/vega-crossfilter?collection=@john-guerra/visualization-widgets">Vega Crossfilter</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ----------------- Notebook ------------------- -->
+      <section id="notebook">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Observable Notebook</h2>
+            <a
+              href="https://observablehq.com/@john-guerra/reactive-widgets#examples"
+              >Please visit the Observable Notebook for more details</a
+            >
+
+            <iframe
+              width="100%"
+              height="900"
+              frameborder="0"
+              src="https://observablehq.com/embed/@john-guerra/reactive-widgets@latest?cell=*"
+            ></iframe>
+          </div>
+          <!-- col-md-9 -->
+        </div>
+        <!-- row -->
+      </section>
     </div>
+    <!-- container -->
 
-    <!-- Reactive widgets allow you to build your visualization application in a more
-    modular way, facilitating reusability and replicability of experiments.
-    Think of them as interactive building blocks for your visualizations! A
-    Reactive Visualization widget displays data and allows users to directly
-    interact with it (e.g., select a bar in a bar chart 📊). It then emits
-    events based on these interactions (e.g., signaling which bars are
-    selected). ## Reactive widget specification
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-    <div
-      style="
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-      "
-    >
-      <div style="flex: 3">
-        A reusable and reactive visualization widget should be: ${md`* A
-        **function** that returns: * an 🧱 [**HTML
-        Element**](https://developer.mozilla.org/en-US/docs/Web/API/Element) *
-        and the 🎯 user selection in the **value** attribute of the element. *
-        Receives: * some 🗃️ **input data** (usually in tidy format) * an 🎛️
-        **options** object * 📣 **Emits** *input* events when there is an user
-        interaction * and 👂🏼 **listens** to *input* to the same event to reflect
-        changes made on other widgets`}
-      </div>
-      <div style="flex: 1; height: 100%">
-        <img width="350px" src="./img/Reusable widget.png" alt="Reactive Widgets Icon" />
-      </div>
-    </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
 
-    <h2>Observable Notebook</h2>
-    <a href="https://observablehq.com/@john-guerra/reactive-widgets#examples"
-      >Please visit the Observable Notebook for more details</a
-    >
-
-    <iframe
-      width="100%"
-      height="900"
-      frameborder="0"
-      src="https://observablehq.com/embed/@john-guerra/reactive-widgets@latest?cell=*"
-    ></iframe>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
