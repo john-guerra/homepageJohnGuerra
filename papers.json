@@ -793,9 +793,24 @@
 	},
 	{
 		"year": "2024",
+		"authors": "John Alexis Guerra-Gomez",
+		"link": "https://ieeexplore.ieee.org/document/10771102",
+		"title": "Towards Reusable and Reactive Widgets for Information Visualization Research and Dissemination",
+		"venue": " 2024 IEEE Visualization and Visual Analytics (VIS)",
+		"date": "10/13/2024",
+		"dateStr": "Oct 2024",
+		"type": "Conference",
+		"ranking": [
+			"Core A*",
+			"Scopus Q1"
+		],
+		"category": "Visualization"
+	},
+	{
+		"year": "2024",
 		"authors": "Yian Chen, Lana Do, Liheng Yi, Ricardo Baeza-Yates, and John Alexis Guerra-Gomez",
 		"link": "https://link.springer.com/conference/hci-collab",
-		"title": "Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting.",
+		"title": "Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. (Pending publication)",
 		"venue": "X Jornadas Iberoamericanas de Interacción Humano-Computador 2024",
 		"doi": "",
 		"date": "06/04/2024",
@@ -808,5 +823,26 @@
 		"journal": "Communications in Computer and Information Science, Springer, Cham.",
 		"category": "Human Computer Interaction",
 		"comment": "// [1] Y. Chen, L. Do, L. Yi, R. Baeza-Yates, and J. A. Guerra-Gomez. (2024). Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. Pending publication in Human-Computer Interaction. HCI-COLLAB 2024. Communications in Computer and Information Science, Springer, Cham."
+	},
+	{
+		"comment": {
+			"year": "2025",
+			"authors": "Francisco Buitrago-Florez, Marcela Hernández Hoyos, Andrés Melani,Luz Adriana Osorio, Verónica Súarez, Gloria Cortés, John A. Guerra-Gomez",
+			"link": "http://www.ijirss.com/index.php/ijirss",
+			"title": "Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. (Pending publication)",
+			"venue": "International Journal of Innovative Research and Scientific Studies (IJIRSS)",
+			"doi": "",
+			"date": "",
+			"dateStr": "",
+			"type": "Journal",
+			"isbn": "",
+			"issn": "2617-6548",
+			"publisher": "IJIRSS",
+			"journal": "International Journal of Innovative Research and Scientific Studies (IJIRSS)",
+			"category": "Human Computer Interaction",
+			"ranking": [
+				"Scopus Q2"
+			]
+		}
 	}
 ]
