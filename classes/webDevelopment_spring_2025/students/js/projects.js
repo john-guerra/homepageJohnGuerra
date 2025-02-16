@@ -1,7 +1,7 @@
 /* globals d3, Tabletop */
 // let urlHtml = "1OHk8QgSQONe-bYgJ1Qnt4uHQmE34xIEtLHV9xwKmGNA";
 let urlCSV =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjEetLuN_eVZZKUy9flRSKcEF8PCjRVIOnrnWS61MjAxewPjQN9hCotQcf2aaO-ZDuR7hx9OItobLw/pub?gid=1291306032&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSP-dXVRnnL0-5ueiPPPrdswrNQ57bmqVyhT_PEleqLCRkkCYb3HP8zYokh0EyO7ZclK1SZAki0LZk8/pub?gid=89913342&single=true&output=csv";
 
 let container = d3.select("#projects");
 /**
@@ -89,7 +89,8 @@ function update(data) {
     .filter(function(d) {
       return (
         d["University ID Number Student 2"] &&
-        d["University ID Number Student 2"] !== d["University ID Number Student 1"]
+        d["University ID Number Student 2"] !==
+          d["University ID Number Student 1"]
       );
     })
     .append("div")
@@ -177,9 +178,15 @@ function update(data) {
 function preProcess(data) {
   let dictStudentProj = {};
   console.log("Received " + data.length);
-  console.log("Disabled", data.filter(d => d.Disabled !== null && d.Disabled !== ""));
+  console.log(
+    "Disabled",
+    data.filter((d) => d.Disabled !== null && d.Disabled !== "")
+  );
   data
-    .filter(d => d.Disabled === null || d.Disabled === "")
+    .filter(
+      (d) =>
+        d.Disabled === null || d.Disabled === undefined || d.Disabled === ""
+    )
     .map((d) => {
       d["Timestamp"] = new Date(d["Timestamp"]);
       return d;
@@ -214,6 +221,8 @@ function updateFromGSheet(data) {
 
 d3.csv(urlCSV, (err, data) => {
   if (err) throw err;
+
+  console.log("got data", data);
 
   updateFromGSheet(data);
 });

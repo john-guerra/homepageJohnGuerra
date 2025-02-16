@@ -21,10 +21,13 @@ async function runPapers() {
 
     papers.forEach(function(d) {
       d.date = timeFmt(d.date);
-      d.authors = d.authors.replace(
-        "John Alexis Guerra-Gomez",
-        "<strong>John Alexis Guerra-Gomez</strong>"
-      );
+      d.authors =
+        d.authors &&
+        typeof d.authors?.replace === "function" &&
+        d.authors.replace(
+          "John Alexis Guerra-Gomez",
+          "<strong>John Alexis Guerra-Gomez</strong>"
+        );
     });
 
     let hideCategories = [

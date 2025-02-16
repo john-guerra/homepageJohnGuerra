@@ -825,24 +825,23 @@
 		"comment": "// [1] Y. Chen, L. Do, L. Yi, R. Baeza-Yates, and J. A. Guerra-Gomez. (2024). Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. Pending publication in Human-Computer Interaction. HCI-COLLAB 2024. Communications in Computer and Information Science, Springer, Cham."
 	},
 	{
-		"comment": {
-			"year": "2025",
-			"authors": "Francisco Buitrago-Florez, Marcela Hernández Hoyos, Andrés Melani,Luz Adriana Osorio, Verónica Súarez, Gloria Cortés, John A. Guerra-Gomez",
-			"link": "http://www.ijirss.com/index.php/ijirss",
-			"title": "Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. (Pending publication)",
-			"venue": "International Journal of Innovative Research and Scientific Studies (IJIRSS)",
-			"doi": "",
-			"date": "",
-			"dateStr": "",
-			"type": "Journal",
-			"isbn": "",
-			"issn": "2617-6548",
-			"publisher": "IJIRSS",
-			"journal": "International Journal of Innovative Research and Scientific Studies (IJIRSS)",
-			"category": "Human Computer Interaction",
-			"ranking": [
-				"Scopus Q2"
-			]
-		}
+		"year": "2025",
+		"authors": "Francisco Buitrago-Florez, Marcela Hernández Hoyos, Andrés Melani, Luz Adriana Osorio, Verónica Súarez, Gloria Cortés, John A. Guerra-Gomez",
+		"link": "http://www.ijirss.com/index.php/ijirss/article/view/4399",
+		"title": "Advancing AI Incidents Classification: Leveraging LLMs with Strategic Prompting. (Pending publication)",
+		"venue": "International Journal of Innovative Research and Scientific Studies (IJIRSS)",
+		"doi": "https://doi.org/10.53894/ijirss.v8i1.4399",
+		"date": "01/01/2025",
+		"dateStr": "",
+		"type": "Journal",
+		"isbn": "Jan 2025",
+		"issn": "2617-6548",
+		"publisher": "IJIRSS",
+		"journal": "International Journal of Innovative Research and Scientific Studies (IJIRSS)",
+		"category": "Human Computer Interaction",
+		"ranking": [
+			"Scopus Q2",
+			"Citescore 2.1"
+		]
 	}
 ]
