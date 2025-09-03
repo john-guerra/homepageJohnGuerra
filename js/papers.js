@@ -202,6 +202,13 @@ async function runPapers() {
           return d.venue;
         });
 
+      paperContentSel
+        .filter(d => d.doi)
+        .append("a")
+        .attr("class", "doi")
+        .attr("href", d => d.doi)
+        .text( d => d.doi);
+
       const paperContentSelTypeCat = paperContentSel
         .append("div")
         .classed("type-cat", true);

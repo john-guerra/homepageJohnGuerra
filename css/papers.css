@@ -1,32 +1,32 @@
 body {
   /*font-family: Helvetica;*/
 }
-#papers .year {
+#papersContent .year {
   margin-right: 5px;
   float: left;
 }
-#papers .paper-content {
+#papersContent .paper-content {
   float: left;
   width: 80%;
 }
-#papers .title {
+#papersContent .title {
   font-weight: 200%;
 }
-#papers .category {
+#papersContent .category {
   /*clear:both;*/
   /*page-break-before: always;*/
 }
-#papers .paper {
-  margin-bottom: 2px;
+#papersContent .paper {
+  margin-bottom: 10px;
   width: 100%;
 }
 
-#papers .authors,
-#papers .venue {
+#papersContent .authors,
+#papersContent .venue {
   color: #777;
 }
 
-#papers .clearer {
+#papersContent .clearer {
   clear: both;
 }
 
