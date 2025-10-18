@@ -95,10 +95,9 @@
         margin: 5mm 0mm 5mm 0mm;
         /* size: 17in 18in; */
 
-         /* 1.75 letter */
+        /* 1.75 letter */
         /* size: 14.875in 19.25in; */
-        
-        
+
         /* 1.5 letter */
         size: 12.75in 16.5in;
       }
@@ -284,7 +283,7 @@
               </div>
               <div class="col-md-11 col-sm-11 col-xs-12 experienceBody">
                 <div class="experienceTitle">
-                  Assistant Teaching Professor
+                  Associate Teaching Professor
                 </div>
                 <ul>
                   <li>
@@ -292,8 +291,9 @@
                     accesibility.
                   </li>
                   <li>
-                    Teaching: Web Development, Database Management Systems and
-                    Information Visualization.
+                    Teaching many different courses including: Web Development,
+                    Database Management Systems, Program Design Paradigms,
+                    Software Engineering and Information Visualization.
                   </li>
                 </ul>
               </div>
@@ -1034,10 +1034,10 @@
           <script type="module">
             import {
               Runtime,
-              Inspector
+              Inspector,
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@john-guerra/my-observable-notebooks.js?v=3";
-            new Runtime().module(define, name => {
+            new Runtime().module(define, (name) => {
               if (name === "beeswarmPlotNotebooks")
                 return new Inspector(
                   document.querySelector(
