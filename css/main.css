@@ -135,3 +135,16 @@ h2 {
 .achievementRow {
   padding-bottom: 0.8rem;
 }
+
+/* Orange circle indicators before experience links */
+.experience #speaker a::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: rgb(80, 123, 148);
+  border-radius: 50%;
+  margin-left: 0.3em;
+  margin-right: 0.15em;
+  vertical-align: middle;
+}
