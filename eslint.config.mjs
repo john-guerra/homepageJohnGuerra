@@ -56,7 +56,7 @@ export default [
       ],
 
       "linebreak-style": ["error", "unix"],
-      quotes: ["error", "double"],
+      quotes: ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
       semi: ["error", "always"],
       "no-console": 0,
     },
