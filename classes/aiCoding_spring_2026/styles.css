@@ -1,0 +1,83 @@
+/* CS 7180 Vibe Coding - Landing Page Styles */
+
+/* Logo Styles */
+.logo {
+  height: 70px;
+}
+
+.course-logo {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+.course-logo-sm {
+  width: 70px;
+  height: 70px;
+}
+
+/* WIP Banner */
+.wip-banner {
+  background: #fff3cd;
+  border-bottom: 1px solid #ffc107;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* Modality Cards */
+.modality-card {
+  border-left: 4px solid #0d6efd;
+  background: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modality-card h5 {
+  color: #0d6efd;
+  margin-bottom: 0.5rem;
+}
+
+/* Project Cards */
+.project-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  height: 100%;
+}
+
+.project-card h5 {
+  color: #198754;
+}
+
+/* Tech Badges */
+.tech-badge {
+  display: inline-block;
+  background: #e9ecef;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  margin: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* Schedule Table */
+.schedule-table th {
+  background: #f8f9fa;
+}
