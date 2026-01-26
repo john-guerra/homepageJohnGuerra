@@ -3,7 +3,7 @@ html(lang="en")
   head
     title CS 7180 Vibe Coding - AI-Assisted Software Engineering | Northeastern University Oakland, Spring 2026
     meta(charset="utf-8")
-    meta(name="description" content="CS 7180 Vibe Coding: Master AI-assisted development for Silicon Valley. Learn Claude, Cursor, prompt engineering, TDD, and build portfolio-worthy applications.")
+    meta(name="description" content="CS 7180 Vibe Coding: Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications.")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="author" content="John Alexis Guerra Gómez")
 
@@ -15,14 +15,14 @@ html(lang="en")
     meta(property="og:type" content="website")
     meta(property="og:url" content="https://johnguerra.co/classes/aiCoding_spring_2026/")
     meta(property="og:title" content="CS 7180 Vibe Coding - AI-Assisted Software Engineering")
-    meta(property="og:description" content="Master AI-assisted development for Silicon Valley. Learn Claude, Cursor, prompt engineering, TDD, and build portfolio-worthy applications at Northeastern University Oakland.")
+    meta(property="og:description" content="Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications at Northeastern University Oakland.")
     meta(property="og:image" content="https://johnguerra.co/classes/aiCoding_spring_2026/logo.svg")
 
     //- Twitter
     meta(name="twitter:card" content="summary_large_image")
     meta(name="twitter:url" content="https://johnguerra.co/classes/aiCoding_spring_2026/")
     meta(name="twitter:title" content="CS 7180 Vibe Coding - AI-Assisted Software Engineering")
-    meta(name="twitter:description" content="Master AI-assisted development for Silicon Valley. Learn Claude, Cursor, prompt engineering, TDD, and build portfolio-worthy applications at Northeastern University Oakland.")
+    meta(name="twitter:description" content="Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications at Northeastern University Oakland.")
     meta(name="twitter:image" content="https://johnguerra.co/classes/aiCoding_spring_2026/logo.svg")
 
     //- Stylesheets
@@ -47,12 +47,19 @@ body
           .mt-3
             span.badge.bg-light.text-dark.me-2 Spring 2026
             span.badge.bg-light.text-dark.me-2 Tue/Thu 3:00-4:40 PM PST
-            span.badge.bg-light.text-dark.me-2 Oakland Campus
+            span.badge.bg-light.text-dark.me-2 Lucie Stern 27, Oakland
             span.badge.bg-warning.text-dark Hybrid: In-Person + Zoom
         .col-md-4.text-center
           img.logo.mt-2(src="../../img/seal_logotype-768x252.png" alt="Northeastern University Logo" style="filter: brightness(0) invert(1); max-width: 100%;")
 
   .container
+    //- Quick Navigation
+    nav.nav.nav-pills.mb-4.justify-content-center
+      a.nav-link(href="#schedule") Schedule
+      a.nav-link(href="#readings") Readings
+      a.nav-link(href="#projects") Projects
+      a.nav-link(href="#grading") Grading
+
     //- Course Overview
     .row.mb-4
       .col-lg-8
@@ -100,9 +107,9 @@ body
           p.small.mb-0 #[strong Skills:] Claude Projects, artifacts, conversational iteration
       .col-md-4
         .modality-card
-          h5 Modality 2: Cursor IDE
+          h5 Modality 2: Antigravity
           p.small.mb-1 #[strong Best for:] Professional development, production code, daily workflow
-          p.small.mb-0 #[strong Skills:] Tab autocomplete, Composer, .cursorrules, YOLO mode
+          p.small.mb-0 #[strong Skills:] Tab autocomplete, Composer, .antigravityrules, YOLO mode
       .col-md-4
         .modality-card
           h5 Modality 3: Claude Code
@@ -110,7 +117,7 @@ body
           p.small.mb-0 #[strong Skills:] Terminal workflows, autonomous agents, script automation
 
     //- Projects
-    .row.mb-4
+    .row.mb-4#projects
       .col-12
         h3 Portfolio Projects
         p.text-muted All projects are open topic—you choose what to build after getting instructor approval.
@@ -149,63 +156,83 @@ body
           span.badge.bg-info.ms-1 Due Week 15
 
     //- Schedule and Grading
-    .row.mb-4
+    .row.mb-4#schedule
       .col-md-7
         h3 Weekly Schedule
         p.small.text-muted.fst-italic Schedule is tentative and subject to change.
+        - var slidesBase = "https://johnguerra.co/lectures/aiCoding_spring2026/"
         table.table.table-sm.schedule-table
           thead
             tr
               th Week
               th Topics
+              th Slides
           tbody
             tr
               td 1
-              td Introduction, Mom Test, Design Thinking, #[strong LLM Fundamentals]
+              td Introduction
+              td
+                a(href=slidesBase + "01_Introduction/") Intro
             tr
               td 2
-              td Modality 1: Claude Web, Requirements Gathering
+              td #[strong LLM Fundamentals], Mom Test & Design Thinking intro, Claude Web
+              td
+                a(href=slidesBase + "02_LLMs_fundamentals/") LLMs
             tr
               td 3
-              td Prompt Engineering Basics
+              td Prompt Engineering, Mom Test & Design Thinking workshop, #[strong HW1 due]
+              td
+                a(href=slidesBase + "03_Prompt_Engineering/") Prompts
             tr
               td 4
-              td Modality 2: Cursor IDE, TDD Introduction
+              td Modality 2: Antigravity, TDD Introduction, #[strong HW2 due]
+              td
             tr
               td 5
-              td Cursor Advanced, CI/CD Fundamentals
+              td Antigravity Advanced, CI/CD Fundamentals
+              td
             tr
               td 6
               td #[strong Project 1 Demos], Modality 3: Claude Code
+              td
             tr
               td 7
               td Advanced Prompt Engineering
+              td
             tr
               td 8
-              td Context Engineering
+              td Context Engineering, #[strong HW3 due]
+              td
             tr
               td 9
               td Evaluations (Evals) Part 1
+              td
             tr
               td 10
               td TDD + CI/CD Integration, #[strong Midterm: No-AI Challenge]
+              td
             tr
               td 11
-              td #[strong Project 2 Demos], Agile/Scrum with AI
+              td #[strong Project 2 Demos], Agile/Scrum with AI, #[strong HW4 due]
+              td
             tr
               td 12
               td Parallel Agentic Programming
+              td
             tr
               td 13
-              td Advanced Full-Stack Patterns
+              td Advanced Full-Stack Patterns, #[strong HW5 due]
+              td
             tr
               td 14
-              td Production Best Practices, Portfolio Building
+              td Production Best Practices, Portfolio Building, #[strong HW6 due]
+              td
             tr
               td 15
               td #[strong Demo Day - Final Project Presentations]
+              td
 
-      .col-md-5
+      .col-md-5#grading
         h3 Grading
         table.table
           thead
@@ -252,8 +279,8 @@ body
       .col-md-6
         h5 Required Tools
         ul.small
-          li #[strong Cursor IDE] (free for 1 year with student account)
-          li #[strong Claude.ai account] (Pro recommended $20/month)
+          li #[strong Antigravity] (free)
+          li #[strong Claude.ai account] (Pro recommended, $20/month)
           li GitHub account
           li Node.js 18+ and npm
           li Git
@@ -271,8 +298,128 @@ body
         h3 Resources
         ul
           li #[a(href="https://docs.anthropic.com") Anthropic Claude Docs]
-          li #[a(href="https://cursor.sh/docs") Cursor Documentation]
+          li #[a(href="https://antigravity.dev/docs") Antigravity Documentation]
           li #[a(href="https://docs.github.com/copilot") GitHub Copilot Guide]
+
+    //- Readings Section
+    .row.mb-4#readings
+      .col-12
+        h3 Required Readings & Resources
+        p.small.text-muted Organized by week. Click to expand each section.
+        .accordion#readingsAccordion
+          //- Week 2: LLM Fundamentals
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week2" aria-expanded="false")
+                | Week 2: LLM Fundamentals
+            .accordion-collapse.collapse#week2(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required Viewing
+                ul.small
+                  li #[a(href="https://www.3blue1brown.com/lessons/neural-networks") But what is a Neural Network?] (19 min) - 3Blue1Brown
+                  li #[a(href="https://www.3blue1brown.com/lessons/gradient-descent") Gradient descent, how neural networks learn] (21 min) - 3Blue1Brown
+                  li #[a(href="https://www.3blue1brown.com/lessons/attention") Attention in transformers, step-by-step] (27 min) - 3Blue1Brown
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://jalammar.github.io/illustrated-transformer/") The Illustrated Transformer] - Jay Alammar
+                  li #[a(href="https://karpathy.ai/zero-to-hero.html") Let's build GPT: from scratch, in code] (1h 56m) - Andrej Karpathy
+                h6 Interactive Tools
+                ul.small
+                  li #[a(href="https://tiktokenizer.vercel.app/") Tiktokenizer] - Visualize how text tokenizes
+                  li #[a(href="https://platform.openai.com/tokenizer") OpenAI Tokenizer] - Official token counter
+
+          //- Week 3: Prompt Engineering
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week3" aria-expanded="false")
+                | Week 3: Prompt Engineering
+            .accordion-collapse.collapse#week3(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code") Claude Artifacts Guide] - Creating interactive apps without code
+                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices") Claude 4 Best Practices] - Anthropic Docs
+                  li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview") Prompt Engineering Overview] - Anthropic Docs
+                  li #[a(href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial") Prompt Engineering Interactive Tutorial] - Anthropic (9 chapters)
+                  li #[a(href="https://docs.anthropic.com/en/resources/prompt-library/library") Prompt Library] - Anthropic
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/context-windows") Managing Context Windows] - Anthropic
+                  li #[a(href="https://github.com/anthropics/courses/tree/master/real_world_prompting") Real World Prompting Course] - Anthropic
+
+          //- Week 4-5: Antigravity & TDD
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week4" aria-expanded="false")
+                | Weeks 4-5: Antigravity IDE & TDD
+            .accordion-collapse.collapse#week4(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://docs.antigravity.dev/") Antigravity Documentation] - Official Docs
+                  li #[a(href="https://docs.antigravity.dev/get-started/migrate-from-vscode") Getting Started / Migrate from VS Code]
+                  li #[a(href="https://jestjs.io/docs/getting-started") Jest Documentation] - Testing
+                  li #[a(href="https://vitest.dev/guide/") Vitest Documentation] - Testing
+
+          //- Week 6: Claude Code
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week6" aria-expanded="false")
+                | Week 6: Claude Code & Terminal AI
+            .accordion-collapse.collapse#week6(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://docs.anthropic.com/en/docs/claude-code") Claude Code Documentation] - Anthropic
+                  li #[a(href="https://github.com/anthropics/courses") Anthropic Tool Use Course]
+
+          //- Week 7-8: Advanced Prompting & Context
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7" aria-expanded="false")
+                | Weeks 7-8: Advanced Prompting & Context Engineering
+            .accordion-collapse.collapse#week7(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking") Extended Thinking] - Anthropic
+                  li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-prompts") Prompt Chaining Guide] - Anthropic
+                h6 Reference (Anthropic Research)
+                ul.small
+                  li #[a(href="https://www.anthropic.com/research/mapping-mind-language-model") Mapping the Mind of a Large Language Model]
+                  li #[a(href="https://www.anthropic.com/research/tracing-thoughts-language-model") Tracing the Thoughts of a Large Language Model]
+
+          //- Week 9-10: Evaluations
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week9" aria-expanded="false")
+                | Weeks 9-10: Evaluations (Evals)
+            .accordion-collapse.collapse#week9(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://github.com/anthropics/courses") Anthropic Prompt Evaluations Course]
+                  li #[a(href="https://github.com/openai/human-eval") HumanEval Benchmark] - OpenAI
+                h6 Reference
+                ul.small
+                  li #[a(href="https://aclanthology.org/2025.findings-acl.686/") HumanEval Pro] - ACL 2025
+                  li #[a(href="https://cset.georgetown.edu/publication/cybersecurity-risks-of-ai-generated-code/") Cybersecurity Risks of AI-Generated Code] - Georgetown CSET
+
+          //- Week 13-14: Production & CI/CD
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week13" aria-expanded="false")
+                | Weeks 13-14: Production & CI/CD
+            .accordion-collapse.collapse#week13(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation]
+                  li #[a(href="https://vercel.com/docs") Vercel Deployment Docs]
+                h6 Security
+                ul.small
+                  li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF AI Code Security Guide]
+                  li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10]
 
     //- Communication
     .row.mb-5
