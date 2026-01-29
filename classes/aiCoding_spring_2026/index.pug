@@ -131,7 +131,7 @@ body
             li GitHub Actions CI pipeline
             li Deployed and publicly accessible
           span.badge.bg-secondary 15% of grade
-          span.badge.bg-info.ms-1 Due Week 6
+          span.badge.bg-info.ms-1 Due Week 7
       .col-md-4
         .project-card
           h5 Project 2: Full-Stack Application
@@ -142,7 +142,7 @@ body
             li Comprehensive evaluation suite
             li 2 documented Agile sprints
           span.badge.bg-secondary 20% of grade
-          span.badge.bg-info.ms-1 Due Week 11
+          span.badge.bg-info.ms-1 Due Week 12
       .col-md-4
         .project-card
           h5 Project 3: Team Application
@@ -180,52 +180,53 @@ body
                 a(href=slidesBase + "02_LLMs_fundamentals/") LLMs
             tr
               td 3
-              td Prompt Engineering, Mom Test & Design Thinking workshop, #[strong HW1 due]
+              td Prompt Engineering, #[strong HW1 due]
               td
                 a(href=slidesBase + "03_Prompt_Engineering/") Prompts
             tr
               td 4
+              td User Research & Prototyping, Mom Test Workshop
+              td
+                a(href=slidesBase + "04_User_Research_Prototyping/") Research
+            tr
+              td 5
               td Modality 2: Antigravity, TDD Introduction, #[strong HW2 due]
               td
             tr
-              td 5
+              td 6
               td Antigravity Advanced, CI/CD Fundamentals
               td
             tr
-              td 6
+              td 7
               td #[strong Project 1 Demos], Modality 3: Claude Code
               td
             tr
-              td 7
+              td 8
               td Advanced Prompt Engineering
               td
             tr
-              td 8
+              td 9
               td Context Engineering, #[strong HW3 due]
               td
             tr
-              td 9
+              td 10
               td Evaluations (Evals) Part 1
               td
             tr
-              td 10
-              td TDD + CI/CD Integration, #[strong Midterm: No-AI Challenge]
-              td
-            tr
               td 11
-              td #[strong Project 2 Demos], Agile/Scrum with AI, #[strong HW4 due]
+              td TDD + CI/CD + Evals, #[strong HW4 due]
               td
             tr
               td 12
-              td Parallel Agentic Programming
+              td #[strong Project 2 Demos], Agile/Scrum with AI
               td
             tr
               td 13
-              td Advanced Full-Stack Patterns, #[strong HW5 due]
+              td Parallel Agentic Programming
               td
             tr
               td 14
-              td Production Best Practices, Portfolio Building, #[strong HW6 due]
+              td Advanced Patterns + Production, #[strong HW5 due], #[strong HW6 due]
               td
             tr
               td 15
@@ -242,13 +243,16 @@ body
           tbody
             tr
               td Participation
-              td 20%
+              td 15%
+            tr
+              td Weekly Quizzes
+              td 10%
             tr
               td Homeworks (6 assignments)
               td 25%
             tr
               td Projects (3 major)
-              td 55%
+              td 50%
 
         h4.mt-4 Key Topics
         ul.small
@@ -291,14 +295,16 @@ body
         h3 Required Books
         ul
           li #[strong The Mom Test] by Rob Fitzpatrick
-          li #[strong Designing for Growth] by Liedtka & Ogilvie
           li #[strong Scrum] by Jeff Sutherland
+        h5.mt-2 Recommended
+        ul
+          li #[strong Designing for Growth] by Liedtka & Ogilvie
 
       .col-md-6
         h3 Resources
         ul
           li #[a(href="https://docs.anthropic.com") Anthropic Claude Docs]
-          li #[a(href="https://antigravity.dev/docs") Antigravity Documentation]
+          li #[a(href="https://antigravity.google/docs/get-started") Antigravity Documentation]
           li #[a(href="https://docs.github.com/copilot") GitHub Copilot Guide]
 
     //- Readings Section
@@ -337,48 +343,67 @@ body
               .accordion-body
                 h6 Required
                 ul.small
-                  li #[a(href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code") Claude Artifacts Guide] - Creating interactive apps without code
                   li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices") Claude 4 Best Practices] - Anthropic Docs
                   li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview") Prompt Engineering Overview] - Anthropic Docs
                   li #[a(href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial") Prompt Engineering Interactive Tutorial] - Anthropic (9 chapters)
                   li #[a(href="https://docs.anthropic.com/en/resources/prompt-library/library") Prompt Library] - Anthropic
                 h6 Recommended
                 ul.small
-                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/context-windows") Managing Context Windows] - Anthropic
                   li #[a(href="https://github.com/anthropics/courses/tree/master/real_world_prompting") Real World Prompting Course] - Anthropic
 
-          //- Week 4-5: Antigravity & TDD
+          //- Week 4: User Research & Prototyping
           .accordion-item
             h2.accordion-header
               button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week4" aria-expanded="false")
-                | Weeks 4-5: Antigravity IDE & TDD
+                | Week 4: User Research & Prototyping
             .accordion-collapse.collapse#week4(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
-                  li #[a(href="https://docs.antigravity.dev/") Antigravity Documentation] - Official Docs
-                  li #[a(href="https://docs.antigravity.dev/get-started/migrate-from-vscode") Getting Started / Migrate from VS Code]
+                  li #[a(href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code") Claude Artifacts Guide] - Creating interactive apps without code
+                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/context-windows") Context Windows] - How Claude's working memory works
+                  li #[a(href="https://support.claude.com/en/articles/9517075-what-are-projects") What Are Projects?] - Persistent knowledge bases for Claude Web
+                h6 Required Books
+                ul.small
+                  li #[strong The Mom Test] by Rob Fitzpatrick
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects") How to Create and Manage Projects] - Step-by-step guide
+                  li #[a(href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects") RAG for Projects] - Retrieval-augmented generation in Claude Projects
+                  li #[a(href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features") Personalization Features] - Profile, instructions, and styles
+                  li #[strong Designing for Growth] by Liedtka & Ogilvie
+
+          //- Weeks 5-6: Antigravity & TDD
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week5" aria-expanded="false")
+                | Weeks 5-6: Antigravity IDE & TDD
+            .accordion-collapse.collapse#week5(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://antigravity.google/docs/get-started") Antigravity Documentation] - Official Docs
                   li #[a(href="https://jestjs.io/docs/getting-started") Jest Documentation] - Testing
                   li #[a(href="https://vitest.dev/guide/") Vitest Documentation] - Testing
 
-          //- Week 6: Claude Code
+          //- Week 7: Claude Code
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week6" aria-expanded="false")
-                | Week 6: Claude Code & Terminal AI
-            .accordion-collapse.collapse#week6(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7" aria-expanded="false")
+                | Week 7: Claude Code & Terminal AI
+            .accordion-collapse.collapse#week7(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
                   li #[a(href="https://docs.anthropic.com/en/docs/claude-code") Claude Code Documentation] - Anthropic
                   li #[a(href="https://github.com/anthropics/courses") Anthropic Tool Use Course]
 
-          //- Week 7-8: Advanced Prompting & Context
+          //- Weeks 8-9: Advanced Prompting & Context
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7" aria-expanded="false")
-                | Weeks 7-8: Advanced Prompting & Context Engineering
-            .accordion-collapse.collapse#week7(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week8" aria-expanded="false")
+                | Weeks 8-9: Advanced Prompting & Context Engineering
+            .accordion-collapse.collapse#week8(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
@@ -389,12 +414,12 @@ body
                   li #[a(href="https://www.anthropic.com/research/mapping-mind-language-model") Mapping the Mind of a Large Language Model]
                   li #[a(href="https://www.anthropic.com/research/tracing-thoughts-language-model") Tracing the Thoughts of a Large Language Model]
 
-          //- Week 9-10: Evaluations
+          //- Weeks 10-11: Evaluations
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week9" aria-expanded="false")
-                | Weeks 9-10: Evaluations (Evals)
-            .accordion-collapse.collapse#week9(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week10" aria-expanded="false")
+                | Weeks 10-11: Evaluations (Evals)
+            .accordion-collapse.collapse#week10(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
@@ -405,12 +430,12 @@ body
                   li #[a(href="https://aclanthology.org/2025.findings-acl.686/") HumanEval Pro] - ACL 2025
                   li #[a(href="https://cset.georgetown.edu/publication/cybersecurity-risks-of-ai-generated-code/") Cybersecurity Risks of AI-Generated Code] - Georgetown CSET
 
-          //- Week 13-14: Production & CI/CD
+          //- Week 14: Production & CI/CD
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week13" aria-expanded="false")
-                | Weeks 13-14: Production & CI/CD
-            .accordion-collapse.collapse#week13(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week14" aria-expanded="false")
+                | Week 14: Production & CI/CD
+            .accordion-collapse.collapse#week14(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
@@ -426,7 +451,7 @@ body
       .col-12
         h3 Communication
         p #[strong Slack] is the main communication channel for this course. Canvas is used for assignment submissions and grades.
-        p.small.text-muted This course #[strong requires AI tool use] but with strict guidelines: document all AI usage, understand all code submitted, never commit code you cannot explain. The Midterm No-AI Challenge tests fundamental programming ability.
+        p.small.text-muted This course #[strong requires AI tool use] but with strict guidelines: document all AI usage, understand all code submitted, never commit code you cannot explain. Weekly quizzes test conceptual understanding.
 
     //- Footer
     hr
