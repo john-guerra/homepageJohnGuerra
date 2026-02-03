@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="container">
-    <nav class="nav nav-pills mb-4 justify-content-center"><a class="nav-link" href="#schedule">Schedule</a><a class="nav-link" href="#readings">Readings</a><a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#grading">Grading</a></nav>
+    <nav class="nav nav-pills mb-4 justify-content-center"><a class="nav-link" href="#timeline-section">Timeline</a><a class="nav-link" href="#schedule">Schedule</a><a class="nav-link" href="#readings">Readings</a><a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#grading">Grading</a></nav>
     <div class="row mb-4">
       <div class="col-lg-8">
         <h3>Course Overview</h3>
@@ -83,21 +83,21 @@
         <p>Students will master three distinct AI coding paradigms:</p>
       </div>
       <div class="col-md-4">
-        <div class="modality-card">
+        <div class="modality-card modality-claude-web">
           <h5>Modality 1: Claude Web</h5>
           <p class="small mb-1"><strong>Best for:</strong> Architecture planning, learning, complex problem-solving</p>
           <p class="small mb-0"><strong>Skills:</strong> Claude Projects, artifacts, conversational iteration</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="modality-card">
+        <div class="modality-card modality-antigravity">
           <h5>Modality 2: Antigravity</h5>
           <p class="small mb-1"><strong>Best for:</strong> Professional development, production code, daily workflow</p>
           <p class="small mb-0"><strong>Skills:</strong> Tab autocomplete, Composer, .antigravityrules, YOLO mode</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="modality-card">
+        <div class="modality-card modality-claude-code">
           <h5>Modality 3: Claude Code</h5>
           <p class="small mb-1"><strong>Best for:</strong> Automation, multi-file refactoring, DevOps</p>
           <p class="small mb-0"><strong>Skills:</strong> Terminal workflows, autonomous agents, script automation</p>
@@ -110,7 +110,7 @@
         <p class="text-muted">All projects are open topic—you choose what to build after getting instructor approval.</p>
       </div>
       <div class="col-md-4">
-        <div class="project-card">
+        <div class="project-card project-p1">
           <h5>Project 1: Personal Utility App</h5>
           <p class="small">Build a personal utility application that solves a real problem validated through Mom Test interviews.</p>
           <ul class="small">
@@ -118,11 +118,11 @@
             <li>Basic test suite (50%+ coverage)</li>
             <li>GitHub Actions CI pipeline</li>
             <li>Deployed and publicly accessible</li>
-          </ul><span class="badge bg-secondary">15% of grade</span><span class="badge bg-info ms-1">Due Week 7</span>
+          </ul><span class="badge" style="background-color: var(--color-green)">15% of grade</span><span class="badge ms-1" style="background-color: var(--color-green-light); color: #333">Due Week 7</span>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="project-card">
+        <div class="project-card project-p2">
           <h5>Project 2: Full-Stack Application</h5>
           <p class="small">Complete full-stack application using multiple AI modalities, Agile practices, TDD, and production-grade CI/CD.</p>
           <ul class="small">
@@ -130,11 +130,11 @@
             <li>Test-Driven Development (80%+ coverage)</li>
             <li>Comprehensive evaluation suite</li>
             <li>2 documented Agile sprints</li>
-          </ul><span class="badge bg-secondary">20% of grade</span><span class="badge bg-info ms-1">Due Week 12</span>
+          </ul><span class="badge" style="background-color: var(--color-purple)">20% of grade</span><span class="badge ms-1" style="background-color: var(--color-purple-light); color: #333">Due Week 12</span>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="project-card">
+        <div class="project-card project-p3">
           <h5>Project 3: Team Application</h5>
           <p class="small">Team of 2-3 building complex, production-grade application with advanced AI techniques.</p>
           <ul class="small">
@@ -142,8 +142,15 @@
             <li>LLM-as-judge evaluation system</li>
             <li>Enterprise CI/CD & monitoring</li>
             <li>Security audit passed</li>
-          </ul><span class="badge bg-secondary">20% of grade</span><span class="badge bg-info ms-1">Due Week 15</span>
+          </ul><span class="badge" style="background-color: var(--color-orange)">20% of grade</span><span class="badge ms-1" style="background-color: var(--color-orange-light); color: #333">Due Week 15</span>
         </div>
+      </div>
+    </div>
+    <div class="row mb-4" id="timeline-section">
+      <div class="col-12">
+        <h3>Interactive Timeline</h3>
+        <p class="text-muted small">Navigate through the semester to see what you should be working on each week.</p>
+        <div id="timeline-container"></div>
       </div>
     </div>
     <div class="row mb-4" id="schedule">
@@ -166,72 +173,72 @@
             </tr>
             <tr>
               <td>2</td>
-              <td><strong>LLM Fundamentals</strong>, Mom Test & Design Thinking intro, Claude Web</td>
+              <td><strong>LLM Architecture & Tokenization</strong></td>
               <td><a href="https://johnguerra.co/lectures/aiCoding_spring2026/02_LLMs_fundamentals/">LLMs</a></td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Prompt Engineering, <strong>HW1 due</strong></td>
+              <td>Prompt Engineering Basics</td>
               <td><a href="https://johnguerra.co/lectures/aiCoding_spring2026/03_Prompt_Engineering/">Prompts</a></td>
             </tr>
             <tr>
               <td>4</td>
-              <td>User Research & Prototyping, Mom Test Workshop</td>
+              <td><strong class="text-claude-web">Claude Web & Artifacts</strong>, <strong class="text-hw">HW1 due</strong></td>
               <td><a href="https://johnguerra.co/lectures/aiCoding_spring2026/04_User_Research_Prototyping/">Research</a></td>
             </tr>
             <tr>
               <td>5</td>
-              <td>Modality 2: Antigravity, TDD Introduction, <strong>HW2 due</strong></td>
+              <td><span class="text-claude-web">Claude Projects & Prototyping</span>, <strong class="text-hw">HW2 due</strong></td>
               <td></td>
             </tr>
             <tr>
               <td>6</td>
-              <td>Antigravity Advanced, CI/CD Fundamentals</td>
+              <td><strong class="text-antigravity">Antigravity Introduction</strong>, TDD Basics</td>
               <td></td>
             </tr>
             <tr>
               <td>7</td>
-              <td><strong>Project 1 Demos</strong>, Modality 3: Claude Code</td>
+              <td>TDD Advanced, <strong class="text-project-p1">Project 1 Demos</strong></td>
               <td></td>
             </tr>
             <tr>
               <td>8</td>
-              <td>Advanced Prompt Engineering</td>
+              <td><span class="text-antigravity">Antigravity Advanced</span>, CI/CD Fundamentals</td>
               <td></td>
             </tr>
             <tr>
               <td>9</td>
-              <td>Context Engineering, <strong>HW3 due</strong></td>
+              <td>Context Engineering, <strong class="text-hw">HW3 due</strong></td>
               <td></td>
             </tr>
             <tr>
               <td>10</td>
-              <td>Evaluations (Evals) Part 1</td>
+              <td>Evaluations (Evals)</td>
               <td></td>
             </tr>
             <tr>
               <td>11</td>
-              <td>TDD + CI/CD + Evals, <strong>HW4 due</strong></td>
+              <td><strong class="text-claude-code">Claude Code Introduction</strong>, <strong class="text-hw">HW4 due</strong></td>
               <td></td>
             </tr>
             <tr>
               <td>12</td>
-              <td><strong>Project 2 Demos</strong>, Agile/Scrum with AI</td>
+              <td><strong class="text-project-p2">Project 2 Demos</strong>, Agile/Scrum with AI</td>
               <td></td>
             </tr>
             <tr>
               <td>13</td>
-              <td>Parallel Agentic Programming</td>
+              <td><span class="text-claude-code">Parallel Agentic Programming</span></td>
               <td></td>
             </tr>
             <tr>
               <td>14</td>
-              <td>Advanced Patterns + Production, <strong>HW5 due</strong>, <strong>HW6 due</strong></td>
+              <td>Advanced Patterns + Production, <strong class="text-hw">HW5 due</strong>, <strong class="text-hw">HW6 due</strong></td>
               <td></td>
             </tr>
             <tr>
               <td>15</td>
-              <td><strong>Demo Day - Final Project Presentations</strong></td>
+              <td><strong class="text-project-p3">Demo Day - Final Presentations</strong></td>
               <td></td>
             </tr>
           </tbody>
@@ -370,7 +377,7 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week4" aria-expanded="false">Week 4: User Research & Prototyping</button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week4" aria-expanded="false">Weeks 4-5: Claude Web & Artifacts</button>
             </h2>
             <div class="accordion-collapse collapse" id="week4" data-bs-parent="#readingsAccordion">
               <div class="accordion-body">
@@ -396,7 +403,7 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week5" aria-expanded="false">Weeks 5-6: Antigravity IDE & TDD</button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week5" aria-expanded="false">Weeks 6-10: Antigravity IDE & TDD</button>
             </h2>
             <div class="accordion-collapse collapse" id="week5" data-bs-parent="#readingsAccordion">
               <div class="accordion-body">
@@ -411,7 +418,7 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week7" aria-expanded="false">Week 7: Claude Code & Terminal AI</button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week7" aria-expanded="false">Weeks 11-15: Claude Code & Production</button>
             </h2>
             <div class="accordion-collapse collapse" id="week7" data-bs-parent="#readingsAccordion">
               <div class="accordion-body">
@@ -425,7 +432,7 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week8" aria-expanded="false">Weeks 8-9: Advanced Prompting & Context Engineering</button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week8" aria-expanded="false">Weeks 8-10: Context Engineering & Evaluations</button>
             </h2>
             <div class="accordion-collapse collapse" id="week8" data-bs-parent="#readingsAccordion">
               <div class="accordion-body">
@@ -433,28 +440,13 @@
                 <ul class="small">
                   <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking">Extended Thinking</a> - Anthropic</li>
                   <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-prompts">Prompt Chaining Guide</a> - Anthropic</li>
-                </ul>
-                <h6>Reference (Anthropic Research)</h6>
-                <ul class="small">
-                  <li><a href="https://www.anthropic.com/research/mapping-mind-language-model">Mapping the Mind of a Large Language Model</a></li>
-                  <li><a href="https://www.anthropic.com/research/tracing-thoughts-language-model">Tracing the Thoughts of a Large Language Model</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week10" aria-expanded="false">Weeks 10-11: Evaluations (Evals)</button>
-            </h2>
-            <div class="accordion-collapse collapse" id="week10" data-bs-parent="#readingsAccordion">
-              <div class="accordion-body">
-                <h6>Required</h6>
-                <ul class="small">
                   <li><a href="https://github.com/anthropics/courses">Anthropic Prompt Evaluations Course</a></li>
                   <li><a href="https://github.com/openai/human-eval">HumanEval Benchmark</a> - OpenAI</li>
                 </ul>
                 <h6>Reference</h6>
                 <ul class="small">
+                  <li><a href="https://www.anthropic.com/research/mapping-mind-language-model">Mapping the Mind of a Large Language Model</a></li>
+                  <li><a href="https://www.anthropic.com/research/tracing-thoughts-language-model">Tracing the Thoughts of a Large Language Model</a></li>
                   <li><a href="https://aclanthology.org/2025.findings-acl.686/">HumanEval Pro</a> - ACL 2025</li>
                   <li><a href="https://cset.georgetown.edu/publication/cybersecurity-risks-of-ai-generated-code/">Cybersecurity Risks of AI-Generated Code</a> - Georgetown CSET</li>
                 </ul>
@@ -496,6 +488,8 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="timeline.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -515,5 +509,17 @@
         link.textContent = e;
       }
     })();
+    
+    // Initialize Course Timeline Widget
+    document.addEventListener('DOMContentLoaded', function() {
+      var container = document.getElementById('timeline-container');
+      if (container && typeof CourseTimeline !== 'undefined') {
+        var timeline = CourseTimeline(courseData, {
+          value: dateToWeek(new Date()),
+          width: Math.min(container.offsetWidth, 900)
+        });
+        container.appendChild(timeline);
+      }
+    });
   </script>
 </body>

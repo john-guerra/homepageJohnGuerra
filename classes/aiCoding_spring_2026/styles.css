@@ -42,29 +42,87 @@
   opacity: 0.9;
 }
 
-/* Modality Cards */
+/* Color palette from d3.schemePaired (matching timeline.js) */
+:root {
+  --color-blue: #1f78b4;
+  --color-blue-light: #a6cee3;
+  --color-green: #33a02c;
+  --color-green-light: #b2df8a;
+  --color-purple: #6a3d9a;
+  --color-purple-light: #cab2d6;
+  --color-orange: #ff7f00;
+  --color-orange-light: #fdbf6f;
+  --color-brown: #b15928;
+}
+
+/* Modality Cards - color coded */
 .modality-card {
-  border-left: 4px solid #0d6efd;
   background: #f8f9fa;
   padding: 1rem;
   margin-bottom: 1rem;
+  border-radius: 0 4px 4px 0;
 }
 
 .modality-card h5 {
-  color: #0d6efd;
   margin-bottom: 0.5rem;
 }
 
-/* Project Cards */
+/* Claude Web - green */
+.modality-card.modality-claude-web {
+  border-left: 4px solid var(--color-green);
+}
+.modality-card.modality-claude-web h5 {
+  color: var(--color-green);
+}
+
+/* Antigravity/IDE - purple */
+.modality-card.modality-antigravity {
+  border-left: 4px solid var(--color-purple);
+}
+.modality-card.modality-antigravity h5 {
+  color: var(--color-purple);
+}
+
+/* Claude Code/CLI - orange */
+.modality-card.modality-claude-code {
+  border-left: 4px solid var(--color-orange);
+}
+.modality-card.modality-claude-code h5 {
+  color: var(--color-orange);
+}
+
+/* Project Cards - color coded */
 .project-card {
-  border: 1px solid #dee2e6;
   border-radius: 0.5rem;
   padding: 1.25rem;
   height: 100%;
 }
 
-.project-card h5 {
-  color: #198754;
+/* P1 - green (matches Claude Web phase) */
+.project-card.project-p1 {
+  border: 2px solid var(--color-green);
+  border-top: 4px solid var(--color-green);
+}
+.project-card.project-p1 h5 {
+  color: var(--color-green);
+}
+
+/* P2 - purple (matches IDE Assistants phase) */
+.project-card.project-p2 {
+  border: 2px solid var(--color-purple);
+  border-top: 4px solid var(--color-purple);
+}
+.project-card.project-p2 h5 {
+  color: var(--color-purple);
+}
+
+/* P3 - orange (matches CLI Agentic phase) */
+.project-card.project-p3 {
+  border: 2px solid var(--color-orange);
+  border-top: 4px solid var(--color-orange);
+}
+.project-card.project-p3 h5 {
+  color: var(--color-orange);
 }
 
 /* Tech Badges */
@@ -81,3 +139,70 @@
 .schedule-table th {
   background: #f8f9fa;
 }
+
+/* Timeline Widget */
+.course-timeline-widget {
+  width: 100%;
+}
+
+.course-timeline-widget svg {
+  font-family: inherit;
+}
+
+.course-timeline-widget .focus-card {
+  border-left: 4px solid #cc0000;
+  background: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.course-timeline-widget .focus-card h5 {
+  color: #333;
+  font-size: 1rem;
+}
+
+.course-timeline-widget .controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.course-timeline-widget .controls label {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.course-timeline-widget .legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .course-timeline-widget svg {
+    min-width: 600px;
+  }
+
+  #timeline-container {
+    overflow-x: auto;
+  }
+
+  .course-timeline-widget .controls {
+    flex-wrap: wrap;
+  }
+}
+
+/* Text color utilities for schedule table */
+.text-claude-web { color: var(--color-green); }
+.text-antigravity { color: var(--color-purple); }
+.text-claude-code { color: var(--color-orange); }
+.text-project-p1 { color: var(--color-green); }
+.text-project-p2 { color: var(--color-purple); }
+.text-project-p3 { color: var(--color-orange); }
+.text-hw { color: var(--color-brown); }
