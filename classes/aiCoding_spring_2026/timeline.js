@@ -54,8 +54,8 @@ const courseData = {
     { id: "HW1", name: "Prompt Engineering", dueWeek: 4, weight: "4%" },
     { id: "HW2", name: "Mom Test", dueWeek: 5, weight: "4%" },
     { id: "HW3", name: "Context Engineering", dueWeek: 8, weight: "4%" },
-    { id: "HW4", name: "TDD + CI/CD", dueWeek: 10, weight: "5%" },
-    { id: "HW5", name: "Parallel Agents", dueWeek: 11, weight: "4%" },
+    { id: "HW4", name: "TDD + CI/CD", dueWeek: 11, weight: "5%" },
+    { id: "HW5", name: "Parallel Agents", dueWeek: 12, weight: "4%" },
     { id: "HW6", name: "Production Ready", dueWeek: 13, weight: "4%" },
   ],
   weeklyFocus: {
@@ -87,15 +87,15 @@ const courseData = {
     6: {
       topic: "P1 Due & IDE-Centric AI Coding",
       project: "P1: Final, P2: Start",
-      action: "Submit P1, start P2",
+      action: "Submit P1, form P2 pairs, start P2",
     },
     7: {
-      topic: "Advanced IDE AI + Agile/Scrum",
+      topic: "Agile/Scrum + Pair Workflow",
       project: "P2: Sprint 1",
       action: "Set up scrumboard, start P2 sprints",
     },
     8: {
-      topic: "Claude Code (Modality 3)",
+      topic: "Advanced IDE AI Features",
       project: "P2: Sprint 2",
       action: "Complete HW3, continue P2",
     },
@@ -105,17 +105,17 @@ const courseData = {
       action: "Rest and catch up on projects",
     },
     10: {
-      topic: "P2 Due & TDD + Evals",
+      topic: "Claude Code (Modality 3)",
       project: "P2: Final, P3: Start",
-      action: "Complete HW4, submit P2, form teams",
+      action: "Submit P2, form P3 teams",
     },
     11: {
-      topic: "CI/CD Fundamentals",
+      topic: "TDD + Evals + CI/CD",
       project: "P3: Sprint 1",
-      action: "Complete HW5, set up CI/CD pipelines",
+      action: "Complete HW4, set up TDD & CI/CD",
     },
     12: {
-      topic: "Claude Code + Parallel Agents",
+      topic: "Advanced Claude Code + Parallel Agents",
       project: "P3: Sprint 2",
       action: "Complete HW5, parallel development",
     },

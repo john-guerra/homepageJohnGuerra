@@ -203,33 +203,34 @@ body
                 a(href=slidesBase + "05_Claude_Web_Projects/") Artifacts
             tr
               td 6
-              td #[strong.text-project-p1 Project 1 Due], #[strong.text-antigravity IDE-Centric AI Coding]
+              td #[strong.text-project-p1 Project 1 Due], #[strong.text-antigravity IDE-Centric AI Coding], P2 pair formation
               td
                 a(href=slidesBase + "06_IDE_AI_Coding/") IDE AI
             tr
               td 7
-              td #[strong.text-antigravity Advanced IDE AI + Agile/Scrum]
+              td #[strong.text-antigravity Agile/Scrum + Pair Workflow]
               td
-                a(href=slidesBase + "07_Advanced_IDE_Agile/") Agile+IDE
+                a(href=slidesBase + "07_Advanced_IDE_Agile/") Agile+Pairs
             tr
               td 8
-              td #[strong.text-claude-code Claude Code (Modality 3)], #[strong.text-hw HW3 due]
+              td #[strong.text-antigravity Advanced IDE AI Features], #[strong.text-hw HW3 due]
               td
+                a(href=slidesBase + "08_Advanced_IDE_Features/") IDE Advanced
             tr
               td 9
               td #[em.text-muted Spring Break - No Class]
               td
             tr
               td 10
-              td #[strong.text-project-p2 Project 2 Due], TDD + Evals, #[strong.text-hw HW4 due]
+              td #[strong.text-project-p2 Project 2 Due], #[strong.text-claude-code Claude Code (Modality 3)], P3 team formation
               td
             tr
               td 11
-              td #[strong.text-claude-code CI/CD Fundamentals], #[strong.text-hw HW5 due]
+              td #[strong.text-claude-code TDD + Evals + CI/CD], #[strong.text-hw HW4 due]
               td
             tr
               td 12
-              td #[strong.text-claude-code Claude Code + Parallel Agents]
+              td #[strong.text-claude-code Advanced Claude Code + Parallel Agents], #[strong.text-hw HW5 due]
               td
             tr
               td 13
@@ -408,11 +409,11 @@ body
                   li #[a(href="https://cursor.directory/") cursor.directory] - Community-maintained rules files for various tech stacks
                   li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF Guide for AI Code Assistants] - Security best practices
 
-          //- Week 7: Advanced IDE AI + Agile/Scrum
+          //- Week 7: Agile/Scrum + Pair Workflow
           .accordion-item
             h2.accordion-header
               button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7agile" aria-expanded="false")
-                | Week 7: Advanced IDE AI + Agile/Scrum
+                | Week 7: Agile/Scrum + Pair Workflow
             .accordion-collapse.collapse#week7agile(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
@@ -427,13 +428,30 @@ body
                 ul.small
                   li #[a(href="https://www.atlassian.com/agile") Atlassian Agile Coach] - Comprehensive Agile/Scrum guide
                   li #[a(href="https://docs.github.com/en/get-started/using-github/github-flow") GitHub Flow Guide] - Branch-based workflow
-                  li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol docs
+                  li #[a(href="https://tuple.app/pair-programming-guide") Tuple's Pair Programming Guide] - Best practices for remote pair programming
 
-          //- Weeks 8-11: TDD, CI/CD & Claude Code
+          //- Week 8: Advanced IDE AI Features
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week8ide" aria-expanded="false")
+                | Week 8: Advanced IDE AI Features
+            .accordion-collapse.collapse#week8ide(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol docs
+                  li #[a(href="https://antigravity.google/docs/get-started") Antigravity Advanced Docs] - Agent memory, MCP, browser mode
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementation and examples
+                  li #[a(href="https://developer.chrome.com/docs/devtools/") Chrome DevTools Debugging Guide] - Browser debugging techniques
+                  li #[a(href="https://nodejs.org/en/learn/getting-started/debugging") Node.js Debugging Guide] - Server-side debugging
+
+          //- Weeks 10-11: TDD, CI/CD & Claude Code
           .accordion-item
             h2.accordion-header
               button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week5" aria-expanded="false")
-                | Weeks 8-11: TDD, CI/CD & Claude Code
+                | Weeks 10-11: TDD, CI/CD & Claude Code
             .accordion-collapse.collapse#week5(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required

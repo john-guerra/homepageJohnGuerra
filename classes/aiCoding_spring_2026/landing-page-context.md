@@ -48,12 +48,13 @@ By the end of this course, students will:
 ## Course Structure
 
 ### Assessment Breakdown
-- **Participation (20%)**: 10% pre-class questions + 10% lottery points
+- **Participation (15%)**: 7% pre-class questions + 8% lottery points
+- **Weekly Quizzes (10%)**: Concept quizzes on Canvas (2 lowest dropped)
 - **Homeworks (25%)**: 6 scaffolding assignments (4-5% each)
-- **Projects (55%)**: 3 major portfolio projects
-  - Project 1: Personal Utility App (15%)
-  - Project 2: Full-Stack Application (20%)
-  - Project 3: Team Application with Advanced AI (20%)
+- **Projects (50%)**: 3 major portfolio projects
+  - Project 1: Personal Utility App (13%)
+  - Project 2: Full-Stack Application (18%)
+  - Project 3: Team Application with Advanced AI (19%)
 
 ### The Three AI Modalities
 
@@ -130,8 +131,8 @@ Team of 2-3 building complex, production-grade application with advanced AI tech
 
 ## Homework Assignments
 
-1. **HW1 (4%)**: Mom Test Interviews + User Stories - Conduct 3 interviews, write user stories, create PRD
-2. **HW2 (4%)**: Prompt Engineering Battle - Solve 3 coding challenges by iterating on prompts
+1. **HW1 (4%)**: Prompt Engineering Battle - Solve 3 coding challenges by iterating on prompts
+2. **HW2 (4%)**: Mom Test Interviews + User Stories - Conduct 3 interviews, write user stories, create PRD
 3. **HW3 (4%)**: Context Engineering Lab - Create .cursorrules, test with/without context
 4. **HW4 (5%)**: TDD + CI/CD + Evals Suite - Build feature using strict TDD, create comprehensive eval suite
 5. **HW5 (4%)**: Parallel Agent Orchestration - Build complex feature with parallel agents
