@@ -18,15 +18,21 @@
     new Runtime().module(define, (name) => {
       if (name === "beeswarmPlotNotebooks")
         return new Inspector(
-          document.querySelector("#observablehq-beeswarmPlotNotebooks-85e7616c")
+          document.querySelector(
+            "#observablehq-beeswarmPlotNotebooks-85e7616c",
+          ),
         );
       if (name === "viewof minLikes")
         return new Inspector(
-          document.querySelector("#observablehq-viewof-minLikes-85e7616c")
+          document.querySelector(
+            "#observablehq-viewof-minLikes-85e7616c",
+          ),
         );
       if (name === "notebooksHtml")
         return new Inspector(
-          document.querySelector("#observablehq-notebooksHtml-85e7616c")
+          document.querySelector(
+            "#observablehq-notebooksHtml-85e7616c",
+          ),
         );
       return ["filteredNotebooks"].includes(name);
     });

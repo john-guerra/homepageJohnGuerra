@@ -1,5 +1,5 @@
 <div class="videos">
-  
+
   <!-- Youtube Videos -->
   <div id="observablehq-beeswarmPlotvideos-4a9d5199"></div>
   <div id="observablehq-viewof-minviews-4a9d5199"></div>
@@ -18,15 +18,19 @@
     new Runtime().module(define, (name) => {
       if (name === "beeswarmPlotvideos")
         return new Inspector(
-          document.querySelector("#observablehq-beeswarmPlotvideos-4a9d5199")
+          document.querySelector(
+            "#observablehq-beeswarmPlotvideos-4a9d5199",
+          ),
         );
       if (name === "viewof minviews")
         return new Inspector(
-          document.querySelector("#observablehq-viewof-minviews-4a9d5199")
+          document.querySelector(
+            "#observablehq-viewof-minviews-4a9d5199",
+          ),
         );
       if (name === "videosHtml")
         return new Inspector(
-          document.querySelector("#observablehq-videosHtml-4a9d5199")
+          document.querySelector("#observablehq-videosHtml-4a9d5199"),
         );
       return ["filteredvideos"].includes(name);
     });

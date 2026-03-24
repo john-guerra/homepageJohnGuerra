@@ -490,27 +490,27 @@
 
             <!-- Btactile -->
             <!-- <div class="row achievementRow">
-            <div class="col-md-1 col-sm-1 col-xs-2 experienceHeader">
-              <img src="img/Btactile%20box.png" class="time-slab" alt="Btactile">
-            </div>
-            <div class="col-md-11 col-sm-11 col-xs-12 experienceBody">
-              <ul>
-                <li>
-                  Co-founded and wrote <a href="http://btactile.com">BTactile</a> a platform to index 5000 tactile graphics for the blind from all over the world using Meteor.js and React.
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-2">
-              <div class="row achievementRow">
-                <div class="col-xs-6 col-md-6">
-                  <a href="http://btactile.com">
-                    <img src="img/thumb_btactile.png" class="project-thumb" alt="BTactile screenshot">
-                  </a>
-                </div>
-              </div>
-            </div>
+      <div class="col-md-1 col-sm-1 col-xs-2 experienceHeader">
+        <img src="img/Btactile%20box.png" class="time-slab" alt="Btactile">
+      </div>
+      <div class="col-md-11 col-sm-11 col-xs-12 experienceBody">
+        <ul>
+          <li>
+            Co-founded and wrote <a href="http://btactile.com">BTactile</a> a platform to index 5000 tactile graphics for the blind from all over the world using Meteor.js and React.
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <div class="row achievementRow">
+          <div class="col-xs-6 col-md-6">
+            <a href="http://btactile.com">
+              <img src="img/thumb_btactile.png" class="project-thumb" alt="BTactile screenshot">
+            </a>
           </div>
-          <hr> -->
+        </div>
+      </div>
+    </div>
+    <hr> -->
             <!-- End Btactile -->
             <!-- Yahoo labs -->
             <div class="row achievementRow">
@@ -659,16 +659,17 @@
                     presidential election.
                   </li>
                   <!-- <li>
-                    Creator of
-                    <strong
-                      ><a target="_blank" href="http://wholikesmyfb.com"
-                        >WholikesMyFB.com</a
-                      ></strong
-                    >
-                    a Facebook app to explore who likes your post the most.
-                  </li> -->
+              Creator of
+              <strong
+                ><a target="_blank" href="http://wholikesmyfb.com"
+                  >WholikesMyFB.com</a
+                ></strong
+              >
+              a Facebook app to explore who likes your post the most.
+            </li> -->
                   <!-- 							<li>Other experiments <strong><a target="_blank" href="http://www.dutovis.com/tradeFlow/flow/flow.html">Tradeflow:</a></strong> A tool to compare the imports/exports of products in countries of the Americas</li>
-                --></ul>
+          -->
+                </ul>
               </div>
             </div>
             <!-- End Extras -->
@@ -1020,27 +1021,25 @@
           <script type="module">
             import {
               Runtime,
-              Inspector,
+              Inspector
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@john-guerra/my-observable-notebooks.js?v=3";
-            new Runtime().module(define, (name) => {
+            new Runtime().module(define, name => {
               if (name === "beeswarmPlotNotebooks")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-beeswarmPlotNotebooks-85e7616c",
-                  ),
+                    "#observablehq-beeswarmPlotNotebooks-85e7616c"
+                  )
                 );
               if (name === "viewof minLikes")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-viewof-minLikes-85e7616c",
-                  ),
+                    "#observablehq-viewof-minLikes-85e7616c"
+                  )
                 );
               if (name === "notebooksHtml")
                 return new Inspector(
-                  document.querySelector(
-                    "#observablehq-notebooksHtml-85e7616c",
-                  ),
+                  document.querySelector("#observablehq-notebooksHtml-85e7616c")
                 );
               return ["filteredNotebooks"].includes(name);
             });
@@ -1060,25 +1059,25 @@
           <script type="module">
             import {
               Runtime,
-              Inspector,
+              Inspector
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@john-guerra/my-youtube-videos.js?v=3";
-            new Runtime().module(define, (name) => {
+            new Runtime().module(define, name => {
               if (name === "beeswarmPlotvideos")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-beeswarmPlotvideos-4a9d5199",
-                  ),
+                    "#observablehq-beeswarmPlotvideos-4a9d5199"
+                  )
                 );
               if (name === "viewof minviews")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-viewof-minviews-4a9d5199",
-                  ),
+                    "#observablehq-viewof-minviews-4a9d5199"
+                  )
                 );
               if (name === "videosHtml")
                 return new Inspector(
-                  document.querySelector("#observablehq-videosHtml-4a9d5199"),
+                  document.querySelector("#observablehq-videosHtml-4a9d5199")
                 );
               return ["filteredvideos"].includes(name);
             });
