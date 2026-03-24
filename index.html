@@ -1027,18 +1027,20 @@
               if (name === "beeswarmPlotNotebooks")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-beeswarmPlotNotebooks-85e7616c"
-                  )
+                    "#observablehq-beeswarmPlotNotebooks-85e7616c",
+                  ),
                 );
               if (name === "viewof minLikes")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-viewof-minLikes-85e7616c"
-                  )
+                    "#observablehq-viewof-minLikes-85e7616c",
+                  ),
                 );
               if (name === "notebooksHtml")
                 return new Inspector(
-                  document.querySelector("#observablehq-notebooksHtml-85e7616c")
+                  document.querySelector(
+                    "#observablehq-notebooksHtml-85e7616c",
+                  ),
                 );
               return ["filteredNotebooks"].includes(name);
             });
@@ -1065,18 +1067,18 @@
               if (name === "beeswarmPlotvideos")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-beeswarmPlotvideos-4a9d5199"
-                  )
+                    "#observablehq-beeswarmPlotvideos-4a9d5199",
+                  ),
                 );
               if (name === "viewof minviews")
                 return new Inspector(
                   document.querySelector(
-                    "#observablehq-viewof-minviews-4a9d5199"
-                  )
+                    "#observablehq-viewof-minviews-4a9d5199",
+                  ),
                 );
               if (name === "videosHtml")
                 return new Inspector(
-                  document.querySelector("#observablehq-videosHtml-4a9d5199")
+                  document.querySelector("#observablehq-videosHtml-4a9d5199"),
                 );
               return ["filteredvideos"].includes(name);
             });

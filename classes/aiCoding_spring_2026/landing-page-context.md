@@ -131,12 +131,11 @@ Team of 2-3 building complex, production-grade application with advanced AI tech
 
 ## Homework Assignments
 
-1. **HW1 (4%)**: Prompt Engineering Battle - Solve 3 coding challenges by iterating on prompts
-2. **HW2 (4%)**: Mom Test Interviews + User Stories - Conduct 3 interviews, write user stories, create PRD
-3. **HW3 (4%)**: Context Engineering Lab - Create .cursorrules, test with/without context
-4. **HW4 (5%)**: TDD + CI/CD + Evals Suite - Build feature using strict TDD, create comprehensive eval suite
-5. **HW5 (4%)**: Parallel Agent Orchestration - Build complex feature with parallel agents
-6. **HW6 (4%)**: Production Readiness Checklist - Make application production-ready
+1. **HW1 (5%)**: Prompt Engineering Battle - Solve 3 coding challenges by iterating on prompts
+2. **HW2 (5%)**: Mom Test Interviews + User Stories - Conduct 3 interviews, write user stories, create PRD
+3. **HW3 (5%)**: Context Engineering Lab - Create rules files, test with/without context
+4. **HW4 (5%)**: Claude Code Workflow & TDD - Set up CLAUDE.md, Explore→Plan→Implement→Commit, TDD through Claude Code
+5. **HW5 (5%)**: Custom Skill + MCP Integration - Build a custom Claude Code skill and connect an MCP server
 
 ## Required Technologies
 

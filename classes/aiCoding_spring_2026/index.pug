@@ -131,7 +131,7 @@ body
             li Basic test suite (50%+ coverage)
             li GitHub Actions CI pipeline
             li Deployed and publicly accessible
-          span.badge(style="background-color: var(--color-green)") 15% of grade
+          span.badge(style="background-color: var(--color-green)") 13% of grade
           span.badge.ms-1(style="background-color: var(--color-green-light); color: #333") Due Week 6
       .col-md-4
         .project-card.project-p2
@@ -142,7 +142,7 @@ body
             li Test-Driven Development (80%+ coverage)
             li Comprehensive evaluation suite
             li 2 documented Agile sprints
-          span.badge(style="background-color: var(--color-purple)") 20% of grade
+          span.badge(style="background-color: var(--color-purple)") 18% of grade
           span.badge.ms-1(style="background-color: var(--color-purple-light); color: #333") Due Week 10
       .col-md-4
         .project-card.project-p3
@@ -153,7 +153,7 @@ body
             li LLM-as-judge evaluation system
             li Enterprise CI/CD & monitoring
             li Security audit passed
-          span.badge(style="background-color: var(--color-orange)") 20% of grade
+          span.badge(style="background-color: var(--color-orange)") 19% of grade
           span.badge.ms-1(style="background-color: var(--color-orange-light); color: #333") Due Week 15
 
     //- Interactive Timeline
@@ -222,27 +222,32 @@ body
               td
             tr
               td 10
-              td #[strong.text-project-p2 Project 2 Due], #[strong.text-claude-code Claude Code (Modality 3)], P3 team formation
+              td #[strong.text-project-p2 Project 2 Due], #[strong.text-claude-code Claude Code Foundations], P3 team formation
               td
+                a(href=slidesBase + "10_Claude_Code_Foundations/") Claude Code Foundations
             tr
               td 11
-              td #[strong.text-claude-code TDD + Evals + CI/CD], #[strong.text-hw HW4 due]
+              td #[strong.text-claude-code Claude Code Workflows & TDD], #[strong.text-hw HW4 due]
               td
+                a(href=slidesBase + "11_Claude_Code_Workflows/") Claude Code Workflows
             tr
               td 12
-              td #[strong.text-claude-code Advanced Claude Code + Parallel Agents], #[strong.text-hw HW5 due]
+              td #[strong.text-claude-code Claude Code Extensibility]
               td
+                a(href=slidesBase + "12_Claude_Code_Extensibility/") Claude Code Extensibility
             tr
               td 13
-              td Advanced Patterns + Production, #[strong.text-hw HW6 due]
+              td #[strong.text-claude-code Agent Architectures & Agent SDK], #[strong.text-hw HW5 due]
               td
+                a(href=slidesBase + "13_Agent_Architectures/") Agent Architectures
             tr
               td 14
-              td Production Polish
+              td #[strong.text-claude-code Emerging AI Engineering]
               td
+                a(href=slidesBase + "14_Emerging_AI_Engineering/") Emerging AI Engineering
             tr
               td 15
-              td #[strong.text-project-p3 Demo Day - Final Presentations]
+              td #[strong.text-project-p3 Project 3 Due] (no lecture)
               td
 
       .col-md-5#grading
@@ -260,7 +265,7 @@ body
               td Weekly Quizzes
               td 10%
             tr
-              td Homeworks (6 assignments)
+              td Homeworks (5 assignments)
               td 25%
             tr
               td Projects (3 major)
@@ -275,7 +280,7 @@ body
           li Test-Driven Development with AI
           li Professional CI/CD Pipelines
           li Agile Practices with AI
-          li Parallel Agentic Programming
+          li Claude Code & Agent Architectures
 
     //- Technologies
     .row.mb-4
@@ -405,7 +410,7 @@ body
                   li #[a(href="https://docs.cursor.com") Cursor Documentation] - Cursor IDE docs and features
                 h6 Recommended
                 ul.small
-                  li #[a(href="https://github.blog/ai-and-ml/github-copilot/inside-github-copilot-how-github-copilot-works/") Inside GitHub Copilot (GitHub Blog)] - How Copilot's architecture works
+                  li #[a(href="https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/") How GitHub Copilot Understands Your Code (GitHub Blog)] - How Copilot uses context and retrieval
                   li #[a(href="https://cursor.directory/") cursor.directory] - Community-maintained rules files for various tech stacks
                   li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF Guide for AI Code Assistants] - Security best practices
 
@@ -428,7 +433,6 @@ body
                 ul.small
                   li #[a(href="https://www.atlassian.com/agile") Atlassian Agile Coach] - Comprehensive Agile/Scrum guide
                   li #[a(href="https://docs.github.com/en/get-started/using-github/github-flow") GitHub Flow Guide] - Branch-based workflow
-                  li #[a(href="https://tuple.app/pair-programming-guide") Tuple's Pair Programming Guide] - Best practices for remote pair programming
 
           //- Week 8: Advanced IDE AI Features
           .accordion-item
@@ -447,67 +451,76 @@ body
                   li #[a(href="https://developer.chrome.com/docs/devtools/") Chrome DevTools Debugging Guide] - Browser debugging techniques
                   li #[a(href="https://nodejs.org/en/learn/getting-started/debugging") Node.js Debugging Guide] - Server-side debugging
 
-          //- Weeks 10-11: TDD, CI/CD & Claude Code
+          //- Week 10: Claude Code Foundations
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week5" aria-expanded="false")
-                | Weeks 10-11: TDD, CI/CD & Claude Code
-            .accordion-collapse.collapse#week5(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week10cc" aria-expanded="false")
+                | Week 10: Claude Code Foundations
+            .accordion-collapse.collapse#week10cc(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
-                  li #[a(href="https://jestjs.io/docs/getting-started") Jest Documentation] - Testing
-                  li #[a(href="https://vitest.dev/guide/") Vitest Documentation] - Testing
-                  li #[a(href="https://testing-library.com/docs/") Testing Library] - Component testing
-                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD (Week 11)
+                  li #[a(href="https://code.claude.com/docs/en/overview") Claude Code Overview] - What Claude Code is and how to get started
+                  li #[a(href="https://code.claude.com/docs/en/memory#claude-md-files") CLAUDE.md — Project Instructions] - How to write effective CLAUDE.md files
+                  li #[a(href="https://code.claude.com/docs/en/context-management") Context Management] - /clear, /compact, checkpoints
+                  li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - Introduction, Setup, Context
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://code.claude.com/docs/en/best-practices") Claude Code Best Practices] - Anthropic's recommended workflows
 
-          //- Weeks 12-15: Claude Code & Production
+          //- Week 11: Claude Code Workflows & TDD
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7" aria-expanded="false")
-                | Weeks 11-15: Claude Code & Production
-            .accordion-collapse.collapse#week7(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week11cc" aria-expanded="false")
+                | Week 11: Claude Code Workflows & TDD
+            .accordion-collapse.collapse#week11cc(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
-                  li #[a(href="https://docs.anthropic.com/en/docs/claude-code") Claude Code Documentation] - Anthropic
-                  li #[a(href="https://github.com/anthropics/courses") Anthropic Tool Use Course]
+                  li #[a(href="https://jestjs.io/docs/getting-started") Jest Documentation] - Unit testing
+                  li #[a(href="https://vitest.dev/guide/") Vitest Documentation] - Fast Vite-native testing
+                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD pipelines
+                  li #[a(href="https://code.claude.com/docs/en/github-actions") Claude Code in GitHub Actions] - AI-powered PR review
+                  li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - Custom Commands, GitHub Integration
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://code.claude.com/docs/en/cli-reference") Claude Code CLI Reference] - Non-interactive mode, output formats
 
-          //- Weeks 8-10: Context Engineering & Evaluations
+          //- Week 12: Claude Code Extensibility
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week8" aria-expanded="false")
-                | Weeks 8-10: Context Engineering & Evaluations
-            .accordion-collapse.collapse#week8(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week12cc" aria-expanded="false")
+                | Week 12: Claude Code Extensibility
+            .accordion-collapse.collapse#week12cc(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
-                  li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking") Extended Thinking] - Anthropic
-                  li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-prompts") Prompt Chaining Guide] - Anthropic
-                  li #[a(href="https://github.com/anthropics/courses") Anthropic Prompt Evaluations Course]
-                  li #[a(href="https://github.com/openai/human-eval") HumanEval Benchmark] - OpenAI
-                h6 Reference
+                  li #[a(href="https://code.claude.com/docs/en/skills") Skills] - Creating custom slash commands
+                  li #[a(href="https://code.claude.com/docs/en/hooks") Hooks] - Deterministic automation at lifecycle points
+                  li #[a(href="https://code.claude.com/docs/en/mcp") MCP Servers] - Connecting external tools and data
+                  li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol
+                  li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - MCP Servers, Hooks & SDK
+                h6 Recommended
                 ul.small
-                  li #[a(href="https://www.anthropic.com/research/mapping-mind-language-model") Mapping the Mind of a Large Language Model]
-                  li #[a(href="https://www.anthropic.com/research/tracing-thoughts-language-model") Tracing the Thoughts of a Large Language Model]
-                  li #[a(href="https://aclanthology.org/2025.findings-acl.686/") HumanEval Pro] - ACL 2025
-                  li #[a(href="https://cset.georgetown.edu/publication/cybersecurity-risks-of-ai-generated-code/") Cybersecurity Risks of AI-Generated Code] - Georgetown CSET
+                  li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementations
 
-          //- Week 14: Production & CI/CD
+          //- Weeks 13-14: Agent Architectures & AI Engineering
           .accordion-item
             h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week14" aria-expanded="false")
-                | Week 14: Production & CI/CD
-            .accordion-collapse.collapse#week14(data-bs-parent="#readingsAccordion")
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week13cc" aria-expanded="false")
+                | Weeks 13-14: Agent Architectures & AI Engineering
+            .accordion-collapse.collapse#week13cc(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
-                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation]
-                  li #[a(href="https://vercel.com/docs") Vercel Deployment Docs]
-                h6 Security
+                  li #[a(href="https://www.anthropic.com/engineering/building-effective-agents") Building Effective Agents] - Anthropic's 6 agent patterns
+                  li #[a(href="https://platform.claude.com/docs/en/agent-sdk/overview") Claude Agent SDK] - Building programmatic agents
+                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching") Prompt Caching] - Cost optimization
+                  li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10] - Security best practices
+                h6 Recommended
                 ul.small
                   li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF AI Code Security Guide]
-                  li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10]
+                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD reference
 
     //- Communication
     .row.mb-5

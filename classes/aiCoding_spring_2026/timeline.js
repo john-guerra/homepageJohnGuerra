@@ -22,7 +22,7 @@ const courseData = {
     { name: "Fundamentals", weeks: [1, 3], color: colorPalette.blue.dark },
     { name: "Claude Web", weeks: [3, 6], color: colorPalette.green.dark },
     { name: "IDE Assistants", weeks: [6, 10], color: colorPalette.purple.dark },
-    { name: "CLI Agentic", weeks: [10, 15], color: colorPalette.orange.dark },
+    { name: "Claude Code & Agents", weeks: [10, 15], color: colorPalette.orange.dark },
   ],
   projects: [
     {
@@ -30,7 +30,7 @@ const courseData = {
       name: "Personal Utility",
       startWeek: 3,
       endWeek: 6,
-      weight: "15%",
+      weight: "13%",
       color: colorPalette.green.dark,
     },
     {
@@ -38,7 +38,7 @@ const courseData = {
       name: "Full-Stack App",
       startWeek: 6,
       endWeek: 10,
-      weight: "20%",
+      weight: "18%",
       color: colorPalette.purple.dark,
     },
     {
@@ -46,17 +46,16 @@ const courseData = {
       name: "Team App",
       startWeek: 10,
       endWeek: 15,
-      weight: "20%",
+      weight: "19%",
       color: colorPalette.orange.dark,
     },
   ],
   homeworks: [
-    { id: "HW1", name: "Prompt Engineering", dueWeek: 4, weight: "4%" },
-    { id: "HW2", name: "Mom Test", dueWeek: 5, weight: "4%" },
-    { id: "HW3", name: "Context Engineering", dueWeek: 8, weight: "4%" },
-    { id: "HW4", name: "TDD + CI/CD", dueWeek: 11, weight: "5%" },
-    { id: "HW5", name: "Parallel Agents", dueWeek: 12, weight: "4%" },
-    { id: "HW6", name: "Production Ready", dueWeek: 13, weight: "4%" },
+    { id: "HW1", name: "Prompt Engineering", dueWeek: 4, weight: "5%" },
+    { id: "HW2", name: "Mom Test", dueWeek: 5, weight: "5%" },
+    { id: "HW3", name: "Context Engineering", dueWeek: 8, weight: "5%" },
+    { id: "HW4", name: "CC Workflow & TDD", dueWeek: 11, weight: "5%" },
+    { id: "HW5", name: "Skill + MCP", dueWeek: 13, weight: "5%" },
   ],
   weeklyFocus: {
     1: {
@@ -105,34 +104,34 @@ const courseData = {
       action: "Rest and catch up on projects",
     },
     10: {
-      topic: "Claude Code (Modality 3)",
+      topic: "Claude Code Foundations",
       project: "P2: Final, P3: Start",
-      action: "Submit P2, form P3 teams",
+      action: "Submit P2, form P3 teams, write CLAUDE.md",
     },
     11: {
-      topic: "TDD + Evals + CI/CD",
+      topic: "Claude Code Workflows & TDD",
       project: "P3: Sprint 1",
-      action: "Complete HW4, set up TDD & CI/CD",
+      action: "Complete HW4, TDD with Claude Code",
     },
     12: {
-      topic: "Advanced Claude Code + Parallel Agents",
+      topic: "Claude Code Extensibility",
       project: "P3: Sprint 2",
-      action: "Complete HW5, parallel development",
+      action: "Learn skills, hooks & MCP",
     },
     13: {
-      topic: "Advanced Patterns + Production",
+      topic: "Agent Architectures & Agent SDK",
       project: "P3: Sprint 3",
-      action: "Complete HW6, advanced features",
+      action: "Complete HW5, learn agent patterns",
     },
     14: {
-      topic: "Production Polish",
+      topic: "Emerging AI Engineering",
       project: "P3: Sprint 4",
       action: "Deploy & polish, demo prep",
     },
     15: {
-      topic: "Demo Day",
-      project: "P3: Final Demo",
-      action: "Present P3, celebrate!",
+      topic: "Project 3 Due",
+      project: "P3: Final",
+      action: "Submit P3 (no lecture)",
     },
   },
 };

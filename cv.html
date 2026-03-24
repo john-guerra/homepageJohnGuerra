@@ -84,8 +84,6 @@
 
   <style>
     /* For PDF export */
-
-    /* For PDF export */
     body {
       width: 95%;
       margin: 0 auto;
@@ -93,17 +91,11 @@
     @media print {
       @page {
         margin: 5mm 0mm 5mm 0mm;
-        /* size: 17in 18in; */
-
-        /* 1.75 letter */
-        /* size: 14.875in 19.25in; */
-
-        /* 1.5 letter */
-        size: 12.75in 16.5in;
+        size: 17in 18in;
       }
     }
 
-    /* .img200 {
+    .img200 {
       width: 50%;
       max-width: 200px;
       display: block;
@@ -111,16 +103,16 @@
       margin-right: auto;
       margin-bottom: 10px;
       margin-top: 10px;
-    } */
+    }
 
     hr {
       margin: 0px;
     }
 
-    /* New page after inventor 
+    /* New page after inventor  */
     #achievementsText > div:nth-child(11) {
       page-break-after: always;
-    } */
+    }
 
     /*.experience {*/
     /*font-size: 120%;*/
@@ -140,9 +132,9 @@
             <strong>user</strong> in the big data analysis/science loop.
           </p>
           john.guerra[~at~]gmail.com<br />
-          <a href="https://johnguerra.co">johnguerra.co</a>
+          <a href="http://johnguerra.co">johnguerra.co</a>
           <br />
-          <a href="https://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
+          <a href="http://johnguerra.co/img/johnguerra_cv.pdf">PDF Version</a>
           <br />
           <a
             href="https://twitter.com/duto_guerra"
@@ -150,7 +142,7 @@
             data-show-count="false"
             >Follow @duto_guerra</a
           >
-          <!-- <script>
+          <script>
             !(function(d, s, id) {
               var js,
                 fjs = d.getElementsByTagName(s)[0];
@@ -161,7 +153,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
               }
             })(document, "script", "twitter-wjs");
-          </script> -->
+          </script>
         </div>
         <div class="col-xs-12 col-md-6">
           <h2>In a nutshell</h2>
@@ -283,7 +275,7 @@
               </div>
               <div class="col-md-11 col-sm-11 col-xs-12 experienceBody">
                 <div class="experienceTitle">
-                  Associate Teaching Professor
+                  Assistant Teaching Professor
                 </div>
                 <ul>
                   <li>
@@ -291,9 +283,8 @@
                     accesibility.
                   </li>
                   <li>
-                    Teaching many different courses including: Web Development,
-                    Database Management Systems, Program Design Paradigms,
-                    Software Engineering and Information Visualization.
+                    Teaching: Web Development, Database Management Systems and
+                    Information Visualization.
                   </li>
                 </ul>
               </div>
@@ -1034,10 +1025,10 @@
           <script type="module">
             import {
               Runtime,
-              Inspector,
+              Inspector
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@john-guerra/my-observable-notebooks.js?v=3";
-            new Runtime().module(define, (name) => {
+            new Runtime().module(define, name => {
               if (name === "beeswarmPlotNotebooks")
                 return new Inspector(
                   document.querySelector(
