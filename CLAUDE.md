@@ -36,3 +36,15 @@ src/partials/   →  included via <%- include() %>
 - `prettier` — HTML formatting
 
 Install: `npm install -g ejs prettier` or use `npx`
+
+## Important Conventions
+
+- The intro/nutshell section is **duplicated** in both `index.ejs.html` and `cv.ejs.html` (not a shared partial) — changes must be made in both files
+- Title: **"Associate Teaching Professor"** (not "Assistant")
+- Course pages using Pug (e.g., `classes/aiCoding_spring_2026/index.pug`) have their own build process
+
+## Styling
+
+- Bootstrap 5.3.2 via CDN
+- Fonts: Playfair Display (headings), Lato (body) — Google Fonts
+- Theme color: `#FF9800`, Background: `#fefefa`
