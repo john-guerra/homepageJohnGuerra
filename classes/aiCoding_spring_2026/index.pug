@@ -59,6 +59,7 @@ body
       a.nav-link(href="#schedule") Schedule
       a.nav-link(href="#readings") Readings
       a.nav-link(href="#projects") Projects
+      a.nav-link(href="#showcase") Showcase
       a.nav-link(href="#grading") Grading
 
     //- Course Overview
@@ -146,15 +147,23 @@ body
           span.badge.ms-1(style="background-color: var(--color-purple-light); color: #333") Due Week 10
       .col-md-4
         .project-card.project-p3
-          h5 Project 3: Team Application
-          p.small Team of 2-3 building complex, production-grade application with advanced AI techniques.
+          h5 Project 3: Production App with Claude Code Mastery
+          p.small Pair project: deploy a production-grade app demonstrating mastery of Claude Code extensibility (W10-W14).
           ul.small
-            li Parallel agentic programming
-            li LLM-as-judge evaluation system
-            li Enterprise CI/CD & monitoring
-            li Security audit passed
+            li CLAUDE.md, skills, hooks, MCP, agents
+            li TDD + CI/CD with AI PR review
+            li Vercel deployment + Sentry monitoring
+            li Blog post + screencast + live demo
           span.badge(style="background-color: var(--color-orange)") 19% of grade
           span.badge.ms-1(style="background-color: var(--color-orange-light); color: #333") Due Week 15
+
+    //- Project Showcase
+    .row.mb-4#showcase
+      .col-12
+        h3 Project Showcase
+        p.text-muted Student projects from this semester. Submit yours via the Google Form on Canvas.
+        #showcase-container.row.g-3
+          //- Populated dynamically from Google Sheet
 
     //- Interactive Timeline
     .row.mb-4#timeline-section
@@ -571,3 +580,129 @@ body
         container.appendChild(timeline);
       }
     });
+
+    // Project Showcase — fetch from Google Sheet CSV
+    (function() {
+      var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSxlPRTySnpMgzIF2nKPkv879VHpr4_c0UgojTkluCFrqSXs9NP6ytQISIPq7AVFLOa9sMnvS7FrJ/pub?gid=954244184&single=true&output=csv';
+      var container = document.getElementById('showcase-container');
+      if (!container) return;
+
+      function showPlaceholder() {
+        var ph = document.createElement('div');
+        ph.className = 'col-12 showcase-placeholder';
+        ph.textContent = 'Projects will appear here once students submit them.';
+        container.textContent = '';
+        container.appendChild(ph);
+      }
+
+      function makeLink(href, text, className) {
+        var a = document.createElement('a');
+        a.href = href;
+        a.textContent = text;
+        a.className = className;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        return a;
+      }
+
+      function parseCSV(text) {
+        var rows = []; var row = []; var field = ''; var inQuotes = false;
+        for (var i = 0; i < text.length; i++) {
+          var c = text[i];
+          if (inQuotes) {
+            if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+            else if (c === '"') { inQuotes = false; }
+            else { field += c; }
+          } else {
+            if (c === '"') { inQuotes = true; }
+            else if (c === ',') { row.push(field); field = ''; }
+            else if (c === '\n' || (c === '\r' && text[i + 1] === '\n')) {
+              row.push(field); field = ''; rows.push(row); row = [];
+              if (c === '\r') i++;
+            } else { field += c; }
+          }
+        }
+        if (field || row.length) { row.push(field); rows.push(row); }
+        return rows;
+      }
+
+      fetch(SHEET_CSV_URL)
+        .then(function(r) { return r.text(); })
+        .then(function(csv) {
+          var rows = parseCSV(csv);
+          if (rows.length <= 1) { showPlaceholder(); return; }
+          var headers = rows[0].map(function(h) { return h.trim().toLowerCase(); });
+          var projects = rows.slice(1).filter(function(r) { return r.length > 1 && r[1]; });
+
+          // Shuffle for fairness
+          for (var i = projects.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = projects[i]; projects[i] = projects[j]; projects[j] = tmp;
+          }
+
+          container.textContent = '';
+          projects.forEach(function(row) {
+            var get = function(key) {
+              var idx = headers.findIndex(function(h) { return h.includes(key); });
+              return idx >= 0 ? (row[idx] || '').trim() : '';
+            };
+            var name = get('project name');
+            var desc = get('description');
+            var github = get('github');
+            var demo = get('demo') || get('project url');
+            var thumb = get('thumbnail');
+            var video = get('video');
+            var blog = get('blog');
+            var s1 = get('student 1') || get('full name');
+            var s2 = get('student 2');
+
+            var col = document.createElement('div');
+            col.className = 'col-md-4 col-sm-6';
+
+            var card = document.createElement('div');
+            card.className = 'card showcase-card';
+
+            if (thumb) {
+              var img = document.createElement('img');
+              img.className = 'card-img-top';
+              img.src = thumb;
+              img.alt = name;
+              card.appendChild(img);
+            }
+
+            var body = document.createElement('div');
+            body.className = 'card-body';
+
+            var title = document.createElement('h5');
+            title.className = 'card-title';
+            title.textContent = name;
+            body.appendChild(title);
+
+            if (desc) {
+              var p = document.createElement('p');
+              p.className = 'card-text';
+              p.textContent = desc;
+              body.appendChild(p);
+            }
+
+            var btnGroup = document.createElement('div');
+            btnGroup.className = 'btn-group flex-wrap';
+            if (github) btnGroup.appendChild(makeLink(github, 'GitHub', 'btn btn-sm btn-secondary'));
+            if (demo) btnGroup.appendChild(makeLink(demo, 'Demo', 'btn btn-sm btn-primary'));
+            if (video) btnGroup.appendChild(makeLink(video, 'Video', 'btn btn-sm btn-success'));
+            if (blog) btnGroup.appendChild(makeLink(blog, 'Blog', 'btn btn-sm btn-info'));
+            body.appendChild(btnGroup);
+
+            card.appendChild(body);
+
+            var footer = document.createElement('div');
+            footer.className = 'card-footer text-muted';
+            footer.textContent = 'By: ' + s1 + (s2 ? ', ' + s2 : '');
+            card.appendChild(footer);
+
+            col.appendChild(card);
+            container.appendChild(col);
+          });
+        })
+        .catch(showPlaceholder);
+    })();

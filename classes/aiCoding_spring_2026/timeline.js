@@ -43,7 +43,7 @@ const courseData = {
     },
     {
       id: "P3",
-      name: "Team App",
+      name: "Production App + CC Mastery",
       startWeek: 10,
       endWeek: 15,
       weight: "19%",

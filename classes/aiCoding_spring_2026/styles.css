@@ -206,3 +206,54 @@
 .text-project-p2 { color: var(--color-purple); }
 .text-project-p3 { color: var(--color-orange); }
 .text-hw { color: var(--color-brown); }
+
+/* Showcase Cards */
+.showcase-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+  transition: box-shadow 0.2s;
+}
+
+.showcase-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.showcase-card .card-img-top {
+  height: 180px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.showcase-card .card-body {
+  padding: 1rem;
+}
+
+.showcase-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.showcase-card .card-text {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.showcase-card .card-footer {
+  background: #f8f9fa;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+
+.showcase-card .btn-group .btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+#showcase-container .showcase-placeholder {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+  font-style: italic;
+}
