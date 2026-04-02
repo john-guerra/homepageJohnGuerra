@@ -1,0 +1,181 @@
+doctype html
+html(lang="en")
+  head
+    title Project Showcase | CS 7180 Vibe Coding - Northeastern University Oakland, Spring 2026
+    meta(charset="utf-8")
+    meta(name="description" content="Student project showcase for CS 7180 Vibe Coding: AI-Assisted Software Engineering at Northeastern University Oakland.")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="author" content="John Alexis Guerra Gómez")
+
+    //- Favicon
+    link(rel="icon" type="image/png" href="../../favicon.png")
+    link(rel="apple-touch-icon" href="../../favicon.png")
+
+    //- Stylesheets
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous")
+    link(href="styles.css" rel="stylesheet")
+body
+  //- Hero Section (compact)
+  .hero(style="padding: 2rem 0;")
+    .container
+      .row.align-items-center
+        .col-md-8
+          .d-flex.align-items-center.mb-2
+            img.course-logo-sm.me-3(src="logo.svg" alt="Vibe Coding Course Logo")
+            h1.mb-0 CS 7180: Vibe Coding
+          p.tagline Project Showcase
+          p.lead Student projects from Spring 2026. Built with AI-assisted development.
+        .col-md-4.text-center
+          img.logo.mt-2(src="../../img/seal_logotype-768x252.png" alt="Northeastern University Logo" style="filter: brightness(0) invert(1); max-width: 100%;")
+
+  .container
+    //- Navigation
+    nav.nav.nav-pills.mb-4.justify-content-center
+      a.nav-link(href="index.html") Back to Course Page
+
+    //- Showcase Grid
+    .row.mb-4
+      .col-12
+        p.text-muted Submit yours via the Google Form on Canvas.
+        #showcase-container.row.g-3
+          //- Populated dynamically from Google Sheet
+
+    //- Footer
+    hr
+    .row.mb-4
+      .col-12.text-center.text-muted
+        p.small
+          | CS 7180: Vibe Coding — AI-Assisted Software Engineering
+          br
+          a(href="https://johnguerra.co") John Alexis Guerra Gómez
+          |  · Northeastern University Oakland · Spring 2026
+
+  //- Bootstrap JS
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")
+
+  //- Project Showcase — fetch from Google Sheet CSV
+  script.
+    (function() {
+      var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSxlPRTySnpMgzIF2nKPkv879VHpr4_c0UgojTkluCFrqSXs9NP6ytQISIPq7AVFLOa9sMnvS7FrJ/pub?gid=954244184&single=true&output=csv';
+      var container = document.getElementById('showcase-container');
+      if (!container) return;
+
+      function showPlaceholder() {
+        var ph = document.createElement('div');
+        ph.className = 'col-12 showcase-placeholder';
+        ph.textContent = 'Projects will appear here once students submit them.';
+        container.textContent = '';
+        container.appendChild(ph);
+      }
+
+      function makeLink(href, text, className) {
+        var a = document.createElement('a');
+        a.href = href;
+        a.textContent = text;
+        a.className = className;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        return a;
+      }
+
+      function parseCSV(text) {
+        var rows = []; var row = []; var field = ''; var inQuotes = false;
+        for (var i = 0; i < text.length; i++) {
+          var c = text[i];
+          if (inQuotes) {
+            if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+            else if (c === '"') { inQuotes = false; }
+            else { field += c; }
+          } else {
+            if (c === '"') { inQuotes = true; }
+            else if (c === ',') { row.push(field); field = ''; }
+            else if (c === '\n' || (c === '\r' && text[i + 1] === '\n')) {
+              row.push(field); field = ''; rows.push(row); row = [];
+              if (c === '\r') i++;
+            } else { field += c; }
+          }
+        }
+        if (field || row.length) { row.push(field); rows.push(row); }
+        return rows;
+      }
+
+      fetch(SHEET_CSV_URL)
+        .then(function(r) { return r.text(); })
+        .then(function(csv) {
+          var rows = parseCSV(csv);
+          if (rows.length <= 1) { showPlaceholder(); return; }
+          var headers = rows[0].map(function(h) { return h.trim().toLowerCase(); });
+          var projects = rows.slice(1).filter(function(r) { return r.length > 1 && r[1]; });
+
+          // Shuffle for fairness
+          for (var i = projects.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = projects[i]; projects[i] = projects[j]; projects[j] = tmp;
+          }
+
+          container.textContent = '';
+          projects.forEach(function(row) {
+            var get = function(key) {
+              var idx = headers.findIndex(function(h) { return h.includes(key); });
+              return idx >= 0 ? (row[idx] || '').trim() : '';
+            };
+            var name = get('project name');
+            var desc = get('description');
+            var github = get('github');
+            var demo = get('demo') || get('project url');
+            var thumb = get('thumbnail');
+            var video = get('video');
+            var blog = get('blog');
+            var s1 = get('student 1') || get('full name');
+            var s2 = get('student 2');
+
+            var col = document.createElement('div');
+            col.className = 'col-md-4 col-sm-6';
+
+            var card = document.createElement('div');
+            card.className = 'card showcase-card';
+
+            if (thumb) {
+              var img = document.createElement('img');
+              img.className = 'card-img-top';
+              img.src = thumb;
+              img.alt = name;
+              card.appendChild(img);
+            }
+
+            var body = document.createElement('div');
+            body.className = 'card-body';
+
+            var title = document.createElement('h5');
+            title.className = 'card-title';
+            title.textContent = name;
+            body.appendChild(title);
+
+            if (desc) {
+              var p = document.createElement('p');
+              p.className = 'card-text';
+              p.textContent = desc;
+              body.appendChild(p);
+            }
+
+            var btnGroup = document.createElement('div');
+            btnGroup.className = 'btn-group flex-wrap';
+            if (github) btnGroup.appendChild(makeLink(github, 'GitHub', 'btn btn-sm btn-secondary'));
+            if (demo) btnGroup.appendChild(makeLink(demo, 'Demo', 'btn btn-sm btn-primary'));
+            if (video) btnGroup.appendChild(makeLink(video, 'Video', 'btn btn-sm btn-success'));
+            if (blog) btnGroup.appendChild(makeLink(blog, 'Blog', 'btn btn-sm btn-info'));
+            body.appendChild(btnGroup);
+
+            card.appendChild(body);
+
+            var footer = document.createElement('div');
+            footer.className = 'card-footer text-muted';
+            footer.textContent = 'By: ' + s1 + (s2 ? ', ' + s2 : '');
+            card.appendChild(footer);
+
+            col.appendChild(card);
+            container.appendChild(col);
+          });
+        })
+        .catch(showPlaceholder);
+    })();
