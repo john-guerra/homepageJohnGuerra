@@ -155,7 +155,7 @@ body
             li Vercel deployment + Sentry monitoring
             li Blog post + screencast + live demo
           span.badge(style="background-color: var(--color-orange)") 19% of grade
-          span.badge.ms-1(style="background-color: var(--color-orange-light); color: #333") Due Week 15
+          span.badge.ms-1(style="background-color: var(--color-orange-light); color: #333") Due Finals Week (Apr 21)
 
     //- Project Showcase
     .row.mb-4#showcase
@@ -246,17 +246,22 @@ body
                 a(href=slidesBase + "12_Claude_Code_Extensibility/") Claude Code Extensibility
             tr
               td 13
-              td #[strong.text-claude-code Agent Architectures & Agent SDK], #[strong.text-hw HW5 due]
+              td #[strong.text-claude-code Agent Architectures & SDK], #[strong.text-hw HW5 due]
               td
                 a(href=slidesBase + "13_Agent_Architectures/") Agent Architectures
             tr
               td 14
-              td #[strong.text-claude-code Emerging AI Engineering]
+              td #[strong.text-claude-code AI Security & Code Quality]
               td
-                a(href=slidesBase + "14_Emerging_AI_Engineering/") Emerging AI Engineering
+                a(href=slidesBase + "14_AI_Security_Code_Quality/") AI Security
             tr
               td 15
-              td #[strong.text-project-p3 Project 3 Due] (no lecture)
+              td #[strong.text-claude-code Production & Course Synthesis]
+              td
+                a(href=slidesBase + "15_Production_Synthesis/") Production
+            tr
+              td 16
+              td #[strong.text-project-p3 Finals Week — Project 3 Due (Apr 21)]
               td
 
       .col-md-5#grading
@@ -513,22 +518,62 @@ body
                 ul.small
                   li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementations
 
-          //- Weeks 13-14: Agent Architectures & AI Engineering
+          //- Week 13: Agent Architectures & SDK
           .accordion-item
             h2.accordion-header
               button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week13cc" aria-expanded="false")
-                | Weeks 13-14: Agent Architectures & AI Engineering
+                | Week 13: Agent Architectures & SDK
             .accordion-collapse.collapse#week13cc(data-bs-parent="#readingsAccordion")
               .accordion-body
                 h6 Required
                 ul.small
                   li #[a(href="https://www.anthropic.com/engineering/building-effective-agents") Building Effective Agents] - Anthropic's 6 agent patterns
                   li #[a(href="https://platform.claude.com/docs/en/agent-sdk/overview") Claude Agent SDK] - Building programmatic agents
-                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching") Prompt Caching] - Cost optimization
-                  li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10] - Security best practices
+                  li #[a(href="https://platform.claude.com/docs/en/agent-sdk/quickstart") Agent SDK Quick Start] - Getting started
+                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/tool-use/overview") Tool Use (Function Calling)] - How agents use tools
                 h6 Recommended
                 ul.small
+                  li #[a(href="https://www.anthropic.com/engineering/building-c-compiler") Building a C Compiler with Parallel Claudes] - 16 agents, 100K lines
+                  li #[a(href="https://www.anthropic.com/engineering/multi-agent-research-system") Multi-Agent Research System] - Orchestrator-worker pattern
+                  li #[a(href="https://www.anthropic.com/engineering/writing-tools-for-agents") Writing Effective Tools for Agents] - Tool design principles
+                  li #[a(href="https://www.anthropic.com/engineering/code-execution-with-mcp") Code Execution with MCP] - 98.7% token reduction
+
+          //- Week 14: AI Security & Code Quality
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week14sec" aria-expanded="false")
+                | Week 14: AI Security & Code Quality
+            .accordion-collapse.collapse#week14sec(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10] - Security best practices
                   li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF AI Code Security Guide]
+                  li #[a(href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents") Demystifying Evals for AI Agents] - Eval frameworks
+                  li #[a(href="https://www.anthropic.com/engineering/claude-code-auto-mode") Claude Code Auto Mode] - Agent safety architecture
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://www.anthropic.com/engineering/eval-awareness-browsecomp") Eval Awareness in BrowseComp] - Model reverse-engineered its benchmark
+                  li #[a(href="https://www.anthropic.com/engineering/AI-resistant-technical-evaluations") Designing AI-Resistant Evaluations] - Assessment design
+                  li #[a(href="https://www.anthropic.com/engineering/infrastructure-noise") Infrastructure Noise in Agentic Evals] - Benchmark skepticism
+
+          //- Week 15: Production & Course Synthesis
+          .accordion-item
+            h2.accordion-header
+              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week15prod" aria-expanded="false")
+                | Week 15: Production & Course Synthesis
+            .accordion-collapse.collapse#week15prod(data-bs-parent="#readingsAccordion")
+              .accordion-body
+                h6 Required
+                ul.small
+                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching") Prompt Caching] - Cost optimization
+                  li #[a(href="https://vercel.com/docs") Vercel Deployment Docs] - Production deployment
+                  li #[a(href="https://www.anthropic.com/engineering/harness-design-long-running-apps") Harness Design for Long-Running Apps] - Planner/Generator/Evaluator
+                  li #[a(href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents") Effective Harnesses for Long-Running Agents] - Multi-session patterns
+                h6 Recommended
+                ul.small
+                  li #[a(href="https://www.anthropic.com/engineering/claude-code-sandboxing") Claude Code Sandboxing] - Production security
+                  li #[a(href="https://www.anthropic.com/engineering/contextual-retrieval") Contextual Retrieval] - RAG patterns
                   li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD reference
 
     //- Communication

@@ -16,13 +16,13 @@ const colorPalette = {
 const courseData = {
   semester: {
     startDate: "2026-01-05", // Week 1 Monday (calendar week containing semester start)
-    totalWeeks: 15,
+    totalWeeks: 16,
   },
   phases: [
     { name: "Fundamentals", weeks: [1, 3], color: colorPalette.blue.dark },
     { name: "Claude Web", weeks: [3, 6], color: colorPalette.green.dark },
     { name: "IDE Assistants", weeks: [6, 10], color: colorPalette.purple.dark },
-    { name: "Claude Code & Agents", weeks: [10, 15], color: colorPalette.orange.dark },
+    { name: "Claude Code & Agents", weeks: [10, 16], color: colorPalette.orange.dark },
   ],
   projects: [
     {
@@ -45,7 +45,7 @@ const courseData = {
       id: "P3",
       name: "Production App + CC Mastery",
       startWeek: 10,
-      endWeek: 15,
+      endWeek: 16,
       weight: "19%",
       color: colorPalette.orange.dark,
     },
@@ -119,19 +119,24 @@ const courseData = {
       action: "Learn skills, hooks & MCP",
     },
     13: {
-      topic: "Agent Architectures & Agent SDK",
+      topic: "Agent Architectures & SDK",
       project: "P3: Sprint 3",
-      action: "Complete HW5, learn agent patterns",
+      action: "Complete HW5, build agents with SDK",
     },
     14: {
-      topic: "Emerging AI Engineering",
+      topic: "AI Security & Code Quality",
       project: "P3: Sprint 4",
-      action: "Deploy & polish, demo prep",
+      action: "Security audit, AI code review",
     },
     15: {
-      topic: "Project 3 Due",
+      topic: "Production & Course Synthesis",
+      project: "P3: Deploy & polish",
+      action: "Deploy, optimize, demo prep",
+    },
+    16: {
+      topic: "Finals Week — P3 Due (Apr 21)",
       project: "P3: Final",
-      action: "Submit P3 (no lecture)",
+      action: "Submit P3",
     },
   },
 };
@@ -144,7 +149,7 @@ const courseData = {
 function dateToWeek(date) {
   const start = new Date(courseData.semester.startDate);
   const diffDays = (date - start) / (1000 * 60 * 60 * 24);
-  return Math.max(1, Math.min(15, Math.ceil(diffDays / 7)));
+  return Math.max(1, Math.min(16, Math.ceil(diffDays / 7)));
 }
 
 /**
@@ -223,7 +228,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
   // Scales
-  const xScale = d3.scaleLinear().domain([1, 15]).range([0, innerWidth]);
+  const xScale = d3.scaleLinear().domain([1, 16]).range([0, innerWidth]);
 
   // Layout constants - tighter vertical spacing
   const phaseHeight = 26;
@@ -283,7 +288,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
     .attr("font-style", "italic")
     .text("Spring Break");
 
-  for (let i = 1; i <= 15; i++) {
+  for (let i = 1; i <= 16; i++) {
     const x = xScale(i);
 
     // Grid lines extend from top of modality row to bottom
@@ -488,7 +493,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
       // Clamp x to valid range
       const x = Math.max(0, Math.min(innerWidth, event.x));
       // Calculate nearest week
-      const week = Math.max(1, Math.min(15, Math.round(xScale.invert(x))));
+      const week = Math.max(1, Math.min(16, Math.round(xScale.invert(x))));
       const snappedX = xScale(week + 0.5);
 
       // Update visual position during drag - line is separate from pill
@@ -514,7 +519,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
 
       // Calculate final week and update widget
       const x = Math.max(0, Math.min(innerWidth, event.x));
-      const week = Math.max(1, Math.min(15, Math.round(xScale.invert(x))));
+      const week = Math.max(1, Math.min(16, Math.round(xScale.invert(x))));
       widget.setValue(week);
     });
 
@@ -526,7 +531,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
   weekPopup.style.cssText =
     "display:none; position:absolute; background:#fff; border:1px solid #ccc; border-radius:8px; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:100; flex-wrap:wrap; gap:4px; max-width:200px;";
 
-  for (let i = 1; i <= 15; i++) {
+  for (let i = 1; i <= 16; i++) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-sm btn-outline-secondary week-btn";
