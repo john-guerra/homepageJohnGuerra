@@ -284,6 +284,8 @@ const skillsTools = [
   { name: "Vega-Lite", value: 130, category: "Research" },
   { name: "Observable", value: 100, category: "Research" },
   { name: "User Experience", value: 50, category: "Research" },
+  { name: "ReactiveWidgets.org", value: 50, category: "Research" },
+
 
   { name: "HTML5/CSS/JS", value: 150, category: "Engineering" },
   { name: "React", value: 100, category: "Engineering" },
