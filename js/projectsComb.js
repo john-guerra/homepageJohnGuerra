@@ -232,36 +232,32 @@
     function(d) {
       d.date = dateFmt(d.date);
       return d;
-    },
-    function(err, data) {
-      if (err) throw err;
-
-      d3.csv("notebooks.csv", function(err2, notebooks) {
-        if (err) throw err;
-        // Combine projects and notebooks
-        data = data.concat(
-          notebooks
-            .filter((n) => NOTEBOOK_VISIBILITY.includes(n.Visibility))
-            .map((n) => ({
-              project: n.Name,
-              thumb: n["Thumb-src"],
-              url: n["Link-href"],
-              date: n.timestamp,
-              rating: n.Likes > 3 ? 5 : 2,
-            }))
-        );
-
-        data = data.sort(function(a, b) {
-          return (
-            d3.ascending(a.rating, b.rating) || d3.ascending(a.date, b.date)
-          );
-        });
-        updateComb(data);
-
-        window.addEventListener("resize", function() {
-          updateComb(data);
-        });
-      });
     }
-  );
+  ).then(function(data) {
+    d3.csv("notebooks.csv").then(function(notebooks) {
+      // Combine projects and notebooks
+      data = data.concat(
+        notebooks
+          .filter((n) => NOTEBOOK_VISIBILITY.includes(n.Visibility))
+          .map((n) => ({
+            project: n.Name,
+            thumb: n["Thumb-src"],
+            url: n["Link-href"],
+            date: n.timestamp,
+            rating: n.Likes > 3 ? 5 : 2,
+          }))
+      );
+
+      data = data.sort(function(a, b) {
+        return (
+          d3.ascending(a.rating, b.rating) || d3.ascending(a.date, b.date)
+        );
+      });
+      updateComb(data);
+
+      window.addEventListener("resize", function() {
+        updateComb(data);
+      });
+    });
+  });
 })();

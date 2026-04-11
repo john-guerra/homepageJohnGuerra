@@ -137,16 +137,12 @@
       d.Start = parseDate(d.Start);
       d.End = d.End !== "-" ? parseDate(d.End) : new Date();
       return d;
-    },
-    function(error, data) {
-      if (error) throw error;
-
-      update(data);
-
-      window.addEventListener("resize", function() {
-        update(data);
-      });
-      // .on("resize", );
     }
-  );
+  ).then(function(data) {
+    update(data);
+
+    window.addEventListener("resize", function() {
+      update(data);
+    });
+  });
 })();

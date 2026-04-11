@@ -1,14 +1,14 @@
 /* globals d3, Tabletop, scroller */
 var urlHtml = "1KiS9NDIoduptAiWL5UybvfQ3KzF91f3ikQ0vk3nUNUQ";
 var graph;
-var dicStudents = d3.map(),
+var dicStudents = new Map(),
   selected = null,
   R = 60;
 function doNetwork(data) {
   var container = d3.select("#studentsViz").attr("class", "step");
   var svg = container.append("svg");
 
-  var dicTopics = d3.map(),
+  var dicTopics = new Map(),
     r = d3.scaleLinear().range([20, 60]),
     width = container.node().offsetWidth,
     height = 600,
@@ -99,21 +99,21 @@ function doNetwork(data) {
   //   })
   // );
 
-  function dragstarted() {
-    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-    d3.event.subject.fx = d3.event.subject.x;
-    d3.event.subject.fy = d3.event.subject.y;
+  function dragstarted(event) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    event.subject.fx = event.subject.x;
+    event.subject.fy = event.subject.y;
   }
 
-  function dragged() {
-    d3.event.subject.fx = d3.event.x;
-    d3.event.subject.fy = d3.event.y;
+  function dragged(event) {
+    event.subject.fx = event.x;
+    event.subject.fy = event.y;
   }
 
-  function dragended() {
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d3.event.subject.fx = null;
-    d3.event.subject.fy = null;
+  function dragended(event) {
+    if (!event.active) simulation.alphaTarget(0);
+    event.subject.fx = null;
+    event.subject.fy = null;
   }
 
   // function drawLink(d) {
@@ -131,8 +131,8 @@ function doNetwork(data) {
   function getGraph(data) {
     var graph = {};
 
-    dicStudents = d3.map();
-    dicTopics = d3.map();
+    dicStudents = new Map();
+    dicTopics = new Map();
     graph.nodes = [];
     data.forEach(function(d) {
       d.topics = d.topics.split(";");
@@ -158,22 +158,22 @@ function doNetwork(data) {
     graph.links = [];
 
     r.domain(
-      d3.extent(dicTopics.entries(), function(d) {
-        return d.value.length;
+      d3.extent(Array.from(dicTopics.entries()), function(d) {
+        return d[1].length;
       })
     );
     graph.nodes = graph.nodes.concat(
-      dicTopics.entries().map(function(t) {
+      Array.from(dicTopics.entries()).map(function(t) {
         return {
-          name: t.key,
-          nickname: t.key,
+          name: t[0],
+          nickname: t[0],
           type: "topic",
-          numberStudents: t.value.length,
+          numberStudents: t[1].length,
         };
       })
     );
 
-    dicTopics.each(function(studentListOnTopic, t) {
+    dicTopics.forEach(function(studentListOnTopic, t) {
       studentListOnTopic.forEach(function(s) {
         graph.links.push({
           source: s,
@@ -293,8 +293,8 @@ function doNetwork(data) {
       // context.stroke();
     }
 
-    function dragsubject() {
-      return simulation.find(d3.event.x, d3.event.y);
+    function dragsubject(event) {
+      return simulation.find(event.x, event.y);
     }
   }
 

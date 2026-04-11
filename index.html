@@ -241,35 +241,37 @@
         </div>
 
         <div class="col-xs-12 col-md-4">
-          <!-- Visual D3 charts -->
-          <div class="row" aria-hidden="true">
-            <div class="col-xs-6 col-md-12">
-              <h3>My Skills</h3>
-              <div id="skillsChart1"></div>
-            </div>
-            <div class="col-xs-6 col-md-12">
-              <h3>The tools and techniques I use</h3>
-              <div id="skillsChart2"></div>
-            </div>
-          </div>
-          <!-- Machine-readable skills (visually hidden, for crawlers and screen readers) -->
+          <!-- Text-based skills (shown immediately, hidden when D3 charts load) -->
           <!-- Generated from skills.json at build time -->
-          <div class="visually-hidden">
+          <div id="skillsTextFallback">
             <h3>Skills</h3>
-            <p>
+            <p style="font-size: 0.9em; line-height: 1.7">
               <strong>Research:</strong>
               Information Visualization, Accessibility, HCI, Machine Learning,
               D3.js, Vega-Lite, Observable, User Experience,
-              ReactiveWidgets.org.
+              ReactiveWidgets.org<br />
 
               <strong>Engineering:</strong>
               AI Assisted Coding, System Architecture, Web Development,
-              HTML5/CSS/JS, React, SQL/NoSQL, Python, Agentic Coding.
+              HTML5/CSS/JS, React, SQL/NoSQL, Python, Agentic Coding<br />
 
               <strong>Education:</strong>
               Education, Public Speaking, Entrepreneurship, Courses, Agile,
-              Design Thinking, Innovation.
+              Design Thinking, Innovation
             </p>
+          </div>
+          <!-- D3 charts (hidden until loaded, then replace text) -->
+          <div id="skillsChartsContainer" class="d-none">
+            <div class="row">
+              <div class="col-xs-6 col-md-12">
+                <h3>My Skills</h3>
+                <div id="skillsChart1"></div>
+              </div>
+              <div class="col-xs-6 col-md-12">
+                <h3>The tools and techniques I use</h3>
+                <div id="skillsChart2"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1416,44 +1418,6 @@
             });
           </script>
         </div>
-
-        <div class="videos">
-          <!-- Youtube Videos -->
-          <div id="observablehq-beeswarmPlotvideos-4a9d5199"></div>
-          <div id="observablehq-viewof-minviews-4a9d5199"></div>
-          <div id="observablehq-videosHtml-4a9d5199"></div>
-
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
-          />
-          <script type="module">
-            import {
-              Runtime,
-              Inspector
-            } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-            import define from "https://api.observablehq.com/@john-guerra/my-youtube-videos.js?v=3";
-            new Runtime().module(define, name => {
-              if (name === "beeswarmPlotvideos")
-                return new Inspector(
-                  document.querySelector(
-                    "#observablehq-beeswarmPlotvideos-4a9d5199"
-                  )
-                );
-              if (name === "viewof minviews")
-                return new Inspector(
-                  document.querySelector(
-                    "#observablehq-viewof-minviews-4a9d5199"
-                  )
-                );
-              if (name === "videosHtml")
-                return new Inspector(
-                  document.querySelector("#observablehq-videosHtml-4a9d5199")
-                );
-              return ["filteredvideos"].includes(name);
-            });
-          </script>
-        </div>
       </section>
       <!-- end projects -->
 
@@ -2293,7 +2257,7 @@
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
     <script src="js/svg-injector.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
     <script src="js/experienceTimeline.js"></script>
     <script src="js/projectsComb.js"></script>
@@ -2302,6 +2266,6 @@
     <script type="text/javascript" src="js/researchStudents.js"></script>
     <script src="js/main.js"></script>
     <script src="js/papers.js" type="module"></script>
-    <script type="module" src="js/skillsChart.js"></script>
+    <script src="js/skillsChart.js"></script>
   </body>
 </html>

@@ -79,28 +79,30 @@
         </div>
 
         <div class="col-xs-12 col-md-4">
-          <!-- Visual D3 charts -->
-          <div class="row" aria-hidden="true">
-            <div class="col-xs-6 col-md-12">
-              <h3>My Skills</h3>
-              <div id="skillsChart1"></div>
-            </div>
-            <div class="col-xs-6 col-md-12">
-              <h3>The tools and techniques I use</h3>
-              <div id="skillsChart2"></div>
-            </div>
-          </div>
-          <!-- Machine-readable skills (visually hidden, for crawlers and screen readers) -->
+          <!-- Text-based skills (shown immediately, hidden when D3 charts load) -->
           <!-- Generated from skills.json at build time -->
-          <div class="visually-hidden">
+          <div id="skillsTextFallback">
             <h3>Skills</h3>
-            <p>
+            <p style="font-size: 0.9em; line-height: 1.7">
               <% const allItems = [...areas, ...tools]; %>
-              <% Object.keys(categories).forEach(function(cat) { %>
+              <% Object.keys(categories).forEach(function(cat, i) { %>
                 <strong><%= categories[cat] %>:</strong>
-                <%= allItems.filter(s => s.category === cat).map(s => s.name).filter((v, i, a) => a.indexOf(v) === i).join(', ') %>.
+                <%= allItems.filter(s => s.category === cat).map(s => s.name).filter((v, i, a) => a.indexOf(v) === i).join(', ') %><% if (i < Object.keys(categories).length - 1) { %><br /><% } %>
               <% }); %>
             </p>
+          </div>
+          <!-- D3 charts (hidden until loaded, then replace text) -->
+          <div id="skillsChartsContainer" class="d-none">
+            <div class="row">
+              <div class="col-xs-6 col-md-12">
+                <h3>My Skills</h3>
+                <div id="skillsChart1"></div>
+              </div>
+              <div class="col-xs-6 col-md-12">
+                <h3>The tools and techniques I use</h3>
+                <div id="skillsChart2"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -160,7 +162,7 @@
 
         <%- include('partials/notebooksPartial.ejs.html') %>
 
-        <%- include('partials/videosPartial.ejs.html') %>
+        <%# include('partials/videosPartial.ejs.html') %>
 
       </section>
       <!-- end projects -->
@@ -960,7 +962,7 @@
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
     <script src="js/svg-injector.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
     <script src="js/experienceTimeline.js"></script>
     <script src="js/projectsComb.js"></script>
@@ -969,7 +971,7 @@
     <script type="text/javascript" src="js/researchStudents.js"></script>
     <script src="js/main.js"></script>
     <script src="js/papers.js" type="module"></script>
-    <script type="module" src="js/skillsChart.js"></script>
+    <script src="js/skillsChart.js"></script>
 
   </body>
 </html>

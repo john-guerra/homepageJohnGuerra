@@ -3,7 +3,7 @@
 var urlHtml = "1KiS9NDIoduptAiWL5UybvfQ3KzF91f3ikQ0vk3nUNUQ";
 var graph,
   simulation;
-var dicStudents = d3.map(),
+var dicStudents = new Map(),
   selected = [],
   R = 80;
 
@@ -14,7 +14,7 @@ function doNetwork(data) {
   var svg = container
     .append("svg");
 
-  var  dicTopics = d3.map(),
+  var  dicTopics = new Map(),
     r = d3.scaleLinear()
       .range([10, 30]),
     width = container.node().offsetWidth,
@@ -86,22 +86,22 @@ function doNetwork(data) {
 
 
 
-  function dragstarted() {
-    if (!d3.event.active) simulation.alpha(1).restart();
-    d3.event.subject.fx = d3.event.subject.x;
-    d3.event.subject.fy = d3.event.subject.y;
+  function dragstarted(event) {
+    if (!event.active) simulation.alpha(1).restart();
+    event.subject.fx = event.subject.x;
+    event.subject.fy = event.subject.y;
   }
 
-  function dragged() {
-    d3.event.subject.fx = d3.event.x;
-    d3.event.subject.fy = d3.event.y;
+  function dragged(event) {
+    event.subject.fx = event.x;
+    event.subject.fy = event.y;
   }
 
-  function dragended() {
-    if (!d3.event.active) simulation.alphaTarget(0);
-    if (!d3.event.sourceEvent.shiftKey) {
-      d3.event.subject.fx = null;
-      d3.event.subject.fy = null;
+  function dragended(event) {
+    if (!event.active) simulation.alphaTarget(0);
+    if (!event.sourceEvent.shiftKey) {
+      event.subject.fx = null;
+      event.subject.fy = null;
     }
   }
 
@@ -120,8 +120,8 @@ function doNetwork(data) {
   function getGraph(data) {
     var graph = {};
 
-    dicStudents = d3.map();
-    dicTopics = d3.map();
+    dicStudents = new Map();
+    dicTopics = new Map();
     graph.nodes = [];
     data.forEach(function (d) {
       d.topics = d.topics.split(";");
@@ -148,20 +148,20 @@ function doNetwork(data) {
     graph.links = [];
 
     r.domain(d3.extent(
-      dicTopics.entries(),
-      function (d) { return d.value.length; }
+      Array.from(dicTopics.entries()),
+      function (d) { return d[1].length; }
     ));
-    graph.nodes = graph.nodes.concat(dicTopics.entries()
+    graph.nodes = graph.nodes.concat(Array.from(dicTopics.entries())
       .map(function (t) {
         return {
-          name:t.key,
-          nickname:t.key,
+          name:t[0],
+          nickname:t[0],
           type:"topic",
-          numberStudents:t.value.length
+          numberStudents:t[1].length
         };
       }));
 
-    dicTopics.each(function (studentListOnTopic, t) {
+    dicTopics.forEach(function (studentListOnTopic, t) {
       studentListOnTopic.forEach(function (s) {
         if (graph.links.filter( l => l.source === s && l.target === t).length) return;
         graph.links.push({
@@ -285,9 +285,9 @@ function doNetwork(data) {
       // context.stroke();
     }
 
-    function dragsubject() {
-      console.log(simulation.find(d3.event.x, d3.event.y));
-      return simulation.find(d3.event.x, d3.event.y);
+    function dragsubject(event) {
+      console.log(simulation.find(event.x, event.y));
+      return simulation.find(event.x, event.y);
     }
   }
 

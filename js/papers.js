@@ -12,8 +12,7 @@ async function runPapers() {
   let timeFmt = d3.timeParse("%m/%d/%Y");
   let color = d3.scaleOrdinal(d3.schemeCategory10);
 
-  d3.json("papers.json", function(err, papers) {
-    if (err) throw err;
+  d3.json("papers.json").then(function(papers) {
 
     let orderBy = "byDate";
     let selectedTypes = [];
@@ -133,10 +132,10 @@ async function runPapers() {
       });
     }
 
-    function onChangeOrderBy() {
-      console.log("evt", d3.event.target.id);
+    function onChangeOrderBy(event) {
+      console.log("evt", event.target.id);
 
-      orderBy = d3.event.target.id;
+      orderBy = event.target.id;
 
       reload();
     }
@@ -238,13 +237,12 @@ async function runPapers() {
 
       h2Container.text("Publications" + " (" + filteredPapers.length + ")");
 
-      let nestedPapers = d3
-        .nest()
-        .key((d) => (orderBy === "byDate" ? "" : d[orderBy]))
-        .entries(filteredPapers.sort(sortByDate))
-        .sort((a, b) =>
-          d3.ascending(categoriesOrder[a.key], categoriesOrder[b.key])
-        );
+      let nestedPapers = Array.from(
+        d3.group(filteredPapers.sort(sortByDate), (d) => (orderBy === "byDate" ? "" : d[orderBy])),
+        ([key, values]) => ({ key, values })
+      ).sort((a, b) =>
+        d3.ascending(categoriesOrder[a.key], categoriesOrder[b.key])
+      );
 
       nestedPapers.map((d) => {
         d.values = d.values.sort((a, b) =>

@@ -1,7 +1,7 @@
 // Skills Satellite Charts — adapted from @john-guerra/skills Observable notebook
 // Two charts matching the original layout: "My Skills" (areas) + "Tools I use"
 
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+/* global d3 */
 
 // Shared color scale — matching categories get the same color across both charts
 const sharedColor = d3
@@ -283,4 +283,10 @@ fetch("skills.json")
         sharedColor,
         chartMaxH,
       );
+
+    // Progressive enhancement: show charts, hide text fallback
+    const chartsContainer = document.getElementById("skillsChartsContainer");
+    const textFallback = document.getElementById("skillsTextFallback");
+    if (chartsContainer) chartsContainer.classList.remove("d-none");
+    if (textFallback) textFallback.classList.add("d-none");
   });

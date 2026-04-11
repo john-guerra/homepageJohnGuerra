@@ -3,15 +3,15 @@ let urlHtml = "1KiS9NDIoduptAiWL5UybvfQ3KzF91f3ikQ0vk3nUNUQ";
 let graph,
   simulation,
   projects = [],
-  projectToStudents = d3.map();
-let dicStudents = d3.map(),
+  projectToStudents = new Map();
+let dicStudents = new Map(),
   selected = [],
   R = 60;
 function doNetwork(data) {
   let container = d3.select("#studentsViz").attr("class", "step");
   let svg = container.append("svg");
 
-  let dicTopics = d3.map(),
+  let dicTopics = new Map(),
     r = d3.scaleLinear().range([20, 60]),
     width = container.node().offsetWidth,
     height = 600,
@@ -104,21 +104,21 @@ function doNetwork(data) {
   //   })
   // );
 
-  function dragstarted() {
-    if (!d3.event.active) simulation.alpha(1).restart();
-    d3.event.subject.fx = d3.event.subject.x;
-    d3.event.subject.fy = d3.event.subject.y;
+  function dragstarted(event) {
+    if (!event.active) simulation.alpha(1).restart();
+    event.subject.fx = event.subject.x;
+    event.subject.fy = event.subject.y;
   }
 
-  function dragged() {
-    d3.event.subject.fx = d3.event.x;
-    d3.event.subject.fy = d3.event.y;
+  function dragged(event) {
+    event.subject.fx = event.x;
+    event.subject.fy = event.y;
   }
 
-  function dragended() {
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d3.event.subject.fx = null;
-    d3.event.subject.fy = null;
+  function dragended(event) {
+    if (!event.active) simulation.alphaTarget(0);
+    event.subject.fx = null;
+    event.subject.fy = null;
   }
 
   // function drawLink(d) {
@@ -136,8 +136,8 @@ function doNetwork(data) {
   function getGraph(data) {
     let graph = {};
 
-    dicStudents = d3.map();
-    dicTopics = d3.map();
+    dicStudents = new Map();
+    dicTopics = new Map();
     graph.nodes = [];
     data.forEach(function(d) {
       d.topics = d.topics.split(";");
@@ -172,22 +172,22 @@ function doNetwork(data) {
     graph.links = [];
 
     r.domain(
-      d3.extent(dicTopics.entries(), function(d) {
-        return d.value.length;
+      d3.extent(Array.from(dicTopics.entries()), function(d) {
+        return d[1].length;
       })
     );
     graph.nodes = graph.nodes.concat(
-      dicTopics.entries().map(function(t) {
+      Array.from(dicTopics.entries()).map(function(t) {
         return {
-          name: t.key,
-          nickname: t.key,
+          name: t[0],
+          nickname: t[0],
           type: "topic",
-          numberStudents: t.value.length,
+          numberStudents: t[1].length,
         };
       })
     );
 
-    dicTopics.each(function(studentListOnTopic, t) {
+    dicTopics.forEach(function(studentListOnTopic, t) {
       studentListOnTopic.forEach(function(s) {
         graph.links.push({
           source: s,
@@ -311,8 +311,8 @@ function doNetwork(data) {
       // context.stroke();
     }
 
-    function dragsubject() {
-      return simulation.find(d3.event.x, d3.event.y);
+    function dragsubject(event) {
+      return simulation.find(event.x, event.y);
     }
   }
 
@@ -547,8 +547,7 @@ function updateFromGSheet(data) {
 
 const urlCSV =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQfJkGjXoOhIMxgrNNMD2tjsa0NsNTgrS7pkFlg8djlJffOu30kTOYGC3NnZWIJ3ibx83SrhxuM6Bu0/pub?gid=0&single=true&output=csv";
-d3.csv(urlCSV, (err, data) => {
-  if (err) throw err;
+d3.csv(urlCSV).then((data) => {
   updateFromGSheet(data);
 });
 
