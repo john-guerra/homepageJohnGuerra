@@ -252,60 +252,27 @@ function SatellitesChart(containerEl, data, centerLabel, ariaLabel, color) {
   }
 }
 
-// Chart 1: My Skills (areas of expertise)
-const skillsAreas = [
-  { name: "Information Visualization", value: 150, category: "Research" },
-  { name: "Accessibility", value: 120, category: "Research" },
-  { name: "HCI", value: 120, category: "Research" },
-  { name: "Machine Learning", value: 70, category: "Research" },
+// Load skills data from shared JSON (single source of truth)
+fetch("skills.json")
+  .then((r) => r.json())
+  .then((skills) => {
+    const el1 = document.getElementById("skillsChart1");
+    if (el1)
+      SatellitesChart(
+        el1,
+        skills.areas,
+        "My Skills",
+        `Skills areas: ${skills.areas.map((s) => s.name).join(", ")}`,
+        sharedColor,
+      );
 
-  { name: "AI Assisted Coding", value: 100, category: "Engineering" },
-  { name: "System Architecture", value: 100, category: "Engineering" },
-  { name: "Web Development", value: 100, category: "Engineering" },
-
-  { name: "Education", value: 120, category: "Education" },
-  { name: "Public Speaking", value: 100, category: "Education" },
-  { name: "Entrepreneurship", value: 70, category: "Education" },
-];
-
-const el1 = document.getElementById("skillsChart1");
-if (el1)
-  SatellitesChart(
-    el1,
-    skillsAreas,
-    "My Skills",
-    `Skills areas: ${skillsAreas.map((s) => s.name).join(", ")}`,
-    sharedColor,
-  );
-
-// Chart 2: Tools and techniques
-const skillsTools = [
-  { name: "D3.js", value: 150, category: "Research" },
-  { name: "Vega-Lite", value: 130, category: "Research" },
-  { name: "Observable", value: 100, category: "Research" },
-  { name: "User Experience", value: 50, category: "Research" },
-  { name: "ReactiveWidgets.org", value: 50, category: "Research" },
-
-
-  { name: "HTML5/CSS/JS", value: 150, category: "Engineering" },
-  { name: "React", value: 100, category: "Engineering" },
-  { name: "SQL/NoSQL", value: 80, category: "Engineering" },
-
-  { name: "Python", value: 80, category: "Engineering" },
-  { name: "Agentic Coding", value: 150, category: "Engineering" },
-
-  { name: "Courses", value: 100, category: "Education" },
-  { name: "Agile", value: 50, category: "Education" },
-  { name: "Design Thinking", value: 50, category: "Education" },
-  { name: "Innovation", value: 50, category: "Education" },
-];
-
-const el2 = document.getElementById("skillsChart2");
-if (el2)
-  SatellitesChart(
-    el2,
-    skillsTools,
-    "Tools &\nTechniques",
-    `Tools: ${skillsTools.map((s) => s.name).join(", ")}`,
-    sharedColor,
-  );
+    const el2 = document.getElementById("skillsChart2");
+    if (el2)
+      SatellitesChart(
+        el2,
+        skills.tools,
+        "Tools &\nTechniques",
+        `Tools: ${skills.tools.map((s) => s.name).join(", ")}`,
+        sharedColor,
+      );
+  });
