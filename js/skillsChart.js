@@ -22,9 +22,9 @@ const categoryLabels = {
   Education: "Education",
 };
 
-function SatellitesChart(containerEl, data, centerLabel, ariaLabel, color) {
+function SatellitesChart(containerEl, data, centerLabel, ariaLabel, color, maxHeight) {
   const width = containerEl.clientWidth || 300;
-  const height = width;
+  const height = maxHeight ? Math.min(width, maxHeight) : width;
   const bigR = width / 3.5;
   const overlapping = 0.95;
   const opacity = 0.95;
@@ -256,6 +256,12 @@ function SatellitesChart(containerEl, data, centerLabel, ariaLabel, color) {
 fetch("skills.json")
   .then((r) => r.json())
   .then((skills) => {
+    // Constrain total chart height to the nutshell text column
+    const nutshellCol = document.querySelector("#intro > .col-xs-12.col-md-5");
+    const nutshellH = nutshellCol ? nutshellCol.clientHeight : null;
+    // Split available height between two charts (minus headings ~60px)
+    const chartMaxH = nutshellH ? Math.floor((nutshellH - 60) / 2) : null;
+
     const el1 = document.getElementById("skillsChart1");
     if (el1)
       SatellitesChart(
@@ -264,6 +270,7 @@ fetch("skills.json")
         "My Skills",
         `Skills areas: ${skills.areas.map((s) => s.name).join(", ")}`,
         sharedColor,
+        chartMaxH,
       );
 
     const el2 = document.getElementById("skillsChart2");
@@ -274,5 +281,6 @@ fetch("skills.json")
         "Tools &\nTechniques",
         `Tools: ${skills.tools.map((s) => s.name).join(", ")}`,
         sharedColor,
+        chartMaxH,
       );
   });

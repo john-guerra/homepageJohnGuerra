@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>John Alexis Guerra Gómez — Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Industry resume for John Alexis Guerra Gómez — Information Visualization, AI-Assisted Development, Accessibility"
+    />
+    <meta name="author" content="John Alexis Guerra Gomez" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Condensed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Lato", sans-serif;
+        font-size: 11pt;
+        line-height: 1.45;
+        color: #222;
+        max-width: 8.5in;
+        margin: 0 auto;
+        padding: 0.5in 0.6in;
+      }
+      a {
+        color: #1a6fb5;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h1 {
+        font-size: 22pt;
+        font-weight: 700;
+        margin-bottom: 2pt;
+      }
+      h2 {
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #ff9800;
+        border-bottom: 1.5px solid #ff9800;
+        padding-bottom: 2pt;
+        margin-top: 14pt;
+        margin-bottom: 6pt;
+      }
+      h3 {
+        font-size: 11pt;
+        font-weight: 700;
+        margin-bottom: 1pt;
+      }
+      .subtitle {
+        font-size: 10pt;
+        color: #555;
+        margin-bottom: 2pt;
+      }
+      .contact {
+        font-size: 9pt;
+        color: #555;
+        margin-bottom: 4pt;
+      }
+      .contact a {
+        color: #555;
+      }
+      .summary {
+        font-size: 10.5pt;
+        margin-bottom: 0;
+      }
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2pt 16pt;
+        font-size: 10pt;
+        margin-bottom: 2pt;
+      }
+      .skills-grid span {
+        white-space: nowrap;
+      }
+      .job {
+        margin-bottom: 8pt;
+      }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .job-header .dates {
+        font-size: 9pt;
+        color: #777;
+        white-space: nowrap;
+      }
+      .job-org {
+        font-size: 10pt;
+        color: #555;
+        margin-bottom: 2pt;
+      }
+      ul {
+        padding-left: 16pt;
+        margin-bottom: 2pt;
+      }
+      li {
+        margin-bottom: 2pt;
+        font-size: 10.5pt;
+      }
+      .pub {
+        font-size: 10pt;
+        margin-bottom: 3pt;
+      }
+      .edu-entry {
+        margin-bottom: 4pt;
+      }
+      .awards {
+        font-size: 10pt;
+      }
+      .footer {
+        margin-top: 12pt;
+        font-size: 9pt;
+        color: #999;
+        text-align: center;
+      }
+
+      /* Print styles for 2-page PDF */
+      @media print {
+        body {
+          padding: 0.4in 0.5in;
+          font-size: 10.5pt;
+        }
+        a {
+          color: #222;
+        }
+        .page-break {
+          page-break-before: always;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+
+      /* Download button (hidden in print) */
+      .download-btn {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        background: #ff9800;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-family: "Lato", sans-serif;
+        font-size: 10pt;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .download-btn:hover {
+        background: #e68a00;
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="javascript:window.print()" class="download-btn no-print"
+      >Print / Save PDF</a
+    >
+
+    <!-- ===== HEADER ===== -->
+    <h1>John Alexis Guerra Gómez</h1>
+    <div class="subtitle">
+      Information Visualization &middot; AI-Assisted Development &middot;
+      Accessibility
+    </div>
+    <div class="contact">
+      jguerra@northeastern.edu &middot;
+      <a href="https://johnguerra.co">johnguerra.co</a> &middot;
+      <a href="https://github.com/john-guerra">github.com/john-guerra</a>
+      &middot;
+      <a href="https://johnguerra.co/cv.html">Full Academic CV</a>
+    </div>
+
+    <!-- ===== SUMMARY ===== -->
+    <h2>Summary</h2>
+    <p class="summary">
+      Senior technologist with 23+ years bridging research and production,
+      specializing in information visualization, AI-assisted development, and
+      accessibility. Built visualization tools deployed in Xerox's healthcare
+      fraud detection products and internal analytics at Yahoo. Co-founded an
+      accessibility startup (10+ international awards, patented technology). PhD
+      in Computer Science (HCI/Visualization) from the University of Maryland.
+      30+ publications at CHI, IEEEVIS, AVI. Currently teaching AI-Assisted
+      Software Engineering at Northeastern University.
+    </p>
+
+    <!-- ===== SKILLS ===== -->
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <span
+        ><strong>Research:</strong> Information Visualization · Accessibility ·
+        HCI · Machine Learning · D3.js · Vega-Lite · Observable · User
+        Experience · ReactiveWidgets.org</span
+      >
+
+      <span
+        ><strong>Engineering:</strong> AI Assisted Coding · System Architecture
+        · Web Development · HTML5/CSS/JS · React · SQL/NoSQL · Python · Agentic
+        Coding</span
+      >
+
+      <span
+        ><strong>Education:</strong> Education · Public Speaking ·
+        Entrepreneurship · Courses · Agile · Design Thinking · Innovation</span
+      >
+    </div>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Associate Teaching Professor</h3>
+        <span class="dates">2020 – Present</span>
+      </div>
+      <div class="job-org">
+        Northeastern University, Khoury College of Computer Sciences — Bay Area
+        / Oakland
+      </div>
+      <ul>
+        <li>
+          Designed and taught courses to hundreds of students across Web
+          Development, Database Management Systems, Software Engineering, Data
+          Visualization, and
+          <a href="https://johnguerra.co/classes/aiCoding_spring_2026/"
+            >AI-Assisted Software Engineering (Vibe Coding)</a
+          >.
+        </li>
+        <li>
+          Conducting applied research in information visualization and
+          accessibility as member of the
+          <a href="https://vis.khoury.northeastern.edu/"
+            >Khoury Visualization Lab</a
+          >.
+        </li>
+        <li>
+          Created
+          <a href="https://johnguerra.co/viz/ieeevis2025Papers/"
+            >Paper Explorers</a
+          >
+          — interactive tools using sentence embeddings and dimensionality
+          reduction to explore academic papers across 8 major conferences.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Remote Lecturer &amp; Course Coordinator</h3>
+        <span class="dates">2017 – 2020</span>
+      </div>
+      <div class="job-org">
+        UC Berkeley, School of Information — online Master in Data Science
+        (MIDS)
+      </div>
+      <ul>
+        <li>
+          Co-designed and delivered the data visualization curriculum (W209),
+          reaching hundreds of remote students across 7 semesters.
+        </li>
+        <li>
+          Completely redesigned
+          <a
+            href="https://github.com/john-guerra/MIDS_W209_Information_Visualization_Slides"
+            >course materials</a
+          >
+          covering D3, Vega-Lite, and Tableau with Visual Analytics theory.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Postdoctoral Researcher</h3>
+        <span class="dates">2015 – 2016</span>
+      </div>
+      <div class="job-org">Yahoo Labs — Sunnyvale, CA</div>
+      <ul>
+        <li>
+          Built internal visualization tools for navigating large photo
+          repositories and exploring organizational structures, used
+          company-wide.
+        </li>
+        <li>
+          Four papers accepted at CHI 2016 and AVI 2016. Created visual
+          analytics for dozens of complex internal datasets.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Research Scientist</h3>
+        <span class="dates">2013 – 2014</span>
+      </div>
+      <div class="job-org">Xerox PARC — Palo Alto, CA</div>
+      <ul>
+        <li>
+          Built
+          <a href="https://www.youtube.com/watch?v=9lYvVjsstZs"
+            >Network Explorer</a
+          >, a visual analytics tool for networks with hundreds of thousands of
+          nodes — deployed in Xerox's healthcare fraud detection product.
+        </li>
+        <li>
+          Integrated visualizations into 3 production products and built
+          dashboards used across the organization.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Co-founder &amp; CTO</h3>
+        <span class="dates">2003 – 2013</span>
+      </div>
+      <div class="job-org">DUTO — Pereira, Colombia</div>
+      <ul>
+        <li>
+          Co-founded accessibility startup. Co-created
+          <a href="http://duto.org/portafolio/">IRIS</a>, a patented system
+          allowing blind children to perceive images through touch. Led all
+          software development for 10 years.
+        </li>
+        <li>
+          Winner of
+          <a href="http://duto.org/nosotros/logros/"
+            >10+ international entrepreneurship awards</a
+          >. Also co-created <a href="https://btactile.com">BTactile</a>,
+          indexing 5000+ tactile graphics worldwide.
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Assistant Professor (Tenure Track)</h3>
+        <span class="dates">2016 – 2020</span>
+      </div>
+      <div class="job-org">Universidad de los Andes — Bogotá, Colombia</div>
+      <ul>
+        <li>
+          Redesigned and delivered Visual Analytics and Web Development courses
+          across 8 semesters. Published research in large-scale data
+          visualization, network visualization, and accessibility.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== PAGE BREAK ===== -->
+    <div class="page-break"></div>
+
+    <!-- ===== SELECTED PROJECTS ===== -->
+    <h2>Selected Projects</h2>
+    <ul>
+      <li>
+        <a href="https://navio.dev"><strong>Navio</strong></a> — Open-source
+        visualization widget for exploring large datasets (<a
+          href="https://www.npmjs.com/package/navio"
+          >npm</a
+        >, 108 stars)
+      </li>
+      <li>
+        <a href="https://johnguerra.co/reactiveWidgets/"
+          ><strong>Reactive Widgets</strong></a
+        >
+        — Reusable visualization components (IEEEVIS 2024,
+        <a href="https://www.npmjs.com/package/@john-guerra/reactive-widget"
+          >npm</a
+        >)
+      </li>
+      <li>
+        <a href="https://johnguerra.co/viz/USElectionsResults/"
+          ><strong>US Election Results</strong></a
+        >
+        — Scrollytelling visualization of presidential elections 2000–2024
+      </li>
+      <li>
+        <a href="https://github.com/john-guerra/forceInABox"
+          ><strong>force-in-a-box</strong></a
+        >
+        — D3 force layout for clustered networks (78 stars, 221 weekly npm
+        downloads)
+      </li>
+      <li>
+        <a href="https://johnguerra.co/viz/umapPlayground/"
+          ><strong>UMAP Playground</strong></a
+        >
+        — Interactive dimensionality reduction in the browser
+      </li>
+    </ul>
+
+    <!-- ===== SELECTED PUBLICATIONS ===== -->
+    <h2>Selected Publications</h2>
+    <p class="pub">
+      <strong>Guerra-Gomez, J.A.</strong> (2024). "Towards Reusable and Reactive
+      Widgets for Information Visualization Research and Dissemination."
+      <em>IEEE VIS 2024</em>.
+    </p>
+    <p class="pub">
+      Pandey, A., Syeda, U.H., Shah, C., <strong>Guerra-Gomez, J.A.</strong>,
+      Borkin, M. (2021). "A State-of-the-Art Survey of Tasks for Tree Design and
+      Evaluation with a Curated Task Dataset." <em>IEEE TVCG</em>.
+    </p>
+    <p class="pub">
+      <strong>Guerra-Gomez, J.A.</strong>, Boulanger, C., Kairam, S., Shamma,
+      D.A. (2016). "Identifying Best Practices for Visualizing Photo Statistics
+      and Galleries using Treemaps." <em>AVI 2016</em>.
+    </p>
+    <p class="pub">
+      Liu, J., Bier, E., Wilson, A., Honda, T., Kumar, S., Gilpin, L.,
+      <strong>Guerra-Gomez, J.A.</strong>, Davies, D. (2016). "Graph Analysis
+      for Detecting Fraud, Waste, and Abuse in Healthcare Data."
+      <em>AI Magazine</em>.
+    </p>
+    <p style="font-size: 9pt; color: #777; margin-top: 4pt;">
+      Full list of 30+ publications:
+      <a href="https://johnguerra.co/#papers">johnguerra.co/#papers</a>
+    </p>
+
+    <!-- ===== EDUCATION ===== -->
+    <h2>Education</h2>
+    <div class="edu-entry">
+      <strong>PhD &amp; MSc in Computer Science</strong> — University of
+      Maryland, College Park (2013)<br />
+      <span style="font-size: 10pt; color: #555;"
+        >Advisors: Dr. Ben Shneiderman &amp; Dr. Catherine Plaisant. Focus: HCI,
+        Information Visualization.</span
+      >
+    </div>
+    <div class="edu-entry">
+      <strong>BSc in Systems Engineering</strong> — Universidad Tecnológica de
+      Pereira, Colombia (2004)
+    </div>
+
+    <!-- ===== AWARDS & PATENTS ===== -->
+    <h2>Awards &amp; Patents</h2>
+    <p class="awards">
+      US Patent application (IRIS accessibility system) &middot; Colombian
+      Patent granted &middot; Fulbright Science &amp; Technology Fellow (40
+      awarded worldwide/year) &middot; 10+ international entrepreneurship awards
+      for DUTO &middot; Program Committee: IEEEVIS 2020–24, CHI, Creativity
+      &amp; Cognition, Graph Drawing
+    </p>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer no-print">
+      <a href="https://johnguerra.co">johnguerra.co</a> &middot;
+      <a href="https://johnguerra.co/cv.html">Full Academic CV</a>
+    </div>
+  </body>
+</html>
