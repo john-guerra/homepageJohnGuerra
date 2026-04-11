@@ -29,6 +29,7 @@ src/partials/   →  included via <%- include() %>
 | `projectsPartial` | index, cv | Project listings |
 | `notebooksPartial` | index, cv | Observable notebook embeds |
 | `videosPartial` | index | YouTube video embeds |
+| `nutshellPartial` | index, cv | "In a nutshell" bio + "By the numbers" with dynamic year counts |
 
 ### Dependencies
 
@@ -39,7 +40,7 @@ Install: `npm install -g ejs prettier` or use `npx`
 
 ## Important Conventions
 
-- The intro/nutshell section is **duplicated** in both `index.ejs.html` and `cv.ejs.html` (not a shared partial) — changes must be made in both files
+- The intro/nutshell section is shared via `nutshellPartial.ejs.html` — edit the partial, not individual pages. The skills column differs per page (D3 charts on index, text list on CV).
 - Title: **"Associate Teaching Professor"** (not "Assistant")
 - Course pages using Pug (e.g., `classes/aiCoding_spring_2026/index.pug`) have their own build process
 

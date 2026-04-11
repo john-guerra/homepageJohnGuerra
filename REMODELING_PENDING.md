@@ -8,36 +8,41 @@ Full improvement plan: `.improvements/improvementPlan.md`
 ## Completed (branch: `website-improvements`)
 
 ### Identity & Tagline (Tasks 1, 3)
-- New tagline: "I build tools and teach developers at the intersection of information visualization, AI-assisted development, and accessibility."
-- Rewrote "In a nutshell" to lead with impact: role, three pillars, Vibe Coding, IRIS/BTactile, career trajectory
-- Added "By the numbers" section (20+ years engineer, 15+ teaching, 12+ research, 30+ publications, entrepreneur, speaker)
+- Kept original nutshell paragraph, added two new paragraphs: Vibe Coding/IRIS/BTactile highlights + career trajectory
+- Added "By the numbers" section with dynamic EJS year counts (computed at build time from start years: research 2008, engineering 2003, teaching 2005, speaking 2005)
 - Fixed title to "Associate Teaching Professor" everywhere
-- Synced `cv.ejs.html` with updated `index.ejs.html` content
 - Fixed "Creator" → "Co-creator" for IRIS and BTactile
+- Corrected Yahoo description: "built internal visualization tools" (not "shipped Flickr features")
 
-### Skills Section (Task 4)
-- Replaced static PNG skill diagrams with text-based categorized list
-- Added new categories: AI & LLMs (Claude Code, Prompt Engineering, LLM APIs, MCP, Agent Architectures) and Accessibility (Tactile Interfaces, Assistive Technology, WCAG)
-- D3 satellite chart code saved in `js/skillsChart.js` (disabled, to revisit — see pending)
+### Skills Visualization (Task 4)
+- D3 satellite charts live on homepage with two charts: "My Skills" + "Tools & Techniques"
+- forceRadial for circular layout, mouse repulsion via phantom node
+- Separated circles and labels into SVG layers (labels never occluded)
+- Semitransparent category centroid labels (Roboto Condensed) with drop shadow
+- Shared color scale across both charts (Research, Engineering, Education)
+- Roboto Condensed font added to headers partial
 
 ### Featured Course (Task 7)
-- Added prominent dark card for "CS 7180: Vibe Coding — AI-Assisted Software Engineering" between intro and experience sections
-- Includes topic badges (Claude Code, Prompt Engineering, Agent Architectures, MCP, Evals) and CTA button
+- Prominent dark card for "CS 7180: Vibe Coding" between intro and experience
+- Topic badges (Claude Code, Prompt Engineering, Agent Architectures, MCP, Evals)
 
 ### Projects by Theme (Task 2)
-- Reorganized from flat list into three themed sections with orange headers:
-  - **Information Visualization**: Navio, Reactive Widgets (IEEEVIS 2024), Network Explorer, TreeVersity v2/v1, Phototreemap, LifeFlow, Tweetometro
-  - **AI & Developer Education**: Vibe Coding course
-  - **Accessibility**: IRIS (patented, 10+ awards), BTactile (5000+ tactile graphics)
-- Rewrote descriptions to emphasize impact, users, and deployment
+- Reorganized into 5 categories:
+  - **Information Visualization** (6): Navio, Network Explorer, Reactive Widgets (+npm), VisPub Network, TreeVersity v2, Phototreemap
+  - **Elections & Civic Data** (7): US Elections 2024 storytelling, US Elections 2020/2016, Colombian Senate, Presidential Elections 2018, Peace Agreement, Anti-corruption Referendum, Tweetometro
+  - **Open Source Libraries** (4): force-in-a-box, d3-force-boundary, netClustering.js, revealVizScroll + link to /oss/ analytics
+  - **AI & Developer Education** (3): Paper Explorers (8 conferences), UMAP Playground, Vibe Coding course
+  - **Accessibility** (2): IRIS, BTactile
+- Screenshots captured for Paper Explorer, UMAP Playground, Vibe Coding, US Elections 2024
 
 ### Experience Bullets (Tasks 8, 9)
 - Northeastern: courses taught including Vibe Coding, Khoury Viz Lab
 - Uniandes: course delivery scale (8 semesters)
 - Berkeley: MIDS curriculum design, hundreds of remote students, 7 semesters
-- Yahoo: shipped Flickr features (millions of users), org-wide analytics tool
+- Yahoo: built internal visualization tools (corrected)
 - PARC: Network Explorer deployed in Xerox fraud detection product
 - DUTO: co-founded accessibility startup, CTO for 10 years, 10+ awards
+- projectsComb made sticky with scrollHeight matching
 
 ### Infrastructure
 - Fixed `build.sh` to use `npx` for `ejs` and `prettier`
@@ -47,13 +52,12 @@ Full improvement plan: `.improvements/improvementPlan.md`
 
 ## Pending
 
-### High Priority — Skills Visualization
-The text-based skills list works but is not visually engaging. A D3 satellite chart is saved in `js/skillsChart.js` (commit `1ac55a2`) but needs work:
-- Proportions: center circle size, bubble spacing, orbit radius
-- Colors: closer to original `d3.schemeCategory10` palette
-- Labels: legibility at small sizes
-- Layout: two charts ("My Skills" areas + "Tools & Techniques") stacked in `col-md-3`
-- The Observable notebook at `@john-guerra/skills` should also be updated with the new data
+### Medium Priority — CV Page Sync
+`cv.ejs.html` needs to be updated to match the homepage changes:
+- New nutshell text with three paragraphs + "By the numbers"
+- Dynamic year counts
+- Text-based skills list (D3 charts don't make sense for PDF export)
+- Corrected Yahoo description
 
 ### Medium Priority — Blog/Writing Section (Task 5)
 Create a `/blog` or `/writing` section. Suggested posts:
@@ -67,8 +71,7 @@ Create a 1-2 page industry-focused resume (separate from academic CV):
 - Professional summary naming the three pillars
 - "Selected Projects" with 4-6 highest-impact items
 - Technical skills prominently listed
-- Teaching summarized as one line
-- Publications summarized as one line
+- Teaching and publications each summarized in one line
 - Link to full academic CV
 
 ### Lower Priority — Navigation Restructure (Task 10)

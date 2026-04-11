@@ -79,7 +79,7 @@
       height = window.innerHeight * 0.7;
     } else if (d3.select("#achievementsText").node()) {
       // set to the height of the text if it exists
-      height = d3.select("#achievementsText").node().clientHeight;
+      height = d3.select("#achievementsText").node().scrollHeight;
     } else {
       height = screen.availHeight || window.innerHeight;
     }

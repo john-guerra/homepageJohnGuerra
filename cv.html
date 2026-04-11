@@ -158,19 +158,21 @@
           </script> -->
         </div>
         <div class="col-xs-12 col-md-6">
+          <!-- IN a nutshell — shared between index and cv -->
           <h2>In a nutshell</h2>
           <p class="experience">
-            Associate Teaching Professor at
+            Information <strong>Visualization Researcher</strong> and
+            <strong>Engineer</strong>. I help people extract insights from their
+            data using interactive infovis and data science. PhD in Computer
+            Science, Associate Teaching Professor at
             <a href="https://www.northeastern.edu/bayarea/"
               >Northeastern University Bay Area</a
-            >, member of the
+            >. Member of the
             <a href="https://vis.khoury.northeastern.edu/"
               >Khoury Visualization Lab</a
-            >. I teach developers, build interactive tools, and conduct applied
-            research across <strong>information visualization</strong>,
-            <strong>AI-assisted software engineering</strong>, and
-            <strong>accessibility</strong>. PhD in Computer Science
-            (HCI/Visualization) from the University of Maryland.
+            >. I conduct research on <strong>Visual Analytics</strong>,
+            <strong>Accessibility</strong>, Big data, Human Computer Interaction
+            and Web Development.
           </p>
           <p class="experience">
             Currently teaching
@@ -193,8 +195,10 @@
             <a
               href="https://profesores.virtual.uniandes.edu.co/jaguerrag/en/inicio-en/"
               >Uniandes</a
-            >, <a href="https://research.yahoo.com/">Yahoo Labs</a> (shipped
-            visualization features in Flickr),
+            >
+            Colombia,
+            <a href="https://research.yahoo.com/">Yahoo Labs</a> (built internal
+            visualization tools),
             <a href="http://parc.com">Xerox PARC</a> (built fraud detection
             tools), and co-founded <a href="http://duto.org">DUTO</a> (10+
             international awards).
@@ -203,27 +207,45 @@
           <h4>By the numbers</h4>
           <ul class="experience">
             <li>
-              <strong>20+ years</strong> as a
+              <strong>23+ years</strong> as a
               <a href="#projects">full stack engineer</a>
             </li>
             <li>
-              <strong>15+ years</strong>
-              <a href="#teaching">teaching</a> at university level across 4
+              <strong>21+ years</strong>
+              <a href="#classes">teaching</a> at university level across 4
               institutions
             </li>
             <li>
-              <strong>12+ years</strong> researching
+              <strong>18+ years</strong> researching
               <a href="http://johnguerra.co/projects.html"
                 >information visualization</a
               >
             </li>
             <li>
               <strong>30+ publications</strong> at CHI, IEEEVIS, AVI, Assets,
-              TRB
+              TRB. Program Committee member of IEEEVIS 2020-24, toCHI 2016,
+              Creativity and Cognition, Graph Drawing. Reviewer for CHI,
+              IEEEVIS, AVI, EuroVis, UIST, and many more.
             </li>
             <li>
-              <strong>15+ years</strong> as
-              <strong>public speaker</strong>
+              <strong>Entrepreneur</strong> — co-founder of
+              <a href="http://duto.co">DUTO</a>, KebSolutions,
+              <a href="http://tweetometro.co">Tweetometro.co</a> and
+              <a href="https://btactile.com">BTactile</a>, with
+              <a href="http://duto.org/nosotros/logros/?lang=en"
+                >10+ international entrepreneurship awards</a
+              >
+            </li>
+            <li id="speaker">
+              <strong>21+ years</strong> as <strong>public speaker</strong> —
+              <a href="https://vcs.rice.edu/program-2025-0">Rice VCS 2025</a>,
+              <a href="https://www.learnlawgic.com/ai-legal-week"
+                >Legal AI Week</a
+              >,
+              <a href="http://www.openvisconf.com/2017/#jgomez-video-item"
+                >OpenVis 2017</a
+              >,
+              <a href="https://www.youtube.com/watch?v=ThPIvxv2vD4">TEDx</a>
             </li>
           </ul>
         </div>
@@ -231,17 +253,16 @@
         <div class="col-xs-12 col-md-2">
           <h3>Skills</h3>
           <p style="font-size: 0.85em; line-height: 1.6">
-            <strong>Visualization:</strong> D3.js, Vega-Lite, Observable,
-            Tableau, HTML5/CSS<br />
-            <strong>AI & LLMs:</strong> Claude Code, Prompt Engineering, LLM
-            APIs, MCP, Agent Architectures<br />
-            <strong>Data:</strong> SQL, DuckDB, Pandas, MongoDB, Arrow<br />
-            <strong>Languages:</strong> JavaScript, Python, React, Svelte,
-            Node.js<br />
-            <strong>Evaluation:</strong> Controlled Experiments, Usability
-            Studies, Rapid Prototyping<br />
-            <strong>Accessibility:</strong> Tactile Interfaces, Assistive Tech,
-            WCAG
+            <strong>Research:</strong> Information Visualization, Accessibility,
+            HCI, Machine Learning<br />
+            <strong>Engineering:</strong> AI-Assisted Coding, System
+            Architecture, Web Development<br />
+            <strong>Tools:</strong> D3.js, Vega-Lite, Observable, React,
+            Node.js, Python, SQL<br />
+            <strong>AI:</strong> Claude Code, Prompt Engineering, LLM APIs, MCP,
+            Agents<br />
+            <strong>Education:</strong> Course Design, Public Speaking,
+            Entrepreneurship
           </p>
         </div>
       </div>
@@ -738,8 +759,8 @@
             <!-- End DUTO -->
           </div>
           <!-- achievements text -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div id="projectsComb"></div>
+          <div class="col-md-4 col-sm-4 col-xs-12" style="position: relative;">
+            <div id="projectsComb" style="position: sticky; top: 1rem;"></div>
           </div>
         </div>
       </section>
@@ -831,6 +852,29 @@
 
         <div class="row">
           <div class="col-md-2">
+            <a href="netviz.html">
+              <img
+                class="project"
+                src="img/overview_10k_nointer_cropped.png"
+                alt="Network Explorer"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="netviz.html">
+              <h4>Network Explorer</h4>
+            </a>
+            <p>
+              Visual analytics tool for understanding large networks with
+              hundreds of thousands of nodes. Deployed in Xerox's healthcare
+              fraud detection product.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
             <a href="./reactiveWidgets/">
               <img
                 class="project"
@@ -848,6 +892,10 @@
               components for research and dissemination.
               <a href="https://ieeexplore.ieee.org/document/10771102"
                 >IEEEVIS 2024 short paper</a
+              >. Available as an
+              <a
+                href="https://www.npmjs.com/package/@john-guerra/reactive-widget"
+                >npm package</a
               >.
             </p>
           </div>
@@ -856,22 +904,21 @@
 
         <div class="row">
           <div class="col-md-2">
-            <a href="netviz.html">
+            <a href="https://johnguerra.co/viz/visPubNetwork/">
               <img
                 class="project"
-                src="img/overview_10k_nointer_cropped.png"
-                alt="Network Explorer"
+                src="img/projs/visPubNetwork2018.gif"
+                alt="VisPub Network"
               />
             </a>
           </div>
           <div class="col-md-10">
-            <a href="netviz.html">
-              <h4>Network Explorer</h4>
+            <a href="https://johnguerra.co/viz/visPubNetwork/">
+              <h4>VisPub Network</h4>
             </a>
             <p>
-              Visual analytics tool for understanding large networks with
-              hundreds of thousands of nodes. Deployed in Xerox's healthcare
-              fraud detection product.
+              Network visualization of the IEEE VIS publication dataset,
+              revealing collaboration patterns and community structure.
             </p>
           </div>
         </div>
@@ -902,28 +949,6 @@
 
         <div class="row">
           <div class="col-md-2">
-            <a href="http://hcil.cs.umd.edu/treeversity">
-              <img
-                class="project"
-                src="img/treeversityv1.png"
-                alt="TreeVersity v1"
-              />
-            </a>
-          </div>
-          <div class="col-md-10">
-            <a href="http://hcil.cs.umd.edu/treeversity">
-              <h4>TreeVersity v1</h4>
-            </a>
-            <p>
-              Desktop application for comparing changes between trees on
-              structure and node values.
-            </p>
-          </div>
-        </div>
-        <br />
-
-        <div class="row">
-          <div class="col-md-2">
             <a href="photoviz.html">
               <img
                 class="project"
@@ -945,25 +970,145 @@
             </p>
           </div>
         </div>
-        <br />
+
+        <!-- ========== Elections & Civic Data ========== -->
+        <h3
+          style="margin-top: 2rem; border-bottom: 2px solid #ff9800; padding-bottom: 0.3rem"
+        >
+          Elections & Civic Data
+        </h3>
 
         <div class="row">
           <div class="col-md-2">
-            <a href="http://www.cs.umd.edu/hcil/lifeflow/">
+            <a href="https://johnguerra.co/viz/USElectionsResults/">
               <img
                 class="project"
-                src="img/lifeflow_thumb.png"
-                alt="LifeFlow"
+                src="img/projs/usElections2024.gif"
+                alt="US Presidential Election Results 2000-2024"
               />
             </a>
           </div>
           <div class="col-md-10">
-            <a href="http://www.cs.umd.edu/hcil/lifeflow/">
-              <h4>LifeFlow</h4>
+            <a href="https://johnguerra.co/viz/USElectionsResults/">
+              <h4>US Presidential Election Results 2000–2024</h4>
             </a>
             <p>
-              Visual analytics tool for temporal categorical data. Contributed
-              the comparison modules as part of a broader HCIL project.
+              Scrollytelling visualization of the 2024 US presidential election
+              results, with historical data going back to 2000.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/USElections2020/">
+              <img
+                class="project"
+                src="img/projs/usElections2012.gif"
+                alt="US Elections visualization"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <h4>US Elections Visualizations</h4>
+            <p>
+              Interactive visualizations of US election results.
+              <a href="https://johnguerra.co/viz/USElections2020/">2020</a>,
+              <a href="https://johnguerra.co/viz/USElections2016/">2016</a>.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/senadoColombia/">
+              <img
+                class="project"
+                src="img/projs/senadoColombia.gif"
+                alt="Colombian Senate Explorer"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://johnguerra.co/viz/senadoColombia/">
+              <h4>Colombian Senate Explorer</h4>
+            </a>
+            <p>
+              Interactive exploration of the Colombian Senate using Navio,
+              allowing filtering and comparison of senators by party, region,
+              and voting patterns.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/resultadosSegundaVuelta2018/">
+              <img
+                class="project"
+                src="img/projs/PrimeraVuelta.gif"
+                alt="Colombian Presidential Elections"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <h4>Colombian Presidential Elections 2018</h4>
+            <p>
+              Scrollytelling visualizations of the Colombian presidential
+              election results.
+              <a href="https://johnguerra.co/viz/resultadosPrimeraVuelta2018/"
+                >First round</a
+              >,
+              <a href="https://johnguerra.co/viz/resultadosSegundaVuelta2018/"
+                >second round analysis</a
+              >.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/resultadosPlebiscito/">
+              <img
+                class="project"
+                src="img/projs/resultadosPlebiscito.png"
+                alt="Colombian Peace Agreement results"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://johnguerra.co/viz/resultadosPlebiscito/">
+              <h4>Colombian Peace Agreement Results</h4>
+            </a>
+            <p>
+              Map visualization of the 2016 Colombian peace agreement referendum
+              results by municipality.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/consultaAnticorrupcion2018/">
+              <img
+                class="project"
+                src="img/projs/consultaStory.gif"
+                alt="Anti-corruption Referendum"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://johnguerra.co/viz/consultaAnticorrupcion2018/">
+              <h4>Anti-corruption Referendum 2018</h4>
+            </a>
+            <p>
+              Scrollytelling visualization of the Colombian anti-corruption
+              referendum results.
             </p>
           </div>
         </div>
@@ -990,6 +1135,114 @@
           </div>
         </div>
 
+        <!-- ========== Open Source Libraries & Tools ========== -->
+        <h3
+          style="margin-top: 2rem; border-bottom: 2px solid #ff9800; padding-bottom: 0.3rem"
+        >
+          Open Source Libraries & Tools
+        </h3>
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://github.com/john-guerra/forceInABox">
+              <img
+                class="project"
+                src="img/projs/forceInABoxv4.gif"
+                alt="force-in-a-box"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://github.com/john-guerra/forceInABox">
+              <h4>force-in-a-box</h4>
+            </a>
+            <p>
+              D3 force layout extension for grouping nodes into clusters. 78
+              stars, 221 weekly downloads on
+              <a href="https://www.npmjs.com/package/@john-guerra/forceInABox"
+                >npm</a
+              >.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://github.com/john-guerra/d3-force-boundary">
+              <img
+                class="project"
+                src="img/projs/boundaryWithArrows.gif"
+                alt="d3-force-boundary"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://github.com/john-guerra/d3-force-boundary">
+              <h4>d3-force-boundary</h4>
+            </a>
+            <p>
+              D3 force simulation plugin to keep nodes within boundaries. 1,400+
+              weekly downloads on
+              <a
+                href="https://www.npmjs.com/package/@john-guerra/d3-force-boundary"
+                >npm</a
+              >.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://github.com/john-guerra/netClusteringJs">
+              <img
+                class="project"
+                src="img/projs/netClusteringJS.gif"
+                alt="netClustering.js"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://github.com/john-guerra/netClusteringJs">
+              <h4>netClustering.js</h4>
+            </a>
+            <p>
+              Network clustering library for JavaScript. Available on
+              <a
+                href="https://www.npmjs.com/package/@john-guerra/netClusteringJs"
+                >npm</a
+              >.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://github.com/john-guerra/revealVizScrollyteling">
+              <img
+                class="project"
+                src="img/projs/revealVizScroll.gif"
+                alt="revealVizScroll"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://github.com/john-guerra/revealVizScrollyteling">
+              <h4>revealVizScroll</h4>
+            </a>
+            <p>
+              Scrollytelling plugin for Reveal.js presentations that
+              synchronizes visualizations with slide transitions.
+            </p>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem">
+          <a href="./oss/">See live npm download stats for all packages →</a>
+        </p>
+
         <!-- ========== AI & Developer Education ========== -->
         <h3
           style="margin-top: 2rem; border-bottom: 2px solid #ff9800; padding-bottom: 0.3rem"
@@ -999,12 +1252,70 @@
 
         <div class="row">
           <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/ieeevis2025Papers/">
+              <img
+                class="project"
+                src="img/projs/paperExplorer.png"
+                alt="Paper Explorer"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <h4>Paper Explorers</h4>
+            <p>
+              Interactive tools for exploring academic papers using sentence
+              embeddings and dimensionality reduction. Semantic search across
+              hundreds to thousands of papers.
+            </p>
+            <p>
+              <a href="https://johnguerra.co/viz/chi2026Papers/">CHI 2026</a>,
+              <a href="https://johnguerra.co/viz/ieeevis2025Papers/"
+                >IEEE VIS 2025</a
+              >,
+              <a href="https://johnguerra.co/viz/chi2025Papers/">CHI 2025</a>,
+              <a href="https://johnguerra.co/viz/neurips2024Papers/"
+                >NeurIPS 2024</a
+              >,
+              <a href="https://johnguerra.co/viz/cscw2024Papers/">CSCW 2024</a>,
+              <a href="https://johnguerra.co/viz/uist2024Papers/">UIST 2024</a>,
+              <a href="https://johnguerra.co/viz/ieeevis2024Papers/"
+                >IEEE VIS 2024</a
+              >,
+              <a href="https://johnguerra.co/viz/chi2024Papers/">CHI 2024</a>
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://johnguerra.co/viz/umapPlayground/">
+              <img
+                class="project"
+                src="img/projs/umapPlayground.png"
+                alt="UMAP Playground"
+              />
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="https://johnguerra.co/viz/umapPlayground/">
+              <h4>UMAP Playground</h4>
+            </a>
+            <p>
+              Interactive web tool for testing the UMAP dimensionality reduction
+              algorithm on your own data. Runs entirely in the browser.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col-md-2">
             <a href="classes/aiCoding_spring_2026/">
               <img
                 class="project"
-                src="classes/aiCoding_spring_2026/img/aiCoding_thumbnail.png"
+                src="img/projs/vibeCoding.png"
                 alt="Vibe Coding course"
-                onerror="this.style.display='none'"
               />
             </a>
           </div>
