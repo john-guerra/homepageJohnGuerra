@@ -1,0 +1,118 @@
+---
+// Reusable interactive D3 bubble chart.
+// Reads /skills.json at runtime and renders a draggable force-directed chart.
+const { caption } = Astro.props;
+---
+<div class="post-float-right">
+  <div id="blog-skills-chart"></div>
+  {caption && <p class="chart-caption">{caption}</p>}
+</div>
+
+<script>
+  const container = document.getElementById("blog-skills-chart");
+  if (container) {
+    const d3 = await import("https://cdn.jsdelivr.net/npm/d3@7/+esm");
+    const skills = await fetch("/blog/skills.json").then((r) => r.json());
+    const data = [...skills.areas, ...skills.tools];
+
+    const width = container.clientWidth || 320;
+    const height = 320;
+    const color = d3
+      .scaleOrdinal()
+      .domain(["Research", "Engineering", "Education"])
+      .range(["#80b1d3", "#fb8072", "#b3de69"]);
+
+    const svg = d3
+      .select(container)
+      .append("svg")
+      .attr("width", "100%")
+      .attr("height", height)
+      .attr("viewBox", [0, 0, width, height]);
+
+    const rScale = d3
+      .scaleSqrt()
+      .domain(d3.extent(data, (d) => d.value))
+      .range([8, 30]);
+
+    const sim = d3
+      .forceSimulation(data)
+      .force("charge", d3.forceManyBody().strength(-15))
+      .force(
+        "collide",
+        d3.forceCollide((d) => rScale(d.value) + 2)
+      )
+      .force("x", d3.forceX(width / 2).strength(0.05))
+      .force("y", d3.forceY(height / 2).strength(0.05))
+      .on("tick", tick);
+
+    const node = svg
+      .append("g")
+      .selectAll("g")
+      .data(data)
+      .join("g")
+      .style("cursor", "grab")
+      .call(
+        d3
+          .drag()
+          .on("start", (e, d) => {
+            if (!e.active) sim.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+          })
+          .on("drag", (e, d) => {
+            d.fx = e.x;
+            d.fy = e.y;
+          })
+          .on("end", (e, d) => {
+            if (!e.active) sim.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+          })
+      );
+
+    node
+      .append("circle")
+      .attr("r", (d) => rScale(d.value))
+      .style("fill", (d) => color(d.category))
+      .style("opacity", 0.9);
+
+    node
+      .append("text")
+      .text((d) => d.name)
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .style("font-family", "Lato, sans-serif")
+      .style("font-size", (d) => Math.max(rScale(d.value) / 3, 7) + "px")
+      .style("fill", "#fff")
+      .style("pointer-events", "none")
+      .style("text-shadow", "0 1px 2px rgba(0,0,0,0.6)");
+
+    node.append("title").text((d) => `${d.name} (${d.category})`);
+
+    function tick() {
+      node.attr("transform", (d) => `translate(${d.x},${d.y})`);
+    }
+  }
+</script>
+
+<style>
+  .post-float-right {
+    float: right;
+    width: 320px;
+    max-width: 45%;
+    margin: 0 0 1rem 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+  }
+  .chart-caption {
+    font-size: 0.8em;
+    color: #777;
+    margin: 0.5rem 0 0;
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .post-float-right { float: none; width: 100%; max-width: 100%; margin: 1rem 0; }
+  }
+</style>

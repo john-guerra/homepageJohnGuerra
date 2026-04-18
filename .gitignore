@@ -1,3 +1,9 @@
 .DS_Store
 node_modules
 .idea/
+
+# Astro blog
+blog-src/.astro/
+blog-src/public/skills.json
+
+# Blog build output is committed (Apache serves it) — do NOT ignore blog/

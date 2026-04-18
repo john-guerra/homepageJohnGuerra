@@ -22,7 +22,7 @@ const formatDate = (d) =>
       <li>
         <div class="date">{formatDate(post.data.date)}</div>
         <h3 style="margin: 0.3rem 0;">
-          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          <a href={`${import.meta.env.BASE_URL}/${post.slug}/`.replace(/\/+/g, "/")}>{post.data.title}</a>
         </h3>
         {post.data.description && <p>{post.data.description}</p>}
       </li>
