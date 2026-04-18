@@ -1,0 +1,15 @@
+{
+  "name": "astro-blog-demo",
+  "version": "1.0.0",
+  "description": "Astro demo for John Guerra's blog evaluation",
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev --port 8081",
+    "preview": "astro preview --port 8081"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "@astrojs/mdx": "^3.1.0"
+  }
+}

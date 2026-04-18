@@ -1,0 +1,18 @@
+---
+title: "Rethinking How I Present My Skills"
+date: 2026-04-20
+tags:
+  - visualization
+  - design
+description: "Moving from static skill diagrams to an interactive satellite chart — and what I learned along the way."
+---
+
+When I redesigned my homepage in 2026, the skills section was the hardest part to get right. The original version had two static PNG diagrams I'd made in Keynote years ago — one showing "My Skills" with Visual Analytics at the center, another showing "Tools I Use." They did the job for a while, but every time I wanted to add something (Claude Code, MCP, Agent Architectures) I'd have to reopen Keynote, re-export, and re-upload.
+
+The fix was obvious in hindsight: generate the chart from data. I built a [D3 satellite chart](https://johnguerra.co/#intro) that reads from a single `skills.json` file. Add a new skill to the JSON, rebuild, done. The same JSON also generates a hidden text version for search engines and screen readers, so I never have to maintain two copies.
+
+![Reactive Widgets representative image](/reactiveWidgets/img/representative_image.png)
+
+The bigger lesson was about **progressive enhancement**. On first load, the page shows a clean text list of skills — readable immediately, works without JavaScript. Once the D3 chart loads, it replaces the text with the interactive version. No flash of unstyled content, no blank space while fonts download, and crucially: crawlers still see the skills. I wrote about the pattern in more detail in my [Reactive Widgets paper](https://ieeexplore.ieee.org/document/10771102) at IEEE VIS 2024.
+
+If you're curious what the final chart looks like, it's embedded at the top of my homepage. You can drag the bubbles around. The category labels float at the centroid of each group and follow the nodes as they move. It's a small touch, but it's the kind of detail that matters when you're trying to make a visualization feel alive rather than decorative.
