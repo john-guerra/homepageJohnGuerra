@@ -20,6 +20,21 @@ blog-src/         →  build.sh (Astro build)          →  blog/ (static output
 2. Run `./build.sh` to regenerate root HTML files
 3. Commit both the `src/` changes and the generated `.html` files
 
+## Deploying
+
+The site is hosted on AWS EC2 behind Apache at `johnguerra.co`. Deployment is a one-liner `rsync` over SSH via `./update.sh`:
+
+```bash
+./build.sh     # always build first
+./update.sh    # rsync to ubuntu@johnguerra.co:/var/www/johnguerra.co
+```
+
+`update.sh` excludes `src/`, `node_modules/`, `.git/`, and `update.sh` itself. Uses the SSH key at `~/Dropbox/dutoVizNew.pem`. Never commit that key.
+
+**Always build before deploying.** `update.sh` does not run the build — it just syncs whatever is currently in the working tree. If you forget to build, you'll deploy stale HTML.
+
+**Destructive flag:** `rsync --delete` means files removed locally get removed on the server. Double-check before running if you've done anything unusual like deleting large directories.
+
 ### Key partials (src/partials/)
 
 | Partial | Used by | Content |
