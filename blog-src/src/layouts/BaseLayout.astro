@@ -1,4 +1,8 @@
 ---
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
 const { title, description } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -10,134 +14,19 @@ const { title, description } = Astro.props;
   {description && <meta name="description" content={description} />}
   <link rel="icon" type="image/x-icon" href="/favicon.png" />
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     rel="stylesheet"
   />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;700&family=Roboto+Condensed:wght@700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;700&family=Roboto+Condensed:wght@700&family=IBM+Plex+Mono:wght@400;600&display=swap"
     rel="stylesheet"
   />
-  <style is:global>
-    body {
-      font-family: "Lato", sans-serif;
-      background: #fefefa;
-      color: #222;
-    }
-    h1, h2, h3, h4 { font-family: "Playfair Display", serif; }
-    .container-blog { max-width: 720px; margin: 0 auto; padding: 2rem 1rem; }
-    a { color: #FF9800; }
-    a:hover { color: #e68a00; }
-    img { max-width: 100%; height: auto; border-radius: 6px; margin: 1rem 0; }
-    code {
-      background: #f5f5f0;
-      padding: 0.1em 0.3em;
-      border-radius: 3px;
-      font-size: 0.9em;
-      color: #222;
-    }
-    pre code { background: transparent; padding: 0; }
-    pre {
-      background: #f5f5f0;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    blockquote {
-      border-left: 3px solid #FF9800;
-      padding-left: 1rem;
-      color: #555;
-      margin: 1rem 0;
-    }
-    .post-meta { color: #888; font-size: 0.9em; margin-bottom: 2rem; }
-    .post-list { list-style: none; padding: 0; }
-    .post-list li {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .post-list .date { color: #888; font-size: 0.85em; }
-    .nav-top {
-      border-bottom: 1px solid #eee;
-      padding: 0.75rem 1rem;
-      background: #fff;
-    }
-    .nav-top-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .nav-brand {
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      text-decoration: none;
-      color: #222;
-      font-size: 1.15rem;
-    }
-    .nav-brand:hover { color: #222; text-decoration: none; }
-    .nav-brand sup { font-size: 0.7em; }
-    .nav-back { font-size: 0.9rem; color: #888; text-decoration: none; }
-    .nav-back:hover { color: #FF9800; }
-
-    /* Footer — "about the author" after every post */
-    .post-footer {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #eee;
-      font-size: 0.9em;
-      color: #555;
-      line-height: 1.7;
-    }
-    .post-footer a { color: #FF9800; }
-    .post-footer .author-bio {
-      margin-bottom: 0.75rem;
-    }
-    .post-footer .author-bio strong {
-      color: #222;
-    }
-    .post-footer .author-contact {
-      margin: 0;
-    }
-  </style>
 </head>
 <body>
-  <nav class="nav-top">
-    <div class="nav-top-inner">
-      <a href="/blog/" class="nav-brand">JAG<sup>2</sup> Blog</a>
-      <a href="/" class="nav-back">← back to johnguerra.co</a>
-    </div>
-  </nav>
+  <SiteHeader />
   <main class="container-blog">
     <slot />
-
-    <footer class="post-footer">
-      <p class="author-bio">
-        <strong><a href="https://johnguerra.co">John Alexis Guerra Gómez</a></strong>
-        is an Associate Teaching Professor at
-        <a href="https://www.northeastern.edu/bayarea/">Northeastern University</a>,
-        member of the
-        <a href="https://vis.khoury.northeastern.edu/">Khoury Visualization Lab</a>.
-        He researches information visualization, AI-assisted development, and accessibility.
-      </p>
-      <p class="author-contact">
-        Questions, suggestions, comments? Reach out on
-        <a href="https://bsky.app/profile/johnguerra.bsky.social" target="_blank">
-          Bluesky</a>,
-        <a href="https://vis.social/@jguerra" target="_blank">
-          Mastodon <i class="bi-mastodon"></i></a>,
-        <a href="https://www.linkedin.com/in/dutoguerra/" target="_blank">
-          LinkedIn <i class="bi-linkedin"></i></a>,
-        <a href="https://twitter.com/duto_guerra" target="_blank">
-          @duto_guerra <i class="bi-twitter"></i></a>, or
-        <a href="https://twitter.com/guerravis" target="_blank">
-          @guerravis en Español <i class="bi-twitter"></i></a>.
-      </p>
-    </footer>
+    <SiteFooter />
   </main>
 </body>
 </html>

@@ -1,0 +1,255 @@
+/* ============================================================
+   JAG² Blog — Design System
+   Single source of truth for colors, typography, spacing, and
+   reusable layout primitives. Components and posts should use
+   these classes/tokens rather than defining their own styles.
+   ============================================================ */
+
+:root {
+  /* Colors — steel-blue palette matching the homepage */
+  --link: #507b94;
+  --link-hover: #385a70;
+  --accent: #80b1d3;
+
+  --bg: #fefefa;
+  --bg-soft: #f5f5f0;
+
+  --text: #222;
+  --text-muted: #666;
+  --text-faint: #888;
+
+  --border: #eee;
+  --border-accent: var(--accent);
+
+  /* Typography */
+  --font-sans: "Lato", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-condensed: "Roboto Condensed", sans-serif;
+
+  /* Spacing */
+  --post-max-width: 720px;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 4rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+/* ============================================================
+   Base typography & elements
+   ============================================================ */
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-md) 0;
+}
+
+code {
+  background: var(--bg-soft);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+pre {
+  background: var(--bg-soft);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-md);
+  color: var(--text-muted);
+  margin: var(--space-md) 0;
+}
+
+/* ============================================================
+   Layout primitive: post container
+   ============================================================ */
+
+.container-blog {
+  max-width: var(--post-max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* ============================================================
+   Blog index — post list
+   ============================================================ */
+
+.post-meta {
+  color: var(--text-faint);
+  font-size: 0.9em;
+  margin-bottom: var(--space-xl);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list .date {
+  color: var(--text-faint);
+  font-size: 0.85em;
+}
+
+/* Tag pills (used in post-meta) */
+.tag {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 10px;
+  font-size: 0.75em;
+  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  letter-spacing: 0.03em;
+  margin-right: 0.25em;
+}
+
+/* ============================================================
+   Reusable post patterns — use these across posts & components
+   ============================================================ */
+
+/* Figure wrapper for any visual (chart, image, comparison) */
+.post-figure {
+  margin: var(--space-lg) 0;
+}
+
+.post-figure figcaption,
+.post-figure .caption {
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.85em;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Two-column responsive grid (before/after, side-by-side) */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.two-col-grid > div > h4 {
+  font-size: 1rem;
+  margin: 0 0 var(--space-sm);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.two-col-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin: 0;
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .two-col-grid { grid-template-columns: 1fr; }
+}
+
+/* Float-right callout (chart next to text) */
+.post-float-right {
+  float: right;
+  width: 320px;
+  max-width: 45%;
+  margin: 0 0 var(--space-md) var(--space-lg);
+  padding: var(--space-md);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 700px) {
+  .post-float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: var(--space-md) 0;
+  }
+}
+
+/* Before/after label pills */
+.before-label,
+.after-label {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: var(--radius-sm);
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--font-condensed);
+}
+
+.before-label { background: var(--bg-soft); color: var(--text-muted); }
+.after-label { background: var(--accent); color: #fff; }
+
+/* ============================================================
+   AI authorship banner — shown at top of posts written by Claude
+   ============================================================ */
+
+.ai-byline {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.9rem var(--space-md);
+  margin: 0 0 var(--space-xl);
+  background: var(--bg-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.ai-byline strong { color: var(--text); }
+
+.ai-byline .ai-byline-icon {
+  font-size: 1.2em;
+  line-height: 1;
+  margin-top: 0.1em;
+}

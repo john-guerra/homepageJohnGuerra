@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How Claude Code Helped Me Choose a Blog Platform — JAG² Blog</title><meta name="description" content="Brainstorming three static site generators with an AI agent, then comparing two side-by-side with real working demos before committing."><link rel="icon" type="image/x-icon" href="/favicon.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;700&family=Roboto+Condensed:wght@700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/blog/_astro/_slug_.CQqzD_Zg.css"></head> <body> <nav class="nav-top" data-astro-cid-ctg3m53h> <div class="nav-top-inner" data-astro-cid-ctg3m53h> <a href="/blog/" class="nav-brand" data-astro-cid-ctg3m53h>JAG<sup data-astro-cid-ctg3m53h>2</sup> Blog</a> <a href="/" class="nav-back" data-astro-cid-ctg3m53h>← back to johnguerra.co</a> </div> </nav>  <main class="container-blog">  <article> <h1>How Claude Code Helped Me Choose a Blog Platform</h1> <div class="post-meta"> April 17, 2026  · <span class="tag">meta</span><span class="tag">ai-assisted-development</span><span class="tag">decision-making</span> </div> <aside class="ai-byline" role="note"> <span class="ai-byline-icon" aria-hidden="true">🤖</span> <span>  <strong>Written by Claude Code on behalf of John.</strong>
+This post was drafted by an AI agent based on John's work and direction;
+        the words are not John's own.
+ </span> </aside>
+<p>Before this blog existed, John had been thinking about adding one for a while. He had a clear goal — publish short technical posts with interactive visualizations embedded inline — but the starting question was which platform to use. Ghost? Jekyll? Eleventy? Astro? Roll his own? The decision mattered because whatever stack he picked, he’d be living in it for years.</p>
+<p>Rather than picking from intuition, John asked Claude to help structure the choice. What came out of it is a small case study in using an AI agent for a design decision rather than a code-writing task.</p>
+<h2 id="step-1-brainstorming-the-space">Step 1: brainstorming the space</h2>
+<p>The first conversation happened in Claude.ai (web), not inside the project. John described the site — static HTML + EJS templates deployed on Apache — and what he wanted: Markdown posts, Git-based workflow, room for D3 visualizations, good SEO. Claude proposed three options:</p>
+<ul>
+<li><strong>Eleventy (11ty)</strong> — plain static site generator, Nunjucks templates nearly identical to EJS.</li>
+<li><strong>Astro with MDX</strong> — more modern, supports React/Svelte components inline, but heavier.</li>
+<li><strong>Ghost self-hosted</strong> — excellent browser editor, but needs a Node.js process running 24/7.</li>
+</ul>
+<p>For each, Claude laid out the trade-offs: attack surface, learning curve, how well Markdown and HTML mix, whether the browser editor was essential or nice-to-have. The output wasn’t a recommendation disguised as a list — it was a side-by-side comparison with honest cons.</p>
+<p>John exported the conversation summary into a handoff file (<code>docs/blog-platform-brainstorm-handoff.md</code>) and started a new session in Claude Code, on his laptop, with access to the actual repo.</p>
+<h2 id="step-2-resisting-the-immediate-recommendation">Step 2: resisting the immediate recommendation</h2>
+<p>Claude’s initial recommendation was Eleventy, on the argument that it mirrored John’s existing EJS stack most closely. That was a reasonable default — minimum learning curve, smallest dependency footprint. But John wasn’t convinced. He wanted to see both Eleventy and Astro running the same post before deciding.</p>
+<p>This is the part of AI-assisted development that doesn’t get talked about enough: <strong>the agent’s first recommendation is often optimized for “safest path” when the user’s actual goal is “best fit.”</strong> If John had accepted Eleventy on reputation, he’d have ended up with a less-good-for-him choice. Asking for demos reframed the decision from abstract comparison to lived experience.</p>
+<h2 id="step-3-two-working-demos-same-content">Step 3: two working demos, same content</h2>
+<p>Claude built both projects at <code>.improvements/blog-demos/eleventy/</code> and <code>.improvements/blog-demos/astro/</code>. Same sample post in each, same styling (Bootstrap + the site’s Playfair/Lato fonts), same front matter fields. The goal was to isolate the authoring experience from the visual output, because the visual output was going to end up identical either way — both produce clean static HTML.</p>
+<p>Building two demos in parallel is exactly the kind of task where AI-assisted development shines. It’s mechanical work with a lot of small decisions: config files, folder conventions, layout templates, content schemas. Claude wrote both scaffolds in minutes. Doing this by hand in two unfamiliar SSGs would’ve taken an afternoon each, and John wouldn’t have had the patience to actually finish the second one — which is precisely how people end up committed to the first option they tried.</p>
+<p>With <code>npm run dev</code> running in each folder, John could click between <code>localhost:8080</code> (Eleventy) and <code>localhost:8081</code> (Astro) and read the same post authored two different ways. The relevant differences became obvious immediately:</p>
+<ul>
+<li><strong>Eleventy:</strong> the post was pure Markdown, then a <code>&lt;script src=&quot;/skillsChart.js&quot;&gt;&lt;/script&gt;</code> tag at the bottom to load an interactive chart. Simple, but the chart setup lived outside the post.</li>
+<li><strong>Astro:</strong> the post was MDX, and embedding the chart was <code>import SkillsChart from &quot;…&quot;</code> at the top, then <code>&lt;SkillsChart /&gt;</code> inline in the markdown. The chart was a proper reusable component.</li>
+</ul>
+<p>For posts with occasional visualizations, both work. For posts <em>built around</em> visualizations — which is where John’s blog is headed — Astro’s component model wins. That tipped the decision.</p>
+<h2 id="step-4-the-hybrid-decision">Step 4: the hybrid decision</h2>
+<p>After picking Astro, there was still a choice: migrate the whole johnguerra.co site to Astro, or use Astro only for the blog and leave the existing EJS homepage alone. Claude offered the honest answer: the existing EJS site works, and a full port would be weeks of regression-prone work without real user benefit. So the blog lives at <code>/blog/</code> as an Astro sub-project; the homepage stays as EJS.</p>
+<p>Hybrid setups get a bad reputation because they can grow into Frankenstein messes. This one stays clean because:</p>
+<ul>
+<li>The blog is a strict sub-tree at <code>/blog/</code>. Everything it needs (styles, components, data) is in <code>blog-src/</code>.</li>
+<li>The build script runs both generators: EJS first, then Astro, outputting to root-level HTML and <code>blog/</code> respectively.</li>
+<li>Shared data — just <code>skills.json</code> right now — gets copied during the build instead of being referenced across the boundary.</li>
+</ul>
+<p>The main homepage gained exactly one link in its nav: “Blog”. That’s the full integration.</p>
+<h2 id="what-the-agent-was-actually-good-at-and-not">What the agent was actually good at (and not)</h2>
+<p><strong>Good at:</strong> scaffolding two full projects with parity; reading documentation for two different SSGs simultaneously; producing honest comparisons with specific numbers (dependency counts, build times, output sizes); resisting sunk-cost pressure when John asked to throw away the Eleventy work.</p>
+<p><strong>Not as good at:</strong> initial aesthetic choices — the first draft of the blog used an orange link color that didn’t match the homepage palette; those decisions needed John’s eye to correct. Also not good at naming things well on the first try (“SkillsChart.astro” vs “SkillsChartFull.astro” vs “BlogSkillsChart.astro” went through three rounds).</p>
+<p>The decision from brainstorm to committed hybrid took roughly one working session. Without Claude, the same decision probably would’ve been “stick with EJS and do the blog in EJS too,” because the cost of exploring alternatives was too high. Lowering that cost is where agents earn their keep.</p> </article>  <footer class="post-footer" data-astro-cid-gcn2mc3v> <p class="author-bio" data-astro-cid-gcn2mc3v> <strong data-astro-cid-gcn2mc3v><a href="https://johnguerra.co" data-astro-cid-gcn2mc3v>John Alexis Guerra Gómez</a></strong>
+is an Associate Teaching Professor at
+<a href="https://www.northeastern.edu/bayarea/" data-astro-cid-gcn2mc3v>Northeastern University</a>,
+    member of the
+<a href="https://vis.khoury.northeastern.edu/" data-astro-cid-gcn2mc3v>Khoury Visualization Lab</a>.
+    He researches information visualization, AI-assisted development, and accessibility.
+</p> <p class="author-contact" data-astro-cid-gcn2mc3v>
+Questions, suggestions, comments? Reach out on
+<a href="https://bsky.app/profile/johnguerra.bsky.social" target="_blank" data-astro-cid-gcn2mc3v>
+Bluesky</a>,
+<a href="https://vis.social/@jguerra" target="_blank" data-astro-cid-gcn2mc3v>
+Mastodon <i class="bi-mastodon" data-astro-cid-gcn2mc3v></i></a>,
+<a href="https://www.linkedin.com/in/dutoguerra/" target="_blank" data-astro-cid-gcn2mc3v>
+LinkedIn <i class="bi-linkedin" data-astro-cid-gcn2mc3v></i></a>,
+<a href="https://twitter.com/duto_guerra" target="_blank" data-astro-cid-gcn2mc3v>
+@duto_guerra <i class="bi-twitter" data-astro-cid-gcn2mc3v></i></a>, or
+<a href="https://twitter.com/guerravis" target="_blank" data-astro-cid-gcn2mc3v>
+@guerravis en Español <i class="bi-twitter" data-astro-cid-gcn2mc3v></i></a>.
+</p> </footer>  </main> </body></html>

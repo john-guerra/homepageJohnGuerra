@@ -1,0 +1,27 @@
+---
+// Disclosure shown at the top of posts written by Claude on behalf of John.
+// Usage in MDX:
+//   import AIByline from "../../components/AIByline.astro";
+//   <AIByline />
+// Optionally pass an `edited` prop if John revised substantially:
+//   <AIByline edited />
+const { edited = false } = Astro.props;
+---
+<aside class="ai-byline" role="note">
+  <span class="ai-byline-icon" aria-hidden="true">🤖</span>
+  <span>
+    {edited ? (
+      <>
+        <strong>Drafted by Claude Code</strong>, edited by John.
+        This post was written with AI assistance; the voice is John's,
+        the phrasing is a collaboration.
+      </>
+    ) : (
+      <>
+        <strong>Written by Claude Code on behalf of John.</strong>
+        This post was drafted by an AI agent based on John's work and direction;
+        the words are not John's own.
+      </>
+    )}
+  </span>
+</aside>
