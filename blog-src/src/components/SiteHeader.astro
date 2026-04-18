@@ -1,0 +1,46 @@
+---
+// Top nav shown on every blog page.
+---
+<nav class="nav-top">
+  <div class="nav-top-inner">
+    <a href="/blog/" class="nav-brand">JAG<sup>2</sup> Blog</a>
+    <a href="/" class="nav-back">← back to johnguerra.co</a>
+  </div>
+</nav>
+
+<style>
+  .nav-top {
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    background: #fff;
+  }
+  .nav-top-inner {
+    max-width: var(--post-max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .nav-brand {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.15rem;
+  }
+  .nav-brand:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-brand sup {
+    font-size: 0.7em;
+  }
+  .nav-back {
+    font-size: 0.9rem;
+    color: var(--text-faint);
+    text-decoration: none;
+  }
+  .nav-back:hover {
+    color: var(--link);
+  }
+</style>

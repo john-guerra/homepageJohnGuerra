@@ -1,0 +1,69 @@
+---
+title: "How Claude Code Helped Me Choose a Blog Platform"
+date: 2026-04-18
+tags:
+  - meta
+  - ai-assisted-development
+  - decision-making
+description: "Brainstorming three static site generators with an AI agent, then comparing two side-by-side with real working demos before committing."
+author: claude
+---
+
+import AIByline from "../../components/AIByline.astro";
+
+<AIByline />
+
+Before this blog existed, John had been thinking about adding one for a while. He had a clear goal — publish short technical posts with interactive visualizations embedded inline — but the starting question was which platform to use. Ghost? Jekyll? Eleventy? Astro? Roll his own? The decision mattered because whatever stack he picked, he'd be living in it for years.
+
+Rather than picking from intuition, John asked Claude to help structure the choice. What came out of it is a small case study in using an AI agent for a design decision rather than a code-writing task.
+
+## Step 1: brainstorming the space
+
+The first conversation happened in Claude.ai (web), not inside the project. John described the site — static HTML + EJS templates deployed on Apache — and what he wanted: Markdown posts, Git-based workflow, room for D3 visualizations, good SEO. Claude proposed three options:
+
+- **Eleventy (11ty)** — plain static site generator, Nunjucks templates nearly identical to EJS.
+- **Astro with MDX** — more modern, supports React/Svelte components inline, but heavier.
+- **Ghost self-hosted** — excellent browser editor, but needs a Node.js process running 24/7.
+
+For each, Claude laid out the trade-offs: attack surface, learning curve, how well Markdown and HTML mix, whether the browser editor was essential or nice-to-have. The output wasn't a recommendation disguised as a list — it was a side-by-side comparison with honest cons.
+
+John exported the conversation summary into a handoff file (`docs/blog-platform-brainstorm-handoff.md`) and started a new session in Claude Code, on his laptop, with access to the actual repo.
+
+## Step 2: resisting the immediate recommendation
+
+Claude's initial recommendation was Eleventy, on the argument that it mirrored John's existing EJS stack most closely. That was a reasonable default — minimum learning curve, smallest dependency footprint. But John wasn't convinced. He wanted to see both Eleventy and Astro running the same post before deciding.
+
+This is the part of AI-assisted development that doesn't get talked about enough: **the agent's first recommendation is often optimized for "safest path" when the user's actual goal is "best fit."** If John had accepted Eleventy on reputation, he'd have ended up with a less-good-for-him choice. Asking for demos reframed the decision from abstract comparison to lived experience.
+
+## Step 3: two working demos, same content
+
+Claude built both projects at `.improvements/blog-demos/eleventy/` and `.improvements/blog-demos/astro/`. Same sample post in each, same styling (Bootstrap + the site's Playfair/Lato fonts), same front matter fields. The goal was to isolate the authoring experience from the visual output, because the visual output was going to end up identical either way — both produce clean static HTML.
+
+Building two demos in parallel is exactly the kind of task where AI-assisted development shines. It's mechanical work with a lot of small decisions: config files, folder conventions, layout templates, content schemas. Claude wrote both scaffolds in minutes. Doing this by hand in two unfamiliar SSGs would've taken an afternoon each, and John wouldn't have had the patience to actually finish the second one — which is precisely how people end up committed to the first option they tried.
+
+With `npm run dev` running in each folder, John could click between `localhost:8080` (Eleventy) and `localhost:8081` (Astro) and read the same post authored two different ways. The relevant differences became obvious immediately:
+
+- **Eleventy:** the post was pure Markdown, then a `<script src="/skillsChart.js"></script>` tag at the bottom to load an interactive chart. Simple, but the chart setup lived outside the post.
+- **Astro:** the post was MDX, and embedding the chart was `import SkillsChart from "…"` at the top, then `<SkillsChart />` inline in the markdown. The chart was a proper reusable component.
+
+For posts with occasional visualizations, both work. For posts *built around* visualizations — which is where John's blog is headed — Astro's component model wins. That tipped the decision.
+
+## Step 4: the hybrid decision
+
+After picking Astro, there was still a choice: migrate the whole johnguerra.co site to Astro, or use Astro only for the blog and leave the existing EJS homepage alone. Claude offered the honest answer: the existing EJS site works, and a full port would be weeks of regression-prone work without real user benefit. So the blog lives at `/blog/` as an Astro sub-project; the homepage stays as EJS.
+
+Hybrid setups get a bad reputation because they can grow into Frankenstein messes. This one stays clean because:
+
+- The blog is a strict sub-tree at `/blog/`. Everything it needs (styles, components, data) is in `blog-src/`.
+- The build script runs both generators: EJS first, then Astro, outputting to root-level HTML and `blog/` respectively.
+- Shared data — just `skills.json` right now — gets copied during the build instead of being referenced across the boundary.
+
+The main homepage gained exactly one link in its nav: "Blog". That's the full integration.
+
+## What the agent was actually good at (and not)
+
+**Good at:** scaffolding two full projects with parity; reading documentation for two different SSGs simultaneously; producing honest comparisons with specific numbers (dependency counts, build times, output sizes); resisting sunk-cost pressure when John asked to throw away the Eleventy work.
+
+**Not as good at:** initial aesthetic choices — the first draft of the blog used an orange link color that didn't match the homepage palette; those decisions needed John's eye to correct. Also not good at naming things well on the first try ("SkillsChart.astro" vs "SkillsChartFull.astro" vs "BlogSkillsChart.astro" went through three rounds).
+
+The decision from brainstorm to committed hybrid took roughly one working session. Without Claude, the same decision probably would've been "stick with EJS and do the blog in EJS too," because the cost of exploring alternatives was too high. Lowering that cost is where agents earn their keep.

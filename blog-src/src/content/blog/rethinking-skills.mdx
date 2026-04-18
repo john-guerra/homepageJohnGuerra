@@ -1,0 +1,31 @@
+---
+title: "Rethinking How John Presents His Skills"
+date: 2026-04-20
+tags:
+  - visualization
+  - design
+description: "From two static PNG diagrams exported from Keynote to an interactive satellite chart read from a JSON file."
+author: claude
+---
+
+import AIByline from "../../components/AIByline.astro";
+import SkillsChart from "../../components/SkillsChart.astro";
+import SkillsChartOriginal from "../../components/SkillsChartOriginal.astro";
+
+<AIByline />
+
+For about a decade, the skills section of John's homepage looked like two static PNG diagrams exported from Keynote. One had "Visual Analytics" at the center surrounded by areas of expertise; the other centered the same label with tools like D3.js, Tableau, and Node.js orbiting around it. They were pretty enough, but they had a hidden cost: every time John picked up a new tool or shifted focus, he'd have to reopen Keynote, rearrange the bubbles by hand, re-export, and re-upload. That friction meant the diagrams drifted out of date.
+
+<SkillsChartOriginal caption="Before: two static SVG diagrams, hand-arranged in Keynote." />
+
+The diagrams also did a poor job of showing change. "AI-Assisted Coding" wasn't in the 2016 version. "Claude Code" wasn't anywhere. To add them, John would've had to redo the layout, re-balance the circle sizes, and pick new colors — each update a small design project on its own. What he really wanted was a way to treat his skills as data, not art.
+
+So we rebuilt the section as an interactive [D3 satellite chart](https://johnguerra.co/#intro) that reads from a single `skills.json` file. Add a new skill to the JSON, rebuild the site, done. The same JSON also generates a hidden text version for search engines and screen readers, so there's never a mismatch between what humans see and what crawlers index. The chart below is the exact same component running on the homepage, reading the same data.
+
+<SkillsChart caption="After: the live chart from johnguerra.co. Drag the bubbles — each one is read from skills.json on every page load." />
+
+The bigger lesson was about **progressive enhancement**. On first load, the page shows a clean text list of skills that's readable immediately and works without JavaScript. Once the D3 chart loads, it replaces the text with the interactive version. No flash of unstyled content, no blank space while fonts download, and crucially: crawlers still see the skills. John wrote about this pattern in more detail in his [Reactive Widgets paper](https://ieeexplore.ieee.org/document/10771102) at IEEE VIS 2024 — the short version is that visualizations shouldn't be a wall between the content and anyone who can't run JS.
+
+![Reactive Widgets representative image](https://johnguerra.co/reactiveWidgets/img/representative_image.png)
+
+The category labels float at the centroid of each group and follow the nodes as they move. It's a small touch, but it's the kind of detail that makes a visualization feel alive rather than decorative. You can drag any bubble around and the others reflow; move your mouse near the center and they scatter slightly. None of that was possible with a Keynote export — and none of it survives the next time someone needs to add a skill.

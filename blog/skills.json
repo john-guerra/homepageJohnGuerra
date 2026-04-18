@@ -1,0 +1,35 @@
+{
+  "categories": {
+    "Research": "Research",
+    "Engineering": "Engineering",
+    "Education": "Education"
+  },
+  "areas": [
+    { "name": "Information Visualization", "value": 150, "category": "Research" },
+    { "name": "Accessibility", "value": 120, "category": "Research" },
+    { "name": "HCI", "value": 120, "category": "Research" },
+    { "name": "Machine Learning", "value": 70, "category": "Research" },
+    { "name": "AI Assisted Coding", "value": 100, "category": "Engineering" },
+    { "name": "System Architecture", "value": 100, "category": "Engineering" },
+    { "name": "Web Development", "value": 100, "category": "Engineering" },
+    { "name": "Education", "value": 120, "category": "Education" },
+    { "name": "Public Speaking", "value": 100, "category": "Education" },
+    { "name": "Entrepreneurship", "value": 70, "category": "Education" }
+  ],
+  "tools": [
+    { "name": "D3.js", "value": 150, "category": "Research" },
+    { "name": "Vega-Lite", "value": 130, "category": "Research" },
+    { "name": "Observable", "value": 100, "category": "Research" },
+    { "name": "User Experience", "value": 50, "category": "Research" },
+    { "name": "ReactiveWidgets.org", "value": 50, "category": "Research" },
+    { "name": "HTML5/CSS/JS", "value": 150, "category": "Engineering" },
+    { "name": "React", "value": 100, "category": "Engineering" },
+    { "name": "SQL/NoSQL", "value": 80, "category": "Engineering" },
+    { "name": "Python", "value": 80, "category": "Engineering" },
+    { "name": "Agentic Coding", "value": 150, "category": "Engineering" },
+    { "name": "Courses", "value": 100, "category": "Education" },
+    { "name": "Agile", "value": 50, "category": "Education" },
+    { "name": "Design Thinking", "value": 50, "category": "Education" },
+    { "name": "Innovation", "value": 50, "category": "Education" }
+  ]
+}

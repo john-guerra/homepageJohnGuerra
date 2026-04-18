@@ -1,0 +1,24 @@
+---
+// The "before": the two static SVGs originally exported from Keynote.
+// Uses shared .post-figure and .two-col-grid classes — no styles here.
+const { caption } = Astro.props;
+---
+<figure class="post-figure">
+  <div class="two-col-grid">
+    <div>
+      <h4>My Skills</h4>
+      <img
+        src="/blog/img/posts/rethinking-skills/my-skills.svg"
+        alt="Skills diagram: Visual Analytics at the center, surrounded by Information Visualization, Data Science, System Architecture, User Evaluation, User Interface Design, and Machine Learning."
+      />
+    </div>
+    <div>
+      <h4>The tools and techniques I use</h4>
+      <img
+        src="/blog/img/posts/rethinking-skills/what-i-use.svg"
+        alt="Tools diagram: Visual Analytics at the center, surrounded by D3.js, Tableau, Vega-Lite, Observable, Javascript, HTML5/CSS, React, Python, Node.js, Django, Express, SQL, NoSQL, Hadoop, Pandas, Arquero.js, R, Controlled Experiments, Usability Studies, MILCS, and Rapid Prototyping."
+      />
+    </div>
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
