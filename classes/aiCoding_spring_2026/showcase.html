@@ -44,33 +44,34 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script>
-    (function() {
-      var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSxlPRTySnpMgzIF2nKPkv879VHpr4_c0UgojTkluCFrqSXs9NP6ytQISIPq7AVFLOa9sMnvS7FrJ/pub?gid=954244184&single=true&output=csv';
-      var container = document.getElementById('showcase-container');
+    (() => {
+      const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSxlPRTySnpMgzIF2nKPkv879VHpr4_c0UgojTkluCFrqSXs9NP6ytQISIPq7AVFLOa9sMnvS7FrJ/pub?gid=954244184&single=true&output=csv';
+      const container = document.getElementById('showcase-container');
       if (!container) return;
     
-      function showPlaceholder() {
-        var ph = document.createElement('div');
+      const showPlaceholder = () => {
+        const ph = document.createElement('div');
         ph.className = 'col-12 showcase-placeholder';
         ph.textContent = 'Projects will appear here once students submit them.';
         container.textContent = '';
         container.appendChild(ph);
-      }
+      };
     
-      function makeLink(href, text, className) {
-        var a = document.createElement('a');
+      const makeLink = (href, text, className) => {
+        const a = document.createElement('a');
         a.href = href;
         a.textContent = text;
         a.className = className;
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         return a;
-      }
+      };
     
-      function parseCSV(text) {
-        var rows = []; var row = []; var field = ''; var inQuotes = false;
-        for (var i = 0; i < text.length; i++) {
-          var c = text[i];
+      const parseCSV = (text) => {
+        const rows = [];
+        let row = [], field = '', inQuotes = false;
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
           if (inQuotes) {
             if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
             else if (c === '"') { inQuotes = false; }
@@ -86,68 +87,98 @@
         }
         if (field || row.length) { row.push(field); rows.push(row); }
         return rows;
-      }
+      };
+    
+      // Last-submission-wins dedup, keyed on project selector + sorted student IDs.
+      // Sorting IDs makes the key position-agnostic (handles swapped Student 1 / Student 2 between submissions).
+      const dedupe = (projects, headers) => {
+        const colIdx = (key) => headers.findIndex(h => h.includes(key));
+        const tsIdx = colIdx('timestamp');
+        const projIdx = colIdx('project');
+        const id1Idx = colIdx('id number student 1');
+        const id2Idx = colIdx('id number student 2');
+        const emailIdx = colIdx('email');
+    
+        const byKey = {};
+        projects
+          .slice()
+          .sort((a, b) => new Date(a[tsIdx]) - new Date(b[tsIdx]))
+          .forEach(row => {
+            const project = (row[projIdx] || '').trim();
+            const ids = [row[id1Idx], row[id2Idx]]
+              .map(v => (v || '').trim())
+              .filter(Boolean)
+              .sort()
+              .join('|');
+            const fallback = (row[emailIdx] || '').trim();
+            const key = `${project}::${ids || fallback}`;
+            byKey[key] = row;
+          });
+        return Object.values(byKey);
+      };
     
       fetch(SHEET_CSV_URL)
-        .then(function(r) { return r.text(); })
-        .then(function(csv) {
-          var rows = parseCSV(csv);
+        .then(r => r.text())
+        .then(csv => {
+          const rows = parseCSV(csv);
           if (rows.length <= 1) { showPlaceholder(); return; }
-          var headers = rows[0].map(function(h) { return h.trim().toLowerCase(); });
-          var projects = rows.slice(1).filter(function(r) { return r.length > 1 && r[1]; });
+          const headers = rows[0].map(h => h.trim().toLowerCase());
+          let projects = rows.slice(1).filter(r => r.length > 1 && r[1]);
     
-          // Shuffle for fairness
-          for (var i = projects.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var tmp = projects[i]; projects[i] = projects[j]; projects[j] = tmp;
+          projects = dedupe(projects, headers);
+    
+          // Shuffle for fairness (after dedup so "last wins" ordering isn't defeated)
+          for (let i = projects.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [projects[i], projects[j]] = [projects[j], projects[i]];
           }
     
           container.textContent = '';
-          projects.forEach(function(row) {
-            var get = function(key) {
-              var idx = headers.findIndex(function(h) { return h.includes(key); });
+          projects.forEach(row => {
+            const get = (key) => {
+              const idx = headers.findIndex(h => h.includes(key));
               return idx >= 0 ? (row[idx] || '').trim() : '';
             };
-            var name = get('project name');
-            var desc = get('description');
-            var github = get('github');
-            var demo = get('demo') || get('project url');
-            var thumb = get('thumbnail');
-            var video = get('video');
-            var blog = get('blog');
-            var s1 = get('student 1') || get('full name');
-            var s2 = get('student 2');
+            const name = get('project name');
+            const desc = get('description');
+            const github = get('github');
+            const demo = get('demo') || get('project url');
+            const thumb = get('thumbnail');
+            const video = get('video');
+            const blog = get('blog');
+            const s1 = get('student 1') || get('full name');
+            const s2 = get('student 2');
     
-            var col = document.createElement('div');
+            const col = document.createElement('div');
             col.className = 'col-md-4 col-sm-6';
     
-            var card = document.createElement('div');
+            const card = document.createElement('div');
             card.className = 'card showcase-card';
     
             if (thumb) {
-              var img = document.createElement('img');
+              const img = document.createElement('img');
               img.className = 'card-img-top';
               img.src = thumb;
               img.alt = name;
               card.appendChild(img);
             }
     
-            var body = document.createElement('div');
+            const body = document.createElement('div');
             body.className = 'card-body';
     
-            var title = document.createElement('h5');
+            const title = document.createElement('h5');
             title.className = 'card-title';
             title.textContent = name;
             body.appendChild(title);
     
             if (desc) {
-              var p = document.createElement('p');
+              const p = document.createElement('p');
               p.className = 'card-text';
               p.textContent = desc;
               body.appendChild(p);
             }
     
-            var btnGroup = document.createElement('div');
+            const btnGroup = document.createElement('div');
             btnGroup.className = 'btn-group flex-wrap';
             if (github) btnGroup.appendChild(makeLink(github, 'GitHub', 'btn btn-sm btn-secondary'));
             if (demo) btnGroup.appendChild(makeLink(demo, 'Demo', 'btn btn-sm btn-primary'));
@@ -157,9 +188,9 @@
     
             card.appendChild(body);
     
-            var footer = document.createElement('div');
+            const footer = document.createElement('div');
             footer.className = 'card-footer text-muted';
-            footer.textContent = 'By: ' + s1 + (s2 ? ', ' + s2 : '');
+            footer.textContent = `By: ${s1}${s2 ? ', ' + s2 : ''}`;
             card.appendChild(footer);
     
             col.appendChild(card);
