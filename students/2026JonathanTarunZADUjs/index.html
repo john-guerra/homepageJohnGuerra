@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZADU.js - Measuring and Visualizing Distortions in Dimensionally Reduced Data on the Browser</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Georgia, serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .header-section {
+      padding: 40px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: normal;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .authors {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .publication-info {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    .content-section {
+      padding: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="container">
+      <h1 class="title">ZADU.js &mdash; Measuring and Visualizing Distortions in Dimensionally Reduced Data on the Browser</h1>
+      <div class="authors">
+        <a href="https://www.linkedin.com/in/jonathan-tarun/" target="_blank">Jonathan Tarun Rajasekaran</a>,
+        <a href="https://www.linkedin.com/in/dutoguerra/" target="_blank">John A. Guerra-Gomez</a>
+      </div>
+      <div class="publication-info">
+        Master of Science Thesis, Khoury College of Computer Sciences, Northeastern University, April 2026
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="content-section">
+      <h2 class="section-title">Abstract</h2>
+      <p>We present ZADU.js, an open-source JavaScript library that computes per-point Trustworthiness (T) and Continuity (C) scores for dimensionality reduction (DR) embeddings entirely in the browser, without server infrastructure. DR projections such as UMAP introduce distortions like false neighbors and missing neighbors, yet analysts rarely have tools that reveal where and how severely a given embedding misleads them. Existing DR quality frameworks depend on server-side Python environments, making them impractical for browser-based visual analytics. ZADU.js addresses this gap by providing per-point scores that map to visual channels such as color on a scatter plot, letting analysts localize distortion spatially rather than rely on a single aggregate statistic.</p>
+
+      <p>We benchmark the metrics on a 200-sample MNIST subset (784 dimensions to 2D), observing baseline scores of T = 0.93 and C = 0.95, and characterize the trade-offs across the parameter space. Metric computation completes in under 25ms for point-level metrics and under 250ms for cluster-level metrics, establishing the feasibility of interactive browser-native quality assessment.</p>
+
+      <p>This thesis contributes (1) ZADU.js, an open-source JavaScript library implementing four complementary per-point DR quality metrics; (2) an interactive UMAP hyperparameter tuning application supporting parameter comparison and point-level neighborhood tracking across embeddings; and (3) an end-to-end browser-native deployment that removes the Python and server dependencies of prior DR quality tools.</p>
+
+      <h2 class="section-title">Problem Statement</h2>
+      <p>Dimensionality reduction algorithms such as UMAP and t-SNE are routinely used to compress high-dimensional data into 2D scatter plots that analysts inspect for clusters, trends, and outliers. Every projection necessarily discards information, and the resulting layout implies geometric relationships that may or may not reflect the actual structure of the original data. The critical question is not whether distortion is present &mdash; it always is &mdash; but which relationships are distorted and where.</p>
+
+      <p>Existing quality assessment libraries operate server-side in Python environments, making them inaccessible to browser-based visualization workflows. Even when quality metrics are computed, they are typically reported as a single global score that cannot reveal the spatial distribution of distortion across the embedding. ZADU.js closes both gaps: it runs natively in the browser and produces per-point scores that can be color-encoded directly onto the scatter plot, transforming a single scalar into a spatial distortion map.</p>
+
+      <h2 class="section-title">Project Resources</h2>
+      <ul>
+        <li><strong>ZADU.js npm package:</strong> The library, installable via npm<br>
+          <a href="https://www.npmjs.com/package/zadu-js" target="_blank">https://www.npmjs.com/package/zadu-js</a>
+        </li>
+        <li><strong>Source code repository:</strong> Library source, examples, and documentation<br>
+          <a href="https://github.com/jonathantarun/zadu-js" target="_blank">https://github.com/jonathantarun/zadu-js</a>
+        </li>
+        <li><strong>Interactive parameter tuning demo:</strong> Browser-native UMAP hyperparameter tuning interface on MNIST<br>
+          <a href="https://jonathantarun.github.io/zadu-js/examples/visualize-tuning-digits.html" target="_blank">https://jonathantarun.github.io/zadu-js/examples/visualize-tuning-digits.html</a>
+        </li>
+        <li><strong>Observable notebook:</strong> Demo of importing and using ZADU.js<br>
+          <a href="https://observablehq.com/@jonathan-tarun-rajasekaran/zadu-js-npm-package-demo" target="_blank">https://observablehq.com/@jonathan-tarun-rajasekaran/zadu-js-npm-package-demo</a>
+        </li>
+        <li><strong>VIS 2025 paper explorer:</strong> Applied use of the library<br>
+          <a href="https://johnguerra.co/viz/ieeevis2025Papers/" target="_blank">https://johnguerra.co/viz/ieeevis2025Papers/</a>
+        </li>
+        <li><strong>Research showcase poster:</strong> Northeastern Oakland, Spring 2026<br>
+          <a href="https://github.com/jonathantarun/zadu-js/blob/main/ZADU.js%20Oakland%20Showcase%20Final%20(1).pdf" target="_blank">View poster (PDF)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../js/jquery-3.3.1.min.js"></script>
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
