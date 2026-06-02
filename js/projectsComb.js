@@ -225,12 +225,26 @@
     //   // .attr("clip-path", "url(#hexClip)")
   }
 
-  const dateFmt = d3.timeParse("%m/%d/%Y");
+  // projects.csv dates are 2-digit years (e.g. 6/1/26) -> %y, not %Y
+  const dateFmt = d3.timeParse("%m/%d/%y");
+  // notebooks.csv timestamps look like "1/18/2023, 9:39:15 AM"
+  const notebookDateFmt = d3.timeParse("%m/%d/%Y, %I:%M:%S %p");
+
+  // The comb only renders a subset, pulling the "important" tiles from the end
+  // of this sorted array. Rank by rating then date, but give projects.csv
+  // entries a small boost over equally-rated notebooks so curated projects
+  // (e.g. the election visualizations) reliably surface instead of being
+  // buried behind the ~130 imported Observable notebooks.
+  function combRank(d) {
+    return d.rating + (d.source === "project" ? 0.5 : 0);
+  }
 
   d3.csv(
     "projects.csv",
     function(d) {
       d.date = dateFmt(d.date);
+      d.rating = +d.rating; // was a string -> coerce so the sort is numeric
+      d.source = "project";
       return d;
     }
   ).then(function(data) {
@@ -243,14 +257,16 @@
             project: n.Name,
             thumb: n["Thumb-src"],
             url: n["Link-href"],
-            date: n.timestamp,
+            date: notebookDateFmt(n.timestamp) || new Date(0),
             rating: n.Likes > 3 ? 5 : 2,
+            source: "notebook",
           }))
       );
 
       data = data.sort(function(a, b) {
         return (
-          d3.ascending(a.rating, b.rating) || d3.ascending(a.date, b.date)
+          d3.ascending(combRank(a), combRank(b)) ||
+          d3.ascending(a.date, b.date)
         );
       });
       updateComb(data);
