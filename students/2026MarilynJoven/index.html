@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identifying and Characterizing Student Dropout: A Design Study through Dynamic Hierarchies in Visual Analytics</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --accent: #FF9800;
+      --bg: #fefefa;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      line-height: 1.7;
+      color: #333;
+      background: var(--bg);
+    }
+
+    /* Header */
+    .header-section {
+      padding: 48px 0 32px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: normal;
+      line-height: 1.3;
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+
+    .authors {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .authors a {
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    .authors a:hover {
+      color: var(--accent);
+    }
+
+    .publication-info {
+      color: #666;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    /* Resource buttons under the header */
+    .resource-links {
+      margin-top: 22px;
+    }
+
+    .resource-links a {
+      display: inline-block;
+      margin: 4px 6px;
+      padding: 8px 18px;
+      border: 1px solid var(--accent);
+      border-radius: 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .resource-links a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Teaser: video floated left, abstract wraps beside and continues underneath */
+    .teaser-row {
+      max-width: 1100px;
+      margin: 0 auto 20px;
+    }
+
+    /* clearfix so the floated figure is contained */
+    .teaser-row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .teaser-figure {
+      float: left;
+      width: 58%;
+      margin: 4px 34px 18px 0;
+      text-align: center;
+    }
+
+    .teaser-figure img,
+    .teaser-figure video {
+      max-width: 100%;
+      width: 100%;
+      border: 1px solid #e2e2e2;
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    /* Clickable teaser video hints it can be expanded */
+    .teaser-figure video {
+      cursor: zoom-in;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .teaser-figure video:hover {
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.16);
+      transform: translateY(-2px);
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1050;
+      background: rgba(0, 0, 0, 0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox video {
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 6px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 26px;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    /* Abstract flows around the floated figure and continues underneath.
+       No BFC here (no overflow/flex) — that's what lets text wrap under the float. */
+    .teaser-text {
+      text-align: justify;
+    }
+
+    figcaption {
+      color: #666;
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    /* Stack on narrow screens: figure spans full width, text below */
+    @media (max-width: 768px) {
+      .teaser-figure {
+        float: none;
+        width: 100%;
+        margin: 0 0 18px 0;
+      }
+    }
+
+    /* Reading column */
+    .reading {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 0 60px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 42px;
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .reading ul {
+      padding-left: 1.2rem;
+    }
+
+    .reading li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="container">
+      <h1 class="title">Identifying and Characterizing Student Dropout: A Design Study through Dynamic Hierarchies in Visual Analytics</h1>
+      <div class="authors">
+        <a href="https://www.linkedin.com/in/marilyn-stephany-joven" target="_blank">Marilyn S. Joven Fonseca</a>,
+        <a href="https://ingenieria.uniandes.edu.co/es/profesores/marcela-hernandez-hoyos" target="_blank">Marcela Hernández Hoyos</a>,
+        <a href="https://academia.uniandes.edu.co/AcademyCv/jp.reyes39" target="_blank">Juan Pablo Reyes</a>,
+        <a href="https://co.linkedin.com/in/nicol%C3%A1s-carvajal-chaves-48954522a" target="_blank">Nicolas Carvajal Chaves</a>,
+        <a href="https://johnguerra.co/" target="_blank">John A. Guerra-Gomez</a>
+      </div>
+      <div class="publication-info">
+        Master's Thesis &mdash; Systems and Computing Engineering Department, Universidad de los Andes, Bogotá D.C., Colombia
+      </div>
+      <div class="resource-links">
+        <a href="https://osf.io/" target="_blank">Supplemental Materials (OSF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser: image left, abstract right -->
+  <div class="container">
+    <div class="teaser-row">
+      <figure class="teaser-figure">
+        <video id="teaserVideo" src="population_deviation.mov" poster="population_deviation.png" autoplay loop muted
+          playsinline title="Click to expand"
+          aria-label="Student Dropout Dashboard: icicle view with deciled Saber11 score and credit completion ratio colored by global proportion deviation"></video>
+        <figcaption>Icicle view with deciled entrance examination score (Saber11) and credit completion ratio, colored by global proportion deviation.</figcaption>
+      </figure>
+      <div class="teaser-text">
+        <!-- <h2 class="section-title">Abstract</h2> -->
+        <p>Student dropout is a persistent problem in higher education, yet the business-intelligence tools institutions rely on report aggregate rates without revealing which subpopulations drive them. We conducted a practice-led design study with administrators at Universidad de los Andes, consolidating 2.8 million longitudinal records into 30,000 undergraduate trajectories (2015 to 2025). The resulting dashboard pairs a reorderable icicle chart with a parallel sets diagram. Its central contribution is a deviation-from-baseline color encoding: at each hierarchical level it maps the signed gap between a subgroup's observed and expected proportion onto a diverging scale that recomputes whenever the analyst reorders the hierarchy. This turns a static layout into a live interface for locating student subgroups whose dropout runs far above or below what their size would predict, without requiring a trained model. Applied to real institutional data, the encoding revealed subgroups that existing reports had never isolated, including a link between a school-level entrance-exam indicator and later credit completion and concentrated dropout along specific program-transfer paths. In a deployment study with 18 practitioners spanning coordinators, faculty directors, deans, vice deans, the system earned a mean System Usability Scale score of 68.47 (SD 13.49; 95% CI [61.76, 75.18]), near the established SUS average of about 68. Participants independently recovered the tool's design-phase findings and surfaced further at-risk groups from their own areas, indicating that a signed, reorderable deviation encoding helps non-expert decision-makers find at-risk cohorts that aggregate reporting hides.
+</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Lightbox for the teaser video -->
+  <div class="lightbox" id="videoLightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <video id="lightboxVideo" src="population_deviation.mov" loop muted playsinline controls></video>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../js/jquery-3.3.1.min.js"></script>
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      var teaser = document.getElementById('teaserVideo');
+      var lightbox = document.getElementById('videoLightbox');
+      var lightboxVideo = document.getElementById('lightboxVideo');
+      var closeBtn = document.getElementById('lightboxClose');
+
+      function open() {
+        lightbox.classList.add('open');
+        lightboxVideo.currentTime = teaser.currentTime || 0;
+        lightboxVideo.play();
+      }
+
+      function close() {
+        lightbox.classList.remove('open');
+        lightboxVideo.pause();
+      }
+
+      teaser.addEventListener('click', open);
+      closeBtn.addEventListener('click', close);
+      // Click the dark backdrop (but not the video itself) to close
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) close();
+      });
+    })();
+  </script>
+</body>
+
+</html>
