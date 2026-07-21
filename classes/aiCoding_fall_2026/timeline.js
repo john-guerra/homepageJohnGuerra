@@ -1,5 +1,5 @@
 /**
- * CourseTimeline - A Reactive Widget for CS 7180 Course Schedule
+ * CourseTimeline - A Reactive Widget for CS 6983 Course Schedule
  * Follows the Reactive Widgets pattern: https://reactivewidgets.com/
  */
 
@@ -15,14 +15,14 @@ const colorPalette = {
 // Course data extracted from schedule.md
 const courseData = {
   semester: {
-    startDate: "2026-01-05", // Week 1 Monday (calendar week containing semester start)
-    totalWeeks: 16,
+    startDate: "2026-09-07", // Week 1 Monday (calendar week containing Sep 9 first day of classes)
+    totalWeeks: 15,
   },
   phases: [
     { name: "Fundamentals", weeks: [1, 3], color: colorPalette.blue.dark },
     { name: "Claude Web", weeks: [3, 6], color: colorPalette.green.dark },
-    { name: "IDE Assistants", weeks: [6, 10], color: colorPalette.purple.dark },
-    { name: "Claude Code & Agents", weeks: [10, 16], color: colorPalette.orange.dark },
+    { name: "IDE Assistants", weeks: [6, 9], color: colorPalette.purple.dark },
+    { name: "Claude Code & Agents", weeks: [9, 15], color: colorPalette.orange.dark },
   ],
   projects: [
     {
@@ -37,15 +37,15 @@ const courseData = {
       id: "P2",
       name: "Full-Stack App",
       startWeek: 6,
-      endWeek: 10,
+      endWeek: 9,
       weight: "18%",
       color: colorPalette.purple.dark,
     },
     {
       id: "P3",
       name: "Production App + CC Mastery",
-      startWeek: 10,
-      endWeek: 16,
+      startWeek: 9,
+      endWeek: 15,
       weight: "19%",
       color: colorPalette.orange.dark,
     },
@@ -54,8 +54,8 @@ const courseData = {
     { id: "HW1", name: "Prompt Engineering", dueWeek: 4, weight: "5%" },
     { id: "HW2", name: "Mom Test", dueWeek: 5, weight: "5%" },
     { id: "HW3", name: "Context Engineering", dueWeek: 8, weight: "5%" },
-    { id: "HW4", name: "CC Workflow & TDD", dueWeek: 11, weight: "5%" },
-    { id: "HW5", name: "Skill + MCP", dueWeek: 13, weight: "5%" },
+    { id: "HW4", name: "CC Workflow & TDD", dueWeek: 10, weight: "5%" },
+    { id: "HW5", name: "Skill + MCP", dueWeek: 12, weight: "5%" },
   ],
   weeklyFocus: {
     1: {
@@ -99,42 +99,37 @@ const courseData = {
       action: "Complete HW3, continue P2",
     },
     9: {
-      topic: "Spring Break",
-      project: "No Class",
-      action: "Rest and catch up on projects",
-    },
-    10: {
       topic: "Claude Code Foundations",
       project: "P2: Final, P3: Start",
       action: "Submit P2, form P3 teams, write CLAUDE.md",
     },
-    11: {
+    10: {
       topic: "Claude Code Workflows & TDD",
       project: "P3: Sprint 1",
       action: "Complete HW4, TDD with Claude Code",
     },
-    12: {
+    11: {
       topic: "Claude Code Extensibility",
       project: "P3: Sprint 2",
       action: "Learn skills, hooks & MCP",
     },
-    13: {
+    12: {
       topic: "Agent Architectures & SDK",
       project: "P3: Sprint 3",
-      action: "Complete HW5, build agents with SDK",
+      action: "Complete HW5 (due before Fall Break), build agents with SDK",
     },
-    14: {
+    13: {
       topic: "AI Security & Code Quality",
       project: "P3: Sprint 4",
       action: "Security audit, AI code review",
     },
-    15: {
+    14: {
       topic: "Production & Course Synthesis",
       project: "P3: Deploy & polish",
       action: "Deploy, optimize, demo prep",
     },
-    16: {
-      topic: "Finals Week — P3 Due (Apr 21)",
+    15: {
+      topic: "Finals Week — P3 Due (Dec 14–20)",
       project: "P3: Final",
       action: "Submit P3",
     },
@@ -149,7 +144,7 @@ const courseData = {
 function dateToWeek(date) {
   const start = new Date(courseData.semester.startDate);
   const diffDays = (date - start) / (1000 * 60 * 60 * 24);
-  return Math.max(1, Math.min(16, Math.ceil(diffDays / 7)));
+  return Math.max(1, Math.min(15, Math.ceil(diffDays / 7)));
 }
 
 /**
@@ -228,7 +223,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
   // Scales
-  const xScale = d3.scaleLinear().domain([1, 16]).range([0, innerWidth]);
+  const xScale = d3.scaleLinear().domain([1, 15]).range([0, innerWidth]);
 
   // Layout constants - tighter vertical spacing
   const phaseHeight = 26;
@@ -239,7 +234,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
 
   // Y-axis labels (italic, positioned further left to avoid overlap)
   const yLabels = [
-    { y: phaseHeight / 2, text: "Modality" },
+    { y: phaseHeight / 2, text: "Harness" },
     { y: projectY + projectHeight / 2, text: "Projects" },
     { y: hwY, text: "Homeworks" },
     { y: axisY, text: "Week" },
@@ -262,10 +257,10 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
   // Draw week axis grid lines FIRST (behind everything)
   const axisGroup = g.append("g").attr("class", "axis-group");
 
-  // Spring Break shading (Week 9: March 2-8, 2026)
-  const springBreakWeek = 9;
-  const sbX1 = xScale(springBreakWeek);
-  const sbX2 = xScale(springBreakWeek + 1);
+  // Fall Break shading (Week 12: Nov 25-29, 2026)
+  const fallBreakWeek = 12;
+  const sbX1 = xScale(fallBreakWeek);
+  const sbX2 = xScale(fallBreakWeek + 1);
   axisGroup
     .append("rect")
     .attr("class", "spring-break-bg")
@@ -276,22 +271,22 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
     .attr("fill", "#e9ecef")
     .attr("opacity", 0.7);
 
-  // Spring Break label (rotated, subtle)
+  // Fall Break label (rotated, subtle)
   axisGroup
     .append("text")
     .attr("class", "spring-break-label")
-    .attr("x", xScale(springBreakWeek + 0.5))
+    .attr("x", xScale(fallBreakWeek + 0.5))
     .attr("y", axisY + 12)
     .attr("text-anchor", "middle")
     .attr("font-size", "8px")
     .attr("fill", "#6c757d")
     .attr("font-style", "italic")
-    .text("Spring Break");
+    .text("Fall Break");
 
-  for (let i = 1; i <= 16; i++) {
+  for (let i = 1; i <= 15; i++) {
     const x = xScale(i);
 
-    // Grid lines extend from top of modality row to bottom
+    // Grid lines extend from top of harness row to bottom
     axisGroup
       .append("line")
       .attr("class", `week-grid-${i}`)
@@ -313,7 +308,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
       .text(i);
   }
 
-  const nowLineY1 = -5; // Start ABOVE the modality band for pill visibility
+  const nowLineY1 = -5; // Start ABOVE the harness band for pill visibility
 
   // NOW indicator LINE - drawn here (in axisGroup, early) so it's BEHIND all content
   const nowLine = axisGroup
@@ -353,7 +348,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
       .text(phase.name);
   });
 
-  // Draw project bars (using project's color property, matching modalities)
+  // Draw project bars (using project's color property, matching harnesses)
   const projectsGroup = g.append("g").attr("class", "projects-group");
 
   data.projects.forEach((project) => {
@@ -531,7 +526,7 @@ function CourseTimeline(data, { value = dateToWeek(new Date()) } = {}) {
   weekPopup.style.cssText =
     "display:none; position:absolute; background:#fff; border:1px solid #ccc; border-radius:8px; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:100; flex-wrap:wrap; gap:4px; max-width:200px;";
 
-  for (let i = 1; i <= 16; i++) {
+  for (let i = 1; i <= 15; i++) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-sm btn-outline-secondary week-btn";
