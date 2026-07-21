@@ -1,9 +1,9 @@
 doctype html
 html(lang="en")
   head
-    title CS 7180 Vibe Coding - AI-Assisted Software Engineering | Northeastern University Oakland, Spring 2026
+    title CS 6983 Vibe Coding - AI-Assisted Software Engineering | Northeastern University Oakland, Fall 2026
     meta(charset="utf-8")
-    meta(name="description" content="CS 7180 Vibe Coding: Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications.")
+    meta(name="description" content="CS 6983 Vibe Coding: Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications.")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="author" content="John Alexis Guerra Gómez")
 
@@ -14,607 +14,603 @@ html(lang="en")
     //- Open Graph / Facebook
     meta(property="og:type" content="website")
     meta(property="og:url" content="https://johnguerra.co/classes/aiCoding_spring_2026/")
-    meta(property="og:title" content="CS 7180 Vibe Coding - AI-Assisted Software Engineering")
+    meta(property="og:title" content="CS 6983 Vibe Coding - AI-Assisted Software Engineering")
     meta(property="og:description" content="Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications at Northeastern University Oakland.")
     meta(property="og:image" content="https://johnguerra.co/classes/aiCoding_spring_2026/logo.svg")
 
     //- Twitter
     meta(name="twitter:card" content="summary_large_image")
     meta(name="twitter:url" content="https://johnguerra.co/classes/aiCoding_spring_2026/")
-    meta(name="twitter:title" content="CS 7180 Vibe Coding - AI-Assisted Software Engineering")
+    meta(name="twitter:title" content="CS 6983 Vibe Coding - AI-Assisted Software Engineering")
     meta(name="twitter:description" content="Master AI-assisted development for Silicon Valley. Learn Claude, Antigravity, prompt engineering, TDD, and build portfolio-worthy applications at Northeastern University Oakland.")
     meta(name="twitter:image" content="https://johnguerra.co/classes/aiCoding_spring_2026/logo.svg")
 
     //- Stylesheets
     link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous")
     link(href="styles.css" rel="stylesheet")
-body
-  //- WIP Banner
-  .wip-banner
-    strong Work in Progress
-    |  — This page is under development. Details may change and the weekly schedule is tentative.
+  body
+    //- WIP Banner
+    .wip-banner
+      strong Work in Progress
+      |  — This page is under development. Details may change and the weekly schedule is tentative.
 
-  //- Hero Section
-  .hero
+    //- Hero Section
+    .hero
+      .container
+        .row.align-items-center
+          .col-md-8
+            .d-flex.align-items-center.mb-2
+              img.course-logo-sm.me-3(src="logo.svg" alt="Vibe Coding Course Logo")
+              h1.mb-0 CS 6983: Vibe Coding
+            p.tagline AI-Assisted Software Engineering
+            p.lead Master AI-assisted development for Silicon Valley. Build production apps with AI—the right way.
+            .mt-3
+              span.badge.bg-light.text-dark.me-2 Fall 2026
+              span.badge.bg-light.text-dark.me-2 Oakland/Online: Tue & Fri 10:35–12:15
+              span.badge.bg-light.text-dark.me-2 San Jose: Wed 1:00–4:20
+              span.badge.bg-warning.text-dark Hybrid: In-Person + Zoom
+          .col-md-4.text-center
+            img.logo.mt-2(src="../../img/seal_logotype-768x252.png" alt="Northeastern University Logo" style="filter: brightness(0) invert(1); max-width: 100%;")
+
     .container
-      .row.align-items-center
-        .col-md-8
-          .d-flex.align-items-center.mb-2
-            img.course-logo-sm.me-3(src="logo.svg" alt="Vibe Coding Course Logo")
-            h1.mb-0 CS 7180: Vibe Coding
-          p.tagline AI-Assisted Software Engineering
-          p.lead Master AI-assisted development for Silicon Valley. Build production apps with AI—the right way.
-          .mt-3
-            span.badge.bg-light.text-dark.me-2 Spring 2026
-            span.badge.bg-light.text-dark.me-2 Tue/Thu 3:00-4:40 PM PST
-            span.badge.bg-light.text-dark.me-2 Lucie Stern 27, Oakland
-            span.badge.bg-warning.text-dark Hybrid: In-Person + Zoom
-        .col-md-4.text-center
-          img.logo.mt-2(src="../../img/seal_logotype-768x252.png" alt="Northeastern University Logo" style="filter: brightness(0) invert(1); max-width: 100%;")
+      //- Quick Navigation
+      nav.nav.nav-pills.mb-4.justify-content-center
+        a.nav-link(href="#timeline-section") Timeline
+        a.nav-link(href="#schedule") Schedule
+        a.nav-link(href="#readings") Readings
+        a.nav-link(href="#projects") Projects
+        a.nav-link(href="showcase.html") Showcase
+        a.nav-link(href="#grading") Grading
 
-  .container
-    //- Quick Navigation
-    nav.nav.nav-pills.mb-4.justify-content-center
-      a.nav-link(href="#timeline-section") Timeline
-      a.nav-link(href="#schedule") Schedule
-      a.nav-link(href="#readings") Readings
-      a.nav-link(href="#projects") Projects
-      a.nav-link(href="showcase.html") Showcase
-      a.nav-link(href="#grading") Grading
+      //- Course Overview
+      .row.mb-4
+        .col-lg-8
+          h3 Course Overview
+          p This course trains master's level computer science students to become Silicon Valley-ready software engineers in the age of AI. Students will master AI-assisted development tools while maintaining professional engineering standards, learning to build high-quality, production-ready full-stack applications.
+          p Building successful software with AI requires more than good prompting—it demands understanding how Large Language Models work, when to use which tools, how to evaluate AI-generated code systematically, and how to integrate AI into professional development workflows.
 
-    //- Course Overview
-    .row.mb-4
-      .col-lg-8
-        h3 Course Overview
-        p This course trains master's level computer science students to become Silicon Valley-ready software engineers in the age of AI. Students will master AI-assisted development tools while maintaining professional engineering standards, learning to build high-quality, production-ready full-stack applications.
-        p Building successful software with AI requires more than good prompting—it demands understanding how Large Language Models work, when to use which tools, how to evaluate AI-generated code systematically, and how to integrate AI into professional development workflows.
+          .alert.alert-info.mt-3
+            strong Hybrid Format:
+            |  This course is offered in-person at Oakland Campus and via Zoom for remote students. The instructor has extensive experience teaching remotely, ensuring a great experience for all students regardless of location.
 
-        .alert.alert-info.mt-3
-          strong Hybrid Format:
-          |  This course is offered in-person at Oakland Campus and via Zoom for remote students. The instructor has extensive experience teaching remotely, ensuring a great experience for all students regardless of location.
+          h4.mt-4 Why This Course?
+          .row
+            .col-md-6
+              ul
+                li #[strong Industry-Relevant]: Tools and practices used in top tech companies
+                li #[strong Portfolio-Focused]: Build 3 prototype applications for your portfolio
+                li #[strong Comprehensive]: LLM fundamentals, prompt engineering, evals, TDD, CI/CD
+            .col-md-6
+              ul
+                li #[strong Balanced]: Learn AI-assisted coding AND prove you can code without AI
+                li #[strong Future-Proof]: Master the workflow, not just current tools
 
-        h4.mt-4 Why This Course?
-        .row
-          .col-md-6
-            ul
-              li #[strong Industry-Relevant]: Tools and practices used in top tech companies
-              li #[strong Portfolio-Focused]: Build 3 prototype applications for your portfolio
-              li #[strong Comprehensive]: LLM fundamentals, prompt engineering, evals, TDD, CI/CD
-          .col-md-6
-            ul
-              li #[strong Balanced]: Learn AI-assisted coding AND prove you can code without AI
-              li #[strong Future-Proof]: Master the workflow, not just current tools
+        .col-lg-4
+          .card
+            .card-body
+              h5.card-title Instructor
+              p.mb-1 #[a(href="https://johnguerra.co") John Alexis Guerra Gómez]
+              p.mb-1
+                small
+                  a#email-link(href="#") [Enable JavaScript to see email]
+              hr
+              p.mb-1 #[strong Office Hours]
+              p.mb-0 By appointment via Slack
 
-      .col-lg-4
-        .card
-          .card-body
-            h5.card-title Instructor
-            p.mb-1 #[a(href="https://johnguerra.co") John Alexis Guerra Gómez]
-            p.mb-1
-              small
-                a#email-link(href="#") [Enable JavaScript to see email]
-            hr
-            p.mb-1 #[strong Office Hours]
-            p.mb-0 By appointment via Slack
+      //- The Three AI Harnesses
+      .row.mb-4
+        .col-12
+          h3 The Three AI Harnesses
+          p Students will master three distinct AI coding paradigms:
+        .col-md-4
+          .modality-card.modality-claude-web
+            h5 Harness 1: Claude Web
+            p.small.mb-1 #[strong Best for:] Architecture planning, learning, complex problem-solving
+            p.small.mb-0 #[strong Skills:] Claude Projects, artifacts, conversational iteration
+        .col-md-4
+          .modality-card.modality-antigravity
+            h5 Harness 2: Antigravity
+            p.small.mb-1 #[strong Best for:] Professional development, production code, daily workflow
+            p.small.mb-0 #[strong Skills:] Tab autocomplete, Composer, .antigravityrules, YOLO mode
+        .col-md-4
+          .modality-card.modality-claude-code
+            h5 Harness 3: Claude Code
+            p.small.mb-1 #[strong Best for:] Automation, multi-file refactoring, DevOps
+            p.small.mb-0 #[strong Skills:] Terminal workflows, autonomous agents, script automation
 
-    //- The Three AI Modalities
-    .row.mb-4
-      .col-12
-        h3 The Three AI Modalities
-        p Students will master three distinct AI coding paradigms:
-      .col-md-4
-        .modality-card.modality-claude-web
-          h5 Modality 1: Claude Web
-          p.small.mb-1 #[strong Best for:] Architecture planning, learning, complex problem-solving
-          p.small.mb-0 #[strong Skills:] Claude Projects, artifacts, conversational iteration
-      .col-md-4
-        .modality-card.modality-antigravity
-          h5 Modality 2: Antigravity
-          p.small.mb-1 #[strong Best for:] Professional development, production code, daily workflow
-          p.small.mb-0 #[strong Skills:] Tab autocomplete, Composer, .antigravityrules, YOLO mode
-      .col-md-4
-        .modality-card.modality-claude-code
-          h5 Modality 3: Claude Code
-          p.small.mb-1 #[strong Best for:] Automation, multi-file refactoring, DevOps
-          p.small.mb-0 #[strong Skills:] Terminal workflows, autonomous agents, script automation
+      //- Projects
+      .row.mb-4#projects
+        .col-12
+          h3 Portfolio Projects
+          p.text-muted All projects are open topic—you choose what to build after getting instructor approval.
+        .col-md-4
+          .project-card.project-p1
+            h5 Project 1: Personal Utility App
+            p.small Build a personal utility application that solves a real problem validated through Mom Test interviews.
+            ul.small
+              li 5+ user stories with CRUD operations
+              li Basic test suite (50%+ coverage)
+              li GitHub Actions CI pipeline
+              li Deployed and publicly accessible
+            span.badge(style="background-color: var(--color-green)") 13% of grade
+            span.badge.ms-1(style="background-color: var(--color-green-light); color: #333") Due Week 6
+        .col-md-4
+          .project-card.project-p2
+            h5 Project 2: Full-Stack Application
+            p.small Complete full-stack application using multiple AI harnesses, Agile practices, TDD, and production-grade CI/CD.
+            ul.small
+              li User authentication (JWT/OAuth)
+              li Test-Driven Development (80%+ coverage)
+              li Comprehensive evaluation suite
+              li 2 documented Agile sprints
+            span.badge(style="background-color: var(--color-purple)") 18% of grade
+            span.badge.ms-1(style="background-color: var(--color-purple-light); color: #333") Due Week 9
+        .col-md-4
+          .project-card.project-p3
+            h5 Project 3: Production App with Claude Code Mastery
+            p.small Pair project: deploy a production-grade app demonstrating mastery of Claude Code extensibility (W9-W14).
+            ul.small
+              li CLAUDE.md, skills, hooks, MCP, agents
+              li TDD + CI/CD with AI PR review
+              li Vercel deployment + Sentry monitoring
+              li Blog post + screencast + live demo
+            span.badge(style="background-color: var(--color-orange)") 19% of grade
+            span.badge.ms-1(style="background-color: var(--color-orange-light); color: #333") Due Finals Week (Dec 14–20)
 
-    //- Projects
-    .row.mb-4#projects
-      .col-12
-        h3 Portfolio Projects
-        p.text-muted All projects are open topic—you choose what to build after getting instructor approval.
-      .col-md-4
-        .project-card.project-p1
-          h5 Project 1: Personal Utility App
-          p.small Build a personal utility application that solves a real problem validated through Mom Test interviews.
+      //- Interactive Timeline
+      .row.mb-4#timeline-section
+        .col-12
+          h3 Interactive Timeline
+          p.text-muted.small Navigate through the semester to see what you should be working on each week.
+          #timeline-container
+
+      //- Schedule and Grading
+      .row.mb-4#schedule
+        .col-md-7
+          h3 Weekly Schedule
+          p.small.text-muted.fst-italic Schedule is tentative and subject to change.
+          - var slidesBase = "https://johnguerra.co/lectures/aiCoding_spring2026/"
+          table.table.table-sm.schedule-table
+            thead
+              tr
+                th Week
+                th Topics
+                th Slides
+            tbody
+              tr
+                td 1
+                td Introduction
+                td
+                  a(href=slidesBase + "01_Introduction/") Intro
+              tr
+                td 2
+                td #[strong LLM Architecture & Tokenization]
+                td
+                  a(href=slidesBase + "02_LLMs_fundamentals/") LLMs
+              tr
+                td 3
+                td Prompt Engineering Basics
+                td
+                  a(href=slidesBase + "03_Prompt_Engineering/") Prompts
+              tr
+                td 4
+                td #[strong.text-claude-web Claude Web & Artifacts], #[strong.text-hw HW1 due]
+                td
+                  a(href=slidesBase + "04_User_Research_Prototyping/") Research
+              tr
+                td 5
+                td #[strong.text-claude-web Claude Web Deep Dive: Artifacts], #[strong.text-hw HW2 due]
+                td
+                  a(href=slidesBase + "05_Claude_Web_Projects/") Artifacts
+              tr
+                td 6
+                td #[strong.text-project-p1 Project 1 Due], #[strong.text-antigravity IDE-Centric AI Coding], P2 pair formation
+                td
+                  a(href=slidesBase + "06_IDE_AI_Coding/") IDE AI
+              tr
+                td 7
+                td #[strong.text-antigravity Agile/Scrum + Pair Workflow]
+                td
+                  a(href=slidesBase + "07_Advanced_IDE_Agile/") Agile+Pairs
+              tr
+                td 8
+                td #[strong.text-antigravity Advanced IDE AI Features], #[strong.text-hw HW3 due]
+                td
+                  a(href=slidesBase + "08_Advanced_IDE_Features/") IDE Advanced
+              tr
+                td 9
+                td #[strong.text-project-p2 Project 2 Due], #[strong.text-claude-code Claude Code Foundations], P3 team formation
+                td
+                  a(href=slidesBase + "09_Claude_Code_Foundations/") Claude Code Foundations
+              tr
+                td 10
+                td #[strong.text-claude-code Claude Code Workflows & TDD], #[strong.text-hw HW4 due]
+                td
+                  a(href=slidesBase + "10_Claude_Code_Workflows/") Claude Code Workflows
+              tr
+                td 11
+                td #[strong.text-claude-code Claude Code Extensibility]
+                td
+                  a(href=slidesBase + "11_Claude_Code_Extensibility/") Claude Code Extensibility
+              tr
+                td 12
+                td #[strong.text-claude-code Agent Architectures & SDK], #[strong.text-hw HW5 due], #[em.text-muted (Fall Break Nov 25–29)]
+                td
+                  a(href=slidesBase + "12_Agent_Architectures/") Agent Architectures
+              tr
+                td 13
+                td #[strong.text-claude-code AI Security & Code Quality]
+                td
+                  a(href=slidesBase + "13_AI_Security_Code_Quality/") AI Security
+              tr
+                td 14
+                td #[strong.text-claude-code Production & Course Synthesis]
+                td
+                  a(href=slidesBase + "14_Production_Synthesis/") Production
+              tr
+                td Finals
+                td #[strong.text-project-p3 Finals Week — Project 3 Due (Dec 14–20)]
+                td
+
+        .col-md-5#grading
+          h3 Grading
+          table.table
+            thead
+              tr
+                th Component
+                th %
+            tbody
+              tr
+                td Participation
+                td 15%
+              tr
+                td Weekly Quizzes
+                td 10%
+              tr
+                td Homeworks (5 assignments)
+                td 25%
+              tr
+                td Projects (3 major)
+                td 50%
+
+          h4.mt-4 Key Topics
           ul.small
-            li 5+ user stories with CRUD operations
-            li Basic test suite (50%+ coverage)
-            li GitHub Actions CI pipeline
-            li Deployed and publicly accessible
-          span.badge(style="background-color: var(--color-green)") 13% of grade
-          span.badge.ms-1(style="background-color: var(--color-green-light); color: #333") Due Week 6
-      .col-md-4
-        .project-card.project-p2
-          h5 Project 2: Full-Stack Application
-          p.small Complete full-stack application using multiple AI modalities, Agile practices, TDD, and production-grade CI/CD.
+            li LLM Fundamentals & Limitations
+            li Multi-Modal AI Development
+            li Prompt & Context Engineering
+            li Evaluation Systems (Evals)
+            li Test-Driven Development with AI
+            li Professional CI/CD Pipelines
+            li Agile Practices with AI
+            li Claude Code & Agent Architectures
+
+      //- Technologies
+      .row.mb-4
+        .col-12
+          h3 Technologies & Tools
+        .col-md-6
+          h5 Tech Stack
+          div
+            span.tech-badge React / Next.js
+            span.tech-badge Node.js / Express
+            span.tech-badge PostgreSQL / MongoDB
+            span.tech-badge Jest / Vitest
+            span.tech-badge Playwright / Cypress
+            span.tech-badge GitHub Actions
+            span.tech-badge TailwindCSS
+            span.tech-badge TypeScript
+        .col-md-6
+          h5 Required Tools
           ul.small
-            li User authentication (JWT/OAuth)
-            li Test-Driven Development (80%+ coverage)
-            li Comprehensive evaluation suite
-            li 2 documented Agile sprints
-          span.badge(style="background-color: var(--color-purple)") 18% of grade
-          span.badge.ms-1(style="background-color: var(--color-purple-light); color: #333") Due Week 10
-      .col-md-4
-        .project-card.project-p3
-          h5 Project 3: Production App with Claude Code Mastery
-          p.small Pair project: deploy a production-grade app demonstrating mastery of Claude Code extensibility (W10-W14).
-          ul.small
-            li CLAUDE.md, skills, hooks, MCP, agents
-            li TDD + CI/CD with AI PR review
-            li Vercel deployment + Sentry monitoring
-            li Blog post + screencast + live demo
-          span.badge(style="background-color: var(--color-orange)") 19% of grade
-          span.badge.ms-1(style="background-color: var(--color-orange-light); color: #333") Due Finals Week (Apr 21)
+            li #[strong Antigravity] (free)
+            li #[strong Claude.ai account] (Pro recommended, $20/month)
+            li GitHub account
+            li Node.js 18+ and npm
+            li Git
 
-    //- Interactive Timeline
-    .row.mb-4#timeline-section
-      .col-12
-        h3 Interactive Timeline
-        p.text-muted.small Navigate through the semester to see what you should be working on each week.
-        #timeline-container
+      //- Resources and Books
+      .row.mb-4
+        .col-md-6
+          h3 Required Books
+          ul
+            li #[strong The Mom Test] by Rob Fitzpatrick
+            li #[strong Scrum] by Jeff Sutherland
+          h5.mt-2 Recommended
+          ul
+            li #[strong Designing for Growth] by Liedtka & Ogilvie
 
-    //- Schedule and Grading
-    .row.mb-4#schedule
-      .col-md-7
-        h3 Weekly Schedule
-        p.small.text-muted.fst-italic Schedule is tentative and subject to change.
-        - var slidesBase = "https://johnguerra.co/lectures/aiCoding_spring2026/"
-        table.table.table-sm.schedule-table
-          thead
-            tr
-              th Week
-              th Topics
-              th Slides
-          tbody
-            tr
-              td 1
-              td Introduction
-              td
-                a(href=slidesBase + "01_Introduction/") Intro
-            tr
-              td 2
-              td #[strong LLM Architecture & Tokenization]
-              td
-                a(href=slidesBase + "02_LLMs_fundamentals/") LLMs
-            tr
-              td 3
-              td Prompt Engineering Basics
-              td
-                a(href=slidesBase + "03_Prompt_Engineering/") Prompts
-            tr
-              td 4
-              td #[strong.text-claude-web Claude Web & Artifacts], #[strong.text-hw HW1 due]
-              td
-                a(href=slidesBase + "04_User_Research_Prototyping/") Research
-            tr
-              td 5
-              td #[strong.text-claude-web Claude Web Deep Dive: Artifacts], #[strong.text-hw HW2 due]
-              td
-                a(href=slidesBase + "05_Claude_Web_Projects/") Artifacts
-            tr
-              td 6
-              td #[strong.text-project-p1 Project 1 Due], #[strong.text-antigravity IDE-Centric AI Coding], P2 pair formation
-              td
-                a(href=slidesBase + "06_IDE_AI_Coding/") IDE AI
-            tr
-              td 7
-              td #[strong.text-antigravity Agile/Scrum + Pair Workflow]
-              td
-                a(href=slidesBase + "07_Advanced_IDE_Agile/") Agile+Pairs
-            tr
-              td 8
-              td #[strong.text-antigravity Advanced IDE AI Features], #[strong.text-hw HW3 due]
-              td
-                a(href=slidesBase + "08_Advanced_IDE_Features/") IDE Advanced
-            tr
-              td 9
-              td #[em.text-muted Spring Break - No Class]
-              td
-            tr
-              td 10
-              td #[strong.text-project-p2 Project 2 Due], #[strong.text-claude-code Claude Code Foundations], P3 team formation
-              td
-                a(href=slidesBase + "10_Claude_Code_Foundations/") Claude Code Foundations
-            tr
-              td 11
-              td #[strong.text-claude-code Claude Code Workflows & TDD], #[strong.text-hw HW4 due]
-              td
-                a(href=slidesBase + "11_Claude_Code_Workflows/") Claude Code Workflows
-            tr
-              td 12
-              td #[strong.text-claude-code Claude Code Extensibility]
-              td
-                a(href=slidesBase + "12_Claude_Code_Extensibility/") Claude Code Extensibility
-            tr
-              td 13
-              td #[strong.text-claude-code Agent Architectures & SDK], #[strong.text-hw HW5 due]
-              td
-                a(href=slidesBase + "13_Agent_Architectures/") Agent Architectures
-            tr
-              td 14
-              td #[strong.text-claude-code AI Security & Code Quality]
-              td
-                a(href=slidesBase + "14_AI_Security_Code_Quality/") AI Security
-            tr
-              td 15
-              td #[strong.text-claude-code Production & Course Synthesis]
-              td
-                a(href=slidesBase + "15_Production_Synthesis/") Production
-            tr
-              td 16
-              td #[strong.text-project-p3 Finals Week — Project 3 Due (Apr 21)]
-              td
+        .col-md-6
+          h3 Resources
+          ul
+            li #[a(href="https://docs.anthropic.com") Anthropic Claude Docs]
+            li #[a(href="https://antigravity.google/docs/get-started") Antigravity Documentation]
+            li #[a(href="https://docs.github.com/copilot") GitHub Copilot Guide]
 
-      .col-md-5#grading
-        h3 Grading
-        table.table
-          thead
-            tr
-              th Component
-              th %
-          tbody
-            tr
-              td Participation
-              td 15%
-            tr
-              td Weekly Quizzes
-              td 10%
-            tr
-              td Homeworks (5 assignments)
-              td 25%
-            tr
-              td Projects (3 major)
-              td 50%
+      //- Readings Section
+      .row.mb-4#readings
+        .col-12
+          h3 Required Readings & Resources
+          p.small.text-muted Organized by week. Click to expand each section.
+          .accordion#readingsAccordion
+            //- Week 2: LLM Fundamentals
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week2" aria-expanded="false")
+                  | Week 2: LLM Fundamentals
+              .accordion-collapse.collapse#week2(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required Viewing
+                  ul.small
+                    li #[a(href="https://www.3blue1brown.com/lessons/neural-networks") But what is a Neural Network?] (19 min) - 3Blue1Brown
+                    li #[a(href="https://www.3blue1brown.com/lessons/gradient-descent") Gradient descent, how neural networks learn] (21 min) - 3Blue1Brown
+                    li #[a(href="https://www.3blue1brown.com/lessons/attention") Attention in transformers, step-by-step] (27 min) - 3Blue1Brown
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://jalammar.github.io/illustrated-transformer/") The Illustrated Transformer] - Jay Alammar
+                    li #[a(href="https://karpathy.ai/zero-to-hero.html") Let's build GPT: from scratch, in code] (1h 56m) - Andrej Karpathy
+                  h6 Interactive Tools
+                  ul.small
+                    li #[a(href="https://tiktokenizer.vercel.app/") Tiktokenizer] - Visualize how text tokenizes
+                    li #[a(href="https://platform.openai.com/tokenizer") OpenAI Tokenizer] - Official token counter
 
-        h4.mt-4 Key Topics
-        ul.small
-          li LLM Fundamentals & Limitations
-          li Multi-Modal AI Development
-          li Prompt & Context Engineering
-          li Evaluation Systems (Evals)
-          li Test-Driven Development with AI
-          li Professional CI/CD Pipelines
-          li Agile Practices with AI
-          li Claude Code & Agent Architectures
+            //- Week 3: Prompt Engineering
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week3" aria-expanded="false")
+                  | Week 3: Prompt Engineering
+              .accordion-collapse.collapse#week3(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices") Claude 4 Best Practices] - Anthropic Docs
+                    li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview") Prompt Engineering Overview] - Anthropic Docs
+                    li #[a(href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial") Prompt Engineering Interactive Tutorial] - Anthropic (9 chapters)
+                    li #[a(href="https://docs.anthropic.com/en/resources/prompt-library/library") Prompt Library] - Anthropic
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://github.com/anthropics/courses/tree/master/real_world_prompting") Real World Prompting Course] - Anthropic
 
-    //- Technologies
-    .row.mb-4
-      .col-12
-        h3 Technologies & Tools
-      .col-md-6
-        h5 Tech Stack
-        div
-          span.tech-badge React / Next.js
-          span.tech-badge Node.js / Express
-          span.tech-badge PostgreSQL / MongoDB
-          span.tech-badge Jest / Vitest
-          span.tech-badge Playwright / Cypress
-          span.tech-badge GitHub Actions
-          span.tech-badge TailwindCSS
-          span.tech-badge TypeScript
-      .col-md-6
-        h5 Required Tools
-        ul.small
-          li #[strong Antigravity] (free)
-          li #[strong Claude.ai account] (Pro recommended, $20/month)
-          li GitHub account
-          li Node.js 18+ and npm
-          li Git
+            //- Weeks 4-5: Claude Web & Artifacts
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week4" aria-expanded="false")
+                  | Weeks 4-5: Claude Web & Artifacts
+              .accordion-collapse.collapse#week4(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code") Claude Artifacts Guide] - Creating interactive apps without code
+                    li #[a(href="https://platform.claude.com/docs/en/build-with-claude/context-windows") Context Windows] - How Claude's working memory works
+                    li #[a(href="https://support.claude.com/en/articles/9517075-what-are-projects") What Are Projects?] - Persistent knowledge bases for Claude Web
+                    li #[a(href="https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts") Prototype AI-Powered Apps] - Building AI-powered artifacts with window.claude.complete()
+                    li #[a(href="https://www.anthropic.com/news/claude-powered-artifacts") Claude-Powered Artifacts Announcement] - AI features in artifacts
+                  h6 Required Books
+                  ul.small
+                    li #[strong The Mom Test] by Rob Fitzpatrick
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects") How to Create and Manage Projects] - Step-by-step guide
+                    li #[a(href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects") RAG for Projects] - Retrieval-augmented generation in Claude Projects
+                    li #[a(href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features") Personalization Features] - Profile, instructions, and styles
+                    li #[a(href="https://zapier.com/blog/how-to-use-claude-artifacts-to-create-web-apps/") How to Use Claude Artifacts (Zapier)] - Step-by-step guide to building web apps
+                    li #[a(href="https://www.datacamp.com/blog/claude-artifacts-introduction") Claude Artifacts 101 (DataCamp)] - Types, use cases, sharing
+                    li #[a(href="https://simonwillison.net/2024/Oct/21/claude-artifacts/") Everything I built with Claude Artifacts (Simon Willison)] - Real-world examples
+                    li #[a(href="https://christinasouch.com/blog/fixing-claude-artifact-creation-issues") Fixing Claude Artifact Issues] - Troubleshooting common problems
+                    li #[strong Designing for Growth] by Liedtka & Ogilvie
 
-    //- Resources and Books
-    .row.mb-4
-      .col-md-6
-        h3 Required Books
-        ul
-          li #[strong The Mom Test] by Rob Fitzpatrick
-          li #[strong Scrum] by Jeff Sutherland
-        h5.mt-2 Recommended
-        ul
-          li #[strong Designing for Growth] by Liedtka & Ogilvie
+            //- Week 6: IDE-Centric AI Coding
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week6" aria-expanded="false")
+                  | Week 6: IDE-Centric AI Coding
+              .accordion-collapse.collapse#week6(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://antigravity.google/docs/get-started") Antigravity Docs (Getting Started)] - Official setup and usage guide
+                    li #[a(href="https://docs.github.com/copilot") GitHub Copilot Guide] - GitHub's AI coding assistant
+                    li #[a(href="https://docs.cursor.com") Cursor Documentation] - Cursor IDE docs and features
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/") How GitHub Copilot Understands Your Code (GitHub Blog)] - How Copilot uses context and retrieval
+                    li #[a(href="https://cursor.directory/") cursor.directory] - Community-maintained rules files for various tech stacks
+                    li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF Guide for AI Code Assistants] - Security best practices
 
-      .col-md-6
-        h3 Resources
-        ul
-          li #[a(href="https://docs.anthropic.com") Anthropic Claude Docs]
-          li #[a(href="https://antigravity.google/docs/get-started") Antigravity Documentation]
-          li #[a(href="https://docs.github.com/copilot") GitHub Copilot Guide]
+            //- Week 7: Agile/Scrum + Pair Workflow
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7agile" aria-expanded="false")
+                  | Week 7: Agile/Scrum + Pair Workflow
+              .accordion-collapse.collapse#week7agile(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://scrumguides.org/") The Scrum Guide] - Definitive guide to Scrum framework
+                    li #[a(href="https://docs.github.com/en/issues/planning-and-tracking-with-projects") GitHub Projects Documentation] - Setting up project boards
+                    li #[a(href="https://docs.github.com/en/issues") GitHub Issues Documentation] - Creating and managing issues
+                  h6 Required Book
+                  ul.small
+                    li #[strong Scrum] by Jeff Sutherland - Start reading this week
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://www.atlassian.com/agile") Atlassian Agile Coach] - Comprehensive Agile/Scrum guide
+                    li #[a(href="https://docs.github.com/en/get-started/using-github/github-flow") GitHub Flow Guide] - Branch-based workflow
 
-    //- Readings Section
-    .row.mb-4#readings
-      .col-12
-        h3 Required Readings & Resources
-        p.small.text-muted Organized by week. Click to expand each section.
-        .accordion#readingsAccordion
-          //- Week 2: LLM Fundamentals
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week2" aria-expanded="false")
-                | Week 2: LLM Fundamentals
-            .accordion-collapse.collapse#week2(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required Viewing
-                ul.small
-                  li #[a(href="https://www.3blue1brown.com/lessons/neural-networks") But what is a Neural Network?] (19 min) - 3Blue1Brown
-                  li #[a(href="https://www.3blue1brown.com/lessons/gradient-descent") Gradient descent, how neural networks learn] (21 min) - 3Blue1Brown
-                  li #[a(href="https://www.3blue1brown.com/lessons/attention") Attention in transformers, step-by-step] (27 min) - 3Blue1Brown
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://jalammar.github.io/illustrated-transformer/") The Illustrated Transformer] - Jay Alammar
-                  li #[a(href="https://karpathy.ai/zero-to-hero.html") Let's build GPT: from scratch, in code] (1h 56m) - Andrej Karpathy
-                h6 Interactive Tools
-                ul.small
-                  li #[a(href="https://tiktokenizer.vercel.app/") Tiktokenizer] - Visualize how text tokenizes
-                  li #[a(href="https://platform.openai.com/tokenizer") OpenAI Tokenizer] - Official token counter
+            //- Week 8: Advanced IDE AI Features
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week8ide" aria-expanded="false")
+                  | Week 8: Advanced IDE AI Features
+              .accordion-collapse.collapse#week8ide(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol docs
+                    li #[a(href="https://antigravity.google/docs/get-started") Antigravity Advanced Docs] - Agent memory, MCP, browser mode
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementation and examples
+                    li #[a(href="https://developer.chrome.com/docs/devtools/") Chrome DevTools Debugging Guide] - Browser debugging techniques
+                    li #[a(href="https://nodejs.org/en/learn/getting-started/debugging") Node.js Debugging Guide] - Server-side debugging
 
-          //- Week 3: Prompt Engineering
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week3" aria-expanded="false")
-                | Week 3: Prompt Engineering
-            .accordion-collapse.collapse#week3(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices") Claude 4 Best Practices] - Anthropic Docs
-                  li #[a(href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview") Prompt Engineering Overview] - Anthropic Docs
-                  li #[a(href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial") Prompt Engineering Interactive Tutorial] - Anthropic (9 chapters)
-                  li #[a(href="https://docs.anthropic.com/en/resources/prompt-library/library") Prompt Library] - Anthropic
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://github.com/anthropics/courses/tree/master/real_world_prompting") Real World Prompting Course] - Anthropic
+            //- Week 9: Claude Code Foundations
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week10cc" aria-expanded="false")
+                  | Week 9: Claude Code Foundations
+              .accordion-collapse.collapse#week10cc(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://code.claude.com/docs/en/overview") Claude Code Overview] - What Claude Code is and how to get started
+                    li #[a(href="https://code.claude.com/docs/en/memory#claude-md-files") CLAUDE.md — Project Instructions] - How to write effective CLAUDE.md files
+                    li #[a(href="https://code.claude.com/docs/en/context-management") Context Management] - /clear, /compact, checkpoints
+                    li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - Introduction, Setup, Context
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://code.claude.com/docs/en/best-practices") Claude Code Best Practices] - Anthropic's recommended workflows
 
-          //- Weeks 4-5: Claude Web & Artifacts
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week4" aria-expanded="false")
-                | Weeks 4-5: Claude Web & Artifacts
-            .accordion-collapse.collapse#week4(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code") Claude Artifacts Guide] - Creating interactive apps without code
-                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/context-windows") Context Windows] - How Claude's working memory works
-                  li #[a(href="https://support.claude.com/en/articles/9517075-what-are-projects") What Are Projects?] - Persistent knowledge bases for Claude Web
-                  li #[a(href="https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts") Prototype AI-Powered Apps] - Building AI-powered artifacts with window.claude.complete()
-                  li #[a(href="https://www.anthropic.com/news/claude-powered-artifacts") Claude-Powered Artifacts Announcement] - AI features in artifacts
-                h6 Required Books
-                ul.small
-                  li #[strong The Mom Test] by Rob Fitzpatrick
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects") How to Create and Manage Projects] - Step-by-step guide
-                  li #[a(href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects") RAG for Projects] - Retrieval-augmented generation in Claude Projects
-                  li #[a(href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features") Personalization Features] - Profile, instructions, and styles
-                  li #[a(href="https://zapier.com/blog/how-to-use-claude-artifacts-to-create-web-apps/") How to Use Claude Artifacts (Zapier)] - Step-by-step guide to building web apps
-                  li #[a(href="https://www.datacamp.com/blog/claude-artifacts-introduction") Claude Artifacts 101 (DataCamp)] - Types, use cases, sharing
-                  li #[a(href="https://simonwillison.net/2024/Oct/21/claude-artifacts/") Everything I built with Claude Artifacts (Simon Willison)] - Real-world examples
-                  li #[a(href="https://christinasouch.com/blog/fixing-claude-artifact-creation-issues") Fixing Claude Artifact Issues] - Troubleshooting common problems
-                  li #[strong Designing for Growth] by Liedtka & Ogilvie
+            //- Week 10: Claude Code Workflows & TDD
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week11cc" aria-expanded="false")
+                  | Week 10: Claude Code Workflows & TDD
+              .accordion-collapse.collapse#week11cc(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://jestjs.io/docs/getting-started") Jest Documentation] - Unit testing
+                    li #[a(href="https://vitest.dev/guide/") Vitest Documentation] - Fast Vite-native testing
+                    li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD pipelines
+                    li #[a(href="https://code.claude.com/docs/en/github-actions") Claude Code in GitHub Actions] - AI-powered PR review
+                    li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - Custom Commands, GitHub Integration
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://code.claude.com/docs/en/cli-reference") Claude Code CLI Reference] - Non-interactive mode, output formats
 
-          //- Week 6: IDE-Centric AI Coding
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week6" aria-expanded="false")
-                | Week 6: IDE-Centric AI Coding
-            .accordion-collapse.collapse#week6(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://antigravity.google/docs/get-started") Antigravity Docs (Getting Started)] - Official setup and usage guide
-                  li #[a(href="https://docs.github.com/copilot") GitHub Copilot Guide] - GitHub's AI coding assistant
-                  li #[a(href="https://docs.cursor.com") Cursor Documentation] - Cursor IDE docs and features
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/") How GitHub Copilot Understands Your Code (GitHub Blog)] - How Copilot uses context and retrieval
-                  li #[a(href="https://cursor.directory/") cursor.directory] - Community-maintained rules files for various tech stacks
-                  li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF Guide for AI Code Assistants] - Security best practices
+            //- Week 11: Claude Code Extensibility
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week12cc" aria-expanded="false")
+                  | Week 11: Claude Code Extensibility
+              .accordion-collapse.collapse#week12cc(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://code.claude.com/docs/en/skills") Skills] - Creating custom slash commands
+                    li #[a(href="https://code.claude.com/docs/en/hooks") Hooks] - Deterministic automation at lifecycle points
+                    li #[a(href="https://code.claude.com/docs/en/mcp") MCP Servers] - Connecting external tools and data
+                    li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol
+                    li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - MCP Servers, Hooks & SDK
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementations
 
-          //- Week 7: Agile/Scrum + Pair Workflow
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week7agile" aria-expanded="false")
-                | Week 7: Agile/Scrum + Pair Workflow
-            .accordion-collapse.collapse#week7agile(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://scrumguides.org/") The Scrum Guide] - Definitive guide to Scrum framework
-                  li #[a(href="https://docs.github.com/en/issues/planning-and-tracking-with-projects") GitHub Projects Documentation] - Setting up project boards
-                  li #[a(href="https://docs.github.com/en/issues") GitHub Issues Documentation] - Creating and managing issues
-                h6 Required Book
-                ul.small
-                  li #[strong Scrum] by Jeff Sutherland - Start reading this week
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://www.atlassian.com/agile") Atlassian Agile Coach] - Comprehensive Agile/Scrum guide
-                  li #[a(href="https://docs.github.com/en/get-started/using-github/github-flow") GitHub Flow Guide] - Branch-based workflow
+            //- Week 12: Agent Architectures & SDK
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week13cc" aria-expanded="false")
+                  | Week 12: Agent Architectures & SDK
+              .accordion-collapse.collapse#week13cc(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://www.anthropic.com/engineering/building-effective-agents") Building Effective Agents] - Anthropic's 6 agent patterns
+                    li #[a(href="https://platform.claude.com/docs/en/agent-sdk/overview") Claude Agent SDK] - Building programmatic agents
+                    li #[a(href="https://platform.claude.com/docs/en/agent-sdk/quickstart") Agent SDK Quick Start] - Getting started
+                    li #[a(href="https://platform.claude.com/docs/en/build-with-claude/tool-use/overview") Tool Use (Function Calling)] - How agents use tools
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://www.anthropic.com/engineering/building-c-compiler") Building a C Compiler with Parallel Claudes] - 16 agents, 100K lines
+                    li #[a(href="https://www.anthropic.com/engineering/multi-agent-research-system") Multi-Agent Research System] - Orchestrator-worker pattern
+                    li #[a(href="https://www.anthropic.com/engineering/writing-tools-for-agents") Writing Effective Tools for Agents] - Tool design principles
+                    li #[a(href="https://www.anthropic.com/engineering/code-execution-with-mcp") Code Execution with MCP] - 98.7% token reduction
 
-          //- Week 8: Advanced IDE AI Features
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week8ide" aria-expanded="false")
-                | Week 8: Advanced IDE AI Features
-            .accordion-collapse.collapse#week8ide(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol docs
-                  li #[a(href="https://antigravity.google/docs/get-started") Antigravity Advanced Docs] - Agent memory, MCP, browser mode
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementation and examples
-                  li #[a(href="https://developer.chrome.com/docs/devtools/") Chrome DevTools Debugging Guide] - Browser debugging techniques
-                  li #[a(href="https://nodejs.org/en/learn/getting-started/debugging") Node.js Debugging Guide] - Server-side debugging
+            //- Week 13: AI Security & Code Quality
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week14sec" aria-expanded="false")
+                  | Week 13: AI Security & Code Quality
+              .accordion-collapse.collapse#week14sec(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10] - Security best practices
+                    li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF AI Code Security Guide]
+                    li #[a(href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents") Demystifying Evals for AI Agents] - Eval frameworks
+                    li #[a(href="https://www.anthropic.com/engineering/claude-code-auto-mode") Claude Code Auto Mode] - Agent safety architecture
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://www.anthropic.com/engineering/eval-awareness-browsecomp") Eval Awareness in BrowseComp] - Model reverse-engineered its benchmark
+                    li #[a(href="https://www.anthropic.com/engineering/AI-resistant-technical-evaluations") Designing AI-Resistant Evaluations] - Assessment design
+                    li #[a(href="https://www.anthropic.com/engineering/infrastructure-noise") Infrastructure Noise in Agentic Evals] - Benchmark skepticism
 
-          //- Week 10: Claude Code Foundations
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week10cc" aria-expanded="false")
-                | Week 10: Claude Code Foundations
-            .accordion-collapse.collapse#week10cc(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://code.claude.com/docs/en/overview") Claude Code Overview] - What Claude Code is and how to get started
-                  li #[a(href="https://code.claude.com/docs/en/memory#claude-md-files") CLAUDE.md — Project Instructions] - How to write effective CLAUDE.md files
-                  li #[a(href="https://code.claude.com/docs/en/context-management") Context Management] - /clear, /compact, checkpoints
-                  li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - Introduction, Setup, Context
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://code.claude.com/docs/en/best-practices") Claude Code Best Practices] - Anthropic's recommended workflows
+            //- Week 14: Production & Course Synthesis
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week15prod" aria-expanded="false")
+                  | Week 14: Production & Course Synthesis
+              .accordion-collapse.collapse#week15prod(data-bs-parent="#readingsAccordion")
+                .accordion-body
+                  h6 Required
+                  ul.small
+                    li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching") Prompt Caching] - Cost optimization
+                    li #[a(href="https://vercel.com/docs") Vercel Deployment Docs] - Production deployment
+                    li #[a(href="https://www.anthropic.com/engineering/harness-design-long-running-apps") Harness Design for Long-Running Apps] - Planner/Generator/Evaluator
+                    li #[a(href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents") Effective Harnesses for Long-Running Agents] - Multi-session patterns
+                  h6 Recommended
+                  ul.small
+                    li #[a(href="https://www.anthropic.com/engineering/claude-code-sandboxing") Claude Code Sandboxing] - Production security
+                    li #[a(href="https://www.anthropic.com/engineering/contextual-retrieval") Contextual Retrieval] - RAG patterns
+                    li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD reference
 
-          //- Week 11: Claude Code Workflows & TDD
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week11cc" aria-expanded="false")
-                | Week 11: Claude Code Workflows & TDD
-            .accordion-collapse.collapse#week11cc(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://jestjs.io/docs/getting-started") Jest Documentation] - Unit testing
-                  li #[a(href="https://vitest.dev/guide/") Vitest Documentation] - Fast Vite-native testing
-                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD pipelines
-                  li #[a(href="https://code.claude.com/docs/en/github-actions") Claude Code in GitHub Actions] - AI-powered PR review
-                  li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - Custom Commands, GitHub Integration
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://code.claude.com/docs/en/cli-reference") Claude Code CLI Reference] - Non-interactive mode, output formats
+      //- Communication
+      .row.mb-5
+        .col-12
+          h3 Communication
+          p #[strong Slack] is the main communication channel for this course. Canvas is used for assignment submissions and grades.
+          p.small.text-muted This course #[strong requires AI tool use] but with strict guidelines: document all AI usage, understand all code submitted, never commit code you cannot explain. Weekly quizzes test conceptual understanding.
 
-          //- Week 12: Claude Code Extensibility
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week12cc" aria-expanded="false")
-                | Week 12: Claude Code Extensibility
-            .accordion-collapse.collapse#week12cc(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://code.claude.com/docs/en/skills") Skills] - Creating custom slash commands
-                  li #[a(href="https://code.claude.com/docs/en/hooks") Hooks] - Deterministic automation at lifecycle points
-                  li #[a(href="https://code.claude.com/docs/en/mcp") MCP Servers] - Connecting external tools and data
-                  li #[a(href="https://modelcontextprotocol.io/") MCP Specification] - Model Context Protocol
-                  li #[a(href="https://anthropic.skilljar.com/claude-code-in-action") Claude Code in Action Course] - MCP Servers, Hooks & SDK
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://github.com/modelcontextprotocol") MCP GitHub Repository] - Reference implementations
+      //- Footer
+      hr
+      .row.mb-4
+        .col-12.text-center.text-muted
+          small CS 6983: Special Topics in AI | Northeastern University Oakland | Fall 2026
+          br
+          small Vibe Coded with ❤️ by #[a(href="https://johnguerra.co") John]
 
-          //- Week 13: Agent Architectures & SDK
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week13cc" aria-expanded="false")
-                | Week 13: Agent Architectures & SDK
-            .accordion-collapse.collapse#week13cc(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://www.anthropic.com/engineering/building-effective-agents") Building Effective Agents] - Anthropic's 6 agent patterns
-                  li #[a(href="https://platform.claude.com/docs/en/agent-sdk/overview") Claude Agent SDK] - Building programmatic agents
-                  li #[a(href="https://platform.claude.com/docs/en/agent-sdk/quickstart") Agent SDK Quick Start] - Getting started
-                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/tool-use/overview") Tool Use (Function Calling)] - How agents use tools
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://www.anthropic.com/engineering/building-c-compiler") Building a C Compiler with Parallel Claudes] - 16 agents, 100K lines
-                  li #[a(href="https://www.anthropic.com/engineering/multi-agent-research-system") Multi-Agent Research System] - Orchestrator-worker pattern
-                  li #[a(href="https://www.anthropic.com/engineering/writing-tools-for-agents") Writing Effective Tools for Agents] - Tool design principles
-                  li #[a(href="https://www.anthropic.com/engineering/code-execution-with-mcp") Code Execution with MCP] - 98.7% token reduction
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")
+    script(src="https://d3js.org/d3.v7.min.js")
+    script(src="timeline.js")
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
 
-          //- Week 14: AI Security & Code Quality
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week14sec" aria-expanded="false")
-                | Week 14: AI Security & Code Quality
-            .accordion-collapse.collapse#week14sec(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://owasp.org/www-project-top-ten/") OWASP Top 10] - Security best practices
-                  li #[a(href="https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions") OpenSSF AI Code Security Guide]
-                  li #[a(href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents") Demystifying Evals for AI Agents] - Eval frameworks
-                  li #[a(href="https://www.anthropic.com/engineering/claude-code-auto-mode") Claude Code Auto Mode] - Agent safety architecture
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://www.anthropic.com/engineering/eval-awareness-browsecomp") Eval Awareness in BrowseComp] - Model reverse-engineered its benchmark
-                  li #[a(href="https://www.anthropic.com/engineering/AI-resistant-technical-evaluations") Designing AI-Resistant Evaluations] - Assessment design
-                  li #[a(href="https://www.anthropic.com/engineering/infrastructure-noise") Infrastructure Noise in Agentic Evals] - Benchmark skepticism
+      // Anti-spam email
+      (function() {
+        var u = 'jguerra';
+        var d = 'northeastern.edu';
+        var e = u + '@' + d;
+        var link = document.getElementById('email-link');
+        if (link) {
+          link.href = 'mailto:' + e;
+          link.textContent = e;
+        }
+      })();
 
-          //- Week 15: Production & Course Synthesis
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#week15prod" aria-expanded="false")
-                | Week 15: Production & Course Synthesis
-            .accordion-collapse.collapse#week15prod(data-bs-parent="#readingsAccordion")
-              .accordion-body
-                h6 Required
-                ul.small
-                  li #[a(href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching") Prompt Caching] - Cost optimization
-                  li #[a(href="https://vercel.com/docs") Vercel Deployment Docs] - Production deployment
-                  li #[a(href="https://www.anthropic.com/engineering/harness-design-long-running-apps") Harness Design for Long-Running Apps] - Planner/Generator/Evaluator
-                  li #[a(href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents") Effective Harnesses for Long-Running Agents] - Multi-session patterns
-                h6 Recommended
-                ul.small
-                  li #[a(href="https://www.anthropic.com/engineering/claude-code-sandboxing") Claude Code Sandboxing] - Production security
-                  li #[a(href="https://www.anthropic.com/engineering/contextual-retrieval") Contextual Retrieval] - RAG patterns
-                  li #[a(href="https://docs.github.com/en/actions") GitHub Actions Documentation] - CI/CD reference
-
-    //- Communication
-    .row.mb-5
-      .col-12
-        h3 Communication
-        p #[strong Slack] is the main communication channel for this course. Canvas is used for assignment submissions and grades.
-        p.small.text-muted This course #[strong requires AI tool use] but with strict guidelines: document all AI usage, understand all code submitted, never commit code you cannot explain. Weekly quizzes test conceptual understanding.
-
-    //- Footer
-    hr
-    .row.mb-4
-      .col-12.text-center.text-muted
-        small CS 7180: Special Topics in AI | Northeastern University Oakland | Spring 2026
-        br
-        small Vibe Coded with ❤️ by #[a(href="https://johnguerra.co") John]
-
-  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")
-  script(src="https://d3js.org/d3.v7.min.js")
-  script(src="timeline.js")
-  script.
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-72531610-1', 'auto');
-    ga('send', 'pageview');
-
-    // Anti-spam email
-    (function() {
-      var u = 'jguerra';
-      var d = 'northeastern.edu';
-      var e = u + '@' + d;
-      var link = document.getElementById('email-link');
-      if (link) {
-        link.href = 'mailto:' + e;
-        link.textContent = e;
-      }
-    })();
-
-    // Initialize Course Timeline Widget
-    document.addEventListener('DOMContentLoaded', function() {
-      var container = document.getElementById('timeline-container');
-      if (container && typeof CourseTimeline !== 'undefined') {
-        var timeline = CourseTimeline(courseData, {
-          value: dateToWeek(new Date()),
-          width: Math.min(container.offsetWidth, 900)
-        });
-        container.appendChild(timeline);
-      }
-    });
+      // Initialize Course Timeline Widget
+      document.addEventListener('DOMContentLoaded', function() {
+        var container = document.getElementById('timeline-container');
+        if (container && typeof CourseTimeline !== 'undefined') {
+          var timeline = CourseTimeline(courseData, {
+            value: dateToWeek(new Date()),
+            width: Math.min(container.offsetWidth, 900)
+          });
+          container.appendChild(timeline);
+        }
+      });
 
