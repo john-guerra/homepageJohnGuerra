@@ -18,6 +18,18 @@ rsync -avzgu --delete --delete-excluded --partial \
   --exclude=.gitignore \
   --exclude=.env \
   --exclude=.DS_Store \
+  --exclude=.vscode \
+  --exclude=index_bk.html \
+  --exclude=d3.html \
+  --exclude=schoolOfLife.html \
+  --exclude=summary_openvis.jade \
+  --exclude=ex.jpg \
+  --exclude=papers.twb \
+  --exclude=astro_viewport.png \
+  --exclude=blog_header.png \
+  --exclude=blog_footer.png \
+  --exclude=eleventy_post.png \
+  --exclude=eleventy_viewport.png \
   -e "ssh -i /Users/aguerra/Dropbox/dutoVizNew.pem" \
   * ubuntu@johnguerra.co:/var/www/johnguerra.co
 

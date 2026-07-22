@@ -2,6 +2,29 @@
 node_modules
 .idea/
 
+# Editor / tooling artifacts
+.vscode/
+.improvements/
+.playwright-mcp/
+
+# Secrets — never commit or deploy (matches nested .env at any depth)
+.env
+
+# Scratch / backup files at repo root (not part of the site)
+/index_bk.html
+/d3.html
+/schoolOfLife.html
+/summary_openvis.jade
+/ex.jpg
+/papers.twb
+
+# Tooling screenshots at repo root
+/astro_viewport.png
+/blog_header.png
+/blog_footer.png
+/eleventy_post.png
+/eleventy_viewport.png
+
 # Astro blog
 blog-src/.astro/
 blog-src/public/skills.json
