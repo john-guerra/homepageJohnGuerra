@@ -106,7 +106,7 @@ const courseData = {
     10: {
       topic: "Claude Code Workflows & TDD",
       project: "P3: Sprint 1",
-      action: "Complete HW4, TDD with Claude Code",
+      action: "Complete HW4, spec-driven TDD with Claude Code",
     },
     11: {
       topic: "Claude Code Extensibility",
