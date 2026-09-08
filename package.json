@@ -23,6 +23,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:cs5610": "playwright test --config=classes/webDevelopment_online_summer_2026/tests/playwright.config.js",
+    "test:cs5610fall2026": "playwright test --config=classes/webDevelopment_online_fall_2026/tests/playwright.config.js",
     "build": "./build.sh"
   },
   "repository": {
