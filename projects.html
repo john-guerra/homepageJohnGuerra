@@ -3,15 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <title>John Alexis Guerra Gómez Projects</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="css/main.css" rel="stylesheet" />
     <link href="css/projectsComb.css" rel="stylesheet" />
+    <link href="css/projectsGallery.css" rel="stylesheet" />
+    <style>
+      /* Cap the hero comb so the browse section below is reachable without excessive scrolling */
+      #projectsComb {
+        max-height: 600px;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
+    <!-- ******************** Honeycomb (hero) ****************** -->
     <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
     <div id="projectsComb"></div>
     <script>
       var CombColumns = 12;
+      var CombMaxHeight = 600;
     </script>
-    <script src="js/projectsComb.js"></script>
+    <script src="js/projectsComb.js?v=2"></script>
+
+    <!-- ******************** Browse Projects ****************** -->
+    <div class="container-xl">
+      <section class="row" id="browse">
+        <h2>Browse Projects</h2>
+
+        <div id="galleryControls">
+          <label for="gallerySearch">Search:</label>
+          <input type="search" id="gallerySearch" placeholder="Project title..." />
+
+          <label for="galleryMinRating">Min rating:</label>
+          <select id="galleryMinRating">
+            <option value="1">Any</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5</option>
+          </select>
+
+          <label for="galleryYearFrom">Years:</label>
+          <input type="number" id="galleryYearFrom" />
+          &ndash;
+          <input type="number" id="galleryYearTo" />
+        </div>
+
+        <form id="gallerySortBy">
+          Order by:
+          <label class="form-check-label"
+            ><input
+              class="form-check-input"
+              type="radio"
+              name="gallerySortBy"
+              id="byDate"
+              checked
+            />
+            Date</label
+          >
+          <label class="form-check-label"
+            ><input
+              class="form-check-input"
+              type="radio"
+              name="gallerySortBy"
+              id="byRating"
+            />
+            Rating</label
+          >
+          <label class="form-check-label"
+            ><input
+              class="form-check-input"
+              type="radio"
+              name="gallerySortBy"
+              id="byTitle"
+            />
+            Title</label
+          >
+        </form>
+
+        <div id="galleryFilters"></div>
+
+        <div id="projectsGalleryCount"></div>
+
+        <div id="projectsGalleryContent" class="gallery-grid"></div>
+      </section>
+    </div>
+
+    <script type="module" src="js/projectsGallery.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

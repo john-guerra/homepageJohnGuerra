@@ -75,7 +75,10 @@
 
     width = svgNode ? svgNode.clientWidth : width;
     // Is it a small screen?
-    if (width < 600) {
+    if (window.CombMaxHeight) {
+      // Explicit cap so the comb doesn't have to fill the whole viewport (e.g. projects.html)
+      height = window.CombMaxHeight;
+    } else if (width < 600) {
       height = window.innerHeight * 0.7;
     } else if (d3.select("#achievementsText").node()) {
       // set to the height of the text if it exists
