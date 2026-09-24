@@ -60,7 +60,14 @@ async function runProjectsGallery() {
   const yearFromInput = document.querySelector("#galleryYearFrom");
   const yearToInput = document.querySelector("#galleryYearTo");
 
-  const allData = await loadData();
+  let allData;
+  try {
+    allData = await loadData();
+  } catch (err) {
+    console.error("Failed to load projects gallery data", err);
+    countEl.text("Could not load projects right now. Please try again later.");
+    return;
+  }
 
   let selectedTypes = [];
   let selectedCategories = [];
@@ -130,7 +137,7 @@ async function runProjectsGallery() {
 
     countEl.text(filtered.length + " project" + (filtered.length === 1 ? "" : "s"));
 
-    const cards = container.selectAll(".gallery-card").data(filtered, (d) => d.title + d.url);
+    const cards = container.selectAll(".gallery-card").data(filtered, (d) => d.source + "|" + d.url + "|" + d.title);
 
     cards.exit().remove();
 
@@ -167,13 +174,15 @@ async function runProjectsGallery() {
 
     cardsMerged
       .select(".gallery-meta")
-      .html((d) => {
+      .html("")
+      .each(function(d) {
+        const meta = d3.select(this);
         // Notebooks share the same value for category and type, so only show one badge
-        const badges =
-          d.category.toLowerCase() === d.type.toLowerCase()
-            ? `<span class="badge-type">${d.type}</span>`
-            : `<span class="badge-category">${d.category}</span> <span class="badge-type">${d.type}</span>`;
-        return `${badges} <span class="gallery-rating">${"★".repeat(d.rating)}</span>`;
+        if (d.category.toLowerCase() !== d.type.toLowerCase()) {
+          meta.append("span").attr("class", "badge-category").text(d.category);
+        }
+        meta.append("span").attr("class", "badge-type").text(d.type);
+        meta.append("span").attr("class", "gallery-rating").text("★".repeat(d.rating));
       });
   }
 

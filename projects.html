@@ -50,9 +50,10 @@
           </select>
 
           <label for="galleryYearFrom">Years:</label>
-          <input type="number" id="galleryYearFrom" />
+          <input type="number" id="galleryYearFrom" aria-label="From year" />
           &ndash;
-          <input type="number" id="galleryYearTo" />
+          <label for="galleryYearTo" class="visually-hidden">To year</label>
+          <input type="number" id="galleryYearTo" aria-label="To year" />
         </div>
 
         <form id="gallerySortBy">
@@ -95,7 +96,7 @@
       </section>
     </div>
 
-    <script type="module" src="js/projectsGallery.js"></script>
+    <script type="module" src="js/projectsGallery.js?v=2"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
