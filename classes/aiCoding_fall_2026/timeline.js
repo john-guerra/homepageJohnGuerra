@@ -51,7 +51,7 @@ const courseData = {
     },
   ],
   homeworks: [
-    { id: "HW1", name: "Prompt Engineering", dueWeek: 4, weight: "5%" },
+    { id: "HW1", name: "Prompt Pairs", dueWeek: 5, weight: "5%" },
     { id: "HW2", name: "Mom Test", dueWeek: 5, weight: "5%" },
     { id: "HW3", name: "Context Engineering", dueWeek: 8, weight: "5%" },
     { id: "HW4", name: "CC Workflow & TDD", dueWeek: 10, weight: "5%" },
