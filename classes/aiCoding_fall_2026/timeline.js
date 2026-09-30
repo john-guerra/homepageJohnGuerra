@@ -76,12 +76,12 @@ const courseData = {
     4: {
       topic: "Claude Web & Artifacts",
       project: "P1: Prototyping",
-      action: "Complete HW1, build prototype",
+      action: "Start HW1, build prototype",
     },
     5: {
       topic: "Claude Projects & Iteration",
       project: "P1: Refinement",
-      action: "Complete HW2, refine prototype",
+      action: "Submit HW1 (Mon), complete HW2, refine prototype",
     },
     6: {
       topic: "P1 Due & IDE-Centric AI Coding",
