@@ -101,7 +101,7 @@ const courseData = {
     9: {
       topic: "Claude Code Foundations",
       project: "P2: Final, P3: Start",
-      action: "Submit P2, form P3 teams, write CLAUDE.md",
+      action: "Submit P2, form P3 pairs, write CLAUDE.md",
     },
     10: {
       topic: "Claude Code Workflows & TDD",
