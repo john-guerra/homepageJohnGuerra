@@ -37,7 +37,7 @@ const courseData = {
       id: "P2",
       name: "Full-Stack App",
       startWeek: 6,
-      endWeek: 9,
+      endWeek: 10,
       weight: "18%",
       color: colorPalette.purple.dark,
     },
@@ -100,13 +100,13 @@ const courseData = {
     },
     9: {
       topic: "Claude Code Foundations",
-      project: "P2: Final, P3: Start",
-      action: "Submit P2, form P3 pairs, write CLAUDE.md",
+      project: "P2: Final sprint, P3: Start",
+      action: "Finish P2, form P3 pairs, write CLAUDE.md",
     },
     10: {
       topic: "Claude Code Workflows & TDD",
       project: "P3: Sprint 1",
-      action: "Complete HW4, spec-driven TDD with Claude Code",
+      action: "Submit P2 (Thu Nov 12), complete HW4, spec-driven TDD with Claude Code",
     },
     11: {
       topic: "Claude Code Extensibility",
@@ -126,10 +126,10 @@ const courseData = {
     14: {
       topic: "Production & Course Synthesis",
       project: "P3: Deploy & polish",
-      action: "Deploy, optimize, demo prep",
+      action: "Submit P3 Proposal (Tue Dec 8), deploy, optimize, demo prep",
     },
     15: {
-      topic: "Finals Week — P3 Due (Dec 14–20)",
+      topic: "Finals Week — P3 Due Tue Dec 15",
       project: "P3: Final",
       action: "Submit P3",
     },
