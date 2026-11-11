@@ -1,10 +1,24 @@
 #!/bin/bash
 set -e
 
+# Compile news/*.md → news.json
+echo "Building news..."
+node scripts/build-news.mjs
+
+# ejs -f accepts a single data file, so merge skills.json + news.json
+DATA_FILE=$(mktemp -t ejsdata.XXXXXX)
+trap 'rm -f "$DATA_FILE"' EXIT
+node -e '
+  const fs = require("fs");
+  const [skills, news, out] = process.argv.slice(1);
+  const read = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
+  fs.writeFileSync(out, JSON.stringify({ ...read(skills), ...read(news) }));
+' skills.json news.json "$DATA_FILE"
+
 # Build main EJS site
 echo "Building main site (EJS)..."
 for file in ./src/*.ejs.html; do
-  npx ejs $file -f ./skills.json -o ./$(basename $file .ejs.html).html && \
+  npx ejs $file -f "$DATA_FILE" -o ./$(basename $file .ejs.html).html && \
     npx prettier --write ./$(basename $file .ejs.html).html
 done
 

@@ -1,0 +1,19 @@
+<%
+  // Renders one news item. Expects `item` from news.json (built from news/*.md).
+  const fmtDate = (d) =>
+    new Date(d + "T12:00:00").toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+%>
+<li id="<%= item.slug %>">
+  <span class="news-date"><%= fmtDate(item.date) %></span>
+  <strong><%= item.title %></strong>
+  <div class="news-body"><%- item.html %></div>
+  <% if (item.links.length) { %>
+  <div class="news-links">
+    <% item.links.forEach(function (l, i) { %><%- i ? " · " : "" %><a href="<%= l.href %>"><%= l.label %> →</a><% }); %>
+  </div>
+  <% } %>
+</li>

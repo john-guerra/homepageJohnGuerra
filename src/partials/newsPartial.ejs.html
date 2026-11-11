@@ -1,0 +1,24 @@
+<%
+  // ******************** NEWS (homepage, compact) ********************
+  // Headlines only; full entries live on news.html. Source: news/*.md → news.json.
+  // The headline links straight to the item's first link (the thing itself),
+  // falling back to its entry on news.html.
+  const maxNews = 4;
+  const fmtShort = (d) =>
+    new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
+%>
+<% if (news.length) { %>
+<section id="news" class="news-compact" aria-labelledby="news-label">
+  <h2 id="news-label" class="news-label">Latest</h2>
+  <ul>
+    <% news.slice(0, maxNews).forEach(function (item) { %>
+    <li>
+      <time datetime="<%= item.date %>"><%= fmtShort(item.date) %></time>
+      <a href="<%= item.links.length ? item.links[0].href : 'news.html#' + item.slug %>"><%= item.title %></a>
+    </li>
+    <% }); %>
+  </ul>
+  <a class="news-all" href="news.html">All news →</a>
+</section>
+<% } %>
+<!-- /news -->

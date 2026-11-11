@@ -148,3 +148,122 @@ h2 {
   margin-right: 0.15em;
   vertical-align: middle;
 }
+/* ******************** NEWS ******************** */
+.news-list {
+  list-style: none;
+  padding-left: 0;
+}
+.news-list li {
+  padding: 0.35rem 0 0.35rem 0.75rem;
+  border-left: 3px solid #ff9800;
+  margin-bottom: 0.5rem;
+}
+.news-body p {
+  margin: 0.15rem 0;
+}
+.news-links {
+  font-size: 0.95em;
+}
+.news-date {
+  display: inline-block;
+  min-width: 8em;
+  color: #616161;
+  font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ******************** TOP NAV ******************** */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e6e2d6;
+  font-size: 0.9rem;
+}
+.top-nav-group {
+  display: flex;
+  gap: 1.1rem;
+}
+.top-nav a {
+  color: #424242;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: #ff9800;
+  text-underline-offset: 4px;
+}
+.top-nav-docs a {
+  font-weight: 700;
+}
+@media (max-width: 767.98px) {
+  /* Docs (News, Blog, CV…) on their own row first; sections scroll sideways,
+     with a right-edge fade hinting there is more */
+  .top-nav {
+    flex-direction: column;
+  }
+  .top-nav-docs {
+    order: -1;
+  }
+  .top-nav-group {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-right: 1.5rem;
+    -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
+    mask-image: linear-gradient(to right, #000 85%, transparent);
+  }
+  .top-nav-docs {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ******************** NEWS (homepage, compact) ******************** */
+.news-compact {
+  margin-top: 1.75rem;
+  max-width: 22rem;
+}
+.news-compact .news-label {
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c43e00; /* 5.15:1 on #fefefa (WCAG AA) */
+  margin: 0 0 0.5rem;
+}
+.news-compact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  border-left: 2px solid #ff9800;
+}
+.news-compact li {
+  padding: 0 0 0.6rem 0.75rem;
+  line-height: 1.3;
+}
+.news-compact time {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #757575;
+}
+.news-compact li a {
+  color: #212121;
+  font-weight: 700;
+  text-decoration: none;
+}
+.news-compact li a:hover,
+.news-compact li a:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: #ff9800;
+}
+.news-compact .news-all {
+  font-size: 0.85rem;
+}

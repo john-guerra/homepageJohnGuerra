@@ -1,0 +1,64 @@
+{
+  "news": [
+    {
+      "slug": "2026-11-10-influentials-bluesky",
+      "title": "Influentials is back, now for Bluesky",
+      "date": "2026-11-10",
+      "year": "2026",
+      "html": "<p>I revived my Twitter-era influentials visualization for Bluesky: who the IEEE VIS 2026 community follows most, updated every ~15 minutes during the conference. Find yourself in the ranking and follow the top accounts via starter packs.</p>",
+      "links": [
+        {
+          "label": "Who to follow at IEEE VIS 2026",
+          "href": "viz/influentials/ieeevis2026/"
+        },
+        {
+          "label": "Other conferences",
+          "href": "viz/influentials/"
+        }
+      ]
+    },
+    {
+      "slug": "2026-11-09-ieeevis-2026",
+      "title": "At IEEE VIS 2026",
+      "date": "2026-11-09",
+      "year": "2026",
+      "html": "<p>I'm attending IEEE VIS 2026. If you are around, come say hi!</p>",
+      "links": [
+        {
+          "label": "IEEE VIS",
+          "href": "https://ieeevis.org"
+        }
+      ]
+    },
+    {
+      "slug": "2026-11-05-papers-navigator",
+      "title": "Papers Navigator for IEEE VIS 2026",
+      "date": "2026-11-05",
+      "year": "2026",
+      "html": "<p>Explore the conference papers by meaning: semantic search, a 2D embedding map, filters, and a personal schedule that tells you which room to go to. A Live page lets you rate talks, take notes and post to Bluesky. Everything stays in your browser.</p>",
+      "links": [
+        {
+          "label": "IEEE VIS 2026 Papers Navigator",
+          "href": "viz/papersNavigator/ieeevis2026/"
+        },
+        {
+          "label": "Code",
+          "href": "https://github.com/john-guerra/papers_navigator"
+        }
+      ]
+    },
+    {
+      "slug": "2026-09-09-ai-coding-course",
+      "title": "Teaching CS 6983: AI Coding (Vibe Coding)",
+      "date": "2026-09-09",
+      "year": "2026",
+      "html": "<p>This fall I'm teaching AI-Assisted Software Engineering in Oakland (hybrid) and Silicon Valley: Claude Code, prompt engineering, agents, MCP and evals.</p>",
+      "links": [
+        {
+          "label": "Course site",
+          "href": "classes/aiCoding_fall_2026/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>News · John Alexis Guerra Gómez</title>
+    <meta property="og:url" content="https://johnguerra.co/news.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="News · John Alexis Guerra Gómez" />
+    <meta
+      property="og:description"
+      content="What John Alexis Guerra Gómez has been building, teaching and presenting."
+    />
+    <meta property="og:image" content="https://johnguerra.co/img/projects.png" />
+
+    <%- include('partials/headersPartial.ejs.html') %>
+  </head>
+
+  <body>
+    <div class="content container-fluid">
+      <p><a href="index.html">← John Alexis Guerra Gómez</a></p>
+      <h1>News</h1>
+
+      <% const years = [...new Set(news.map((n) => n.year))]; %>
+      <% years.forEach(function (year) { %>
+      <section class="row" id="news-<%= year %>">
+        <div class="col-12 col-lg-9">
+          <h2><%= year %></h2>
+          <ul class="news-list">
+            <% news.filter((n) => n.year === year).forEach(function (item) { %>
+            <%- include('partials/newsItemPartial.ejs.html', { item: item }) %>
+            <% }); %>
+          </ul>
+        </div>
+      </section>
+      <% }); %>
+    </div>
+  </body>
+</html>
